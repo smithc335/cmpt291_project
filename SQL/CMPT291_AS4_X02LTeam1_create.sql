@@ -19,8 +19,14 @@ DROP TABLE IF EXISTS EmployeePhone;
 DROP TABLE IF EXISTS Employee;
 DROP TABLE IF EXISTS CustomerPhone;
 DROP TABLE IF EXISTS Customer;
+DROP TABLE IF EXISTS UserLogin;
 
 -- Create tables
+
+CREATE TABLE UserLogin(
+Username VARCHAR(40) NOT NULL,
+Password VARCHAR(40) NOT NULL
+);
 
 CREATE TABLE Customer (
 CustomerID INT NOT NULL, 
@@ -34,8 +40,7 @@ EmailAddress VARCHAR(40) NOT NULL,
 AcctNum INT NOT NULL,	 
 AcctCreateDate DATE NOT NULL DEFAULT(GETDATE()), 
 CreditCardNum NCHAR(16) NOT NULL, 
-PRIMARY KEY (CustomerID),
-UNIQUE (EmailAddress)
+PRIMARY KEY (CustomerID)
 );
 
 CREATE SEQUENCE Customer_CustomerID_Seq START WITH 1 INCREMENT BY 1;

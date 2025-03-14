@@ -95,32 +95,32 @@ INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, Ret
 -- Add test data for QueueUp
 
 INSERT INTO QueueUp (MovieID, CustomerID)
-	VALUES (2, 1);
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Fast & Furious'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'));
 
 INSERT INTO QueueUp (MovieID, CustomerID)
-	VALUES (1, 3);
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Fast & Furious'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'p.mckay@hotmail.ca'));
 
 INSERT INTO QueueUp (MovieID, CustomerID)
-	VALUES (3, 2);
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Parasite'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'stacell13@yahoo.com'));
 
 -- Add test data for AppearedIn
 
 INSERT INTO AppearedIn (MovieID, ActorID)
-	VALUES (2, 1);
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Superbad'), (SELECT ActorID FROM Actor WHERE Name = 'Leonardo DiCaprio'));
 
 INSERT INTO AppearedIn (MovieID, ActorID)
-	VALUES (1, 3);
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Fast & Furious'), (SELECT ActorID FROM Actor WHERE Name = 'Tom Hanks'));
 
 INSERT INTO AppearedIn (MovieID, ActorID)
-	VALUES (3, 2);
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Parasite'), (SELECT ActorID FROM Actor WHERE Name = 'Scarlett Johansson'));
 
 -- Add test data for RateActor
 
 INSERT INTO RateActor (RentalID, ActorID, ActorRating)
-	VALUES (1, 1, 5);
+	VALUES (1, (SELECT ActorID FROM Actor WHERE Name = 'Leonardo DiCaprio'), 5);
 
 INSERT INTO RateActor (RentalID, ActorID, ActorRating)
-	VALUES (2, 3, 3);
+	VALUES (2, (SELECT ActorID FROM Actor WHERE Name = 'Tom Hanks'), 3);
 
 INSERT INTO RateActor (RentalID, ActorID, ActorRating)
-	VALUES (3, 3, 4);
+	VALUES (3, (SELECT ActorID FROM Actor WHERE Name = 'Tom Hanks'), 4);
