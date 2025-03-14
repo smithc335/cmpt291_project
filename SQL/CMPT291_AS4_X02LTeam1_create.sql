@@ -1,0 +1,147 @@
+USE MovieRentalSystem;
+
+-- Clean up database schema
+
+DROP SEQUENCE IF EXISTS Customer_CustomerID_Seq;
+DROP SEQUENCE IF EXISTS Customer_AcctNum_Seq;
+DROP SEQUENCE IF EXISTS Employee_EmployeeID_Seq;
+DROP SEQUENCE IF EXISTS Movie_MovieID_Seq;
+DROP SEQUENCE IF EXISTS Actor_ActorID_Seq;
+DROP SEQUENCE IF EXISTS Rental_RentalID_Seq;
+
+DROP TABLE IF EXISTS RateActor;
+DROP TABLE IF EXISTS AppearedIn;
+DROP TABLE IF EXISTS QueueUp;
+DROP TABLE IF EXISTS Rental;
+DROP TABLE IF EXISTS Actor;
+DROP TABLE IF EXISTS Movie;
+DROP TABLE IF EXISTS EmployeePhone;
+DROP TABLE IF EXISTS Employee;
+DROP TABLE IF EXISTS CustomerPhone;
+DROP TABLE IF EXISTS Customer;
+
+-- Create tables
+
+CREATE TABLE Customer (
+CustomerID INT NOT NULL, 
+LastName VARCHAR(40) NOT NULL, 
+FirstName VARCHAR(40) NOT NULL, 
+Address VARCHAR(40) NOT NULL, 
+City VARCHAR(40) NOT NULL, 
+Province CHAR(2) NOT NULL, 
+PostalCode CHAR(6) NOT NULL, 
+EmailAddress VARCHAR(40) NOT NULL, 
+AcctNum INT NOT NULL,	 
+AcctCreateDate DATE NOT NULL DEFAULT(GETDATE()), 
+CreditCardNum NCHAR(16) NOT NULL, 
+PRIMARY KEY (CustomerID),
+UNIQUE (EmailAddress)
+);
+
+CREATE SEQUENCE Customer_CustomerID_Seq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE Customer_AcctNum_Seq START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE CustomerPhone (
+CustomerID INT NOT NULL,
+PhoneNum NCHAR(10) NOT NULL,
+PhoneType VARCHAR(10) NOT NULL,
+StartTime DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+EndTime DATETIME,
+PRIMARY KEY (CustomerID, PhoneNum),
+FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
+CONSTRAINT CustomerPhonePeriod CHECK (StartTime < EndTime)
+);
+
+CREATE TABLE Employee (
+EmployeeID INT NOT NULL, 
+SSN NCHAR(9) NOT NULL, 
+LastName VARCHAR(40) NOT NULL, 
+FirstName VARCHAR(40) NOT NULL, 
+Address VARCHAR(40) NOT NULL, 
+City VARCHAR(40) NOT NULL, 
+Province CHAR(2) NOT NULL, 
+PostalCode CHAR(6) NOT NULL,
+StartDate DATE NOT NULL DEFAULT(GETDATE()),
+PRIMARY KEY (EmployeeID),
+UNIQUE (SSN, StartDate)
+);
+
+CREATE SEQUENCE Employee_EmployeeID_Seq START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE EmployeePhone (
+EmployeeID INT NOT NULL,
+PhoneNum NCHAR(10) NOT NULL,
+PhoneType VARCHAR(10) NOT NULL,
+StartTime DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+EndTime DATETIME,
+PRIMARY KEY (EmployeeID, PhoneNum),
+FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
+CONSTRAINT EmployeePhonePeriod CHECK (StartTime < EndTime)
+);
+
+CREATE TABLE Movie (
+MovieID INT NOT NULL, 
+Name VARCHAR(40) NOT NULL, 
+Type VARCHAR(10) NOT NULL
+	CHECK (Type='Comedy' or Type='Drama' or Type='Action' or Type='Foreign'), 
+DistributionFee NUMERIC(6, 2) NOT NULL, 
+NumCopies INT NOT NULL, 
+PRIMARY KEY (MovieID)
+);
+
+CREATE SEQUENCE Movie_MovieID_Seq START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE Actor (
+ActorID INT NOT NULL, 
+Name VARCHAR(40) NOT NULL, 
+Gender CHAR(1) NOT NULL
+	CHECK (Gender='M' or Gender='F'), 
+DateOfBirth DATE NOT NULL, 
+PRIMARY KEY (ActorID)
+);
+
+CREATE SEQUENCE Actor_ActorID_Seq START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE Rental (
+RentalID INT NOT NULL, 
+MovieID INT NOT NULL, 
+CustomerID INT NOT NULL, 
+EmployeeID INT NOT NULL,
+CheckoutDate DATE NOT NULL DEFAULT(GETDATE()), 
+ReturnDate DATE, 
+CustRateMovie INT,
+	CHECK (CustRateMovie BETWEEN 1 AND 5),
+PRIMARY KEY (RentalID),
+FOREIGN KEY (MovieID) REFERENCES Movie (MovieID),
+FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
+FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID)
+);
+
+CREATE SEQUENCE Rental_RentalID_Seq START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE QueueUp (
+MovieID INT NOT NULL, 
+CustomerID INT NOT NULL, 
+PRIMARY KEY (MovieID, CustomerID),
+FOREIGN KEY (MovieID) REFERENCES Movie (MovieID),
+FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+);
+
+CREATE TABLE AppearedIn (
+MovieID INT NOT NULL, 
+ActorID INT NOT NULL,
+PRIMARY KEY (MovieID, ActorID),
+FOREIGN KEY (MovieID) REFERENCES Movie (MovieID),
+FOREIGN KEY (ActorID) REFERENCES Actor (ActorID),
+);
+
+CREATE TABLE RateActor (
+RentalID INT NOT NULL, 
+ActorID INT NOT NULL, 
+ActorRating INT NOT NULL,
+	CHECK (ActorRating BETWEEN 1 AND 5), 
+PRIMARY KEY (RentalID, ActorID),
+FOREIGN KEY (RentalID) REFERENCES Rental (RentalID),
+FOREIGN KEY (ActorID) REFERENCES Actor (ActorID),
+);
+
