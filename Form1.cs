@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -13,9 +14,44 @@ namespace CMPT291_Project
 {
     public partial class Form1 : Form
     {
+        public SqlConnection myConnection;
+        public SqlCommand myCommand;
+        public SqlDataReader myReader;
+
         public Form1()
         {
             InitializeComponent();
+
+            ///////////////////////////////
+            //operation.Items.Clear();
+            //operation.Items.Add("Show all");
+            //operation.Items.Add("Show with starting grade: ");
+            //////////////////////////////////
+            ///
+            String connectionString = "Server = DESKTOP-EK1AC4K; Database = MovieRentalSystem; Trusted_Connection = yes;";
+
+
+            /* Starting the connection */
+            //SqlConnection myConnection = new SqlConnection("user id=adminTest;" + // Username
+            //                             "password=1234;" + // Password
+            //                             "server=localhost;" + // IP for the server
+            //                                                   //"Trusted_Connection=yes;" +
+            //                             "database=ConnectTutorial; " + // Database to connect to
+            //                             "connection timeout=30"); // Timeout in seconds
+
+            SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
+
+            try
+            {
+                myConnection.Open(); // Open connection
+                myCommand = new SqlCommand();
+                myCommand.Connection = myConnection; // Link the command stream to the connection
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error");
+                this.Close();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,10 +101,32 @@ namespace CMPT291_Project
 
             // Compute hash based on inputted password.
             passwordHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-
-            Console.WriteLine(ByteArrayToString(passwordHash));
+            //Console.WriteLine(ByteArrayToString(passwordHash));
 
             // Check whether hash matches entry in database.
+            myCommand.CommandText = "select PasswordHash from UserLogin where Username = '" + UsernameTextbox.Text + "'";
+
+            try
+            {
+                //MessageBox.Show(myCommand.CommandText);
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    int col = myReader.GetOrdinal("PasswordHash");
+
+                    // Checks password hash with inputted password hash and prints a message.
+                    if (myReader.GetString(col) == ByteArrayToString(passwordHash))
+                        MessageBox.Show("Password matches database.");
+                }
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
+
         }
 
         private void usernameTextbox_TextChanged(object sender, EventArgs e)
