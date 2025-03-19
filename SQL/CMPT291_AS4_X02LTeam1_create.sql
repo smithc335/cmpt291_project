@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS UserLogin;
 
 CREATE TABLE UserLogin(
 Username VARCHAR(40) NOT NULL,
-Password VARCHAR(40) NOT NULL
+PasswordHash VARCHAR(40) NOT NULL
 );
 
 CREATE TABLE Customer (

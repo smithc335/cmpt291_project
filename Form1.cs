@@ -35,15 +35,12 @@ namespace CMPT291_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-
-
             //Hash Code Implementation for User Password
             string sSourceData;
             byte[] tmpSource;
             byte[] tmpHash;
 
-            sSourceData = passwordTextbox.Text;
+            sSourceData = PasswordTextbox.Text;
             //Create a byte array from source data.
             tmpSource = ASCIIEncoding.ASCII.GetBytes(sSourceData);
 
@@ -53,13 +50,25 @@ namespace CMPT291_Project
             tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
 
             Console.WriteLine(ByteArrayToString(tmpHash));
-
-
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
+            // Hash Code Implementation for User Password
+            string userPassword;
+            byte[] tmpSource;
+            byte[] passwordHash;
 
+            userPassword = PasswordTextbox.Text;
+            // Create a byte array from inputted password.
+            tmpSource = ASCIIEncoding.ASCII.GetBytes(userPassword);
+
+            // Compute hash based on inputted password.
+            passwordHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
+
+            Console.WriteLine(ByteArrayToString(passwordHash));
+
+            // Check whether hash matches entry in database.
         }
 
         private void usernameTextbox_TextChanged(object sender, EventArgs e)
@@ -67,7 +76,7 @@ namespace CMPT291_Project
 
         }
 
-        //Hash Code Function
+        // Hash Code Function
         private static string ByteArrayToString(byte[] arrInput)
         {
             int i;

@@ -12,6 +12,25 @@ DELETE EmployeePhone;
 DELETE Employee;
 DELETE CustomerPhone;
 DELETE Customer;
+DELETE UserLogin;
+
+-- Add test data for UserLogin
+
+INSERT INTO UserLogin (Username, PasswordHash)
+	VALUES ('smithc', '3FE92FCD855752C77DEE500FABF6C309');
+	-- Password = claire1234
+
+INSERT INTO UserLogin (Username, PasswordHash)
+	VALUES ('beaulieum', 'B9457A0168DF164F35C9D4289753367F');
+	-- Password = matt1234
+
+INSERT INTO UserLogin (Username, PasswordHash)
+	VALUES ('bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
+	-- Password = kovidh1234
+
+INSERT INTO UserLogin (Username, PasswordHash)
+	VALUES ('sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
+	-- Password = jaisica1234
 
 -- Add test data for Customer and CustomerPhone
 
@@ -34,6 +53,18 @@ INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
 	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'p.mckay@hotmail.ca'), '7805776766', 'Mobile');
 
 -- Add test data for Employee and EmployeePhone
+
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '387584938', 'Smith', 'Claire', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
+
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '238759295', 'Beaulieu', 'Matt', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
+
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '385774936', 'Bains', 'Kovidh', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
+
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '673867955', 'Sutariya', 'Jaisica', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
 
 INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
 	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '123456789', 'Sharma', 'Amit', '123 Main St', 'Toronto', 'ON', 'M4B1B3');
