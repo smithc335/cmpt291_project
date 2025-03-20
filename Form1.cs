@@ -117,9 +117,17 @@ namespace CMPT291_Project
 
                     // Checks password hash with inputted password hash and prints a message.
                     if (myReader.GetString(col) == ByteArrayToString(passwordHash))
-                        MessageBox.Show("Password matches database.");
+                    {
+                        //MessageBox.Show("Password matches database.");
+                        LoginResultLabel.Text = "You have been logged in successfully.";
+                    }
+                    else
+                    {
+                        LoginResultLabel.Text = "Username and/or password is incorrect.";
+                    }
                 }
 
+                LoginResultLabel.Visible = true;
                 myReader.Close();
             }
             catch (Exception e3)
