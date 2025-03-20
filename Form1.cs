@@ -52,6 +52,12 @@ namespace CMPT291_Project
                 MessageBox.Show(e.ToString(), "Error");
                 this.Close();
             }
+
+            // Hiding tab pages on initialization
+            MovieRentalTabControl.TabPages.Remove(CustomersTabPage);
+            MovieRentalTabControl.TabPages.Remove(MoviesTabPage);
+            MovieRentalTabControl.TabPages.Remove(RentalsTabPage);
+            MovieRentalTabControl.TabPages.Remove(ReportsTabPage);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -96,15 +102,18 @@ namespace CMPT291_Project
             byte[] passwordHash;
 
             userPassword = PasswordTextbox.Text;
-            // Create a byte array from inputted password.
+            // Create a byte array from inputted password
             tmpSource = ASCIIEncoding.ASCII.GetBytes(userPassword);
 
-            // Compute hash based on inputted password.
+            // Compute hash based on inputted password
             passwordHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
             //Console.WriteLine(ByteArrayToString(passwordHash));
 
-            // Check whether hash matches entry in database.
+            // Check whether hash matches entry in database
             myCommand.CommandText = "select PasswordHash from UserLogin where Username = '" + UsernameTextbox.Text + "'";
+
+            // Set incorrect message before executing query
+            LoginResultLabel.Text = "Username and/or password is incorrect.";
 
             try
             {
@@ -118,12 +127,13 @@ namespace CMPT291_Project
                     // Checks password hash with inputted password hash and prints a message.
                     if (myReader.GetString(col) == ByteArrayToString(passwordHash))
                     {
-                        //MessageBox.Show("Password matches database.");
                         LoginResultLabel.Text = "You have been logged in successfully.";
-                    }
-                    else
-                    {
-                        LoginResultLabel.Text = "Username and/or password is incorrect.";
+
+                        // Bringing back tab pages on successful log in
+                        MovieRentalTabControl.TabPages.Insert(1, CustomersTabPage);
+                        MovieRentalTabControl.TabPages.Insert(2, MoviesTabPage);
+                        MovieRentalTabControl.TabPages.Insert(3, RentalsTabPage);
+                        MovieRentalTabControl.TabPages.Insert(4, ReportsTabPage);
                     }
                 }
 
