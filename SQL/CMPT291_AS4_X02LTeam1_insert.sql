@@ -37,34 +37,42 @@ INSERT INTO UserLogin (Username, PasswordHash)
 INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, AcctCreateDate, CreditCardNum)
 	VALUES (NEXT VALUE FOR Customer_CustomerID_Seq, 'Smith', 'John', '4563 Pine St', 'Edmonton', 'AB', 'T5J2Z1', 'john.smith@gmail.com', NEXT VALUE FOR Customer_AcctNum_Seq, '2025-01-15', '4125169729432940');
 
-INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
-	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'), '7802634786', 'Mobile');
+INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, AcctCreateDate, CreditCardNum)
+	VALUES (NEXT VALUE FOR Customer_CustomerID_Seq, 'Smith', 'Elizabeth', '4563 Pine St', 'Edmonton', 'AB', 'T5J2Z1', 'eliza.smith@gmail.com', (SELECT AcctNum FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'), '2025-01-15', '4125169729432940');
+
+INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, CreditCardNum)
+	VALUES (NEXT VALUE FOR Customer_CustomerID_Seq, 'McDonald', 'Catherine', '3786 67 Ave', 'Vancouver', 'BC', 'V5H2K3', 'cathy@mcdonald.ca', NEXT VALUE FOR Customer_AcctNum_Seq, '4175937592275629');
 
 INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, AcctCreateDate, CreditCardNum)
 	VALUES (NEXT VALUE FOR Customer_CustomerID_Seq, 'Ferrell', 'Stacey', '714 Elsa Fall Apt. 635', 'Edmonton', 'AB', 'T5H3Z4', 'stacell13@yahoo.com', NEXT VALUE FOR Customer_AcctNum_Seq, '2025-02-15', '4189716201947152');
 
-INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
-	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'stacell13@yahoo.com'), '7805871202', 'Mobile');
-
 INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, AcctCreateDate, CreditCardNum)
 	VALUES (NEXT VALUE FOR Customer_CustomerID_Seq, 'Mckay', 'Phoebe', '318 Cole Walk', 'Calgary', 'AB', 'T6T0H7', 'p.mckay@hotmail.ca', NEXT VALUE FOR Customer_AcctNum_Seq, '2025-02-23', '4134199034560738');
+
+-- Add test data for CustomerPhone
+
+INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
+	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'), '7802634786', 'Mobile');
+
+INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
+	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'stacell13@yahoo.com'), '7805871202', 'Mobile');
 
 INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
 	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'p.mckay@hotmail.ca'), '7805776766', 'Mobile');
 
--- Add test data for Employee and EmployeePhone
+-- Add test data for Employee
 
-INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
-	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '387584938', 'Smith', 'Claire', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode, StartDate) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '387584938', 'Smith', 'Claire', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2', '2025-01-06');
 
-INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
-	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '238759295', 'Beaulieu', 'Matt', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode, StartDate) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '238759295', 'Beaulieu', 'Matt', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2', '2025-01-06');
 
-INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
-	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '385774936', 'Bains', 'Kovidh', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode, StartDate) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '385774936', 'Bains', 'Kovidh', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2', '2025-01-06');
 
-INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
-	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '673867955', 'Sutariya', 'Jaisica', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2');
+INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode, StartDate) 
+	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '673867955', 'Sutariya', 'Jaisica', 'MacEwan University', 'Edmonton', 'AB', 'T5J2P2', '2025-01-06');
 
 INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode) 
 	VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '123456789', 'Sharma', 'Amit', '123 Main St', 'Toronto', 'ON', 'M4B1B3');
@@ -77,6 +85,8 @@ INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Provi
 
 INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode, StartDate) 
 VALUES (NEXT VALUE FOR Employee_EmployeeID_Seq, '345678901', 'Kaur', 'Simran', '321 Pine St', 'Montreal', 'QC', 'H3Z2Y7', '2024-10-31');
+
+-- Add test data for EmployeePhone
 
 INSERT INTO EmployeePhone (EmployeeID, PhoneNum, PhoneType)
 	VALUES ((SELECT EmployeeID FROM Employee WHERE SSN = '123456789'), '7802634786', 'Mobile');
@@ -92,6 +102,39 @@ INSERT INTO EmployeePhone (EmployeeID, PhoneNum, PhoneType)
 
 -- Add test data for Movie
 
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Iron Man', 'Action', 210.00, 4);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'The Notebook', 'Drama', 150.25, 7);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Avengers: Age of Ultron', 'Action', 205.00, 8);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'School of Rock', 'Comedy', 100.00, 3);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'She''s the Man', 'Comedy', 275.00, 10);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Spirited Away', 'Foreign', 175.50, 2);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Captain America: The Winter Soldier', 'Action', 210.00, 8);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'La La Land', 'Drama', 190.75, 5);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, '10 Things I Hate About You', 'Comedy', 200.00, 7);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Interstellar', 'Drama', 225.00, 9);
+
+INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'The Shawshank Redemption', 'Drama', 210.00, 4);
+
 INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies)
 	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Fast & Furious', 'Action', 150.00, 10);
 
@@ -102,6 +145,27 @@ INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies)
 	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Parasite', 'Foreign', 200.00, 7);
 
 -- Add test data for Actor
+
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Robert Downey Jr.', 'M', '1965-04-04');
+
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Jack Black', 'M', '1969-08-28');
+
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Emma Stone', 'F', '1988-11-06');
+
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Chris Evans', 'M', '1981-06-13');
+
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Anne Hathaway', 'F', '1982-11-12');
+
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Gwyneth Paltrow', 'F', '1972-09-27');
+
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Elizabeth Olsen', 'F', '1989-02-16');
 
 INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
 	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Leonardo DiCaprio', 'M', '1974-11-11');
@@ -137,6 +201,15 @@ INSERT INTO QueueUp (MovieID, CustomerID)
 -- Add test data for AppearedIn
 
 INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Iron Man'), (SELECT ActorID FROM Actor WHERE Name = 'Robert Downey Jr.'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Iron Man'), (SELECT ActorID FROM Actor WHERE Name = 'Gwyneth Paltrow'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Captain America: The Winter Soldier'), (SELECT ActorID FROM Actor WHERE Name = 'Robert Downey Jr.'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
 	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Superbad'), (SELECT ActorID FROM Actor WHERE Name = 'Leonardo DiCaprio'));
 
 INSERT INTO AppearedIn (MovieID, ActorID)
@@ -155,3 +228,17 @@ INSERT INTO RateActor (RentalID, ActorID, ActorRating)
 
 INSERT INTO RateActor (RentalID, ActorID, ActorRating)
 	VALUES (3, (SELECT ActorID FROM Actor WHERE Name = 'Tom Hanks'), 4);
+
+-- View whole tables
+
+SELECT * FROM UserLogin;
+SELECT * FROM Customer;
+SELECT * FROM CustomerPhone;
+SELECT * FROM Employee;
+SELECT * FROM EmployeePhone;
+SELECT * FROM Movie;
+SELECT * FROM Actor;
+SELECT * FROM Rental;
+SELECT * FROM QueueUp;
+SELECT * FROM AppearedIn;
+SELECT * FROM RateActor;
