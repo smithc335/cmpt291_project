@@ -181,5 +181,10 @@ namespace CMPT291_Project
                 MessageBox.Show(e3.ToString(), "Error");
             }
         }
+
+        private void LoginResultLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
