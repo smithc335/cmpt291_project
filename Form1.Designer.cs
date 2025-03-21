@@ -42,19 +42,32 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.MoveToAddButton = new System.Windows.Forms.Button();
-            this.SearchCustomerLabel = new System.Windows.Forms.Label();
             this.AddCustomerPanel = new System.Windows.Forms.Panel();
             this.MoveToSearchButton = new System.Windows.Forms.Button();
             this.AddCustomersLabel = new System.Windows.Forms.Label();
             this.MoviesTabPage = new System.Windows.Forms.TabPage();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
+            this.CustSearchInstructionsLabel = new System.Windows.Forms.Label();
+            this.EditCustomerButton = new System.Windows.Forms.Button();
+            this.DeleteCustomerButton = new System.Windows.Forms.Button();
+            this.EditCustomerPanel = new System.Windows.Forms.Panel();
+            this.BackToSearchButton = new System.Windows.Forms.Button();
+            this.EditCustInfoLabel = new System.Windows.Forms.Label();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcctNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Province = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.CustomersTabPage.SuspendLayout();
             this.SearchCustomerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.AddCustomerPanel.SuspendLayout();
+            this.EditCustomerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -163,6 +176,7 @@
             // CustomersTabPage
             // 
             this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
+            this.CustomersTabPage.Controls.Add(this.EditCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -176,11 +190,13 @@
             // SearchCustomerPanel
             // 
             this.SearchCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.SearchCustomerPanel.Controls.Add(this.DeleteCustomerButton);
+            this.SearchCustomerPanel.Controls.Add(this.EditCustomerButton);
+            this.SearchCustomerPanel.Controls.Add(this.CustSearchInstructionsLabel);
             this.SearchCustomerPanel.Controls.Add(this.Customer);
             this.SearchCustomerPanel.Controls.Add(this.SearchButton);
             this.SearchCustomerPanel.Controls.Add(this.SearchTextBox);
             this.SearchCustomerPanel.Controls.Add(this.MoveToAddButton);
-            this.SearchCustomerPanel.Controls.Add(this.SearchCustomerLabel);
             this.SearchCustomerPanel.Location = new System.Drawing.Point(12, 11);
             this.SearchCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
             this.SearchCustomerPanel.Name = "SearchCustomerPanel";
@@ -189,23 +205,33 @@
             // 
             // Customer
             // 
+            this.Customer.AllowUserToResizeColumns = false;
+            this.Customer.AllowUserToResizeRows = false;
             this.Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Customer.Location = new System.Drawing.Point(41, 129);
+            this.Customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CustomerID,
+            this.FirstName,
+            this.LastName,
+            this.EmailAddress,
+            this.AcctNum,
+            this.City,
+            this.Province});
+            this.Customer.Location = new System.Drawing.Point(27, 109);
             this.Customer.Margin = new System.Windows.Forms.Padding(5);
             this.Customer.Name = "Customer";
             this.Customer.RowHeadersWidth = 51;
-            this.Customer.Size = new System.Drawing.Size(549, 279);
+            this.Customer.Size = new System.Drawing.Size(804, 243);
             this.Customer.TabIndex = 9;
             // 
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(636, 65);
+            this.SearchButton.Location = new System.Drawing.Point(603, 52);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(5);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(186, 52);
+            this.SearchButton.Size = new System.Drawing.Size(139, 39);
             this.SearchButton.TabIndex = 8;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = false;
@@ -214,7 +240,7 @@
             // SearchTextBox
             // 
             this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.Location = new System.Drawing.Point(41, 78);
+            this.SearchTextBox.Location = new System.Drawing.Point(27, 57);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(549, 26);
@@ -223,27 +249,16 @@
             // MoveToAddButton
             // 
             this.MoveToAddButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.MoveToAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveToAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MoveToAddButton.ForeColor = System.Drawing.Color.White;
-            this.MoveToAddButton.Location = new System.Drawing.Point(636, 346);
+            this.MoveToAddButton.Location = new System.Drawing.Point(678, 373);
             this.MoveToAddButton.Margin = new System.Windows.Forms.Padding(5);
             this.MoveToAddButton.Name = "MoveToAddButton";
-            this.MoveToAddButton.Size = new System.Drawing.Size(186, 62);
+            this.MoveToAddButton.Size = new System.Drawing.Size(153, 39);
             this.MoveToAddButton.TabIndex = 6;
             this.MoveToAddButton.Text = "Add Customer";
             this.MoveToAddButton.UseVisualStyleBackColor = false;
             this.MoveToAddButton.Click += new System.EventHandler(this.MoveToAddButton_Click);
-            // 
-            // SearchCustomerLabel
-            // 
-            this.SearchCustomerLabel.AutoSize = true;
-            this.SearchCustomerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchCustomerLabel.Location = new System.Drawing.Point(36, 31);
-            this.SearchCustomerLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.SearchCustomerLabel.Name = "SearchCustomerLabel";
-            this.SearchCustomerLabel.Size = new System.Drawing.Size(197, 26);
-            this.SearchCustomerLabel.TabIndex = 1;
-            this.SearchCustomerLabel.Text = "Search Customer";
             // 
             // AddCustomerPanel
             // 
@@ -260,12 +275,12 @@
             // MoveToSearchButton
             // 
             this.MoveToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.MoveToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MoveToSearchButton.ForeColor = System.Drawing.Color.White;
-            this.MoveToSearchButton.Location = new System.Drawing.Point(380, 248);
+            this.MoveToSearchButton.Location = new System.Drawing.Point(639, 371);
             this.MoveToSearchButton.Margin = new System.Windows.Forms.Padding(5);
             this.MoveToSearchButton.Name = "MoveToSearchButton";
-            this.MoveToSearchButton.Size = new System.Drawing.Size(251, 63);
+            this.MoveToSearchButton.Size = new System.Drawing.Size(185, 39);
             this.MoveToSearchButton.TabIndex = 5;
             this.MoveToSearchButton.Text = "Search Customers";
             this.MoveToSearchButton.UseVisualStyleBackColor = false;
@@ -312,6 +327,120 @@
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
+            // CustSearchInstructionsLabel
+            // 
+            this.CustSearchInstructionsLabel.AutoSize = true;
+            this.CustSearchInstructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustSearchInstructionsLabel.Location = new System.Drawing.Point(24, 23);
+            this.CustSearchInstructionsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CustSearchInstructionsLabel.Name = "CustSearchInstructionsLabel";
+            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(210, 17);
+            this.CustSearchInstructionsLabel.TabIndex = 10;
+            this.CustSearchInstructionsLabel.Text = "Search customers by last name.";
+            // 
+            // EditCustomerButton
+            // 
+            this.EditCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.EditCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.EditCustomerButton.Location = new System.Drawing.Point(27, 373);
+            this.EditCustomerButton.Margin = new System.Windows.Forms.Padding(5);
+            this.EditCustomerButton.Name = "EditCustomerButton";
+            this.EditCustomerButton.Size = new System.Drawing.Size(227, 39);
+            this.EditCustomerButton.TabIndex = 11;
+            this.EditCustomerButton.Text = "Edit Customer Information";
+            this.EditCustomerButton.UseVisualStyleBackColor = false;
+            this.EditCustomerButton.Click += new System.EventHandler(this.EditCustomerButton_Click);
+            // 
+            // DeleteCustomerButton
+            // 
+            this.DeleteCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.DeleteCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteCustomerButton.Location = new System.Drawing.Point(274, 373);
+            this.DeleteCustomerButton.Margin = new System.Windows.Forms.Padding(5);
+            this.DeleteCustomerButton.Name = "DeleteCustomerButton";
+            this.DeleteCustomerButton.Size = new System.Drawing.Size(155, 39);
+            this.DeleteCustomerButton.TabIndex = 12;
+            this.DeleteCustomerButton.Text = "Delete Customer";
+            this.DeleteCustomerButton.UseVisualStyleBackColor = false;
+            // 
+            // EditCustomerPanel
+            // 
+            this.EditCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.EditCustomerPanel.Controls.Add(this.BackToSearchButton);
+            this.EditCustomerPanel.Controls.Add(this.EditCustInfoLabel);
+            this.EditCustomerPanel.Location = new System.Drawing.Point(12, 11);
+            this.EditCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.EditCustomerPanel.Name = "EditCustomerPanel";
+            this.EditCustomerPanel.Size = new System.Drawing.Size(853, 429);
+            this.EditCustomerPanel.TabIndex = 6;
+            this.EditCustomerPanel.Visible = false;
+            // 
+            // BackToSearchButton
+            // 
+            this.BackToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackToSearchButton.ForeColor = System.Drawing.Color.White;
+            this.BackToSearchButton.Location = new System.Drawing.Point(639, 371);
+            this.BackToSearchButton.Margin = new System.Windows.Forms.Padding(5);
+            this.BackToSearchButton.Name = "BackToSearchButton";
+            this.BackToSearchButton.Size = new System.Drawing.Size(185, 39);
+            this.BackToSearchButton.TabIndex = 5;
+            this.BackToSearchButton.Text = "Back to Search";
+            this.BackToSearchButton.UseVisualStyleBackColor = false;
+            this.BackToSearchButton.Click += new System.EventHandler(this.BackToSearchButton_Click);
+            // 
+            // EditCustInfoLabel
+            // 
+            this.EditCustInfoLabel.AutoSize = true;
+            this.EditCustInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditCustInfoLabel.Location = new System.Drawing.Point(23, 31);
+            this.EditCustInfoLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.EditCustInfoLabel.Name = "EditCustInfoLabel";
+            this.EditCustInfoLabel.Size = new System.Drawing.Size(220, 20);
+            this.EditCustInfoLabel.TabIndex = 1;
+            this.EditCustInfoLabel.Text = "Edit Customer Information";
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.HeaderText = "ID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Width = 50;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            // 
+            // EmailAddress
+            // 
+            this.EmailAddress.HeaderText = "Email Address";
+            this.EmailAddress.Name = "EmailAddress";
+            this.EmailAddress.Width = 200;
+            // 
+            // AcctNum
+            // 
+            this.AcctNum.HeaderText = "Account Number";
+            this.AcctNum.Name = "AcctNum";
+            // 
+            // City
+            // 
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            this.City.Width = 125;
+            // 
+            // Province
+            // 
+            this.Province.HeaderText = "Province";
+            this.Province.Name = "Province";
+            this.Province.Width = 75;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +461,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).EndInit();
             this.AddCustomerPanel.ResumeLayout(false);
             this.AddCustomerPanel.PerformLayout();
+            this.EditCustomerPanel.ResumeLayout(false);
+            this.EditCustomerPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -352,13 +483,25 @@
         private System.Windows.Forms.TabPage ReportsTabPage;
         private System.Windows.Forms.Panel AddCustomerPanel;
         private System.Windows.Forms.Panel SearchCustomerPanel;
-        private System.Windows.Forms.Label SearchCustomerLabel;
         private System.Windows.Forms.Label AddCustomersLabel;
         private System.Windows.Forms.Button MoveToSearchButton;
         private System.Windows.Forms.Button MoveToAddButton;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.DataGridView Customer;
+        private System.Windows.Forms.Label CustSearchInstructionsLabel;
+        private System.Windows.Forms.Button EditCustomerButton;
+        private System.Windows.Forms.Button DeleteCustomerButton;
+        private System.Windows.Forms.Panel EditCustomerPanel;
+        private System.Windows.Forms.Button BackToSearchButton;
+        private System.Windows.Forms.Label EditCustInfoLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcctNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Province;
     }
 }
 

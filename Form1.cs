@@ -151,27 +151,29 @@ namespace CMPT291_Project
         {
             SearchCustomerPanel.Visible = true;
             AddCustomerPanel.Visible = false;
+            EditCustomerPanel.Visible = false;
         }
 
         private void MoveToAddButton_Click(object sender, EventArgs e)
         {
             AddCustomerPanel.Visible = true;
             SearchCustomerPanel.Visible = false;
+            EditCustomerPanel.Visible = false;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            myCommand.CommandText = "select * from Customer where FirstName = '" + SearchTextBox.Text + "'";
+            myCommand.CommandText = "select * from Customer where LastName = '" + SearchTextBox.Text + "'";
 
             try
             {
-                MessageBox.Show(myCommand.CommandText);
+                //MessageBox.Show(myCommand.CommandText);
                 myReader = myCommand.ExecuteReader();
 
                 Customer.Rows.Clear();
                 while (myReader.Read())
                 {
-                    Customer.Rows.Add(myReader["CustomerID"].ToString(), myReader["name"].ToString(), myReader["grade"].ToString());
+                    Customer.Rows.Add(myReader["CustomerID"].ToString(), myReader["FirstName"].ToString(), myReader["LastName"].ToString(), myReader["EmailAddress"].ToString(), myReader["AcctNum"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString());
                 }
 
                 myReader.Close();
@@ -185,6 +187,36 @@ namespace CMPT291_Project
         private void LoginResultLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditCustomerButton_Click(object sender, EventArgs e)
+        {
+            EditCustomerPanel.Visible = true;
+            AddCustomerPanel.Visible = false;
+            SearchCustomerPanel.Visible = false;
+
+            int selectedCellCount = Customer.GetCellCount(DataGridViewElementStates.Selected);
+
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+            sb.Append("Details: ");
+
+            for (int i = 0; i < selectedCellCount; i++)
+            {
+                sb.Append(Customer.SelectedCells[i].Value.ToString());
+                sb.Append(", ");
+                sb.Append(Environment.NewLine);
+            }
+
+            //sb.Append("Total: " + selectedCellCount.ToString());
+            MessageBox.Show(sb.ToString(), "Selected Cells");
+        }
+
+        private void BackToSearchButton_Click(object sender, EventArgs e)
+        {
+            SearchCustomerPanel.Visible = true;
+            AddCustomerPanel.Visible = false;
+            EditCustomerPanel.Visible = false;
         }
     }
 }
