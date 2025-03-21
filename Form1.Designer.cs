@@ -184,7 +184,6 @@
             // 
             // MoviesTabPage
             // 
-            this.MoviesTabPage.Controls.Add(this.panel1);
             this.MoviesTabPage.Location = new System.Drawing.Point(4, 25);
             this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.MoviesTabPage.Name = "MoviesTabPage";
