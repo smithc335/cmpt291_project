@@ -232,13 +232,13 @@ INSERT INTO RateActor (RentalID, ActorID, ActorRating)
 -- View whole tables
 
 SELECT * FROM UserLogin;
-SELECT * FROM Customer;
-SELECT * FROM CustomerPhone;
-SELECT * FROM Employee;
-SELECT * FROM EmployeePhone;
-SELECT * FROM Movie;
-SELECT * FROM Actor;
-SELECT * FROM Rental;
-SELECT * FROM QueueUp;
-SELECT * FROM AppearedIn;
-SELECT * FROM RateActor;
+--SELECT * FROM Customer;
+--SELECT * FROM CustomerPhone;
+--SELECT * FROM Employee;
+--SELECT * FROM EmployeePhone;
+--SELECT * FROM Movie;
+--SELECT * FROM Actor;
+--SELECT * FROM Rental;
+--SELECT * FROM QueueUp;
+--SELECT * FROM AppearedIn;
+--SELECT * FROM RateActor;
