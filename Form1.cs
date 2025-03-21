@@ -28,18 +28,18 @@ namespace CMPT291_Project
             //operation.Items.Add("Show with starting grade: ");
             //////////////////////////////////
             ///
-            String connectionString = "Server = Jaisica-Laptop; Database = MovieRentalSystem; Trusted_Connection = yes;";
+            //String connectionString = "Server = DESKTOP-EK1AC4K; Database = MovieRentalSystem; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
-            //SqlConnection myConnection = new SqlConnection("user id=adminTest;" + // Username
-            //                             "password=1234;" + // Password
-            //                             "server=localhost;" + // IP for the server
-            //                                                   //"Trusted_Connection=yes;" +
-            //                             "database=ConnectTutorial; " + // Database to connect to
-            //                             "connection timeout=30"); // Timeout in seconds
+            SqlConnection myConnection = new SqlConnection("user id=movieadmin;" + // Username
+                                         "password=1234;" + // Password
+                                         "server=localhost;" + // IP for the server
+                                         "Trusted_Connection=yes;" +
+                                         "database=MovieRentalSystem; " + // Database to connect to
+                                         "connection timeout=30"); // Timeout in seconds
 
-            SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
+            //SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
             try
             {
@@ -75,24 +75,6 @@ namespace CMPT291_Project
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Hash Code Implementation for User Password
-            string sSourceData;
-            byte[] tmpSource;
-            byte[] tmpHash;
-
-            sSourceData = PasswordTextbox.Text;
-            //Create a byte array from source data.
-            tmpSource = ASCIIEncoding.ASCII.GetBytes(sSourceData);
-
-            System.Console.WriteLine("Hello, World!");
-
-            //Compute hash based on source data.
-            tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-
-            Console.WriteLine(ByteArrayToString(tmpHash));
-        }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
@@ -130,6 +112,7 @@ namespace CMPT291_Project
                         LoginResultLabel.Text = "You have been logged in successfully.";
 
                         // Bringing back tab pages on successful log in
+                        // WILL DUPLICATE TABS IF LOGIN BUTTON CLICKED TWICE
                         MovieRentalTabControl.TabPages.Insert(1, CustomersTabPage);
                         MovieRentalTabControl.TabPages.Insert(2, MoviesTabPage);
                         MovieRentalTabControl.TabPages.Insert(3, RentalsTabPage);
@@ -162,6 +145,41 @@ namespace CMPT291_Project
                 sOutput.Append(arrInput[i].ToString("X2"));
             }
             return sOutput.ToString();
+        }
+
+        private void MoveToSearchButton_Click(object sender, EventArgs e)
+        {
+            SearchCustomerPanel.Visible = true;
+            AddCustomerPanel.Visible = false;
+        }
+
+        private void MoveToAddButton_Click(object sender, EventArgs e)
+        {
+            AddCustomerPanel.Visible = true;
+            SearchCustomerPanel.Visible = false;
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            myCommand.CommandText = "select * from Customer where FirstName = '" + SearchTextBox.Text + "'";
+
+            try
+            {
+                MessageBox.Show(myCommand.CommandText);
+                myReader = myCommand.ExecuteReader();
+
+                Customer.Rows.Clear();
+                while (myReader.Read())
+                {
+                    Customer.Rows.Add(myReader["CustomerID"].ToString(), myReader["name"].ToString(), myReader["grade"].ToString());
+                }
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
         }
     }
 }
