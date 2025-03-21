@@ -28,7 +28,7 @@ namespace CMPT291_Project
             //operation.Items.Add("Show with starting grade: ");
             //////////////////////////////////
             ///
-            String connectionString = "Server = DESKTOP-EK1AC4K; Database = MovieRentalSystem; Trusted_Connection = yes;";
+            String connectionString = "Server = Jaisica-Laptop; Database = MovieRentalSystem; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
