@@ -269,5 +269,36 @@ namespace CMPT291_Project
             bool isCellSelected = Customer.SelectedCells.Count > 0 && Customer.SelectedCells[0].Value != null;
             ViewDetailsButton.Enabled = isCellSelected;
         }
+
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditMoviesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovieSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovieSearchbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MoviesDisplayed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteMovieButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
