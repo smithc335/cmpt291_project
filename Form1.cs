@@ -158,7 +158,18 @@ namespace CMPT291_Project
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            myCommand.CommandText = "select * from Customer where LastName = '" + SearchTextBox.Text + "'";
+            if (FirstNameRadioButton.Checked)
+            {
+                myCommand.CommandText = "select * from Customer where FirstName = '" + SearchTextBox.Text + "'";
+            }
+            else if (LastNameRadioButton.Checked)
+            {
+                myCommand.CommandText = "select * from Customer where LastName = '" + SearchTextBox.Text + "'";
+            }
+            else
+            {
+                myCommand.CommandText = "select * from Customer where EmailAddress = '" + SearchTextBox.Text + "'";
+            }
 
             try
             {
