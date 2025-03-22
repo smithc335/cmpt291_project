@@ -30,6 +30,8 @@
         {
             this.MovieRentalTabControl = new System.Windows.Forms.TabControl();
             this.LogInTabPage = new System.Windows.Forms.TabPage();
+            this.SystemNameLabel = new System.Windows.Forms.Label();
+            this.LoginTitleLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.LoginResultLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
@@ -61,6 +63,7 @@
             this.MoviesTabPage = new System.Windows.Forms.TabPage();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
+            this.LoginPanel = new System.Windows.Forms.Panel();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.CustomersTabPage.SuspendLayout();
@@ -68,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.EditCustomerPanel.SuspendLayout();
             this.AddCustomerPanel.SuspendLayout();
+            this.LoginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -87,12 +91,7 @@
             // 
             // LogInTabPage
             // 
-            this.LogInTabPage.Controls.Add(this.UsernameLabel);
-            this.LogInTabPage.Controls.Add(this.LoginResultLabel);
-            this.LogInTabPage.Controls.Add(this.PasswordLabel);
-            this.LogInTabPage.Controls.Add(this.LoginButton);
-            this.LogInTabPage.Controls.Add(this.UsernameTextbox);
-            this.LogInTabPage.Controls.Add(this.PasswordTextbox);
+            this.LogInTabPage.Controls.Add(this.LoginPanel);
             this.LogInTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogInTabPage.Location = new System.Drawing.Point(4, 25);
             this.LogInTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -103,26 +102,48 @@
             this.LogInTabPage.Text = "Log In";
             this.LogInTabPage.UseVisualStyleBackColor = true;
             // 
+            // SystemNameLabel
+            // 
+            this.SystemNameLabel.AutoSize = true;
+            this.SystemNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SystemNameLabel.Location = new System.Drawing.Point(100, 81);
+            this.SystemNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.SystemNameLabel.Name = "SystemNameLabel";
+            this.SystemNameLabel.Size = new System.Drawing.Size(238, 26);
+            this.SystemNameLabel.TabIndex = 7;
+            this.SystemNameLabel.Text = "Movie Rental System";
+            // 
+            // LoginTitleLabel
+            // 
+            this.LoginTitleLabel.AutoSize = true;
+            this.LoginTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginTitleLabel.Location = new System.Drawing.Point(101, 119);
+            this.LoginTitleLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LoginTitleLabel.Name = "LoginTitleLabel";
+            this.LoginTitleLabel.Size = new System.Drawing.Size(148, 24);
+            this.LoginTitleLabel.TabIndex = 6;
+            this.LoginTitleLabel.Text = "Employee Login";
+            // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.Location = new System.Drawing.Point(66, 78);
+            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLabel.Location = new System.Drawing.Point(101, 191);
             this.UsernameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(192, 26);
+            this.UsernameLabel.Size = new System.Drawing.Size(96, 20);
             this.UsernameLabel.TabIndex = 0;
-            this.UsernameLabel.Text = "Enter Username:";
+            this.UsernameLabel.Text = "Username:";
             this.UsernameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // LoginResultLabel
             // 
             this.LoginResultLabel.AutoSize = true;
-            this.LoginResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginResultLabel.Location = new System.Drawing.Point(290, 276);
+            this.LoginResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginResultLabel.Location = new System.Drawing.Point(254, 323);
             this.LoginResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LoginResultLabel.Name = "LoginResultLabel";
-            this.LoginResultLabel.Size = new System.Drawing.Size(98, 20);
+            this.LoginResultLabel.Size = new System.Drawing.Size(87, 17);
             this.LoginResultLabel.TabIndex = 5;
             this.LoginResultLabel.Text = "Login Result";
             this.LoginResultLabel.Visible = false;
@@ -131,23 +152,23 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(66, 153);
+            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLabel.Location = new System.Drawing.Point(101, 248);
             this.PasswordLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(187, 26);
+            this.PasswordLabel.Size = new System.Drawing.Size(91, 20);
             this.PasswordLabel.TabIndex = 1;
-            this.PasswordLabel.Text = "Enter Password:";
+            this.PasswordLabel.Text = "Password:";
             // 
             // LoginButton
             // 
             this.LoginButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginButton.ForeColor = System.Drawing.Color.White;
-            this.LoginButton.Location = new System.Drawing.Point(71, 251);
+            this.LoginButton.Location = new System.Drawing.Point(101, 305);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(187, 67);
+            this.LoginButton.Size = new System.Drawing.Size(111, 52);
             this.LoginButton.TabIndex = 4;
             this.LoginButton.Text = "Log In";
             this.LoginButton.UseVisualStyleBackColor = false;
@@ -155,29 +176,28 @@
             // 
             // UsernameTextbox
             // 
-            this.UsernameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameTextbox.Location = new System.Drawing.Point(267, 78);
+            this.UsernameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameTextbox.Location = new System.Drawing.Point(206, 191);
             this.UsernameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.UsernameTextbox.Name = "UsernameTextbox";
-            this.UsernameTextbox.Size = new System.Drawing.Size(528, 26);
+            this.UsernameTextbox.Size = new System.Drawing.Size(422, 23);
             this.UsernameTextbox.TabIndex = 2;
-            this.UsernameTextbox.TextChanged += new System.EventHandler(this.usernameTextbox_TextChanged);
             // 
             // PasswordTextbox
             // 
-            this.PasswordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTextbox.Location = new System.Drawing.Point(267, 153);
+            this.PasswordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordTextbox.Location = new System.Drawing.Point(206, 248);
             this.PasswordTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.PasswordTextbox.Name = "PasswordTextbox";
-            this.PasswordTextbox.Size = new System.Drawing.Size(528, 26);
+            this.PasswordTextbox.Size = new System.Drawing.Size(422, 23);
             this.PasswordTextbox.TabIndex = 3;
             this.PasswordTextbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // CustomersTabPage
             // 
-            this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.EditCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
+            this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
@@ -441,6 +461,23 @@
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
+            // LoginPanel
+            // 
+            this.LoginPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.LoginPanel.Controls.Add(this.SystemNameLabel);
+            this.LoginPanel.Controls.Add(this.LoginTitleLabel);
+            this.LoginPanel.Controls.Add(this.PasswordTextbox);
+            this.LoginPanel.Controls.Add(this.UsernameLabel);
+            this.LoginPanel.Controls.Add(this.UsernameTextbox);
+            this.LoginPanel.Controls.Add(this.LoginResultLabel);
+            this.LoginPanel.Controls.Add(this.LoginButton);
+            this.LoginPanel.Controls.Add(this.PasswordLabel);
+            this.LoginPanel.Location = new System.Drawing.Point(12, 11);
+            this.LoginPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.LoginPanel.Name = "LoginPanel";
+            this.LoginPanel.Size = new System.Drawing.Size(853, 484);
+            this.LoginPanel.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,7 +491,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MovieRentalTabControl.ResumeLayout(false);
             this.LogInTabPage.ResumeLayout(false);
-            this.LogInTabPage.PerformLayout();
             this.CustomersTabPage.ResumeLayout(false);
             this.SearchCustomerPanel.ResumeLayout(false);
             this.SearchCustomerPanel.PerformLayout();
@@ -463,6 +499,8 @@
             this.EditCustomerPanel.PerformLayout();
             this.AddCustomerPanel.ResumeLayout(false);
             this.AddCustomerPanel.PerformLayout();
+            this.LoginPanel.ResumeLayout(false);
+            this.LoginPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -502,6 +540,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AcctNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn City;
         private System.Windows.Forms.DataGridViewTextBoxColumn Province;
+        private System.Windows.Forms.Label LoginTitleLabel;
+        private System.Windows.Forms.Label SystemNameLabel;
+        private System.Windows.Forms.Panel LoginPanel;
     }
 }
 

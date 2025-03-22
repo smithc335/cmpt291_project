@@ -130,11 +130,6 @@ namespace CMPT291_Project
 
         }
 
-        private void usernameTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         // Hash Code Function
         private static string ByteArrayToString(byte[] arrInput)
         {
