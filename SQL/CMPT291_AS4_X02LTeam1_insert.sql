@@ -232,7 +232,7 @@ INSERT INTO RateActor (RentalID, ActorID, ActorRating)
 -- View whole tables
 
 SELECT * FROM UserLogin;
---SELECT * FROM Customer;
+SELECT * FROM Customer;
 --SELECT * FROM CustomerPhone;
 --SELECT * FROM Employee;
 --SELECT * FROM EmployeePhone;

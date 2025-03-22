@@ -65,17 +65,6 @@ namespace CMPT291_Project
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void LoginButton_Click(object sender, EventArgs e)
         {
             // Hash Code Implementation for User Password
@@ -130,8 +119,7 @@ namespace CMPT291_Project
 
         }
 
-        // Hash Code Function
-        private static string ByteArrayToString(byte[] arrInput)
+        private static string ByteArrayToString(byte[] arrInput) // Hash Code Function
         {
             int i;
             StringBuilder sOutput = new StringBuilder(arrInput.Length);
@@ -146,14 +134,14 @@ namespace CMPT291_Project
         {
             SearchCustomerPanel.Visible = true;
             AddCustomerPanel.Visible = false;
-            EditCustomerPanel.Visible = false;
+            ViewCustomerPanel.Visible = false;
         }
 
         private void MoveToAddButton_Click(object sender, EventArgs e)
         {
             AddCustomerPanel.Visible = true;
             SearchCustomerPanel.Visible = false;
-            EditCustomerPanel.Visible = false;
+            ViewCustomerPanel.Visible = false;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -190,39 +178,96 @@ namespace CMPT291_Project
             }
         }
 
-        private void LoginResultLabel_Click(object sender, EventArgs e)
+        private void ViewDetailsButton_Click(object sender, EventArgs e)
         {
+            int selectedCellCount = Customer.GetCellCount(DataGridViewElementStates.Selected);
 
-        }
-
-        private void EditCustomerButton_Click(object sender, EventArgs e)
-        {
-            EditCustomerPanel.Visible = true;
+            //if (selectedCellCount != 7)
+            //{
+            //    MessageBox.Show("Please select a complete customer record to proceed.");
+            //}
+            //else
+            //{
+            ViewCustomerPanel.Visible = true;
             AddCustomerPanel.Visible = false;
             SearchCustomerPanel.Visible = false;
 
-            int selectedCellCount = Customer.GetCellCount(DataGridViewElementStates.Selected);
+            myCommand.CommandText = "select * from Customer where CustomerID = " + Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
 
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-
-            sb.Append("Details: ");
-
-            for (int i = 0; i < selectedCellCount; i++)
+            try
             {
-                sb.Append(Customer.SelectedCells[i].Value.ToString());
-                sb.Append(", ");
-                sb.Append(Environment.NewLine);
-            }
+                myReader = myCommand.ExecuteReader();
 
-            //sb.Append("Total: " + selectedCellCount.ToString());
-            MessageBox.Show(sb.ToString(), "Selected Cells");
+                while (myReader.Read())
+                {
+                    VULastNameTextbox.Text = myReader.GetString(1);
+                    VUFirstNameTextbox.Text = myReader.GetString(2);
+                    VUAddressTextbox.Text = myReader.GetString(3);
+                    VUCityTextbox.Text = myReader.GetString(4);
+                    VUProvinceComboBox.SelectedItem = myReader.GetString(5);
+                    VUPostalCodeTextbox.Text = myReader.GetString(6);
+                    VUEmailTextbox.Text = myReader.GetString(7);
+                    VUAcctNumTextbox.Text = myReader.GetValue(8).ToString();
+                    VUCreditTextbox.Text = myReader.GetString(10);
+                }
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
+            //}
         }
 
-        private void BackToSearchButton_Click(object sender, EventArgs e)
+        private void CancelViewingButton_Click(object sender, EventArgs e)
         {
             SearchCustomerPanel.Visible = true;
+            ViewCustomerPanel.Visible = false;
             AddCustomerPanel.Visible = false;
-            EditCustomerPanel.Visible = false;
+
+            UpdateTitleLabel.Visible = false;
+            ViewTitleLabel.Visible = true;
+
+            SaveUpdatesButton.Visible = false;
+            MoveToUpdateButton.Visible = true;
+            DeleteCustomerButton.Visible = false;
+
+            VUAcctNumTextbox.ReadOnly = true;
+            VUAddressTextbox.ReadOnly = true;
+            VUCityTextbox.ReadOnly = true;
+            VUCreditTextbox.ReadOnly = true;
+            VUEmailTextbox.ReadOnly = true;
+            VUFirstNameTextbox.ReadOnly = true;
+            VULastNameTextbox.ReadOnly = true;
+            VUPostalCodeTextbox.ReadOnly = true;
+            VUProvinceComboBox.Enabled = false;
+        }
+
+        private void MoveToUpdateButton_Click(object sender, EventArgs e)
+        {
+            UpdateTitleLabel.Visible = true;
+            ViewTitleLabel.Visible = false;
+
+            SaveUpdatesButton.Visible = true;
+            MoveToUpdateButton.Visible = false;
+            DeleteCustomerButton.Visible = true;
+
+            VUAcctNumTextbox.ReadOnly = false;
+            VUAddressTextbox.ReadOnly = false;
+            VUCityTextbox.ReadOnly = false;
+            VUCreditTextbox.ReadOnly = false;
+            VUEmailTextbox.ReadOnly = false;
+            VUFirstNameTextbox.ReadOnly = false;
+            VULastNameTextbox.ReadOnly = false;
+            VUPostalCodeTextbox.ReadOnly = false;
+            VUProvinceComboBox.Enabled = true;
+        }
+
+        private void Customer_SelectionChanged(object sender, EventArgs e)
+        {
+            bool isCellSelected = Customer.SelectedCells.Count > 0 && Customer.SelectedCells[0].Value != null;
+            ViewDetailsButton.Enabled = isCellSelected;
         }
     }
 }
