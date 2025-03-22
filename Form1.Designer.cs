@@ -38,22 +38,10 @@
             this.PasswordTextbox = new System.Windows.Forms.TextBox();
             this.CustomersTabPage = new System.Windows.Forms.TabPage();
             this.SearchCustomerPanel = new System.Windows.Forms.Panel();
-            this.Customer = new System.Windows.Forms.DataGridView();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.MoveToAddButton = new System.Windows.Forms.Button();
-            this.AddCustomerPanel = new System.Windows.Forms.Panel();
-            this.MoveToSearchButton = new System.Windows.Forms.Button();
-            this.AddCustomersLabel = new System.Windows.Forms.Label();
-            this.MoviesTabPage = new System.Windows.Forms.TabPage();
-            this.RentalsTabPage = new System.Windows.Forms.TabPage();
-            this.ReportsTabPage = new System.Windows.Forms.TabPage();
-            this.CustSearchInstructionsLabel = new System.Windows.Forms.Label();
-            this.EditCustomerButton = new System.Windows.Forms.Button();
             this.DeleteCustomerButton = new System.Windows.Forms.Button();
-            this.EditCustomerPanel = new System.Windows.Forms.Panel();
-            this.BackToSearchButton = new System.Windows.Forms.Button();
-            this.EditCustInfoLabel = new System.Windows.Forms.Label();
+            this.EditCustomerButton = new System.Windows.Forms.Button();
+            this.CustSearchInstructionsLabel = new System.Windows.Forms.Label();
+            this.Customer = new System.Windows.Forms.DataGridView();
             this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,13 +49,25 @@
             this.AcctNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Province = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.MoveToAddButton = new System.Windows.Forms.Button();
+            this.EditCustomerPanel = new System.Windows.Forms.Panel();
+            this.BackToSearchButton = new System.Windows.Forms.Button();
+            this.EditCustInfoLabel = new System.Windows.Forms.Label();
+            this.AddCustomerPanel = new System.Windows.Forms.Panel();
+            this.MoveToSearchButton = new System.Windows.Forms.Button();
+            this.AddCustomersLabel = new System.Windows.Forms.Label();
+            this.MoviesTabPage = new System.Windows.Forms.TabPage();
+            this.RentalsTabPage = new System.Windows.Forms.TabPage();
+            this.ReportsTabPage = new System.Windows.Forms.TabPage();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.CustomersTabPage.SuspendLayout();
             this.SearchCustomerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
-            this.AddCustomerPanel.SuspendLayout();
             this.EditCustomerPanel.SuspendLayout();
+            this.AddCustomerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -82,7 +82,7 @@
             this.MovieRentalTabControl.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.MovieRentalTabControl.Name = "MovieRentalTabControl";
             this.MovieRentalTabControl.SelectedIndex = 0;
-            this.MovieRentalTabControl.Size = new System.Drawing.Size(886, 480);
+            this.MovieRentalTabControl.Size = new System.Drawing.Size(886, 535);
             this.MovieRentalTabControl.TabIndex = 6;
             // 
             // LogInTabPage
@@ -98,7 +98,7 @@
             this.LogInTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.LogInTabPage.Name = "LogInTabPage";
             this.LogInTabPage.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.LogInTabPage.Size = new System.Drawing.Size(878, 451);
+            this.LogInTabPage.Size = new System.Drawing.Size(878, 506);
             this.LogInTabPage.TabIndex = 0;
             this.LogInTabPage.Text = "Log In";
             this.LogInTabPage.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
             this.CustomersTabPage.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.CustomersTabPage.Size = new System.Drawing.Size(878, 451);
+            this.CustomersTabPage.Size = new System.Drawing.Size(878, 506);
             this.CustomersTabPage.TabIndex = 1;
             this.CustomersTabPage.Text = "Customers";
             this.CustomersTabPage.UseVisualStyleBackColor = true;
@@ -200,8 +200,46 @@
             this.SearchCustomerPanel.Location = new System.Drawing.Point(12, 11);
             this.SearchCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
             this.SearchCustomerPanel.Name = "SearchCustomerPanel";
-            this.SearchCustomerPanel.Size = new System.Drawing.Size(853, 429);
+            this.SearchCustomerPanel.Size = new System.Drawing.Size(853, 484);
             this.SearchCustomerPanel.TabIndex = 2;
+            // 
+            // DeleteCustomerButton
+            // 
+            this.DeleteCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.DeleteCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteCustomerButton.Location = new System.Drawing.Point(274, 430);
+            this.DeleteCustomerButton.Margin = new System.Windows.Forms.Padding(5);
+            this.DeleteCustomerButton.Name = "DeleteCustomerButton";
+            this.DeleteCustomerButton.Size = new System.Drawing.Size(155, 39);
+            this.DeleteCustomerButton.TabIndex = 12;
+            this.DeleteCustomerButton.Text = "Delete Customer";
+            this.DeleteCustomerButton.UseVisualStyleBackColor = false;
+            // 
+            // EditCustomerButton
+            // 
+            this.EditCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.EditCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.EditCustomerButton.Location = new System.Drawing.Point(27, 430);
+            this.EditCustomerButton.Margin = new System.Windows.Forms.Padding(5);
+            this.EditCustomerButton.Name = "EditCustomerButton";
+            this.EditCustomerButton.Size = new System.Drawing.Size(227, 39);
+            this.EditCustomerButton.TabIndex = 11;
+            this.EditCustomerButton.Text = "Edit Customer Information";
+            this.EditCustomerButton.UseVisualStyleBackColor = false;
+            this.EditCustomerButton.Click += new System.EventHandler(this.EditCustomerButton_Click);
+            // 
+            // CustSearchInstructionsLabel
+            // 
+            this.CustSearchInstructionsLabel.AutoSize = true;
+            this.CustSearchInstructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustSearchInstructionsLabel.Location = new System.Drawing.Point(24, 23);
+            this.CustSearchInstructionsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CustSearchInstructionsLabel.Name = "CustSearchInstructionsLabel";
+            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(210, 17);
+            this.CustSearchInstructionsLabel.TabIndex = 10;
+            this.CustSearchInstructionsLabel.Text = "Search customers by last name.";
             // 
             // Customer
             // 
@@ -220,187 +258,8 @@
             this.Customer.Margin = new System.Windows.Forms.Padding(5);
             this.Customer.Name = "Customer";
             this.Customer.RowHeadersWidth = 51;
-            this.Customer.Size = new System.Drawing.Size(804, 243);
+            this.Customer.Size = new System.Drawing.Size(804, 301);
             this.Customer.TabIndex = 9;
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(603, 52);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(5);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(139, 39);
-            this.SearchButton.TabIndex = 8;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.UseVisualStyleBackColor = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.Location = new System.Drawing.Point(27, 57);
-            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(5);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(549, 26);
-            this.SearchTextBox.TabIndex = 7;
-            // 
-            // MoveToAddButton
-            // 
-            this.MoveToAddButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.MoveToAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoveToAddButton.ForeColor = System.Drawing.Color.White;
-            this.MoveToAddButton.Location = new System.Drawing.Point(678, 373);
-            this.MoveToAddButton.Margin = new System.Windows.Forms.Padding(5);
-            this.MoveToAddButton.Name = "MoveToAddButton";
-            this.MoveToAddButton.Size = new System.Drawing.Size(153, 39);
-            this.MoveToAddButton.TabIndex = 6;
-            this.MoveToAddButton.Text = "Add Customer";
-            this.MoveToAddButton.UseVisualStyleBackColor = false;
-            this.MoveToAddButton.Click += new System.EventHandler(this.MoveToAddButton_Click);
-            // 
-            // AddCustomerPanel
-            // 
-            this.AddCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.AddCustomerPanel.Controls.Add(this.MoveToSearchButton);
-            this.AddCustomerPanel.Controls.Add(this.AddCustomersLabel);
-            this.AddCustomerPanel.Location = new System.Drawing.Point(12, 11);
-            this.AddCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.AddCustomerPanel.Name = "AddCustomerPanel";
-            this.AddCustomerPanel.Size = new System.Drawing.Size(853, 429);
-            this.AddCustomerPanel.TabIndex = 0;
-            this.AddCustomerPanel.Visible = false;
-            // 
-            // MoveToSearchButton
-            // 
-            this.MoveToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.MoveToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoveToSearchButton.ForeColor = System.Drawing.Color.White;
-            this.MoveToSearchButton.Location = new System.Drawing.Point(639, 371);
-            this.MoveToSearchButton.Margin = new System.Windows.Forms.Padding(5);
-            this.MoveToSearchButton.Name = "MoveToSearchButton";
-            this.MoveToSearchButton.Size = new System.Drawing.Size(185, 39);
-            this.MoveToSearchButton.TabIndex = 5;
-            this.MoveToSearchButton.Text = "Search Customers";
-            this.MoveToSearchButton.UseVisualStyleBackColor = false;
-            this.MoveToSearchButton.Click += new System.EventHandler(this.MoveToSearchButton_Click);
-            // 
-            // AddCustomersLabel
-            // 
-            this.AddCustomersLabel.AutoSize = true;
-            this.AddCustomersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCustomersLabel.Location = new System.Drawing.Point(36, 31);
-            this.AddCustomersLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.AddCustomersLabel.Name = "AddCustomersLabel";
-            this.AddCustomersLabel.Size = new System.Drawing.Size(164, 26);
-            this.AddCustomersLabel.TabIndex = 1;
-            this.AddCustomersLabel.Text = "Add Customer";
-            // 
-            // MoviesTabPage
-            // 
-            this.MoviesTabPage.Location = new System.Drawing.Point(4, 25);
-            this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.MoviesTabPage.Name = "MoviesTabPage";
-            this.MoviesTabPage.Size = new System.Drawing.Size(1369, 605);
-            this.MoviesTabPage.TabIndex = 2;
-            this.MoviesTabPage.Text = "Movies";
-            this.MoviesTabPage.UseVisualStyleBackColor = true;
-            // 
-            // RentalsTabPage
-            // 
-            this.RentalsTabPage.Location = new System.Drawing.Point(4, 25);
-            this.RentalsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.RentalsTabPage.Name = "RentalsTabPage";
-            this.RentalsTabPage.Size = new System.Drawing.Size(1369, 605);
-            this.RentalsTabPage.TabIndex = 3;
-            this.RentalsTabPage.Text = "Rentals";
-            this.RentalsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ReportsTabPage
-            // 
-            this.ReportsTabPage.Location = new System.Drawing.Point(4, 25);
-            this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.ReportsTabPage.Name = "ReportsTabPage";
-            this.ReportsTabPage.Size = new System.Drawing.Size(1369, 605);
-            this.ReportsTabPage.TabIndex = 4;
-            this.ReportsTabPage.Text = "Reports";
-            this.ReportsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // CustSearchInstructionsLabel
-            // 
-            this.CustSearchInstructionsLabel.AutoSize = true;
-            this.CustSearchInstructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustSearchInstructionsLabel.Location = new System.Drawing.Point(24, 23);
-            this.CustSearchInstructionsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustSearchInstructionsLabel.Name = "CustSearchInstructionsLabel";
-            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(210, 17);
-            this.CustSearchInstructionsLabel.TabIndex = 10;
-            this.CustSearchInstructionsLabel.Text = "Search customers by last name.";
-            // 
-            // EditCustomerButton
-            // 
-            this.EditCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.EditCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.EditCustomerButton.Location = new System.Drawing.Point(27, 373);
-            this.EditCustomerButton.Margin = new System.Windows.Forms.Padding(5);
-            this.EditCustomerButton.Name = "EditCustomerButton";
-            this.EditCustomerButton.Size = new System.Drawing.Size(227, 39);
-            this.EditCustomerButton.TabIndex = 11;
-            this.EditCustomerButton.Text = "Edit Customer Information";
-            this.EditCustomerButton.UseVisualStyleBackColor = false;
-            this.EditCustomerButton.Click += new System.EventHandler(this.EditCustomerButton_Click);
-            // 
-            // DeleteCustomerButton
-            // 
-            this.DeleteCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.DeleteCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteCustomerButton.Location = new System.Drawing.Point(274, 373);
-            this.DeleteCustomerButton.Margin = new System.Windows.Forms.Padding(5);
-            this.DeleteCustomerButton.Name = "DeleteCustomerButton";
-            this.DeleteCustomerButton.Size = new System.Drawing.Size(155, 39);
-            this.DeleteCustomerButton.TabIndex = 12;
-            this.DeleteCustomerButton.Text = "Delete Customer";
-            this.DeleteCustomerButton.UseVisualStyleBackColor = false;
-            // 
-            // EditCustomerPanel
-            // 
-            this.EditCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.EditCustomerPanel.Controls.Add(this.BackToSearchButton);
-            this.EditCustomerPanel.Controls.Add(this.EditCustInfoLabel);
-            this.EditCustomerPanel.Location = new System.Drawing.Point(12, 11);
-            this.EditCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.EditCustomerPanel.Name = "EditCustomerPanel";
-            this.EditCustomerPanel.Size = new System.Drawing.Size(853, 429);
-            this.EditCustomerPanel.TabIndex = 6;
-            this.EditCustomerPanel.Visible = false;
-            // 
-            // BackToSearchButton
-            // 
-            this.BackToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.BackToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToSearchButton.ForeColor = System.Drawing.Color.White;
-            this.BackToSearchButton.Location = new System.Drawing.Point(639, 371);
-            this.BackToSearchButton.Margin = new System.Windows.Forms.Padding(5);
-            this.BackToSearchButton.Name = "BackToSearchButton";
-            this.BackToSearchButton.Size = new System.Drawing.Size(185, 39);
-            this.BackToSearchButton.TabIndex = 5;
-            this.BackToSearchButton.Text = "Back to Search";
-            this.BackToSearchButton.UseVisualStyleBackColor = false;
-            this.BackToSearchButton.Click += new System.EventHandler(this.BackToSearchButton_Click);
-            // 
-            // EditCustInfoLabel
-            // 
-            this.EditCustInfoLabel.AutoSize = true;
-            this.EditCustInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditCustInfoLabel.Location = new System.Drawing.Point(23, 31);
-            this.EditCustInfoLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.EditCustInfoLabel.Name = "EditCustInfoLabel";
-            this.EditCustInfoLabel.Size = new System.Drawing.Size(220, 20);
-            this.EditCustInfoLabel.TabIndex = 1;
-            this.EditCustInfoLabel.Text = "Edit Customer Information";
             // 
             // CustomerID
             // 
@@ -441,11 +300,152 @@
             this.Province.Name = "Province";
             this.Province.Width = 75;
             // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
+            this.SearchButton.Location = new System.Drawing.Point(603, 52);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(5);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(139, 39);
+            this.SearchButton.TabIndex = 8;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.Location = new System.Drawing.Point(27, 57);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(5);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(549, 26);
+            this.SearchTextBox.TabIndex = 7;
+            // 
+            // MoveToAddButton
+            // 
+            this.MoveToAddButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.MoveToAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveToAddButton.ForeColor = System.Drawing.Color.White;
+            this.MoveToAddButton.Location = new System.Drawing.Point(678, 430);
+            this.MoveToAddButton.Margin = new System.Windows.Forms.Padding(5);
+            this.MoveToAddButton.Name = "MoveToAddButton";
+            this.MoveToAddButton.Size = new System.Drawing.Size(153, 39);
+            this.MoveToAddButton.TabIndex = 6;
+            this.MoveToAddButton.Text = "Add Customer";
+            this.MoveToAddButton.UseVisualStyleBackColor = false;
+            this.MoveToAddButton.Click += new System.EventHandler(this.MoveToAddButton_Click);
+            // 
+            // EditCustomerPanel
+            // 
+            this.EditCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.EditCustomerPanel.Controls.Add(this.BackToSearchButton);
+            this.EditCustomerPanel.Controls.Add(this.EditCustInfoLabel);
+            this.EditCustomerPanel.Location = new System.Drawing.Point(12, 11);
+            this.EditCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.EditCustomerPanel.Name = "EditCustomerPanel";
+            this.EditCustomerPanel.Size = new System.Drawing.Size(853, 484);
+            this.EditCustomerPanel.TabIndex = 6;
+            this.EditCustomerPanel.Visible = false;
+            // 
+            // BackToSearchButton
+            // 
+            this.BackToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackToSearchButton.ForeColor = System.Drawing.Color.White;
+            this.BackToSearchButton.Location = new System.Drawing.Point(646, 430);
+            this.BackToSearchButton.Margin = new System.Windows.Forms.Padding(5);
+            this.BackToSearchButton.Name = "BackToSearchButton";
+            this.BackToSearchButton.Size = new System.Drawing.Size(185, 39);
+            this.BackToSearchButton.TabIndex = 5;
+            this.BackToSearchButton.Text = "Back to Search";
+            this.BackToSearchButton.UseVisualStyleBackColor = false;
+            this.BackToSearchButton.Click += new System.EventHandler(this.BackToSearchButton_Click);
+            // 
+            // EditCustInfoLabel
+            // 
+            this.EditCustInfoLabel.AutoSize = true;
+            this.EditCustInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditCustInfoLabel.Location = new System.Drawing.Point(23, 31);
+            this.EditCustInfoLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.EditCustInfoLabel.Name = "EditCustInfoLabel";
+            this.EditCustInfoLabel.Size = new System.Drawing.Size(220, 20);
+            this.EditCustInfoLabel.TabIndex = 1;
+            this.EditCustInfoLabel.Text = "Edit Customer Information";
+            // 
+            // AddCustomerPanel
+            // 
+            this.AddCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.AddCustomerPanel.Controls.Add(this.MoveToSearchButton);
+            this.AddCustomerPanel.Controls.Add(this.AddCustomersLabel);
+            this.AddCustomerPanel.Location = new System.Drawing.Point(12, 11);
+            this.AddCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.AddCustomerPanel.Name = "AddCustomerPanel";
+            this.AddCustomerPanel.Size = new System.Drawing.Size(853, 484);
+            this.AddCustomerPanel.TabIndex = 0;
+            this.AddCustomerPanel.Visible = false;
+            // 
+            // MoveToSearchButton
+            // 
+            this.MoveToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.MoveToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveToSearchButton.ForeColor = System.Drawing.Color.White;
+            this.MoveToSearchButton.Location = new System.Drawing.Point(646, 430);
+            this.MoveToSearchButton.Margin = new System.Windows.Forms.Padding(5);
+            this.MoveToSearchButton.Name = "MoveToSearchButton";
+            this.MoveToSearchButton.Size = new System.Drawing.Size(185, 39);
+            this.MoveToSearchButton.TabIndex = 5;
+            this.MoveToSearchButton.Text = "Search Customers";
+            this.MoveToSearchButton.UseVisualStyleBackColor = false;
+            this.MoveToSearchButton.Click += new System.EventHandler(this.MoveToSearchButton_Click);
+            // 
+            // AddCustomersLabel
+            // 
+            this.AddCustomersLabel.AutoSize = true;
+            this.AddCustomersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCustomersLabel.Location = new System.Drawing.Point(36, 31);
+            this.AddCustomersLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.AddCustomersLabel.Name = "AddCustomersLabel";
+            this.AddCustomersLabel.Size = new System.Drawing.Size(164, 26);
+            this.AddCustomersLabel.TabIndex = 1;
+            this.AddCustomersLabel.Text = "Add Customer";
+            // 
+            // MoviesTabPage
+            // 
+            this.MoviesTabPage.Location = new System.Drawing.Point(4, 25);
+            this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.MoviesTabPage.Name = "MoviesTabPage";
+            this.MoviesTabPage.Size = new System.Drawing.Size(878, 506);
+            this.MoviesTabPage.TabIndex = 2;
+            this.MoviesTabPage.Text = "Movies";
+            this.MoviesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // RentalsTabPage
+            // 
+            this.RentalsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.RentalsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.RentalsTabPage.Name = "RentalsTabPage";
+            this.RentalsTabPage.Size = new System.Drawing.Size(878, 506);
+            this.RentalsTabPage.TabIndex = 3;
+            this.RentalsTabPage.Text = "Rentals";
+            this.RentalsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ReportsTabPage
+            // 
+            this.ReportsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ReportsTabPage.Name = "ReportsTabPage";
+            this.ReportsTabPage.Size = new System.Drawing.Size(878, 506);
+            this.ReportsTabPage.TabIndex = 4;
+            this.ReportsTabPage.Text = "Reports";
+            this.ReportsTabPage.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 512);
+            this.ClientSize = new System.Drawing.Size(919, 565);
             this.Controls.Add(this.MovieRentalTabControl);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -459,10 +459,10 @@
             this.SearchCustomerPanel.ResumeLayout(false);
             this.SearchCustomerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).EndInit();
-            this.AddCustomerPanel.ResumeLayout(false);
-            this.AddCustomerPanel.PerformLayout();
             this.EditCustomerPanel.ResumeLayout(false);
             this.EditCustomerPanel.PerformLayout();
+            this.AddCustomerPanel.ResumeLayout(false);
+            this.AddCustomerPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
