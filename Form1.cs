@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,24 +23,20 @@ namespace CMPT291_Project
         {
             InitializeComponent();
 
-            ///////////////////////////////
             //operation.Items.Clear();
             //operation.Items.Add("Show all");
             //operation.Items.Add("Show with starting grade: ");
-            //////////////////////////////////
-            ///
+            
             //String connectionString = "Server = DESKTOP-EK1AC4K; Database = MovieRentalSystem; Trusted_Connection = yes;";
+            //SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
-
-            /* Starting the connection */
+            // Starting the connection
             SqlConnection myConnection = new SqlConnection("user id=movieadmin;" + // Username
                                          "password=1234;" + // Password
                                          "server=localhost;" + // IP for the server
                                          "Trusted_Connection=yes;" +
                                          "database=MovieRentalSystem; " + // Database to connect to
                                          "connection timeout=30"); // Timeout in seconds
-
-            //SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
             try
             {
@@ -88,7 +85,6 @@ namespace CMPT291_Project
 
             try
             {
-                //MessageBox.Show(myCommand.CommandText);
                 myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
@@ -99,9 +95,9 @@ namespace CMPT291_Project
                     if (myReader.GetString(col) == ByteArrayToString(passwordHash))
                     {
                         LoginResultLabel.Text = "You have been logged in successfully.";
+                        LoginButton.Enabled = false;
 
                         // Bringing back tab pages on successful log in
-                        // WILL DUPLICATE TABS IF LOGIN BUTTON CLICKED TWICE
                         MovieRentalTabControl.TabPages.Insert(1, CustomersTabPage);
                         MovieRentalTabControl.TabPages.Insert(2, MoviesTabPage);
                         MovieRentalTabControl.TabPages.Insert(3, RentalsTabPage);
@@ -161,13 +157,14 @@ namespace CMPT291_Project
 
             try
             {
-                //MessageBox.Show(myCommand.CommandText);
                 myReader = myCommand.ExecuteReader();
 
                 Customer.Rows.Clear();
                 while (myReader.Read())
                 {
-                    Customer.Rows.Add(myReader["CustomerID"].ToString(), myReader["FirstName"].ToString(), myReader["LastName"].ToString(), myReader["EmailAddress"].ToString(), myReader["AcctNum"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString());
+                    Customer.Rows.Add(myReader["CustomerID"].ToString(), myReader["FirstName"].ToString(), 
+                        myReader["LastName"].ToString(), myReader["EmailAddress"].ToString(), 
+                        myReader["AcctNum"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString());
                 }
 
                 myReader.Close();
@@ -180,14 +177,6 @@ namespace CMPT291_Project
 
         private void ViewDetailsButton_Click(object sender, EventArgs e)
         {
-            int selectedCellCount = Customer.GetCellCount(DataGridViewElementStates.Selected);
-
-            //if (selectedCellCount != 7)
-            //{
-            //    MessageBox.Show("Please select a complete customer record to proceed.");
-            //}
-            //else
-            //{
             ViewCustomerPanel.Visible = true;
             AddCustomerPanel.Visible = false;
             SearchCustomerPanel.Visible = false;
@@ -217,7 +206,6 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e3.ToString(), "Error");
             }
-            //}
         }
 
         private void CancelViewingButton_Click(object sender, EventArgs e)
@@ -232,6 +220,7 @@ namespace CMPT291_Project
             SaveUpdatesButton.Visible = false;
             MoveToUpdateButton.Visible = true;
             DeleteCustomerButton.Visible = false;
+            DeleteCustomerButton.Enabled = false;
 
             VUAcctNumTextbox.ReadOnly = true;
             VUAddressTextbox.ReadOnly = true;
@@ -252,6 +241,7 @@ namespace CMPT291_Project
             SaveUpdatesButton.Visible = true;
             MoveToUpdateButton.Visible = false;
             DeleteCustomerButton.Visible = true;
+            DeleteCustomerButton.Enabled = true;
 
             VUAcctNumTextbox.ReadOnly = false;
             VUAddressTextbox.ReadOnly = false;
@@ -270,6 +260,52 @@ namespace CMPT291_Project
             ViewDetailsButton.Enabled = isCellSelected;
         }
 
+        private void DeleteCustomerButton_Click(object sender, EventArgs e)
+        {
+            //  CAN WE MAKE DELETE CUSTOMER CHANGE CUSTOMER FROM ACTIVE TO INACTIVE INSTEAD OF DELETING ALL RECORDS?
+
+            string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+
+            // Delete records from all tables with CustomerID as foreign key
+            myCommand.CommandText = "delete from QueueUp where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+            myCommand.CommandText = "delete from RateActor where RentalID in (select RentalID from Rental where CustomerID = " + customerID + ")";
+            myCommand.ExecuteNonQuery();
+            myCommand.CommandText = "delete from Rental where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+            myCommand.CommandText = "delete from CustomerPhone where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+
+            // Delete customer record from Customer table
+            myCommand.CommandText = "delete from Customer where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+
+            MessageBox.Show("Customer has been deleted."); // should have an "are you sure?" message maybe??
+
+            // Change screens back to search screen
+            SearchCustomerPanel.Visible = true;
+            SearchButton.PerformClick(); // Execute search button click to refresh search results on search screen
+            ViewCustomerPanel.Visible = false;
+            AddCustomerPanel.Visible = false;
+
+            UpdateTitleLabel.Visible = false;
+            ViewTitleLabel.Visible = true;
+
+            SaveUpdatesButton.Visible = false;
+            MoveToUpdateButton.Visible = true;
+            DeleteCustomerButton.Visible = false;
+            DeleteCustomerButton.Enabled = false;
+
+            VUAcctNumTextbox.ReadOnly = true;
+            VUAddressTextbox.ReadOnly = true;
+            VUCityTextbox.ReadOnly = true;
+            VUCreditTextbox.ReadOnly = true;
+            VUEmailTextbox.ReadOnly = true;
+            VUFirstNameTextbox.ReadOnly = true;
+            VULastNameTextbox.ReadOnly = true;
+            VUPostalCodeTextbox.ReadOnly = true;
+            VUProvinceComboBox.Enabled = false;
+        }
 
         private void label1_Click_1(object sender, EventArgs e)
         {

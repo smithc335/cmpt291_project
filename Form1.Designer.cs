@@ -106,16 +106,16 @@
             this.MoveToSearchButton = new System.Windows.Forms.Button();
             this.AddCustomersLabel = new System.Windows.Forms.Label();
             this.MoviesTabPage = new System.Windows.Forms.TabPage();
+            this.SearchMoviePanel = new System.Windows.Forms.Panel();
+            this.AddMovieButton = new System.Windows.Forms.Button();
+            this.EditMoviesButton = new System.Windows.Forms.Button();
+            this.DeleteMovieButton = new System.Windows.Forms.Button();
+            this.MoviesDisplayed = new System.Windows.Forms.ListBox();
+            this.MovieSearchbutton = new System.Windows.Forms.Button();
+            this.MovieSearchTextBox = new System.Windows.Forms.TextBox();
+            this.SearchMoviesLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
-            this.SearchMoviePanel = new System.Windows.Forms.Panel();
-            this.SearchMoviesLabel = new System.Windows.Forms.Label();
-            this.MovieSearchTextBox = new System.Windows.Forms.TextBox();
-            this.MovieSearchbutton = new System.Windows.Forms.Button();
-            this.MoviesDisplayed = new System.Windows.Forms.ListBox();
-            this.DeleteMovieButton = new System.Windows.Forms.Button();
-            this.EditMoviesButton = new System.Windows.Forms.Button();
-            this.AddMovieButton = new System.Windows.Forms.Button();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -263,9 +263,9 @@
             // 
             // CustomersTabPage
             // 
-            this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
+            this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
@@ -485,6 +485,7 @@
             // DeleteCustomerButton
             // 
             this.DeleteCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.DeleteCustomerButton.Enabled = false;
             this.DeleteCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteCustomerButton.ForeColor = System.Drawing.Color.White;
             this.DeleteCustomerButton.Location = new System.Drawing.Point(284, 428);
@@ -495,6 +496,7 @@
             this.DeleteCustomerButton.Text = "Delete Customer";
             this.DeleteCustomerButton.UseVisualStyleBackColor = false;
             this.DeleteCustomerButton.Visible = false;
+            this.DeleteCustomerButton.Click += new System.EventHandler(this.DeleteCustomerButton_Click);
             // 
             // SaveUpdatesButton
             // 
@@ -1048,6 +1050,108 @@
             this.MoviesTabPage.Text = "Movies";
             this.MoviesTabPage.UseVisualStyleBackColor = true;
             // 
+            // SearchMoviePanel
+            // 
+            this.SearchMoviePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.SearchMoviePanel.Controls.Add(this.AddMovieButton);
+            this.SearchMoviePanel.Controls.Add(this.EditMoviesButton);
+            this.SearchMoviePanel.Controls.Add(this.DeleteMovieButton);
+            this.SearchMoviePanel.Controls.Add(this.MoviesDisplayed);
+            this.SearchMoviePanel.Controls.Add(this.MovieSearchbutton);
+            this.SearchMoviePanel.Controls.Add(this.MovieSearchTextBox);
+            this.SearchMoviePanel.Controls.Add(this.SearchMoviesLabel);
+            this.SearchMoviePanel.Location = new System.Drawing.Point(17, 20);
+            this.SearchMoviePanel.Name = "SearchMoviePanel";
+            this.SearchMoviePanel.Size = new System.Drawing.Size(843, 470);
+            this.SearchMoviePanel.TabIndex = 0;
+            // 
+            // AddMovieButton
+            // 
+            this.AddMovieButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.AddMovieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddMovieButton.ForeColor = System.Drawing.Color.White;
+            this.AddMovieButton.Location = new System.Drawing.Point(641, 403);
+            this.AddMovieButton.Margin = new System.Windows.Forms.Padding(5);
+            this.AddMovieButton.Name = "AddMovieButton";
+            this.AddMovieButton.Size = new System.Drawing.Size(175, 47);
+            this.AddMovieButton.TabIndex = 17;
+            this.AddMovieButton.Text = "Add Movie";
+            this.AddMovieButton.UseVisualStyleBackColor = false;
+            // 
+            // EditMoviesButton
+            // 
+            this.EditMoviesButton.BackColor = System.Drawing.Color.Green;
+            this.EditMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditMoviesButton.ForeColor = System.Drawing.Color.White;
+            this.EditMoviesButton.Location = new System.Drawing.Point(592, 129);
+            this.EditMoviesButton.Margin = new System.Windows.Forms.Padding(5);
+            this.EditMoviesButton.Name = "EditMoviesButton";
+            this.EditMoviesButton.Size = new System.Drawing.Size(97, 39);
+            this.EditMoviesButton.TabIndex = 16;
+            this.EditMoviesButton.Text = "Edit";
+            this.EditMoviesButton.UseVisualStyleBackColor = false;
+            this.EditMoviesButton.Click += new System.EventHandler(this.EditMoviesButton_Click);
+            // 
+            // DeleteMovieButton
+            // 
+            this.DeleteMovieButton.BackColor = System.Drawing.Color.Maroon;
+            this.DeleteMovieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteMovieButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteMovieButton.Location = new System.Drawing.Point(719, 129);
+            this.DeleteMovieButton.Margin = new System.Windows.Forms.Padding(5);
+            this.DeleteMovieButton.Name = "DeleteMovieButton";
+            this.DeleteMovieButton.Size = new System.Drawing.Size(97, 39);
+            this.DeleteMovieButton.TabIndex = 15;
+            this.DeleteMovieButton.Text = "Delete";
+            this.DeleteMovieButton.UseVisualStyleBackColor = false;
+            this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieButton_Click);
+            // 
+            // MoviesDisplayed
+            // 
+            this.MoviesDisplayed.FormattingEnabled = true;
+            this.MoviesDisplayed.ItemHeight = 16;
+            this.MoviesDisplayed.Location = new System.Drawing.Point(23, 106);
+            this.MoviesDisplayed.Name = "MoviesDisplayed";
+            this.MoviesDisplayed.Size = new System.Drawing.Size(549, 276);
+            this.MoviesDisplayed.TabIndex = 14;
+            this.MoviesDisplayed.SelectedIndexChanged += new System.EventHandler(this.MoviesDisplayed_SelectedIndexChanged);
+            // 
+            // MovieSearchbutton
+            // 
+            this.MovieSearchbutton.BackColor = System.Drawing.Color.SteelBlue;
+            this.MovieSearchbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovieSearchbutton.ForeColor = System.Drawing.Color.White;
+            this.MovieSearchbutton.Location = new System.Drawing.Point(647, 49);
+            this.MovieSearchbutton.Margin = new System.Windows.Forms.Padding(5);
+            this.MovieSearchbutton.Name = "MovieSearchbutton";
+            this.MovieSearchbutton.Size = new System.Drawing.Size(139, 39);
+            this.MovieSearchbutton.TabIndex = 13;
+            this.MovieSearchbutton.Text = "Search";
+            this.MovieSearchbutton.UseVisualStyleBackColor = false;
+            this.MovieSearchbutton.Click += new System.EventHandler(this.MovieSearchbutton_Click);
+            // 
+            // MovieSearchTextBox
+            // 
+            this.MovieSearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovieSearchTextBox.Location = new System.Drawing.Point(23, 54);
+            this.MovieSearchTextBox.Margin = new System.Windows.Forms.Padding(5);
+            this.MovieSearchTextBox.Name = "MovieSearchTextBox";
+            this.MovieSearchTextBox.Size = new System.Drawing.Size(549, 26);
+            this.MovieSearchTextBox.TabIndex = 12;
+            this.MovieSearchTextBox.TextChanged += new System.EventHandler(this.MovieSearchTextBox_TextChanged);
+            // 
+            // SearchMoviesLabel
+            // 
+            this.SearchMoviesLabel.AutoSize = true;
+            this.SearchMoviesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchMoviesLabel.Location = new System.Drawing.Point(20, 20);
+            this.SearchMoviesLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.SearchMoviesLabel.Name = "SearchMoviesLabel";
+            this.SearchMoviesLabel.Size = new System.Drawing.Size(114, 17);
+            this.SearchMoviesLabel.TabIndex = 11;
+            this.SearchMoviesLabel.Text = "Search Movies";
+            this.SearchMoviesLabel.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // RentalsTabPage
             // 
             this.RentalsTabPage.Location = new System.Drawing.Point(4, 25);
@@ -1067,108 +1171,6 @@
             this.ReportsTabPage.TabIndex = 4;
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // SearchMoviePanel
-            // 
-            this.SearchMoviePanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.SearchMoviePanel.Controls.Add(this.AddMovieButton);
-            this.SearchMoviePanel.Controls.Add(this.EditMoviesButton);
-            this.SearchMoviePanel.Controls.Add(this.DeleteMovieButton);
-            this.SearchMoviePanel.Controls.Add(this.MoviesDisplayed);
-            this.SearchMoviePanel.Controls.Add(this.MovieSearchbutton);
-            this.SearchMoviePanel.Controls.Add(this.MovieSearchTextBox);
-            this.SearchMoviePanel.Controls.Add(this.SearchMoviesLabel);
-            this.SearchMoviePanel.Location = new System.Drawing.Point(17, 20);
-            this.SearchMoviePanel.Name = "SearchMoviePanel";
-            this.SearchMoviePanel.Size = new System.Drawing.Size(843, 470);
-            this.SearchMoviePanel.TabIndex = 0;
-            // 
-            // SearchMoviesLabel
-            // 
-            this.SearchMoviesLabel.AutoSize = true;
-            this.SearchMoviesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchMoviesLabel.Location = new System.Drawing.Point(20, 20);
-            this.SearchMoviesLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.SearchMoviesLabel.Name = "SearchMoviesLabel";
-            this.SearchMoviesLabel.Size = new System.Drawing.Size(114, 17);
-            this.SearchMoviesLabel.TabIndex = 11;
-            this.SearchMoviesLabel.Text = "Search Movies";
-            this.SearchMoviesLabel.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // MovieSearchTextBox
-            // 
-            this.MovieSearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovieSearchTextBox.Location = new System.Drawing.Point(23, 54);
-            this.MovieSearchTextBox.Margin = new System.Windows.Forms.Padding(5);
-            this.MovieSearchTextBox.Name = "MovieSearchTextBox";
-            this.MovieSearchTextBox.Size = new System.Drawing.Size(549, 26);
-            this.MovieSearchTextBox.TabIndex = 12;
-            this.MovieSearchTextBox.TextChanged += new System.EventHandler(this.MovieSearchTextBox_TextChanged);
-            // 
-            // MovieSearchbutton
-            // 
-            this.MovieSearchbutton.BackColor = System.Drawing.Color.SteelBlue;
-            this.MovieSearchbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovieSearchbutton.ForeColor = System.Drawing.Color.White;
-            this.MovieSearchbutton.Location = new System.Drawing.Point(647, 49);
-            this.MovieSearchbutton.Margin = new System.Windows.Forms.Padding(5);
-            this.MovieSearchbutton.Name = "MovieSearchbutton";
-            this.MovieSearchbutton.Size = new System.Drawing.Size(139, 39);
-            this.MovieSearchbutton.TabIndex = 13;
-            this.MovieSearchbutton.Text = "Search";
-            this.MovieSearchbutton.UseVisualStyleBackColor = false;
-            this.MovieSearchbutton.Click += new System.EventHandler(this.MovieSearchbutton_Click);
-            // 
-            // MoviesDisplayed
-            // 
-            this.MoviesDisplayed.FormattingEnabled = true;
-            this.MoviesDisplayed.ItemHeight = 16;
-            this.MoviesDisplayed.Location = new System.Drawing.Point(23, 106);
-            this.MoviesDisplayed.Name = "MoviesDisplayed";
-            this.MoviesDisplayed.Size = new System.Drawing.Size(549, 276);
-            this.MoviesDisplayed.TabIndex = 14;
-            this.MoviesDisplayed.SelectedIndexChanged += new System.EventHandler(this.MoviesDisplayed_SelectedIndexChanged);
-            // 
-            // DeleteMovieButton
-            // 
-            this.DeleteMovieButton.BackColor = System.Drawing.Color.Maroon;
-            this.DeleteMovieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteMovieButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteMovieButton.Location = new System.Drawing.Point(719, 129);
-            this.DeleteMovieButton.Margin = new System.Windows.Forms.Padding(5);
-            this.DeleteMovieButton.Name = "DeleteMovieButton";
-            this.DeleteMovieButton.Size = new System.Drawing.Size(97, 39);
-            this.DeleteMovieButton.TabIndex = 15;
-            this.DeleteMovieButton.Text = "Delete";
-            this.DeleteMovieButton.UseVisualStyleBackColor = false;
-            this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieButton_Click);
-            // 
-            // EditMoviesButton
-            // 
-            this.EditMoviesButton.BackColor = System.Drawing.Color.Green;
-            this.EditMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditMoviesButton.ForeColor = System.Drawing.Color.White;
-            this.EditMoviesButton.Location = new System.Drawing.Point(592, 129);
-            this.EditMoviesButton.Margin = new System.Windows.Forms.Padding(5);
-            this.EditMoviesButton.Name = "EditMoviesButton";
-            this.EditMoviesButton.Size = new System.Drawing.Size(97, 39);
-            this.EditMoviesButton.TabIndex = 16;
-            this.EditMoviesButton.Text = "Edit";
-            this.EditMoviesButton.UseVisualStyleBackColor = false;
-            this.EditMoviesButton.Click += new System.EventHandler(this.EditMoviesButton_Click);
-            // 
-            // AddMovieButton
-            // 
-            this.AddMovieButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.AddMovieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMovieButton.ForeColor = System.Drawing.Color.White;
-            this.AddMovieButton.Location = new System.Drawing.Point(641, 403);
-            this.AddMovieButton.Margin = new System.Windows.Forms.Padding(5);
-            this.AddMovieButton.Name = "AddMovieButton";
-            this.AddMovieButton.Size = new System.Drawing.Size(175, 47);
-            this.AddMovieButton.TabIndex = 17;
-            this.AddMovieButton.Text = "Add Movie";
-            this.AddMovieButton.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
