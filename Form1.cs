@@ -284,7 +284,7 @@ namespace CMPT291_Project
 
             // Change screens back to search screen
             SearchCustomerPanel.Visible = true;
-            SearchButton.PerformClick(); // Execute search button click to refresh search results on search screen
+            SearchButton.PerformClick(); // FIX THIS LATER (pull query into its own UpdateCustomerDataGrid method)
             ViewCustomerPanel.Visible = false;
             AddCustomerPanel.Visible = false;
 
@@ -305,6 +305,35 @@ namespace CMPT291_Project
             VULastNameTextbox.ReadOnly = true;
             VUPostalCodeTextbox.ReadOnly = true;
             VUProvinceComboBox.Enabled = false;
+        }
+
+        private void AddNewPhoneButton_Click(object sender, EventArgs e)
+        {
+            if (AddPhoneTextbox2.Visible == false)
+            {
+                AddPhoneTextbox2.Visible = true;
+                AddPhoneComboBox2.Visible = true;
+            }
+            else if (AddPhoneTextbox3.Visible == false)
+            {
+                AddPhoneTextbox3.Visible = true;
+                AddPhoneComboBox3.Visible = true;
+            }
+            else if (AddPhoneTextbox4.Visible == false)
+            {
+                AddPhoneTextbox4.Visible = true;
+                AddPhoneComboBox4.Visible = true;
+            }
+            else if (AddPhoneTextbox5.Visible == false)
+            {
+                AddPhoneTextbox5.Visible = true;
+                AddPhoneComboBox5.Visible = true;
+            }
+            else
+            {
+                AddPhoneTextbox6.Visible = true;
+                AddPhoneComboBox6.Visible = true;
+            }
         }
 
         private void label1_Click_1(object sender, EventArgs e)

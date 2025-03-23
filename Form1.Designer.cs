@@ -116,6 +116,36 @@
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
+            this.AddPhonePanel = new System.Windows.Forms.Panel();
+            this.AddPhoneLabel = new System.Windows.Forms.Label();
+            this.AddPhoneTextbox1 = new System.Windows.Forms.TextBox();
+            this.AddPhoneComboBox1 = new System.Windows.Forms.ComboBox();
+            this.AddPhoneComboBox2 = new System.Windows.Forms.ComboBox();
+            this.AddPhoneTextbox2 = new System.Windows.Forms.TextBox();
+            this.AddPhoneComboBox3 = new System.Windows.Forms.ComboBox();
+            this.AddPhoneTextbox3 = new System.Windows.Forms.TextBox();
+            this.AddPhoneComboBox4 = new System.Windows.Forms.ComboBox();
+            this.AddPhoneTextbox4 = new System.Windows.Forms.TextBox();
+            this.AddPhoneComboBox6 = new System.Windows.Forms.ComboBox();
+            this.AddPhoneTextbox6 = new System.Windows.Forms.TextBox();
+            this.AddPhoneComboBox5 = new System.Windows.Forms.ComboBox();
+            this.AddPhoneTextbox5 = new System.Windows.Forms.TextBox();
+            this.AddNewPhoneButton = new System.Windows.Forms.Button();
+            this.VUAddNewPhoneButton = new System.Windows.Forms.Button();
+            this.VUPhoneLabel = new System.Windows.Forms.Label();
+            this.VUPhonePanel = new System.Windows.Forms.Panel();
+            this.VUPhoneComboBox6 = new System.Windows.Forms.ComboBox();
+            this.VUPhoneTextbox6 = new System.Windows.Forms.TextBox();
+            this.VUPhoneComboBox5 = new System.Windows.Forms.ComboBox();
+            this.VUPhoneTextbox5 = new System.Windows.Forms.TextBox();
+            this.VUPhoneComboBox4 = new System.Windows.Forms.ComboBox();
+            this.VUPhoneTextbox4 = new System.Windows.Forms.TextBox();
+            this.VUPhoneComboBox3 = new System.Windows.Forms.ComboBox();
+            this.VUPhoneTextbox3 = new System.Windows.Forms.TextBox();
+            this.VUPhoneComboBox2 = new System.Windows.Forms.ComboBox();
+            this.VUPhoneTextbox2 = new System.Windows.Forms.TextBox();
+            this.VUPhoneComboBox1 = new System.Windows.Forms.ComboBox();
+            this.VUPhoneTextbox1 = new System.Windows.Forms.TextBox();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -126,6 +156,8 @@
             this.AddCustomerPanel.SuspendLayout();
             this.MoviesTabPage.SuspendLayout();
             this.SearchMoviePanel.SuspendLayout();
+            this.AddPhonePanel.SuspendLayout();
+            this.VUPhonePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -304,7 +336,7 @@
             this.ViewDetailsButton.Name = "ViewDetailsButton";
             this.ViewDetailsButton.Size = new System.Drawing.Size(261, 39);
             this.ViewDetailsButton.TabIndex = 16;
-            this.ViewDetailsButton.Text = "View All Customer Details";
+            this.ViewDetailsButton.Text = "View / Edit Customer Details";
             this.ViewDetailsButton.UseVisualStyleBackColor = false;
             this.ViewDetailsButton.Click += new System.EventHandler(this.ViewDetailsButton_Click);
             // 
@@ -451,8 +483,11 @@
             // ViewCustomerPanel
             // 
             this.ViewCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.ViewCustomerPanel.Controls.Add(this.VUAddNewPhoneButton);
             this.ViewCustomerPanel.Controls.Add(this.DeleteCustomerButton);
+            this.ViewCustomerPanel.Controls.Add(this.VUPhoneLabel);
             this.ViewCustomerPanel.Controls.Add(this.SaveUpdatesButton);
+            this.ViewCustomerPanel.Controls.Add(this.VUPhonePanel);
             this.ViewCustomerPanel.Controls.Add(this.UpdateTitleLabel);
             this.ViewCustomerPanel.Controls.Add(this.VUProvinceComboBox);
             this.ViewCustomerPanel.Controls.Add(this.MoveToUpdateButton);
@@ -542,7 +577,7 @@
             "QC",
             "SK",
             "YT"});
-            this.VUProvinceComboBox.Location = new System.Drawing.Point(469, 319);
+            this.VUProvinceComboBox.Location = new System.Drawing.Point(469, 353);
             this.VUProvinceComboBox.Name = "VUProvinceComboBox";
             this.VUProvinceComboBox.Size = new System.Drawing.Size(121, 24);
             this.VUProvinceComboBox.TabIndex = 48;
@@ -565,7 +600,7 @@
             // 
             this.VUCreditLabel.AutoSize = true;
             this.VUCreditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUCreditLabel.Location = new System.Drawing.Point(24, 137);
+            this.VUCreditLabel.Location = new System.Drawing.Point(438, 102);
             this.VUCreditLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUCreditLabel.Name = "VUCreditLabel";
             this.VUCreditLabel.Size = new System.Drawing.Size(137, 17);
@@ -575,18 +610,18 @@
             // VUCreditTextbox
             // 
             this.VUCreditTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUCreditTextbox.Location = new System.Drawing.Point(175, 134);
+            this.VUCreditTextbox.Location = new System.Drawing.Point(589, 99);
             this.VUCreditTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUCreditTextbox.Name = "VUCreditTextbox";
             this.VUCreditTextbox.ReadOnly = true;
-            this.VUCreditTextbox.Size = new System.Drawing.Size(282, 23);
+            this.VUCreditTextbox.Size = new System.Drawing.Size(226, 23);
             this.VUCreditTextbox.TabIndex = 46;
             // 
             // VUAcctNumLabel
             // 
             this.VUAcctNumLabel.AutoSize = true;
             this.VUAcctNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUAcctNumLabel.Location = new System.Drawing.Point(24, 213);
+            this.VUAcctNumLabel.Location = new System.Drawing.Point(25, 137);
             this.VUAcctNumLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUAcctNumLabel.Name = "VUAcctNumLabel";
             this.VUAcctNumLabel.Size = new System.Drawing.Size(117, 17);
@@ -596,11 +631,11 @@
             // VUAcctNumTextbox
             // 
             this.VUAcctNumTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUAcctNumTextbox.Location = new System.Drawing.Point(155, 210);
+            this.VUAcctNumTextbox.Location = new System.Drawing.Point(155, 134);
             this.VUAcctNumTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUAcctNumTextbox.Name = "VUAcctNumTextbox";
             this.VUAcctNumTextbox.ReadOnly = true;
-            this.VUAcctNumTextbox.Size = new System.Drawing.Size(282, 23);
+            this.VUAcctNumTextbox.Size = new System.Drawing.Size(119, 23);
             this.VUAcctNumTextbox.TabIndex = 43;
             // 
             // VUEmailLabel
@@ -621,14 +656,14 @@
             this.VUEmailTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUEmailTextbox.Name = "VUEmailTextbox";
             this.VUEmailTextbox.ReadOnly = true;
-            this.VUEmailTextbox.Size = new System.Drawing.Size(282, 23);
+            this.VUEmailTextbox.Size = new System.Drawing.Size(259, 23);
             this.VUEmailTextbox.TabIndex = 41;
             // 
             // VUPostalCodeLabel
             // 
             this.VUPostalCodeLabel.AutoSize = true;
             this.VUPostalCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPostalCodeLabel.Location = new System.Drawing.Point(23, 357);
+            this.VUPostalCodeLabel.Location = new System.Drawing.Point(23, 391);
             this.VUPostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUPostalCodeLabel.Name = "VUPostalCodeLabel";
             this.VUPostalCodeLabel.Size = new System.Drawing.Size(88, 17);
@@ -638,7 +673,7 @@
             // VUPostalCodeTextbox
             // 
             this.VUPostalCodeTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPostalCodeTextbox.Location = new System.Drawing.Point(126, 354);
+            this.VUPostalCodeTextbox.Location = new System.Drawing.Point(126, 388);
             this.VUPostalCodeTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUPostalCodeTextbox.Name = "VUPostalCodeTextbox";
             this.VUPostalCodeTextbox.ReadOnly = true;
@@ -649,7 +684,7 @@
             // 
             this.VUProvinceLabel.AutoSize = true;
             this.VUProvinceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUProvinceLabel.Location = new System.Drawing.Point(392, 322);
+            this.VUProvinceLabel.Location = new System.Drawing.Point(392, 356);
             this.VUProvinceLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUProvinceLabel.Name = "VUProvinceLabel";
             this.VUProvinceLabel.Size = new System.Drawing.Size(67, 17);
@@ -660,7 +695,7 @@
             // 
             this.VUCityLabel.AutoSize = true;
             this.VUCityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUCityLabel.Location = new System.Drawing.Point(23, 322);
+            this.VUCityLabel.Location = new System.Drawing.Point(23, 356);
             this.VUCityLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUCityLabel.Name = "VUCityLabel";
             this.VUCityLabel.Size = new System.Drawing.Size(35, 17);
@@ -670,7 +705,7 @@
             // VUCityTextbox
             // 
             this.VUCityTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUCityTextbox.Location = new System.Drawing.Point(72, 319);
+            this.VUCityTextbox.Location = new System.Drawing.Point(72, 353);
             this.VUCityTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUCityTextbox.Name = "VUCityTextbox";
             this.VUCityTextbox.ReadOnly = true;
@@ -681,7 +716,7 @@
             // 
             this.VUAddressLabel.AutoSize = true;
             this.VUAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUAddressLabel.Location = new System.Drawing.Point(23, 287);
+            this.VUAddressLabel.Location = new System.Drawing.Point(23, 321);
             this.VUAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUAddressLabel.Name = "VUAddressLabel";
             this.VUAddressLabel.Size = new System.Drawing.Size(64, 17);
@@ -691,7 +726,7 @@
             // VUAddressTextbox
             // 
             this.VUAddressTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUAddressTextbox.Location = new System.Drawing.Point(101, 284);
+            this.VUAddressTextbox.Location = new System.Drawing.Point(101, 318);
             this.VUAddressTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUAddressTextbox.Name = "VUAddressTextbox";
             this.VUAddressTextbox.ReadOnly = true;
@@ -768,6 +803,9 @@
             // AddCustomerPanel
             // 
             this.AddCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.AddCustomerPanel.Controls.Add(this.AddNewPhoneButton);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddPhonePanel);
             this.AddCustomerPanel.Controls.Add(this.AddProvinceComboBox);
             this.AddCustomerPanel.Controls.Add(this.AddSaveCustomerButton);
             this.AddCustomerPanel.Controls.Add(this.AddCreditLabel);
@@ -814,7 +852,7 @@
             "QC",
             "SK",
             "YT"});
-            this.AddProvinceComboBox.Location = new System.Drawing.Point(470, 319);
+            this.AddProvinceComboBox.Location = new System.Drawing.Point(470, 352);
             this.AddProvinceComboBox.Name = "AddProvinceComboBox";
             this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 24);
             this.AddProvinceComboBox.TabIndex = 26;
@@ -824,7 +862,7 @@
             this.AddSaveCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
             this.AddSaveCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddSaveCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.AddSaveCustomerButton.Location = new System.Drawing.Point(27, 428);
+            this.AddSaveCustomerButton.Location = new System.Drawing.Point(26, 428);
             this.AddSaveCustomerButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddSaveCustomerButton.Name = "AddSaveCustomerButton";
             this.AddSaveCustomerButton.Size = new System.Drawing.Size(185, 39);
@@ -836,7 +874,7 @@
             // 
             this.AddCreditLabel.AutoSize = true;
             this.AddCreditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCreditLabel.Location = new System.Drawing.Point(25, 137);
+            this.AddCreditLabel.Location = new System.Drawing.Point(439, 102);
             this.AddCreditLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddCreditLabel.Name = "AddCreditLabel";
             this.AddCreditLabel.Size = new System.Drawing.Size(137, 17);
@@ -846,17 +884,17 @@
             // AddCreditTextbox
             // 
             this.AddCreditTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCreditTextbox.Location = new System.Drawing.Point(176, 134);
+            this.AddCreditTextbox.Location = new System.Drawing.Point(590, 99);
             this.AddCreditTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddCreditTextbox.Name = "AddCreditTextbox";
-            this.AddCreditTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddCreditTextbox.Size = new System.Drawing.Size(224, 23);
             this.AddCreditTextbox.TabIndex = 24;
             // 
             // AddAcctNumInstLabel
             // 
             this.AddAcctNumInstLabel.AutoSize = true;
             this.AddAcctNumInstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAcctNumInstLabel.Location = new System.Drawing.Point(452, 217);
+            this.AddAcctNumInstLabel.Location = new System.Drawing.Point(288, 139);
             this.AddAcctNumInstLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAcctNumInstLabel.Name = "AddAcctNumInstLabel";
             this.AddAcctNumInstLabel.Size = new System.Drawing.Size(248, 13);
@@ -867,7 +905,7 @@
             // 
             this.AddAcctNumLabel.AutoSize = true;
             this.AddAcctNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAcctNumLabel.Location = new System.Drawing.Point(25, 213);
+            this.AddAcctNumLabel.Location = new System.Drawing.Point(24, 137);
             this.AddAcctNumLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAcctNumLabel.Name = "AddAcctNumLabel";
             this.AddAcctNumLabel.Size = new System.Drawing.Size(117, 17);
@@ -877,10 +915,10 @@
             // AddAcctNumTextbox
             // 
             this.AddAcctNumTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAcctNumTextbox.Location = new System.Drawing.Point(156, 210);
+            this.AddAcctNumTextbox.Location = new System.Drawing.Point(155, 134);
             this.AddAcctNumTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddAcctNumTextbox.Name = "AddAcctNumTextbox";
-            this.AddAcctNumTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddAcctNumTextbox.Size = new System.Drawing.Size(119, 23);
             this.AddAcctNumTextbox.TabIndex = 21;
             // 
             // AddEmailLabel
@@ -900,14 +938,14 @@
             this.AddEmailTextbox.Location = new System.Drawing.Point(141, 99);
             this.AddEmailTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddEmailTextbox.Name = "AddEmailTextbox";
-            this.AddEmailTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddEmailTextbox.Size = new System.Drawing.Size(258, 23);
             this.AddEmailTextbox.TabIndex = 19;
             // 
             // AddPostalCodeLabel
             // 
             this.AddPostalCodeLabel.AutoSize = true;
             this.AddPostalCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPostalCodeLabel.Location = new System.Drawing.Point(24, 357);
+            this.AddPostalCodeLabel.Location = new System.Drawing.Point(24, 390);
             this.AddPostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddPostalCodeLabel.Name = "AddPostalCodeLabel";
             this.AddPostalCodeLabel.Size = new System.Drawing.Size(88, 17);
@@ -917,7 +955,7 @@
             // AddPostalCodeTextbox
             // 
             this.AddPostalCodeTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPostalCodeTextbox.Location = new System.Drawing.Point(127, 354);
+            this.AddPostalCodeTextbox.Location = new System.Drawing.Point(127, 387);
             this.AddPostalCodeTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddPostalCodeTextbox.Name = "AddPostalCodeTextbox";
             this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 23);
@@ -927,7 +965,7 @@
             // 
             this.AddProvinceLabel.AutoSize = true;
             this.AddProvinceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProvinceLabel.Location = new System.Drawing.Point(393, 322);
+            this.AddProvinceLabel.Location = new System.Drawing.Point(393, 355);
             this.AddProvinceLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddProvinceLabel.Name = "AddProvinceLabel";
             this.AddProvinceLabel.Size = new System.Drawing.Size(67, 17);
@@ -938,7 +976,7 @@
             // 
             this.AddCityLabel.AutoSize = true;
             this.AddCityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCityLabel.Location = new System.Drawing.Point(24, 322);
+            this.AddCityLabel.Location = new System.Drawing.Point(24, 355);
             this.AddCityLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddCityLabel.Name = "AddCityLabel";
             this.AddCityLabel.Size = new System.Drawing.Size(35, 17);
@@ -948,7 +986,7 @@
             // AddCityTextbox
             // 
             this.AddCityTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCityTextbox.Location = new System.Drawing.Point(73, 319);
+            this.AddCityTextbox.Location = new System.Drawing.Point(73, 352);
             this.AddCityTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddCityTextbox.Name = "AddCityTextbox";
             this.AddCityTextbox.Size = new System.Drawing.Size(282, 23);
@@ -958,7 +996,7 @@
             // 
             this.AddAddressLabel.AutoSize = true;
             this.AddAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAddressLabel.Location = new System.Drawing.Point(24, 287);
+            this.AddAddressLabel.Location = new System.Drawing.Point(24, 320);
             this.AddAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAddressLabel.Name = "AddAddressLabel";
             this.AddAddressLabel.Size = new System.Drawing.Size(64, 17);
@@ -968,7 +1006,7 @@
             // AddAddressTextbox
             // 
             this.AddAddressTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAddressTextbox.Location = new System.Drawing.Point(102, 284);
+            this.AddAddressTextbox.Location = new System.Drawing.Point(102, 317);
             this.AddAddressTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddAddressTextbox.Name = "AddAddressTextbox";
             this.AddAddressTextbox.Size = new System.Drawing.Size(328, 23);
@@ -1172,6 +1210,393 @@
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
+            // AddPhonePanel
+            // 
+            this.AddPhonePanel.AutoScroll = true;
+            this.AddPhonePanel.BackColor = System.Drawing.Color.White;
+            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox6);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox6);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox5);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox5);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox4);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox4);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox3);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox3);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox2);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox2);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox1);
+            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox1);
+            this.AddPhonePanel.Location = new System.Drawing.Point(159, 180);
+            this.AddPhonePanel.Name = "AddPhonePanel";
+            this.AddPhonePanel.Size = new System.Drawing.Size(399, 114);
+            this.AddPhonePanel.TabIndex = 27;
+            // 
+            // AddPhoneLabel
+            // 
+            this.AddPhoneLabel.AutoSize = true;
+            this.AddPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneLabel.Location = new System.Drawing.Point(25, 180);
+            this.AddPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddPhoneLabel.Name = "AddPhoneLabel";
+            this.AddPhoneLabel.Size = new System.Drawing.Size(124, 17);
+            this.AddPhoneLabel.TabIndex = 28;
+            this.AddPhoneLabel.Text = "Phone Number(s):";
+            // 
+            // AddPhoneTextbox1
+            // 
+            this.AddPhoneTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox1.Location = new System.Drawing.Point(9, 6);
+            this.AddPhoneTextbox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox1.Name = "AddPhoneTextbox1";
+            this.AddPhoneTextbox1.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox1.TabIndex = 29;
+            // 
+            // AddPhoneComboBox1
+            // 
+            this.AddPhoneComboBox1.FormattingEnabled = true;
+            this.AddPhoneComboBox1.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.AddPhoneComboBox1.Location = new System.Drawing.Point(251, 6);
+            this.AddPhoneComboBox1.Name = "AddPhoneComboBox1";
+            this.AddPhoneComboBox1.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox1.TabIndex = 29;
+            // 
+            // AddPhoneComboBox2
+            // 
+            this.AddPhoneComboBox2.FormattingEnabled = true;
+            this.AddPhoneComboBox2.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.AddPhoneComboBox2.Location = new System.Drawing.Point(251, 36);
+            this.AddPhoneComboBox2.Name = "AddPhoneComboBox2";
+            this.AddPhoneComboBox2.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox2.TabIndex = 30;
+            this.AddPhoneComboBox2.Visible = false;
+            // 
+            // AddPhoneTextbox2
+            // 
+            this.AddPhoneTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox2.Location = new System.Drawing.Point(9, 36);
+            this.AddPhoneTextbox2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox2.Name = "AddPhoneTextbox2";
+            this.AddPhoneTextbox2.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox2.TabIndex = 31;
+            this.AddPhoneTextbox2.Visible = false;
+            // 
+            // AddPhoneComboBox3
+            // 
+            this.AddPhoneComboBox3.FormattingEnabled = true;
+            this.AddPhoneComboBox3.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.AddPhoneComboBox3.Location = new System.Drawing.Point(251, 66);
+            this.AddPhoneComboBox3.Name = "AddPhoneComboBox3";
+            this.AddPhoneComboBox3.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox3.TabIndex = 32;
+            this.AddPhoneComboBox3.Visible = false;
+            // 
+            // AddPhoneTextbox3
+            // 
+            this.AddPhoneTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox3.Location = new System.Drawing.Point(9, 66);
+            this.AddPhoneTextbox3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox3.Name = "AddPhoneTextbox3";
+            this.AddPhoneTextbox3.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox3.TabIndex = 33;
+            this.AddPhoneTextbox3.Visible = false;
+            // 
+            // AddPhoneComboBox4
+            // 
+            this.AddPhoneComboBox4.FormattingEnabled = true;
+            this.AddPhoneComboBox4.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.AddPhoneComboBox4.Location = new System.Drawing.Point(251, 95);
+            this.AddPhoneComboBox4.Name = "AddPhoneComboBox4";
+            this.AddPhoneComboBox4.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox4.TabIndex = 34;
+            this.AddPhoneComboBox4.Visible = false;
+            // 
+            // AddPhoneTextbox4
+            // 
+            this.AddPhoneTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox4.Location = new System.Drawing.Point(9, 95);
+            this.AddPhoneTextbox4.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox4.Name = "AddPhoneTextbox4";
+            this.AddPhoneTextbox4.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox4.TabIndex = 35;
+            this.AddPhoneTextbox4.Visible = false;
+            // 
+            // AddPhoneComboBox6
+            // 
+            this.AddPhoneComboBox6.FormattingEnabled = true;
+            this.AddPhoneComboBox6.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.AddPhoneComboBox6.Location = new System.Drawing.Point(251, 155);
+            this.AddPhoneComboBox6.Name = "AddPhoneComboBox6";
+            this.AddPhoneComboBox6.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox6.TabIndex = 38;
+            this.AddPhoneComboBox6.Visible = false;
+            // 
+            // AddPhoneTextbox6
+            // 
+            this.AddPhoneTextbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox6.Location = new System.Drawing.Point(9, 155);
+            this.AddPhoneTextbox6.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox6.Name = "AddPhoneTextbox6";
+            this.AddPhoneTextbox6.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox6.TabIndex = 39;
+            this.AddPhoneTextbox6.Visible = false;
+            // 
+            // AddPhoneComboBox5
+            // 
+            this.AddPhoneComboBox5.FormattingEnabled = true;
+            this.AddPhoneComboBox5.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.AddPhoneComboBox5.Location = new System.Drawing.Point(251, 125);
+            this.AddPhoneComboBox5.Name = "AddPhoneComboBox5";
+            this.AddPhoneComboBox5.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox5.TabIndex = 36;
+            this.AddPhoneComboBox5.Visible = false;
+            // 
+            // AddPhoneTextbox5
+            // 
+            this.AddPhoneTextbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox5.Location = new System.Drawing.Point(9, 125);
+            this.AddPhoneTextbox5.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox5.Name = "AddPhoneTextbox5";
+            this.AddPhoneTextbox5.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox5.TabIndex = 37;
+            this.AddPhoneTextbox5.Visible = false;
+            // 
+            // AddNewPhoneButton
+            // 
+            this.AddNewPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.AddNewPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewPhoneButton.ForeColor = System.Drawing.Color.White;
+            this.AddNewPhoneButton.Location = new System.Drawing.Point(578, 180);
+            this.AddNewPhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.AddNewPhoneButton.Name = "AddNewPhoneButton";
+            this.AddNewPhoneButton.Size = new System.Drawing.Size(32, 30);
+            this.AddNewPhoneButton.TabIndex = 29;
+            this.AddNewPhoneButton.Text = "+";
+            this.AddNewPhoneButton.UseVisualStyleBackColor = false;
+            this.AddNewPhoneButton.Click += new System.EventHandler(this.AddNewPhoneButton_Click);
+            // 
+            // VUAddNewPhoneButton
+            // 
+            this.VUAddNewPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.VUAddNewPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUAddNewPhoneButton.ForeColor = System.Drawing.Color.White;
+            this.VUAddNewPhoneButton.Location = new System.Drawing.Point(578, 180);
+            this.VUAddNewPhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.VUAddNewPhoneButton.Name = "VUAddNewPhoneButton";
+            this.VUAddNewPhoneButton.Size = new System.Drawing.Size(32, 30);
+            this.VUAddNewPhoneButton.TabIndex = 32;
+            this.VUAddNewPhoneButton.Text = "+";
+            this.VUAddNewPhoneButton.UseVisualStyleBackColor = false;
+            // 
+            // VUPhoneLabel
+            // 
+            this.VUPhoneLabel.AutoSize = true;
+            this.VUPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneLabel.Location = new System.Drawing.Point(23, 180);
+            this.VUPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.VUPhoneLabel.Name = "VUPhoneLabel";
+            this.VUPhoneLabel.Size = new System.Drawing.Size(124, 17);
+            this.VUPhoneLabel.TabIndex = 31;
+            this.VUPhoneLabel.Text = "Phone Number(s):";
+            // 
+            // VUPhonePanel
+            // 
+            this.VUPhonePanel.AutoScroll = true;
+            this.VUPhonePanel.BackColor = System.Drawing.Color.White;
+            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox6);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox6);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox5);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox5);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox4);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox4);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox3);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox3);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox2);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox2);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox1);
+            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox1);
+            this.VUPhonePanel.Location = new System.Drawing.Point(159, 180);
+            this.VUPhonePanel.Name = "VUPhonePanel";
+            this.VUPhonePanel.Size = new System.Drawing.Size(399, 118);
+            this.VUPhonePanel.TabIndex = 30;
+            // 
+            // VUPhoneComboBox6
+            // 
+            this.VUPhoneComboBox6.Enabled = false;
+            this.VUPhoneComboBox6.FormattingEnabled = true;
+            this.VUPhoneComboBox6.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.VUPhoneComboBox6.Location = new System.Drawing.Point(251, 155);
+            this.VUPhoneComboBox6.Name = "VUPhoneComboBox6";
+            this.VUPhoneComboBox6.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox6.TabIndex = 38;
+            this.VUPhoneComboBox6.Visible = false;
+            // 
+            // VUPhoneTextbox6
+            // 
+            this.VUPhoneTextbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneTextbox6.Location = new System.Drawing.Point(9, 155);
+            this.VUPhoneTextbox6.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.VUPhoneTextbox6.Name = "VUPhoneTextbox6";
+            this.VUPhoneTextbox6.ReadOnly = true;
+            this.VUPhoneTextbox6.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox6.TabIndex = 39;
+            this.VUPhoneTextbox6.Visible = false;
+            // 
+            // VUPhoneComboBox5
+            // 
+            this.VUPhoneComboBox5.Enabled = false;
+            this.VUPhoneComboBox5.FormattingEnabled = true;
+            this.VUPhoneComboBox5.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.VUPhoneComboBox5.Location = new System.Drawing.Point(251, 125);
+            this.VUPhoneComboBox5.Name = "VUPhoneComboBox5";
+            this.VUPhoneComboBox5.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox5.TabIndex = 36;
+            this.VUPhoneComboBox5.Visible = false;
+            // 
+            // VUPhoneTextbox5
+            // 
+            this.VUPhoneTextbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneTextbox5.Location = new System.Drawing.Point(9, 125);
+            this.VUPhoneTextbox5.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.VUPhoneTextbox5.Name = "VUPhoneTextbox5";
+            this.VUPhoneTextbox5.ReadOnly = true;
+            this.VUPhoneTextbox5.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox5.TabIndex = 37;
+            this.VUPhoneTextbox5.Visible = false;
+            // 
+            // VUPhoneComboBox4
+            // 
+            this.VUPhoneComboBox4.Enabled = false;
+            this.VUPhoneComboBox4.FormattingEnabled = true;
+            this.VUPhoneComboBox4.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.VUPhoneComboBox4.Location = new System.Drawing.Point(251, 95);
+            this.VUPhoneComboBox4.Name = "VUPhoneComboBox4";
+            this.VUPhoneComboBox4.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox4.TabIndex = 34;
+            this.VUPhoneComboBox4.Visible = false;
+            // 
+            // VUPhoneTextbox4
+            // 
+            this.VUPhoneTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneTextbox4.Location = new System.Drawing.Point(9, 95);
+            this.VUPhoneTextbox4.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.VUPhoneTextbox4.Name = "VUPhoneTextbox4";
+            this.VUPhoneTextbox4.ReadOnly = true;
+            this.VUPhoneTextbox4.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox4.TabIndex = 35;
+            this.VUPhoneTextbox4.Visible = false;
+            // 
+            // VUPhoneComboBox3
+            // 
+            this.VUPhoneComboBox3.Enabled = false;
+            this.VUPhoneComboBox3.FormattingEnabled = true;
+            this.VUPhoneComboBox3.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.VUPhoneComboBox3.Location = new System.Drawing.Point(251, 66);
+            this.VUPhoneComboBox3.Name = "VUPhoneComboBox3";
+            this.VUPhoneComboBox3.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox3.TabIndex = 32;
+            this.VUPhoneComboBox3.Visible = false;
+            // 
+            // VUPhoneTextbox3
+            // 
+            this.VUPhoneTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneTextbox3.Location = new System.Drawing.Point(9, 66);
+            this.VUPhoneTextbox3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.VUPhoneTextbox3.Name = "VUPhoneTextbox3";
+            this.VUPhoneTextbox3.ReadOnly = true;
+            this.VUPhoneTextbox3.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox3.TabIndex = 33;
+            this.VUPhoneTextbox3.Visible = false;
+            // 
+            // VUPhoneComboBox2
+            // 
+            this.VUPhoneComboBox2.Enabled = false;
+            this.VUPhoneComboBox2.FormattingEnabled = true;
+            this.VUPhoneComboBox2.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.VUPhoneComboBox2.Location = new System.Drawing.Point(251, 36);
+            this.VUPhoneComboBox2.Name = "VUPhoneComboBox2";
+            this.VUPhoneComboBox2.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox2.TabIndex = 30;
+            this.VUPhoneComboBox2.Visible = false;
+            // 
+            // VUPhoneTextbox2
+            // 
+            this.VUPhoneTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneTextbox2.Location = new System.Drawing.Point(9, 36);
+            this.VUPhoneTextbox2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.VUPhoneTextbox2.Name = "VUPhoneTextbox2";
+            this.VUPhoneTextbox2.ReadOnly = true;
+            this.VUPhoneTextbox2.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox2.TabIndex = 31;
+            this.VUPhoneTextbox2.Visible = false;
+            // 
+            // VUPhoneComboBox1
+            // 
+            this.VUPhoneComboBox1.Enabled = false;
+            this.VUPhoneComboBox1.FormattingEnabled = true;
+            this.VUPhoneComboBox1.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.VUPhoneComboBox1.Location = new System.Drawing.Point(251, 6);
+            this.VUPhoneComboBox1.Name = "VUPhoneComboBox1";
+            this.VUPhoneComboBox1.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox1.TabIndex = 29;
+            // 
+            // VUPhoneTextbox1
+            // 
+            this.VUPhoneTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneTextbox1.Location = new System.Drawing.Point(9, 6);
+            this.VUPhoneTextbox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.VUPhoneTextbox1.Name = "VUPhoneTextbox1";
+            this.VUPhoneTextbox1.ReadOnly = true;
+            this.VUPhoneTextbox1.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox1.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1198,6 +1623,10 @@
             this.MoviesTabPage.ResumeLayout(false);
             this.SearchMoviePanel.ResumeLayout(false);
             this.SearchMoviePanel.PerformLayout();
+            this.AddPhonePanel.ResumeLayout(false);
+            this.AddPhonePanel.PerformLayout();
+            this.VUPhonePanel.ResumeLayout(false);
+            this.VUPhonePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1292,6 +1721,36 @@
         private System.Windows.Forms.Button EditMoviesButton;
         private System.Windows.Forms.Button DeleteMovieButton;
         private System.Windows.Forms.ListBox MoviesDisplayed;
+        private System.Windows.Forms.Panel AddPhonePanel;
+        private System.Windows.Forms.Label AddPhoneLabel;
+        private System.Windows.Forms.ComboBox AddPhoneComboBox1;
+        private System.Windows.Forms.TextBox AddPhoneTextbox1;
+        private System.Windows.Forms.ComboBox AddPhoneComboBox6;
+        private System.Windows.Forms.TextBox AddPhoneTextbox6;
+        private System.Windows.Forms.ComboBox AddPhoneComboBox5;
+        private System.Windows.Forms.TextBox AddPhoneTextbox5;
+        private System.Windows.Forms.ComboBox AddPhoneComboBox4;
+        private System.Windows.Forms.TextBox AddPhoneTextbox4;
+        private System.Windows.Forms.ComboBox AddPhoneComboBox3;
+        private System.Windows.Forms.TextBox AddPhoneTextbox3;
+        private System.Windows.Forms.ComboBox AddPhoneComboBox2;
+        private System.Windows.Forms.TextBox AddPhoneTextbox2;
+        private System.Windows.Forms.Button AddNewPhoneButton;
+        private System.Windows.Forms.Button VUAddNewPhoneButton;
+        private System.Windows.Forms.Label VUPhoneLabel;
+        private System.Windows.Forms.Panel VUPhonePanel;
+        private System.Windows.Forms.ComboBox VUPhoneComboBox6;
+        private System.Windows.Forms.TextBox VUPhoneTextbox6;
+        private System.Windows.Forms.ComboBox VUPhoneComboBox5;
+        private System.Windows.Forms.TextBox VUPhoneTextbox5;
+        private System.Windows.Forms.ComboBox VUPhoneComboBox4;
+        private System.Windows.Forms.TextBox VUPhoneTextbox4;
+        private System.Windows.Forms.ComboBox VUPhoneComboBox3;
+        private System.Windows.Forms.TextBox VUPhoneTextbox3;
+        private System.Windows.Forms.ComboBox VUPhoneComboBox2;
+        private System.Windows.Forms.TextBox VUPhoneTextbox2;
+        private System.Windows.Forms.ComboBox VUPhoneComboBox1;
+        private System.Windows.Forms.TextBox VUPhoneTextbox1;
     }
 }
 
