@@ -348,7 +348,36 @@ namespace CMPT291_Project
 
         private void MovieSearchTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (byTitleRadio.Checked)
+            {
+                myCommand.CommandText = "select * from Movie where Name = '" + SearchTextBox.Text + "'";
+            }
+            else if (byIdRadio.Checked)
+            {
+                myCommand.CommandText = "select * from Movie where MovieID = '" + SearchTextBox.Text + "'";
+            }
+            else
+            {
+                myCommand.CommandText = "select * from Movie where Type = '" + SearchTextBox.Text + "'";
+            }
 
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                Movie.Rows.Clear();
+                while (myReader.Read())
+                {
+                    Movie.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(),
+                        myReader["Type"].ToString(), myReader["NumCopies"].ToString());
+                }
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
         }
 
         private void MovieSearchbutton_Click(object sender, EventArgs e)
