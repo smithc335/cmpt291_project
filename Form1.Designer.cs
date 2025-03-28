@@ -141,10 +141,6 @@
             this.byIdRadio = new System.Windows.Forms.RadioButton();
             this.byTitleRadio = new System.Windows.Forms.RadioButton();
             this.Movie = new System.Windows.Forms.DataGridView();
-            this.MovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddMovieButton = new System.Windows.Forms.Button();
             this.EditMoviesButton = new System.Windows.Forms.Button();
             this.DeleteMovieButton = new System.Windows.Forms.Button();
@@ -153,14 +149,10 @@
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
-            this.RentalsSearchPanel = new System.Windows.Forms.Panel();
-            this.RentalCustSearchLabel = new System.Windows.Forms.Label();
-            this.RentalCustSearchTBox = new System.Windows.Forms.TextBox();
-            this.byCustNameRadio = new System.Windows.Forms.RadioButton();
-            this.byCustIdRadio = new System.Windows.Forms.RadioButton();
-            this.rentalCustdataGridView = new System.Windows.Forms.DataGridView();
-            this.rentalCustId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentalCustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -174,9 +166,6 @@
             this.MoviesTabPage.SuspendLayout();
             this.SearchMoviePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Movie)).BeginInit();
-            this.RentalsTabPage.SuspendLayout();
-            this.RentalsSearchPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalCustdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -1591,34 +1580,6 @@
             this.Movie.Size = new System.Drawing.Size(730, 311);
             this.Movie.TabIndex = 18;
             // 
-            // MovieID
-            // 
-            this.MovieID.HeaderText = "MovieID";
-            this.MovieID.MinimumWidth = 6;
-            this.MovieID.Name = "MovieID";
-            this.MovieID.Width = 125;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 6;
-            this.Type.Name = "Type";
-            this.Type.Width = 125;
-            // 
-            // NumCopies
-            // 
-            this.NumCopies.HeaderText = "Number of Copies";
-            this.NumCopies.MinimumWidth = 6;
-            this.NumCopies.Name = "NumCopies";
-            this.NumCopies.Width = 125;
-            // 
             // AddMovieButton
             // 
             this.AddMovieButton.BackColor = System.Drawing.Color.SteelBlue;
@@ -1698,7 +1659,6 @@
             // 
             // RentalsTabPage
             // 
-            this.RentalsTabPage.Controls.Add(this.RentalsSearchPanel);
             this.RentalsTabPage.Location = new System.Drawing.Point(4, 29);
             this.RentalsTabPage.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.RentalsTabPage.Name = "RentalsTabPage";
@@ -1717,84 +1677,33 @@
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
-            // RentalsSearchPanel
+            // MovieID
             // 
-            this.RentalsSearchPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.RentalsSearchPanel.Controls.Add(this.rentalCustdataGridView);
-            this.RentalsSearchPanel.Controls.Add(this.byCustIdRadio);
-            this.RentalsSearchPanel.Controls.Add(this.byCustNameRadio);
-            this.RentalsSearchPanel.Controls.Add(this.RentalCustSearchTBox);
-            this.RentalsSearchPanel.Controls.Add(this.RentalCustSearchLabel);
-            this.RentalsSearchPanel.Location = new System.Drawing.Point(17, 17);
-            this.RentalsSearchPanel.Name = "RentalsSearchPanel";
-            this.RentalsSearchPanel.Size = new System.Drawing.Size(1139, 592);
-            this.RentalsSearchPanel.TabIndex = 0;
+            this.MovieID.HeaderText = "MovieID";
+            this.MovieID.MinimumWidth = 6;
+            this.MovieID.Name = "MovieID";
+            this.MovieID.Width = 125;
             // 
-            // RentalCustSearchLabel
+            // Name
             // 
-            this.RentalCustSearchLabel.AutoSize = true;
-            this.RentalCustSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.RentalCustSearchLabel.Location = new System.Drawing.Point(45, 26);
-            this.RentalCustSearchLabel.Name = "RentalCustSearchLabel";
-            this.RentalCustSearchLabel.Size = new System.Drawing.Size(155, 20);
-            this.RentalCustSearchLabel.TabIndex = 0;
-            this.RentalCustSearchLabel.Text = "Customer Search";
+            this.Name.HeaderText = "Name";
+            this.Name.MinimumWidth = 6;
+            this.Name.Name = "Name";
+            this.Name.Width = 125;
             // 
-            // RentalCustSearchTBox
+            // Type
             // 
-            this.RentalCustSearchTBox.Location = new System.Drawing.Point(49, 76);
-            this.RentalCustSearchTBox.Name = "RentalCustSearchTBox";
-            this.RentalCustSearchTBox.Size = new System.Drawing.Size(506, 26);
-            this.RentalCustSearchTBox.TabIndex = 1;
+            this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 6;
+            this.Type.Name = "Type";
+            this.Type.Width = 125;
             // 
-            // byCustNameRadio
+            // NumCopies
             // 
-            this.byCustNameRadio.AutoSize = true;
-            this.byCustNameRadio.Location = new System.Drawing.Point(49, 130);
-            this.byCustNameRadio.Name = "byCustNameRadio";
-            this.byCustNameRadio.Size = new System.Drawing.Size(177, 24);
-            this.byCustNameRadio.TabIndex = 2;
-            this.byCustNameRadio.TabStop = true;
-            this.byCustNameRadio.Text = "By Customer Name";
-            this.byCustNameRadio.UseVisualStyleBackColor = true;
-            // 
-            // byCustIdRadio
-            // 
-            this.byCustIdRadio.AutoSize = true;
-            this.byCustIdRadio.Location = new System.Drawing.Point(248, 130);
-            this.byCustIdRadio.Name = "byCustIdRadio";
-            this.byCustIdRadio.Size = new System.Drawing.Size(150, 24);
-            this.byCustIdRadio.TabIndex = 3;
-            this.byCustIdRadio.TabStop = true;
-            this.byCustIdRadio.Text = "By Customer ID";
-            this.byCustIdRadio.UseVisualStyleBackColor = true;
-            // 
-            // rentalCustdataGridView
-            // 
-            this.rentalCustdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentalCustdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rentalCustId,
-            this.rentalCustName});
-            this.rentalCustdataGridView.Location = new System.Drawing.Point(49, 176);
-            this.rentalCustdataGridView.Name = "rentalCustdataGridView";
-            this.rentalCustdataGridView.RowHeadersWidth = 51;
-            this.rentalCustdataGridView.RowTemplate.Height = 24;
-            this.rentalCustdataGridView.Size = new System.Drawing.Size(506, 86);
-            this.rentalCustdataGridView.TabIndex = 4;
-            // 
-            // rentalCustId
-            // 
-            this.rentalCustId.HeaderText = "Customer ID";
-            this.rentalCustId.MinimumWidth = 6;
-            this.rentalCustId.Name = "rentalCustId";
-            this.rentalCustId.Width = 125;
-            // 
-            // rentalCustName
-            // 
-            this.rentalCustName.HeaderText = "Customer Name";
-            this.rentalCustName.MinimumWidth = 6;
-            this.rentalCustName.Name = "rentalCustName";
-            this.rentalCustName.Width = 125;
+            this.NumCopies.HeaderText = "Number of Copies";
+            this.NumCopies.MinimumWidth = 6;
+            this.NumCopies.Name = "NumCopies";
+            this.NumCopies.Width = 125;
             // 
             // Form1
             // 
@@ -1827,10 +1736,6 @@
             this.SearchMoviePanel.ResumeLayout(false);
             this.SearchMoviePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Movie)).EndInit();
-            this.RentalsTabPage.ResumeLayout(false);
-            this.RentalsSearchPanel.ResumeLayout(false);
-            this.RentalsSearchPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalCustdataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1962,14 +1867,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumCopies;
-        private System.Windows.Forms.Panel RentalsSearchPanel;
-        private System.Windows.Forms.Label RentalCustSearchLabel;
-        private System.Windows.Forms.RadioButton byCustIdRadio;
-        private System.Windows.Forms.RadioButton byCustNameRadio;
-        private System.Windows.Forms.TextBox RentalCustSearchTBox;
-        private System.Windows.Forms.DataGridView rentalCustdataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentalCustId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentalCustName;
     }
 }
 
