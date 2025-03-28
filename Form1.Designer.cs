@@ -40,25 +40,9 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.CustomersTabPage = new System.Windows.Forms.TabPage();
-            this.SearchCustomerPanel = new System.Windows.Forms.Panel();
-            this.ViewDetailsButton = new System.Windows.Forms.Button();
-            this.EmailRadioButton = new System.Windows.Forms.RadioButton();
-            this.FirstNameRadioButton = new System.Windows.Forms.RadioButton();
-            this.LastNameRadioButton = new System.Windows.Forms.RadioButton();
-            this.CustSearchInstructionsLabel = new System.Windows.Forms.Label();
-            this.Customer = new System.Windows.Forms.DataGridView();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AcctNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Province = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.MoveToAddButton = new System.Windows.Forms.Button();
             this.ViewCustomerPanel = new System.Windows.Forms.Panel();
             this.DeleteCustomerButton = new System.Windows.Forms.Button();
+            this.VUPhoneLabel = new System.Windows.Forms.Label();
             this.SaveUpdatesButton = new System.Windows.Forms.Button();
             this.UpdateTitleLabel = new System.Windows.Forms.Label();
             this.VUProvinceComboBox = new System.Windows.Forms.ComboBox();
@@ -83,6 +67,7 @@
             this.ViewTitleLabel = new System.Windows.Forms.Label();
             this.CancelViewingButton = new System.Windows.Forms.Button();
             this.AddCustomerPanel = new System.Windows.Forms.Panel();
+            this.AddPhoneLabel = new System.Windows.Forms.Label();
             this.AddProvinceComboBox = new System.Windows.Forms.ComboBox();
             this.AddSaveCustomerButton = new System.Windows.Forms.Button();
             this.AddCreditLabel = new System.Windows.Forms.Label();
@@ -105,6 +90,23 @@
             this.AddFirstNameTextbox = new System.Windows.Forms.TextBox();
             this.MoveToSearchButton = new System.Windows.Forms.Button();
             this.AddCustomersLabel = new System.Windows.Forms.Label();
+            this.SearchCustomerPanel = new System.Windows.Forms.Panel();
+            this.ViewDetailsButton = new System.Windows.Forms.Button();
+            this.EmailRadioButton = new System.Windows.Forms.RadioButton();
+            this.FirstNameRadioButton = new System.Windows.Forms.RadioButton();
+            this.LastNameRadioButton = new System.Windows.Forms.RadioButton();
+            this.CustSearchInstructionsLabel = new System.Windows.Forms.Label();
+            this.Customer = new System.Windows.Forms.DataGridView();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcctNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Province = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.MoveToAddButton = new System.Windows.Forms.Button();
             this.MoviesTabPage = new System.Windows.Forms.TabPage();
             this.SearchMoviePanel = new System.Windows.Forms.Panel();
             this.AddMovieButton = new System.Windows.Forms.Button();
@@ -116,48 +118,24 @@
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
-            this.AddPhonePanel = new System.Windows.Forms.Panel();
-            this.AddPhoneLabel = new System.Windows.Forms.Label();
-            this.AddPhoneTextbox1 = new System.Windows.Forms.TextBox();
-            this.AddPhoneComboBox1 = new System.Windows.Forms.ComboBox();
-            this.AddPhoneComboBox2 = new System.Windows.Forms.ComboBox();
-            this.AddPhoneTextbox2 = new System.Windows.Forms.TextBox();
-            this.AddPhoneComboBox3 = new System.Windows.Forms.ComboBox();
-            this.AddPhoneTextbox3 = new System.Windows.Forms.TextBox();
-            this.AddPhoneComboBox4 = new System.Windows.Forms.ComboBox();
-            this.AddPhoneTextbox4 = new System.Windows.Forms.TextBox();
-            this.AddPhoneComboBox6 = new System.Windows.Forms.ComboBox();
-            this.AddPhoneTextbox6 = new System.Windows.Forms.TextBox();
-            this.AddPhoneComboBox5 = new System.Windows.Forms.ComboBox();
-            this.AddPhoneTextbox5 = new System.Windows.Forms.TextBox();
-            this.AddNewPhoneButton = new System.Windows.Forms.Button();
-            this.VUAddNewPhoneButton = new System.Windows.Forms.Button();
-            this.VUPhoneLabel = new System.Windows.Forms.Label();
-            this.VUPhonePanel = new System.Windows.Forms.Panel();
-            this.VUPhoneComboBox6 = new System.Windows.Forms.ComboBox();
-            this.VUPhoneTextbox6 = new System.Windows.Forms.TextBox();
-            this.VUPhoneComboBox5 = new System.Windows.Forms.ComboBox();
-            this.VUPhoneTextbox5 = new System.Windows.Forms.TextBox();
-            this.VUPhoneComboBox4 = new System.Windows.Forms.ComboBox();
-            this.VUPhoneTextbox4 = new System.Windows.Forms.TextBox();
-            this.VUPhoneComboBox3 = new System.Windows.Forms.ComboBox();
-            this.VUPhoneTextbox3 = new System.Windows.Forms.TextBox();
-            this.VUPhoneComboBox2 = new System.Windows.Forms.ComboBox();
-            this.VUPhoneTextbox2 = new System.Windows.Forms.TextBox();
-            this.VUPhoneComboBox1 = new System.Windows.Forms.ComboBox();
-            this.VUPhoneTextbox1 = new System.Windows.Forms.TextBox();
+            this.AddPhoneListBox = new System.Windows.Forms.ListBox();
+            this.AddPhoneComboBox = new System.Windows.Forms.ComboBox();
+            this.AddPhoneTextbox = new System.Windows.Forms.TextBox();
+            this.AddPhoneButton = new System.Windows.Forms.Button();
+            this.VUPhoneButton = new System.Windows.Forms.Button();
+            this.VUPhoneComboBox = new System.Windows.Forms.ComboBox();
+            this.VUPhoneTextbox = new System.Windows.Forms.TextBox();
+            this.VUPhoneListBox = new System.Windows.Forms.ListBox();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
             this.CustomersTabPage.SuspendLayout();
-            this.SearchCustomerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.ViewCustomerPanel.SuspendLayout();
             this.AddCustomerPanel.SuspendLayout();
+            this.SearchCustomerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.MoviesTabPage.SuspendLayout();
             this.SearchMoviePanel.SuspendLayout();
-            this.AddPhonePanel.SuspendLayout();
-            this.VUPhonePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -295,9 +273,9 @@
             // 
             // CustomersTabPage
             // 
-            this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
+            this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
@@ -307,187 +285,16 @@
             this.CustomersTabPage.Text = "Customers";
             this.CustomersTabPage.UseVisualStyleBackColor = true;
             // 
-            // SearchCustomerPanel
-            // 
-            this.SearchCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.SearchCustomerPanel.Controls.Add(this.ViewDetailsButton);
-            this.SearchCustomerPanel.Controls.Add(this.EmailRadioButton);
-            this.SearchCustomerPanel.Controls.Add(this.FirstNameRadioButton);
-            this.SearchCustomerPanel.Controls.Add(this.LastNameRadioButton);
-            this.SearchCustomerPanel.Controls.Add(this.CustSearchInstructionsLabel);
-            this.SearchCustomerPanel.Controls.Add(this.Customer);
-            this.SearchCustomerPanel.Controls.Add(this.SearchButton);
-            this.SearchCustomerPanel.Controls.Add(this.SearchTextBox);
-            this.SearchCustomerPanel.Controls.Add(this.MoveToAddButton);
-            this.SearchCustomerPanel.Location = new System.Drawing.Point(12, 11);
-            this.SearchCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.SearchCustomerPanel.Name = "SearchCustomerPanel";
-            this.SearchCustomerPanel.Size = new System.Drawing.Size(853, 484);
-            this.SearchCustomerPanel.TabIndex = 2;
-            // 
-            // ViewDetailsButton
-            // 
-            this.ViewDetailsButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.ViewDetailsButton.Enabled = false;
-            this.ViewDetailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewDetailsButton.ForeColor = System.Drawing.Color.White;
-            this.ViewDetailsButton.Location = new System.Drawing.Point(26, 430);
-            this.ViewDetailsButton.Margin = new System.Windows.Forms.Padding(5);
-            this.ViewDetailsButton.Name = "ViewDetailsButton";
-            this.ViewDetailsButton.Size = new System.Drawing.Size(261, 39);
-            this.ViewDetailsButton.TabIndex = 16;
-            this.ViewDetailsButton.Text = "View / Edit Customer Details";
-            this.ViewDetailsButton.UseVisualStyleBackColor = false;
-            this.ViewDetailsButton.Click += new System.EventHandler(this.ViewDetailsButton_Click);
-            // 
-            // EmailRadioButton
-            // 
-            this.EmailRadioButton.AutoSize = true;
-            this.EmailRadioButton.Location = new System.Drawing.Point(417, 21);
-            this.EmailRadioButton.Name = "EmailRadioButton";
-            this.EmailRadioButton.Size = new System.Drawing.Size(114, 21);
-            this.EmailRadioButton.TabIndex = 15;
-            this.EmailRadioButton.Text = "email address";
-            this.EmailRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // FirstNameRadioButton
-            // 
-            this.FirstNameRadioButton.AutoSize = true;
-            this.FirstNameRadioButton.Checked = true;
-            this.FirstNameRadioButton.Location = new System.Drawing.Point(209, 21);
-            this.FirstNameRadioButton.Name = "FirstNameRadioButton";
-            this.FirstNameRadioButton.Size = new System.Drawing.Size(88, 21);
-            this.FirstNameRadioButton.TabIndex = 14;
-            this.FirstNameRadioButton.TabStop = true;
-            this.FirstNameRadioButton.Text = "first name";
-            this.FirstNameRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // LastNameRadioButton
-            // 
-            this.LastNameRadioButton.AutoSize = true;
-            this.LastNameRadioButton.Location = new System.Drawing.Point(312, 21);
-            this.LastNameRadioButton.Name = "LastNameRadioButton";
-            this.LastNameRadioButton.Size = new System.Drawing.Size(87, 21);
-            this.LastNameRadioButton.TabIndex = 13;
-            this.LastNameRadioButton.Text = "last name";
-            this.LastNameRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // CustSearchInstructionsLabel
-            // 
-            this.CustSearchInstructionsLabel.AutoSize = true;
-            this.CustSearchInstructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustSearchInstructionsLabel.Location = new System.Drawing.Point(24, 23);
-            this.CustSearchInstructionsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustSearchInstructionsLabel.Name = "CustSearchInstructionsLabel";
-            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(165, 17);
-            this.CustSearchInstructionsLabel.TabIndex = 10;
-            this.CustSearchInstructionsLabel.Text = "Search customers by:";
-            // 
-            // Customer
-            // 
-            this.Customer.AllowUserToResizeColumns = false;
-            this.Customer.AllowUserToResizeRows = false;
-            this.Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CustomerID,
-            this.FirstName,
-            this.LastName,
-            this.EmailAddress,
-            this.AcctNum,
-            this.City,
-            this.Province});
-            this.Customer.Location = new System.Drawing.Point(27, 109);
-            this.Customer.Margin = new System.Windows.Forms.Padding(5);
-            this.Customer.Name = "Customer";
-            this.Customer.RowHeadersWidth = 51;
-            this.Customer.Size = new System.Drawing.Size(804, 301);
-            this.Customer.TabIndex = 9;
-            this.Customer.SelectionChanged += new System.EventHandler(this.Customer_SelectionChanged);
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.HeaderText = "ID";
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.Width = 50;
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            // 
-            // EmailAddress
-            // 
-            this.EmailAddress.HeaderText = "Email Address";
-            this.EmailAddress.Name = "EmailAddress";
-            this.EmailAddress.Width = 200;
-            // 
-            // AcctNum
-            // 
-            this.AcctNum.HeaderText = "Account Number";
-            this.AcctNum.Name = "AcctNum";
-            // 
-            // City
-            // 
-            this.City.HeaderText = "City";
-            this.City.Name = "City";
-            this.City.Width = 125;
-            // 
-            // Province
-            // 
-            this.Province.HeaderText = "Province";
-            this.Province.Name = "Province";
-            this.Province.Width = 75;
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(603, 52);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(5);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(139, 39);
-            this.SearchButton.TabIndex = 8;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.UseVisualStyleBackColor = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.Location = new System.Drawing.Point(27, 57);
-            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(5);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(549, 26);
-            this.SearchTextBox.TabIndex = 7;
-            // 
-            // MoveToAddButton
-            // 
-            this.MoveToAddButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.MoveToAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoveToAddButton.ForeColor = System.Drawing.Color.White;
-            this.MoveToAddButton.Location = new System.Drawing.Point(634, 430);
-            this.MoveToAddButton.Margin = new System.Windows.Forms.Padding(5);
-            this.MoveToAddButton.Name = "MoveToAddButton";
-            this.MoveToAddButton.Size = new System.Drawing.Size(197, 39);
-            this.MoveToAddButton.TabIndex = 6;
-            this.MoveToAddButton.Text = "Add New Customer";
-            this.MoveToAddButton.UseVisualStyleBackColor = false;
-            this.MoveToAddButton.Click += new System.EventHandler(this.MoveToAddButton_Click);
-            // 
             // ViewCustomerPanel
             // 
             this.ViewCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.ViewCustomerPanel.Controls.Add(this.VUAddNewPhoneButton);
+            this.ViewCustomerPanel.Controls.Add(this.VUPhoneButton);
+            this.ViewCustomerPanel.Controls.Add(this.VUPhoneComboBox);
+            this.ViewCustomerPanel.Controls.Add(this.VUPhoneTextbox);
+            this.ViewCustomerPanel.Controls.Add(this.VUPhoneListBox);
             this.ViewCustomerPanel.Controls.Add(this.DeleteCustomerButton);
             this.ViewCustomerPanel.Controls.Add(this.VUPhoneLabel);
             this.ViewCustomerPanel.Controls.Add(this.SaveUpdatesButton);
-            this.ViewCustomerPanel.Controls.Add(this.VUPhonePanel);
             this.ViewCustomerPanel.Controls.Add(this.UpdateTitleLabel);
             this.ViewCustomerPanel.Controls.Add(this.VUProvinceComboBox);
             this.ViewCustomerPanel.Controls.Add(this.MoveToUpdateButton);
@@ -532,6 +339,17 @@
             this.DeleteCustomerButton.UseVisualStyleBackColor = false;
             this.DeleteCustomerButton.Visible = false;
             this.DeleteCustomerButton.Click += new System.EventHandler(this.DeleteCustomerButton_Click);
+            // 
+            // VUPhoneLabel
+            // 
+            this.VUPhoneLabel.AutoSize = true;
+            this.VUPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneLabel.Location = new System.Drawing.Point(23, 180);
+            this.VUPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.VUPhoneLabel.Name = "VUPhoneLabel";
+            this.VUPhoneLabel.Size = new System.Drawing.Size(124, 17);
+            this.VUPhoneLabel.TabIndex = 31;
+            this.VUPhoneLabel.Text = "Phone Number(s):";
             // 
             // SaveUpdatesButton
             // 
@@ -803,9 +621,11 @@
             // AddCustomerPanel
             // 
             this.AddCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.AddCustomerPanel.Controls.Add(this.AddNewPhoneButton);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneButton);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneComboBox);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneListBox);
             this.AddCustomerPanel.Controls.Add(this.AddPhoneLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddPhonePanel);
             this.AddCustomerPanel.Controls.Add(this.AddProvinceComboBox);
             this.AddCustomerPanel.Controls.Add(this.AddSaveCustomerButton);
             this.AddCustomerPanel.Controls.Add(this.AddCreditLabel);
@@ -834,6 +654,17 @@
             this.AddCustomerPanel.Size = new System.Drawing.Size(853, 484);
             this.AddCustomerPanel.TabIndex = 0;
             this.AddCustomerPanel.Visible = false;
+            // 
+            // AddPhoneLabel
+            // 
+            this.AddPhoneLabel.AutoSize = true;
+            this.AddPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneLabel.Location = new System.Drawing.Point(25, 180);
+            this.AddPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddPhoneLabel.Name = "AddPhoneLabel";
+            this.AddPhoneLabel.Size = new System.Drawing.Size(124, 17);
+            this.AddPhoneLabel.TabIndex = 28;
+            this.AddPhoneLabel.Text = "Phone Number(s):";
             // 
             // AddProvinceComboBox
             // 
@@ -869,6 +700,7 @@
             this.AddSaveCustomerButton.TabIndex = 25;
             this.AddSaveCustomerButton.Text = "Add New Customer";
             this.AddSaveCustomerButton.UseVisualStyleBackColor = false;
+            this.AddSaveCustomerButton.Click += new System.EventHandler(this.AddSaveCustomerButton_Click);
             // 
             // AddCreditLabel
             // 
@@ -1077,6 +909,179 @@
             this.AddCustomersLabel.TabIndex = 1;
             this.AddCustomersLabel.Text = "Add New Customer";
             // 
+            // SearchCustomerPanel
+            // 
+            this.SearchCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.SearchCustomerPanel.Controls.Add(this.ViewDetailsButton);
+            this.SearchCustomerPanel.Controls.Add(this.EmailRadioButton);
+            this.SearchCustomerPanel.Controls.Add(this.FirstNameRadioButton);
+            this.SearchCustomerPanel.Controls.Add(this.LastNameRadioButton);
+            this.SearchCustomerPanel.Controls.Add(this.CustSearchInstructionsLabel);
+            this.SearchCustomerPanel.Controls.Add(this.Customer);
+            this.SearchCustomerPanel.Controls.Add(this.SearchButton);
+            this.SearchCustomerPanel.Controls.Add(this.SearchTextBox);
+            this.SearchCustomerPanel.Controls.Add(this.MoveToAddButton);
+            this.SearchCustomerPanel.Location = new System.Drawing.Point(12, 11);
+            this.SearchCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.SearchCustomerPanel.Name = "SearchCustomerPanel";
+            this.SearchCustomerPanel.Size = new System.Drawing.Size(853, 484);
+            this.SearchCustomerPanel.TabIndex = 2;
+            // 
+            // ViewDetailsButton
+            // 
+            this.ViewDetailsButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ViewDetailsButton.Enabled = false;
+            this.ViewDetailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewDetailsButton.ForeColor = System.Drawing.Color.White;
+            this.ViewDetailsButton.Location = new System.Drawing.Point(26, 430);
+            this.ViewDetailsButton.Margin = new System.Windows.Forms.Padding(5);
+            this.ViewDetailsButton.Name = "ViewDetailsButton";
+            this.ViewDetailsButton.Size = new System.Drawing.Size(261, 39);
+            this.ViewDetailsButton.TabIndex = 16;
+            this.ViewDetailsButton.Text = "View / Edit Customer Details";
+            this.ViewDetailsButton.UseVisualStyleBackColor = false;
+            this.ViewDetailsButton.Click += new System.EventHandler(this.ViewDetailsButton_Click);
+            // 
+            // EmailRadioButton
+            // 
+            this.EmailRadioButton.AutoSize = true;
+            this.EmailRadioButton.Location = new System.Drawing.Point(417, 21);
+            this.EmailRadioButton.Name = "EmailRadioButton";
+            this.EmailRadioButton.Size = new System.Drawing.Size(114, 21);
+            this.EmailRadioButton.TabIndex = 15;
+            this.EmailRadioButton.Text = "email address";
+            this.EmailRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // FirstNameRadioButton
+            // 
+            this.FirstNameRadioButton.AutoSize = true;
+            this.FirstNameRadioButton.Checked = true;
+            this.FirstNameRadioButton.Location = new System.Drawing.Point(209, 21);
+            this.FirstNameRadioButton.Name = "FirstNameRadioButton";
+            this.FirstNameRadioButton.Size = new System.Drawing.Size(88, 21);
+            this.FirstNameRadioButton.TabIndex = 14;
+            this.FirstNameRadioButton.TabStop = true;
+            this.FirstNameRadioButton.Text = "first name";
+            this.FirstNameRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // LastNameRadioButton
+            // 
+            this.LastNameRadioButton.AutoSize = true;
+            this.LastNameRadioButton.Location = new System.Drawing.Point(312, 21);
+            this.LastNameRadioButton.Name = "LastNameRadioButton";
+            this.LastNameRadioButton.Size = new System.Drawing.Size(87, 21);
+            this.LastNameRadioButton.TabIndex = 13;
+            this.LastNameRadioButton.Text = "last name";
+            this.LastNameRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // CustSearchInstructionsLabel
+            // 
+            this.CustSearchInstructionsLabel.AutoSize = true;
+            this.CustSearchInstructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustSearchInstructionsLabel.Location = new System.Drawing.Point(24, 23);
+            this.CustSearchInstructionsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CustSearchInstructionsLabel.Name = "CustSearchInstructionsLabel";
+            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(165, 17);
+            this.CustSearchInstructionsLabel.TabIndex = 10;
+            this.CustSearchInstructionsLabel.Text = "Search customers by:";
+            // 
+            // Customer
+            // 
+            this.Customer.AllowUserToResizeColumns = false;
+            this.Customer.AllowUserToResizeRows = false;
+            this.Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CustomerID,
+            this.FirstName,
+            this.LastName,
+            this.EmailAddress,
+            this.AcctNum,
+            this.City,
+            this.Province});
+            this.Customer.Location = new System.Drawing.Point(27, 109);
+            this.Customer.Margin = new System.Windows.Forms.Padding(5);
+            this.Customer.Name = "Customer";
+            this.Customer.RowHeadersWidth = 51;
+            this.Customer.Size = new System.Drawing.Size(804, 301);
+            this.Customer.TabIndex = 9;
+            this.Customer.SelectionChanged += new System.EventHandler(this.Customer_SelectionChanged);
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.HeaderText = "ID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Width = 50;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            // 
+            // EmailAddress
+            // 
+            this.EmailAddress.HeaderText = "Email Address";
+            this.EmailAddress.Name = "EmailAddress";
+            this.EmailAddress.Width = 200;
+            // 
+            // AcctNum
+            // 
+            this.AcctNum.HeaderText = "Account Number";
+            this.AcctNum.Name = "AcctNum";
+            // 
+            // City
+            // 
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            this.City.Width = 125;
+            // 
+            // Province
+            // 
+            this.Province.HeaderText = "Province";
+            this.Province.Name = "Province";
+            this.Province.Width = 75;
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
+            this.SearchButton.Location = new System.Drawing.Point(603, 52);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(5);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(139, 39);
+            this.SearchButton.TabIndex = 8;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.Location = new System.Drawing.Point(27, 57);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(5);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(549, 26);
+            this.SearchTextBox.TabIndex = 7;
+            // 
+            // MoveToAddButton
+            // 
+            this.MoveToAddButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.MoveToAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveToAddButton.ForeColor = System.Drawing.Color.White;
+            this.MoveToAddButton.Location = new System.Drawing.Point(634, 430);
+            this.MoveToAddButton.Margin = new System.Windows.Forms.Padding(5);
+            this.MoveToAddButton.Name = "MoveToAddButton";
+            this.MoveToAddButton.Size = new System.Drawing.Size(197, 39);
+            this.MoveToAddButton.TabIndex = 6;
+            this.MoveToAddButton.Text = "Add New Customer";
+            this.MoveToAddButton.UseVisualStyleBackColor = false;
+            this.MoveToAddButton.Click += new System.EventHandler(this.MoveToAddButton_Click);
+            // 
             // MoviesTabPage
             // 
             this.MoviesTabPage.Controls.Add(this.SearchMoviePanel);
@@ -1210,392 +1215,100 @@
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
-            // AddPhonePanel
+            // AddPhoneListBox
             // 
-            this.AddPhonePanel.AutoScroll = true;
-            this.AddPhonePanel.BackColor = System.Drawing.Color.White;
-            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox6);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox6);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox5);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox5);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox4);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox4);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox3);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox3);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox2);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox2);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneComboBox1);
-            this.AddPhonePanel.Controls.Add(this.AddPhoneTextbox1);
-            this.AddPhonePanel.Location = new System.Drawing.Point(159, 180);
-            this.AddPhonePanel.Name = "AddPhonePanel";
-            this.AddPhonePanel.Size = new System.Drawing.Size(399, 114);
-            this.AddPhonePanel.TabIndex = 27;
+            this.AddPhoneListBox.FormattingEnabled = true;
+            this.AddPhoneListBox.ItemHeight = 16;
+            this.AddPhoneListBox.Location = new System.Drawing.Point(160, 180);
+            this.AddPhoneListBox.Name = "AddPhoneListBox";
+            this.AddPhoneListBox.Size = new System.Drawing.Size(244, 100);
+            this.AddPhoneListBox.TabIndex = 29;
             // 
-            // AddPhoneLabel
+            // AddPhoneComboBox
             // 
-            this.AddPhoneLabel.AutoSize = true;
-            this.AddPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneLabel.Location = new System.Drawing.Point(25, 180);
-            this.AddPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddPhoneLabel.Name = "AddPhoneLabel";
-            this.AddPhoneLabel.Size = new System.Drawing.Size(124, 17);
-            this.AddPhoneLabel.TabIndex = 28;
-            this.AddPhoneLabel.Text = "Phone Number(s):";
-            // 
-            // AddPhoneTextbox1
-            // 
-            this.AddPhoneTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneTextbox1.Location = new System.Drawing.Point(9, 6);
-            this.AddPhoneTextbox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPhoneTextbox1.Name = "AddPhoneTextbox1";
-            this.AddPhoneTextbox1.Size = new System.Drawing.Size(231, 23);
-            this.AddPhoneTextbox1.TabIndex = 29;
-            // 
-            // AddPhoneComboBox1
-            // 
-            this.AddPhoneComboBox1.FormattingEnabled = true;
-            this.AddPhoneComboBox1.Items.AddRange(new object[] {
+            this.AddPhoneComboBox.FormattingEnabled = true;
+            this.AddPhoneComboBox.Items.AddRange(new object[] {
             "Home",
             "Mobile",
             "Work",
             "Other"});
-            this.AddPhoneComboBox1.Location = new System.Drawing.Point(251, 6);
-            this.AddPhoneComboBox1.Name = "AddPhoneComboBox1";
-            this.AddPhoneComboBox1.Size = new System.Drawing.Size(121, 24);
-            this.AddPhoneComboBox1.TabIndex = 29;
+            this.AddPhoneComboBox.Location = new System.Drawing.Point(672, 180);
+            this.AddPhoneComboBox.Name = "AddPhoneComboBox";
+            this.AddPhoneComboBox.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox.TabIndex = 30;
+            this.AddPhoneComboBox.SelectedIndexChanged += new System.EventHandler(this.AddPhoneComboBox_SelectedIndexChanged);
             // 
-            // AddPhoneComboBox2
+            // AddPhoneTextbox
             // 
-            this.AddPhoneComboBox2.FormattingEnabled = true;
-            this.AddPhoneComboBox2.Items.AddRange(new object[] {
+            this.AddPhoneTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox.Location = new System.Drawing.Point(430, 180);
+            this.AddPhoneTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox.Name = "AddPhoneTextbox";
+            this.AddPhoneTextbox.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox.TabIndex = 31;
+            this.AddPhoneTextbox.TextChanged += new System.EventHandler(this.AddPhoneTextbox_TextChanged);
+            // 
+            // AddPhoneButton
+            // 
+            this.AddPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.AddPhoneButton.Enabled = false;
+            this.AddPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneButton.ForeColor = System.Drawing.Color.White;
+            this.AddPhoneButton.Location = new System.Drawing.Point(430, 214);
+            this.AddPhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.AddPhoneButton.Name = "AddPhoneButton";
+            this.AddPhoneButton.Size = new System.Drawing.Size(180, 39);
+            this.AddPhoneButton.TabIndex = 32;
+            this.AddPhoneButton.Text = "Add New Phone Number";
+            this.AddPhoneButton.UseVisualStyleBackColor = false;
+            this.AddPhoneButton.Click += new System.EventHandler(this.AddPhoneButton_Click);
+            // 
+            // VUPhoneButton
+            // 
+            this.VUPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.VUPhoneButton.Enabled = false;
+            this.VUPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneButton.ForeColor = System.Drawing.Color.White;
+            this.VUPhoneButton.Location = new System.Drawing.Point(427, 214);
+            this.VUPhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.VUPhoneButton.Name = "VUPhoneButton";
+            this.VUPhoneButton.Size = new System.Drawing.Size(180, 39);
+            this.VUPhoneButton.TabIndex = 55;
+            this.VUPhoneButton.Text = "Add New Phone Number";
+            this.VUPhoneButton.UseVisualStyleBackColor = false;
+            // 
+            // VUPhoneComboBox
+            // 
+            this.VUPhoneComboBox.Enabled = false;
+            this.VUPhoneComboBox.FormattingEnabled = true;
+            this.VUPhoneComboBox.Items.AddRange(new object[] {
             "Home",
             "Mobile",
             "Work",
             "Other"});
-            this.AddPhoneComboBox2.Location = new System.Drawing.Point(251, 36);
-            this.AddPhoneComboBox2.Name = "AddPhoneComboBox2";
-            this.AddPhoneComboBox2.Size = new System.Drawing.Size(121, 24);
-            this.AddPhoneComboBox2.TabIndex = 30;
-            this.AddPhoneComboBox2.Visible = false;
+            this.VUPhoneComboBox.Location = new System.Drawing.Point(669, 180);
+            this.VUPhoneComboBox.Name = "VUPhoneComboBox";
+            this.VUPhoneComboBox.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox.TabIndex = 53;
             // 
-            // AddPhoneTextbox2
+            // VUPhoneTextbox
             // 
-            this.AddPhoneTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneTextbox2.Location = new System.Drawing.Point(9, 36);
-            this.AddPhoneTextbox2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPhoneTextbox2.Name = "AddPhoneTextbox2";
-            this.AddPhoneTextbox2.Size = new System.Drawing.Size(231, 23);
-            this.AddPhoneTextbox2.TabIndex = 31;
-            this.AddPhoneTextbox2.Visible = false;
+            this.VUPhoneTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUPhoneTextbox.Location = new System.Drawing.Point(427, 180);
+            this.VUPhoneTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.VUPhoneTextbox.Name = "VUPhoneTextbox";
+            this.VUPhoneTextbox.ReadOnly = true;
+            this.VUPhoneTextbox.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox.TabIndex = 54;
             // 
-            // AddPhoneComboBox3
+            // VUPhoneListBox
             // 
-            this.AddPhoneComboBox3.FormattingEnabled = true;
-            this.AddPhoneComboBox3.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.AddPhoneComboBox3.Location = new System.Drawing.Point(251, 66);
-            this.AddPhoneComboBox3.Name = "AddPhoneComboBox3";
-            this.AddPhoneComboBox3.Size = new System.Drawing.Size(121, 24);
-            this.AddPhoneComboBox3.TabIndex = 32;
-            this.AddPhoneComboBox3.Visible = false;
-            // 
-            // AddPhoneTextbox3
-            // 
-            this.AddPhoneTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneTextbox3.Location = new System.Drawing.Point(9, 66);
-            this.AddPhoneTextbox3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPhoneTextbox3.Name = "AddPhoneTextbox3";
-            this.AddPhoneTextbox3.Size = new System.Drawing.Size(231, 23);
-            this.AddPhoneTextbox3.TabIndex = 33;
-            this.AddPhoneTextbox3.Visible = false;
-            // 
-            // AddPhoneComboBox4
-            // 
-            this.AddPhoneComboBox4.FormattingEnabled = true;
-            this.AddPhoneComboBox4.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.AddPhoneComboBox4.Location = new System.Drawing.Point(251, 95);
-            this.AddPhoneComboBox4.Name = "AddPhoneComboBox4";
-            this.AddPhoneComboBox4.Size = new System.Drawing.Size(121, 24);
-            this.AddPhoneComboBox4.TabIndex = 34;
-            this.AddPhoneComboBox4.Visible = false;
-            // 
-            // AddPhoneTextbox4
-            // 
-            this.AddPhoneTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneTextbox4.Location = new System.Drawing.Point(9, 95);
-            this.AddPhoneTextbox4.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPhoneTextbox4.Name = "AddPhoneTextbox4";
-            this.AddPhoneTextbox4.Size = new System.Drawing.Size(231, 23);
-            this.AddPhoneTextbox4.TabIndex = 35;
-            this.AddPhoneTextbox4.Visible = false;
-            // 
-            // AddPhoneComboBox6
-            // 
-            this.AddPhoneComboBox6.FormattingEnabled = true;
-            this.AddPhoneComboBox6.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.AddPhoneComboBox6.Location = new System.Drawing.Point(251, 155);
-            this.AddPhoneComboBox6.Name = "AddPhoneComboBox6";
-            this.AddPhoneComboBox6.Size = new System.Drawing.Size(121, 24);
-            this.AddPhoneComboBox6.TabIndex = 38;
-            this.AddPhoneComboBox6.Visible = false;
-            // 
-            // AddPhoneTextbox6
-            // 
-            this.AddPhoneTextbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneTextbox6.Location = new System.Drawing.Point(9, 155);
-            this.AddPhoneTextbox6.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPhoneTextbox6.Name = "AddPhoneTextbox6";
-            this.AddPhoneTextbox6.Size = new System.Drawing.Size(231, 23);
-            this.AddPhoneTextbox6.TabIndex = 39;
-            this.AddPhoneTextbox6.Visible = false;
-            // 
-            // AddPhoneComboBox5
-            // 
-            this.AddPhoneComboBox5.FormattingEnabled = true;
-            this.AddPhoneComboBox5.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.AddPhoneComboBox5.Location = new System.Drawing.Point(251, 125);
-            this.AddPhoneComboBox5.Name = "AddPhoneComboBox5";
-            this.AddPhoneComboBox5.Size = new System.Drawing.Size(121, 24);
-            this.AddPhoneComboBox5.TabIndex = 36;
-            this.AddPhoneComboBox5.Visible = false;
-            // 
-            // AddPhoneTextbox5
-            // 
-            this.AddPhoneTextbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneTextbox5.Location = new System.Drawing.Point(9, 125);
-            this.AddPhoneTextbox5.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPhoneTextbox5.Name = "AddPhoneTextbox5";
-            this.AddPhoneTextbox5.Size = new System.Drawing.Size(231, 23);
-            this.AddPhoneTextbox5.TabIndex = 37;
-            this.AddPhoneTextbox5.Visible = false;
-            // 
-            // AddNewPhoneButton
-            // 
-            this.AddNewPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.AddNewPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewPhoneButton.ForeColor = System.Drawing.Color.White;
-            this.AddNewPhoneButton.Location = new System.Drawing.Point(578, 180);
-            this.AddNewPhoneButton.Margin = new System.Windows.Forms.Padding(5);
-            this.AddNewPhoneButton.Name = "AddNewPhoneButton";
-            this.AddNewPhoneButton.Size = new System.Drawing.Size(32, 30);
-            this.AddNewPhoneButton.TabIndex = 29;
-            this.AddNewPhoneButton.Text = "+";
-            this.AddNewPhoneButton.UseVisualStyleBackColor = false;
-            this.AddNewPhoneButton.Click += new System.EventHandler(this.AddNewPhoneButton_Click);
-            // 
-            // VUAddNewPhoneButton
-            // 
-            this.VUAddNewPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.VUAddNewPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUAddNewPhoneButton.ForeColor = System.Drawing.Color.White;
-            this.VUAddNewPhoneButton.Location = new System.Drawing.Point(578, 180);
-            this.VUAddNewPhoneButton.Margin = new System.Windows.Forms.Padding(5);
-            this.VUAddNewPhoneButton.Name = "VUAddNewPhoneButton";
-            this.VUAddNewPhoneButton.Size = new System.Drawing.Size(32, 30);
-            this.VUAddNewPhoneButton.TabIndex = 32;
-            this.VUAddNewPhoneButton.Text = "+";
-            this.VUAddNewPhoneButton.UseVisualStyleBackColor = false;
-            // 
-            // VUPhoneLabel
-            // 
-            this.VUPhoneLabel.AutoSize = true;
-            this.VUPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPhoneLabel.Location = new System.Drawing.Point(23, 180);
-            this.VUPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.VUPhoneLabel.Name = "VUPhoneLabel";
-            this.VUPhoneLabel.Size = new System.Drawing.Size(124, 17);
-            this.VUPhoneLabel.TabIndex = 31;
-            this.VUPhoneLabel.Text = "Phone Number(s):";
-            // 
-            // VUPhonePanel
-            // 
-            this.VUPhonePanel.AutoScroll = true;
-            this.VUPhonePanel.BackColor = System.Drawing.Color.White;
-            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox6);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox6);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox5);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox5);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox4);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox4);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox3);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox3);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox2);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox2);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneComboBox1);
-            this.VUPhonePanel.Controls.Add(this.VUPhoneTextbox1);
-            this.VUPhonePanel.Location = new System.Drawing.Point(159, 180);
-            this.VUPhonePanel.Name = "VUPhonePanel";
-            this.VUPhonePanel.Size = new System.Drawing.Size(399, 118);
-            this.VUPhonePanel.TabIndex = 30;
-            // 
-            // VUPhoneComboBox6
-            // 
-            this.VUPhoneComboBox6.Enabled = false;
-            this.VUPhoneComboBox6.FormattingEnabled = true;
-            this.VUPhoneComboBox6.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.VUPhoneComboBox6.Location = new System.Drawing.Point(251, 155);
-            this.VUPhoneComboBox6.Name = "VUPhoneComboBox6";
-            this.VUPhoneComboBox6.Size = new System.Drawing.Size(121, 24);
-            this.VUPhoneComboBox6.TabIndex = 38;
-            this.VUPhoneComboBox6.Visible = false;
-            // 
-            // VUPhoneTextbox6
-            // 
-            this.VUPhoneTextbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPhoneTextbox6.Location = new System.Drawing.Point(9, 155);
-            this.VUPhoneTextbox6.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.VUPhoneTextbox6.Name = "VUPhoneTextbox6";
-            this.VUPhoneTextbox6.ReadOnly = true;
-            this.VUPhoneTextbox6.Size = new System.Drawing.Size(231, 23);
-            this.VUPhoneTextbox6.TabIndex = 39;
-            this.VUPhoneTextbox6.Visible = false;
-            // 
-            // VUPhoneComboBox5
-            // 
-            this.VUPhoneComboBox5.Enabled = false;
-            this.VUPhoneComboBox5.FormattingEnabled = true;
-            this.VUPhoneComboBox5.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.VUPhoneComboBox5.Location = new System.Drawing.Point(251, 125);
-            this.VUPhoneComboBox5.Name = "VUPhoneComboBox5";
-            this.VUPhoneComboBox5.Size = new System.Drawing.Size(121, 24);
-            this.VUPhoneComboBox5.TabIndex = 36;
-            this.VUPhoneComboBox5.Visible = false;
-            // 
-            // VUPhoneTextbox5
-            // 
-            this.VUPhoneTextbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPhoneTextbox5.Location = new System.Drawing.Point(9, 125);
-            this.VUPhoneTextbox5.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.VUPhoneTextbox5.Name = "VUPhoneTextbox5";
-            this.VUPhoneTextbox5.ReadOnly = true;
-            this.VUPhoneTextbox5.Size = new System.Drawing.Size(231, 23);
-            this.VUPhoneTextbox5.TabIndex = 37;
-            this.VUPhoneTextbox5.Visible = false;
-            // 
-            // VUPhoneComboBox4
-            // 
-            this.VUPhoneComboBox4.Enabled = false;
-            this.VUPhoneComboBox4.FormattingEnabled = true;
-            this.VUPhoneComboBox4.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.VUPhoneComboBox4.Location = new System.Drawing.Point(251, 95);
-            this.VUPhoneComboBox4.Name = "VUPhoneComboBox4";
-            this.VUPhoneComboBox4.Size = new System.Drawing.Size(121, 24);
-            this.VUPhoneComboBox4.TabIndex = 34;
-            this.VUPhoneComboBox4.Visible = false;
-            // 
-            // VUPhoneTextbox4
-            // 
-            this.VUPhoneTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPhoneTextbox4.Location = new System.Drawing.Point(9, 95);
-            this.VUPhoneTextbox4.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.VUPhoneTextbox4.Name = "VUPhoneTextbox4";
-            this.VUPhoneTextbox4.ReadOnly = true;
-            this.VUPhoneTextbox4.Size = new System.Drawing.Size(231, 23);
-            this.VUPhoneTextbox4.TabIndex = 35;
-            this.VUPhoneTextbox4.Visible = false;
-            // 
-            // VUPhoneComboBox3
-            // 
-            this.VUPhoneComboBox3.Enabled = false;
-            this.VUPhoneComboBox3.FormattingEnabled = true;
-            this.VUPhoneComboBox3.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.VUPhoneComboBox3.Location = new System.Drawing.Point(251, 66);
-            this.VUPhoneComboBox3.Name = "VUPhoneComboBox3";
-            this.VUPhoneComboBox3.Size = new System.Drawing.Size(121, 24);
-            this.VUPhoneComboBox3.TabIndex = 32;
-            this.VUPhoneComboBox3.Visible = false;
-            // 
-            // VUPhoneTextbox3
-            // 
-            this.VUPhoneTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPhoneTextbox3.Location = new System.Drawing.Point(9, 66);
-            this.VUPhoneTextbox3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.VUPhoneTextbox3.Name = "VUPhoneTextbox3";
-            this.VUPhoneTextbox3.ReadOnly = true;
-            this.VUPhoneTextbox3.Size = new System.Drawing.Size(231, 23);
-            this.VUPhoneTextbox3.TabIndex = 33;
-            this.VUPhoneTextbox3.Visible = false;
-            // 
-            // VUPhoneComboBox2
-            // 
-            this.VUPhoneComboBox2.Enabled = false;
-            this.VUPhoneComboBox2.FormattingEnabled = true;
-            this.VUPhoneComboBox2.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.VUPhoneComboBox2.Location = new System.Drawing.Point(251, 36);
-            this.VUPhoneComboBox2.Name = "VUPhoneComboBox2";
-            this.VUPhoneComboBox2.Size = new System.Drawing.Size(121, 24);
-            this.VUPhoneComboBox2.TabIndex = 30;
-            this.VUPhoneComboBox2.Visible = false;
-            // 
-            // VUPhoneTextbox2
-            // 
-            this.VUPhoneTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPhoneTextbox2.Location = new System.Drawing.Point(9, 36);
-            this.VUPhoneTextbox2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.VUPhoneTextbox2.Name = "VUPhoneTextbox2";
-            this.VUPhoneTextbox2.ReadOnly = true;
-            this.VUPhoneTextbox2.Size = new System.Drawing.Size(231, 23);
-            this.VUPhoneTextbox2.TabIndex = 31;
-            this.VUPhoneTextbox2.Visible = false;
-            // 
-            // VUPhoneComboBox1
-            // 
-            this.VUPhoneComboBox1.Enabled = false;
-            this.VUPhoneComboBox1.FormattingEnabled = true;
-            this.VUPhoneComboBox1.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.VUPhoneComboBox1.Location = new System.Drawing.Point(251, 6);
-            this.VUPhoneComboBox1.Name = "VUPhoneComboBox1";
-            this.VUPhoneComboBox1.Size = new System.Drawing.Size(121, 24);
-            this.VUPhoneComboBox1.TabIndex = 29;
-            // 
-            // VUPhoneTextbox1
-            // 
-            this.VUPhoneTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VUPhoneTextbox1.Location = new System.Drawing.Point(9, 6);
-            this.VUPhoneTextbox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.VUPhoneTextbox1.Name = "VUPhoneTextbox1";
-            this.VUPhoneTextbox1.ReadOnly = true;
-            this.VUPhoneTextbox1.Size = new System.Drawing.Size(231, 23);
-            this.VUPhoneTextbox1.TabIndex = 29;
+            this.VUPhoneListBox.FormattingEnabled = true;
+            this.VUPhoneListBox.ItemHeight = 16;
+            this.VUPhoneListBox.Location = new System.Drawing.Point(157, 180);
+            this.VUPhoneListBox.Name = "VUPhoneListBox";
+            this.VUPhoneListBox.Size = new System.Drawing.Size(244, 100);
+            this.VUPhoneListBox.TabIndex = 52;
             // 
             // Form1
             // 
@@ -1613,20 +1326,16 @@
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.CustomersTabPage.ResumeLayout(false);
-            this.SearchCustomerPanel.ResumeLayout(false);
-            this.SearchCustomerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Customer)).EndInit();
             this.ViewCustomerPanel.ResumeLayout(false);
             this.ViewCustomerPanel.PerformLayout();
             this.AddCustomerPanel.ResumeLayout(false);
             this.AddCustomerPanel.PerformLayout();
+            this.SearchCustomerPanel.ResumeLayout(false);
+            this.SearchCustomerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Customer)).EndInit();
             this.MoviesTabPage.ResumeLayout(false);
             this.SearchMoviePanel.ResumeLayout(false);
             this.SearchMoviePanel.PerformLayout();
-            this.AddPhonePanel.ResumeLayout(false);
-            this.AddPhonePanel.PerformLayout();
-            this.VUPhonePanel.ResumeLayout(false);
-            this.VUPhonePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1721,36 +1430,16 @@
         private System.Windows.Forms.Button EditMoviesButton;
         private System.Windows.Forms.Button DeleteMovieButton;
         private System.Windows.Forms.ListBox MoviesDisplayed;
-        private System.Windows.Forms.Panel AddPhonePanel;
         private System.Windows.Forms.Label AddPhoneLabel;
-        private System.Windows.Forms.ComboBox AddPhoneComboBox1;
-        private System.Windows.Forms.TextBox AddPhoneTextbox1;
-        private System.Windows.Forms.ComboBox AddPhoneComboBox6;
-        private System.Windows.Forms.TextBox AddPhoneTextbox6;
-        private System.Windows.Forms.ComboBox AddPhoneComboBox5;
-        private System.Windows.Forms.TextBox AddPhoneTextbox5;
-        private System.Windows.Forms.ComboBox AddPhoneComboBox4;
-        private System.Windows.Forms.TextBox AddPhoneTextbox4;
-        private System.Windows.Forms.ComboBox AddPhoneComboBox3;
-        private System.Windows.Forms.TextBox AddPhoneTextbox3;
-        private System.Windows.Forms.ComboBox AddPhoneComboBox2;
-        private System.Windows.Forms.TextBox AddPhoneTextbox2;
-        private System.Windows.Forms.Button AddNewPhoneButton;
-        private System.Windows.Forms.Button VUAddNewPhoneButton;
         private System.Windows.Forms.Label VUPhoneLabel;
-        private System.Windows.Forms.Panel VUPhonePanel;
-        private System.Windows.Forms.ComboBox VUPhoneComboBox6;
-        private System.Windows.Forms.TextBox VUPhoneTextbox6;
-        private System.Windows.Forms.ComboBox VUPhoneComboBox5;
-        private System.Windows.Forms.TextBox VUPhoneTextbox5;
-        private System.Windows.Forms.ComboBox VUPhoneComboBox4;
-        private System.Windows.Forms.TextBox VUPhoneTextbox4;
-        private System.Windows.Forms.ComboBox VUPhoneComboBox3;
-        private System.Windows.Forms.TextBox VUPhoneTextbox3;
-        private System.Windows.Forms.ComboBox VUPhoneComboBox2;
-        private System.Windows.Forms.TextBox VUPhoneTextbox2;
-        private System.Windows.Forms.ComboBox VUPhoneComboBox1;
-        private System.Windows.Forms.TextBox VUPhoneTextbox1;
+        private System.Windows.Forms.ListBox AddPhoneListBox;
+        private System.Windows.Forms.Button AddPhoneButton;
+        private System.Windows.Forms.ComboBox AddPhoneComboBox;
+        private System.Windows.Forms.TextBox AddPhoneTextbox;
+        private System.Windows.Forms.Button VUPhoneButton;
+        private System.Windows.Forms.ComboBox VUPhoneComboBox;
+        private System.Windows.Forms.TextBox VUPhoneTextbox;
+        private System.Windows.Forms.ListBox VUPhoneListBox;
     }
 }
 

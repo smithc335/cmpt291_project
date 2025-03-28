@@ -206,6 +206,25 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e3.ToString(), "Error");
             }
+
+            myCommand.CommandText = "select * from CustomerPhone where CustomerID = " + Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            VUPhoneListBox.Items.Clear();
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    VUPhoneListBox.Items.Add(myReader["PhoneNum"].ToString() + " (" + myReader["PhoneType"].ToString() + ")");
+                }
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
         }
 
         private void CancelViewingButton_Click(object sender, EventArgs e)
@@ -229,6 +248,8 @@ namespace CMPT291_Project
             VUEmailTextbox.ReadOnly = true;
             VUFirstNameTextbox.ReadOnly = true;
             VULastNameTextbox.ReadOnly = true;
+            VUPhoneComboBox.Enabled = false;
+            VUPhoneTextbox.ReadOnly = true;
             VUPostalCodeTextbox.ReadOnly = true;
             VUProvinceComboBox.Enabled = false;
         }
@@ -250,6 +271,8 @@ namespace CMPT291_Project
             VUEmailTextbox.ReadOnly = false;
             VUFirstNameTextbox.ReadOnly = false;
             VULastNameTextbox.ReadOnly = false;
+            VUPhoneComboBox.Enabled = true;
+            VUPhoneTextbox.ReadOnly = false;
             VUPostalCodeTextbox.ReadOnly = false;
             VUProvinceComboBox.Enabled = true;
         }
@@ -307,34 +330,36 @@ namespace CMPT291_Project
             VUProvinceComboBox.Enabled = false;
         }
 
-        private void AddNewPhoneButton_Click(object sender, EventArgs e)
-        {
-            if (AddPhoneTextbox2.Visible == false)
-            {
-                AddPhoneTextbox2.Visible = true;
-                AddPhoneComboBox2.Visible = true;
-            }
-            else if (AddPhoneTextbox3.Visible == false)
-            {
-                AddPhoneTextbox3.Visible = true;
-                AddPhoneComboBox3.Visible = true;
-            }
-            else if (AddPhoneTextbox4.Visible == false)
-            {
-                AddPhoneTextbox4.Visible = true;
-                AddPhoneComboBox4.Visible = true;
-            }
-            else if (AddPhoneTextbox5.Visible == false)
-            {
-                AddPhoneTextbox5.Visible = true;
-                AddPhoneComboBox5.Visible = true;
-            }
-            else
-            {
-                AddPhoneTextbox6.Visible = true;
-                AddPhoneComboBox6.Visible = true;
-            }
-        }
+
+
+        //private void AddNewPhoneButton_Click(object sender, EventArgs e)
+        //{
+        //    if (AddPhoneTextbox2.Visible == false && AddPhoneTextbox1.Text != string.Empty)
+        //    {
+        //        AddPhoneTextbox2.Visible = true;
+        //        AddPhoneComboBox2.Visible = true;
+        //    }
+        //    else if (AddPhoneTextbox3.Visible == false && AddPhoneTextbox2.Text != string.Empty)
+        //    {
+        //        AddPhoneTextbox3.Visible = true;
+        //        AddPhoneComboBox3.Visible = true;
+        //    }
+        //    else if (AddPhoneTextbox4.Visible == false && AddPhoneTextbox3.Text != string.Empty)
+        //    {
+        //        AddPhoneTextbox4.Visible = true;
+        //        AddPhoneComboBox4.Visible = true;
+        //    }
+        //    else if (AddPhoneTextbox5.Visible == false && AddPhoneTextbox4.Text != string.Empty)
+        //    {
+        //        AddPhoneTextbox5.Visible = true;
+        //        AddPhoneComboBox5.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        AddPhoneTextbox6.Visible = true;
+        //        AddPhoneComboBox6.Visible = true;
+        //    }
+        //}
 
         private void label1_Click_1(object sender, EventArgs e)
         {
@@ -364,6 +389,82 @@ namespace CMPT291_Project
         private void DeleteMovieButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddSaveCustomerButton_Click(object sender, EventArgs e)
+        {
+            // ADDS CUSTOMERS WHEN FIELDS ARE EMPTY!! NEED TO FIX
+
+            if (AddAcctNumTextbox.Text == string.Empty)
+            {
+                // customer is creating new acct num
+                myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
+                    "EmailAddress, AcctNum, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" + AddLastNameTextbox.Text + 
+                    "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text + "', '" + 
+                    AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text + 
+                    "', next value for Customer_AcctNum_Seq, '" + AddCreditTextbox.Text + "')";
+            }
+            else
+            {
+                // adding customer to existing acct
+                myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
+                    "EmailAddress, AcctNum, AcctCreateDate, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" + 
+                    AddLastNameTextbox.Text + "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text + 
+                    "', '" + AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text + "', " + 
+                    AddAcctNumTextbox.Text + ", (select AcctCreateDate from Customer where AcctNum = " + AddAcctNumTextbox.Text + "), '" + 
+                    AddCreditTextbox.Text + "')";
+            }
+
+            myCommand.ExecuteNonQuery();
+
+            //MessageBox.Show(myCommand.CommandText);
+
+            AddAcctNumTextbox.Text = string.Empty;
+            AddAddressTextbox.Text = string.Empty;
+            AddCityTextbox.Text = string.Empty;
+            AddCreditTextbox.Text = string.Empty;
+            AddEmailTextbox.Text = string.Empty;
+            AddFirstNameTextbox.Text = string.Empty;
+            AddLastNameTextbox.Text = string.Empty;
+            AddPhoneListBox.Items.Clear();
+            AddPhoneComboBox.Text = string.Empty;
+            AddPhoneTextbox.Text = string.Empty;
+            AddPostalCodeTextbox.Text = string.Empty;
+            AddProvinceComboBox.Text = string.Empty;
+        }
+
+        private void AddPhoneButton_Click(object sender, EventArgs e)
+        {
+            if (AddPhoneTextbox.Text.Length > 0 && AddPhoneComboBox.Text.Length > 0)
+            {
+                AddPhoneListBox.Items.Add(AddPhoneTextbox.Text + " (" + AddPhoneComboBox.Text + ")");
+                AddPhoneTextbox.Text = string.Empty;
+                AddPhoneComboBox.Text = string.Empty;
+            }
+        }
+
+        private void AddPhoneTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (AddPhoneComboBox.Text.Length > 0 && AddPhoneTextbox.Text.Length == 10)
+            {
+                AddPhoneButton.Enabled = true;
+            }
+            else
+            {
+                AddPhoneButton.Enabled = false;
+            }
+        }
+
+        private void AddPhoneComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (AddPhoneComboBox.Text.Length > 0 && AddPhoneTextbox.Text.Length == 10)
+            {
+                AddPhoneButton.Enabled = true;
+            }
+            else
+            {
+                AddPhoneButton.Enabled = false;
+            }
         }
     }
 }
