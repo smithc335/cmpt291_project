@@ -326,69 +326,10 @@ namespace CMPT291_Project
             VUEmailTextbox.ReadOnly = true;
             VUFirstNameTextbox.ReadOnly = true;
             VULastNameTextbox.ReadOnly = true;
+            VUPhoneComboBox.Enabled = false;
+            VUPhoneTextbox.ReadOnly = true;
             VUPostalCodeTextbox.ReadOnly = true;
             VUProvinceComboBox.Enabled = false;
-        }
-
-
-
-        //private void AddNewPhoneButton_Click(object sender, EventArgs e)
-        //{
-        //    if (AddPhoneTextbox2.Visible == false && AddPhoneTextbox1.Text != string.Empty)
-        //    {
-        //        AddPhoneTextbox2.Visible = true;
-        //        AddPhoneComboBox2.Visible = true;
-        //    }
-        //    else if (AddPhoneTextbox3.Visible == false && AddPhoneTextbox2.Text != string.Empty)
-        //    {
-        //        AddPhoneTextbox3.Visible = true;
-        //        AddPhoneComboBox3.Visible = true;
-        //    }
-        //    else if (AddPhoneTextbox4.Visible == false && AddPhoneTextbox3.Text != string.Empty)
-        //    {
-        //        AddPhoneTextbox4.Visible = true;
-        //        AddPhoneComboBox4.Visible = true;
-        //    }
-        //    else if (AddPhoneTextbox5.Visible == false && AddPhoneTextbox4.Text != string.Empty)
-        //    {
-        //        AddPhoneTextbox5.Visible = true;
-        //        AddPhoneComboBox5.Visible = true;
-        //    }
-        //    else
-        //    {
-        //        AddPhoneTextbox6.Visible = true;
-        //        AddPhoneComboBox6.Visible = true;
-        //    }
-        //}
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditMoviesButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MovieSearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MovieSearchbutton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MoviesDisplayed_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DeleteMovieButton_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void AddSaveCustomerButton_Click(object sender, EventArgs e)
@@ -399,19 +340,19 @@ namespace CMPT291_Project
             {
                 // customer is creating new acct num
                 myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
-                    "EmailAddress, AcctNum, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" + AddLastNameTextbox.Text + 
-                    "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text + "', '" + 
-                    AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text + 
+                    "EmailAddress, AcctNum, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" + AddLastNameTextbox.Text +
+                    "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text + "', '" +
+                    AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text +
                     "', next value for Customer_AcctNum_Seq, '" + AddCreditTextbox.Text + "')";
             }
             else
             {
                 // adding customer to existing acct
                 myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
-                    "EmailAddress, AcctNum, AcctCreateDate, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" + 
-                    AddLastNameTextbox.Text + "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text + 
-                    "', '" + AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text + "', " + 
-                    AddAcctNumTextbox.Text + ", (select AcctCreateDate from Customer where AcctNum = " + AddAcctNumTextbox.Text + "), '" + 
+                    "EmailAddress, AcctNum, AcctCreateDate, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" +
+                    AddLastNameTextbox.Text + "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text +
+                    "', '" + AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text + "', " +
+                    AddAcctNumTextbox.Text + ", (select AcctCreateDate from Customer where AcctNum = " + AddAcctNumTextbox.Text + "), '" +
                     AddCreditTextbox.Text + "')";
             }
 
@@ -465,6 +406,70 @@ namespace CMPT291_Project
             {
                 AddPhoneButton.Enabled = false;
             }
+        }
+
+        private void VUPhoneButton_Click(object sender, EventArgs e)
+        {
+            if (VUPhoneTextbox.Text.Length > 0 && VUPhoneComboBox.Text.Length > 0)
+            {
+                VUPhoneListBox.Items.Add(VUPhoneTextbox.Text + " (" + VUPhoneComboBox.Text + ")");
+                VUPhoneTextbox.Text = string.Empty;
+                VUPhoneComboBox.Text = string.Empty;
+            }
+        }
+
+        private void VUPhoneTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (VUPhoneComboBox.Text.Length > 0 && VUPhoneTextbox.Text.Length == 10)
+            {
+                VUPhoneButton.Enabled = true;
+            }
+            else
+            {
+                VUPhoneButton.Enabled = false;
+            }
+        }
+
+        private void VUPhoneComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (VUPhoneComboBox.Text.Length > 0 && VUPhoneTextbox.Text.Length == 10)
+            {
+                VUPhoneButton.Enabled = true;
+            }
+            else
+            {
+                VUPhoneButton.Enabled = false;
+            }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditMoviesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovieSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovieSearchbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MoviesDisplayed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteMovieButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
