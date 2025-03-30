@@ -385,9 +385,10 @@ namespace CMPT291_Project
             // DOESN'T CHECK IF CUSTOMER EXISTS OR NOT (unique combination of first name, last name, and email?)
             string[] phoneNumbers;
 
+            // Add customer to Customer table
             if (AddAcctNumTextbox.Text == "")
             {
-                // customer is creating new acct num
+                // Customer is creating new acct num
                 myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
                     "EmailAddress, AcctNum, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" + AddLastNameTextbox.Text +
                     "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text + "', '" +
@@ -396,7 +397,7 @@ namespace CMPT291_Project
             }
             else
             {
-                // adding customer to existing acct
+                // Adding customer to existing acct
                 myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
                     "EmailAddress, AcctNum, AcctCreateDate, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" +
                     AddLastNameTextbox.Text + "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text +
@@ -407,6 +408,7 @@ namespace CMPT291_Project
 
             myCommand.ExecuteNonQuery();
 
+            // Add phone numbers to CustomerPhone table
             if (AddPhoneListBox.Items.Count > 0)
             {
                 for (int i = 0; i < AddPhoneListBox.Items.Count;  i++)
@@ -710,6 +712,55 @@ namespace CMPT291_Project
         {
             // Test
             // test  2
+        }
+
+        private void SaveUpdatesButton_Click(object sender, EventArgs e)
+        {
+            string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            string[] phoneNumbers;
+
+            // Update record in Customer table
+            myCommand.CommandText = "update Customer set FirstName = '" + VUFirstNameTextbox.Text + "', LastName = '" + VULastNameTextbox.Text +
+                "', EmailAddress = '" + VUEmailTextbox.Text + "', CreditCardNum = '" + VUCreditTextbox.Text + "', AcctNum = " +
+                VUAcctNumTextbox.Text + ", Address = '" + VUAddressTextbox.Text + "', City = '" + VUCityTextbox.Text + "', Province = '" +
+                VUProvinceComboBox.Text + "', PostalCode = '" + VUPostalCodeTextbox.Text + "' where CustomerID = " + customerID;
+
+            myCommand.ExecuteNonQuery();
+
+            // Update records in CustomerPhone table
+            myCommand.CommandText = "delete from CustomerPhone where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+
+            if (VUPhoneListBox.Items.Count > 0)
+            {
+                for (int i = 0; i < VUPhoneListBox.Items.Count; i++)
+                {
+                    myCommand.CommandText = "insert into CustomerPhone (CustomerID, PhoneNum, PhoneType) values (" + customerID + ", '";
+
+                    phoneNumbers = VUPhoneListBox.Items[i].ToString().Split(' ');
+                    myCommand.CommandText += phoneNumbers[0] + "', '" + phoneNumbers[2] + "')";
+
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Customer information has been updated.");
+
+            // Change screens back to search screen
+            SearchCustomerPanel.Visible = true;
+            SearchButton.PerformClick(); // FIX THIS LATER (pull query into its own UpdateCustomerDataGrid method)
+            ViewCustomerPanel.Visible = false;
+            AddCustomerPanel.Visible = false;
+        }
+
+        private void VUPhoneListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VUDeletePhoneButton.Enabled = (VUPhoneListBox.SelectedItem != null);
+        }
+
+        private void VUDeletePhoneButton_Click(object sender, EventArgs e)
+        {
+            VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
         }
     }
 }
