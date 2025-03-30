@@ -126,6 +126,7 @@
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
+            this.VUDeletePhoneButton = new System.Windows.Forms.Button();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -273,9 +274,9 @@
             // 
             // CustomersTabPage
             // 
+            this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
-            this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
@@ -809,6 +810,7 @@
             // ViewCustomerPanel
             // 
             this.ViewCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.ViewCustomerPanel.Controls.Add(this.VUDeletePhoneButton);
             this.ViewCustomerPanel.Controls.Add(this.VUPhoneButton);
             this.ViewCustomerPanel.Controls.Add(this.VUPhoneComboBox);
             this.ViewCustomerPanel.Controls.Add(this.VUPhoneTextbox);
@@ -851,7 +853,7 @@
             this.VUPhoneButton.Enabled = false;
             this.VUPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VUPhoneButton.ForeColor = System.Drawing.Color.White;
-            this.VUPhoneButton.Location = new System.Drawing.Point(427, 214);
+            this.VUPhoneButton.Location = new System.Drawing.Point(617, 214);
             this.VUPhoneButton.Margin = new System.Windows.Forms.Padding(5);
             this.VUPhoneButton.Name = "VUPhoneButton";
             this.VUPhoneButton.Size = new System.Drawing.Size(180, 39);
@@ -894,6 +896,7 @@
             this.VUPhoneListBox.Name = "VUPhoneListBox";
             this.VUPhoneListBox.Size = new System.Drawing.Size(244, 100);
             this.VUPhoneListBox.TabIndex = 52;
+            this.VUPhoneListBox.SelectedIndexChanged += new System.EventHandler(this.VUPhoneListBox_SelectedIndexChanged);
             // 
             // DeleteCustomerButton
             // 
@@ -935,6 +938,7 @@
             this.SaveUpdatesButton.Text = "Save Customer Information";
             this.SaveUpdatesButton.UseVisualStyleBackColor = false;
             this.SaveUpdatesButton.Visible = false;
+            this.SaveUpdatesButton.Click += new System.EventHandler(this.SaveUpdatesButton_Click);
             // 
             // UpdateTitleLabel
             // 
@@ -1316,6 +1320,21 @@
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
+            // VUDeletePhoneButton
+            // 
+            this.VUDeletePhoneButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.VUDeletePhoneButton.Enabled = false;
+            this.VUDeletePhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUDeletePhoneButton.ForeColor = System.Drawing.Color.White;
+            this.VUDeletePhoneButton.Location = new System.Drawing.Point(427, 214);
+            this.VUDeletePhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.VUDeletePhoneButton.Name = "VUDeletePhoneButton";
+            this.VUDeletePhoneButton.Size = new System.Drawing.Size(180, 39);
+            this.VUDeletePhoneButton.TabIndex = 56;
+            this.VUDeletePhoneButton.Text = "Delete Phone Number";
+            this.VUDeletePhoneButton.UseVisualStyleBackColor = false;
+            this.VUDeletePhoneButton.Click += new System.EventHandler(this.VUDeletePhoneButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1446,6 +1465,7 @@
         private System.Windows.Forms.ComboBox VUPhoneComboBox;
         private System.Windows.Forms.TextBox VUPhoneTextbox;
         private System.Windows.Forms.ListBox VUPhoneListBox;
+        private System.Windows.Forms.Button VUDeletePhoneButton;
     }
 }
 
