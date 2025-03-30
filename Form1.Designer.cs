@@ -832,10 +832,12 @@
             this.AddProvinceComboBox.Name = "AddProvinceComboBox";
             this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 24);
             this.AddProvinceComboBox.TabIndex = 26;
+            this.AddProvinceComboBox.SelectedIndexChanged += new System.EventHandler(this.AddProvinceComboBox_SelectedIndexChanged);
             // 
             // AddSaveCustomerButton
             // 
             this.AddSaveCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.AddSaveCustomerButton.Enabled = false;
             this.AddSaveCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddSaveCustomerButton.ForeColor = System.Drawing.Color.White;
             this.AddSaveCustomerButton.Location = new System.Drawing.Point(26, 428);
@@ -866,6 +868,7 @@
             this.AddCreditTextbox.Name = "AddCreditTextbox";
             this.AddCreditTextbox.Size = new System.Drawing.Size(224, 23);
             this.AddCreditTextbox.TabIndex = 24;
+            this.AddCreditTextbox.TextChanged += new System.EventHandler(this.AddCreditTextbox_TextChanged);
             // 
             // AddAcctNumInstLabel
             // 
@@ -917,6 +920,7 @@
             this.AddEmailTextbox.Name = "AddEmailTextbox";
             this.AddEmailTextbox.Size = new System.Drawing.Size(258, 23);
             this.AddEmailTextbox.TabIndex = 19;
+            this.AddEmailTextbox.TextChanged += new System.EventHandler(this.AddEmailTextbox_TextChanged);
             // 
             // AddPostalCodeLabel
             // 
@@ -937,6 +941,7 @@
             this.AddPostalCodeTextbox.Name = "AddPostalCodeTextbox";
             this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 23);
             this.AddPostalCodeTextbox.TabIndex = 17;
+            this.AddPostalCodeTextbox.TextChanged += new System.EventHandler(this.AddPostalCodeTextbox_TextChanged);
             // 
             // AddProvinceLabel
             // 
@@ -968,6 +973,7 @@
             this.AddCityTextbox.Name = "AddCityTextbox";
             this.AddCityTextbox.Size = new System.Drawing.Size(282, 23);
             this.AddCityTextbox.TabIndex = 13;
+            this.AddCityTextbox.TextChanged += new System.EventHandler(this.AddCityTextbox_TextChanged);
             // 
             // AddAddressLabel
             // 
@@ -988,6 +994,7 @@
             this.AddAddressTextbox.Name = "AddAddressTextbox";
             this.AddAddressTextbox.Size = new System.Drawing.Size(328, 23);
             this.AddAddressTextbox.TabIndex = 11;
+            this.AddAddressTextbox.TextChanged += new System.EventHandler(this.AddAddressTextbox_TextChanged);
             // 
             // AddLastNameLabel
             // 
@@ -1008,6 +1015,7 @@
             this.AddLastNameTextbox.Name = "AddLastNameTextbox";
             this.AddLastNameTextbox.Size = new System.Drawing.Size(282, 23);
             this.AddLastNameTextbox.TabIndex = 9;
+            this.AddLastNameTextbox.TextChanged += new System.EventHandler(this.AddLastNameTextbox_TextChanged);
             // 
             // AddFirstNameLabel
             // 
@@ -1028,6 +1036,7 @@
             this.AddFirstNameTextbox.Name = "AddFirstNameTextbox";
             this.AddFirstNameTextbox.Size = new System.Drawing.Size(282, 23);
             this.AddFirstNameTextbox.TabIndex = 7;
+            this.AddFirstNameTextbox.TextChanged += new System.EventHandler(this.AddFirstNameTextbox_TextChanged);
             // 
             // MoveToSearchButton
             // 
@@ -1278,7 +1287,6 @@
             this.EditMoviesButton.TabIndex = 16;
             this.EditMoviesButton.Text = "Edit";
             this.EditMoviesButton.UseVisualStyleBackColor = false;
-            this.EditMoviesButton.Click += new System.EventHandler(this.EditMoviesButton_Click);
             // 
             // DeleteMovieButton
             // 
@@ -1292,7 +1300,6 @@
             this.DeleteMovieButton.TabIndex = 15;
             this.DeleteMovieButton.Text = "Delete";
             this.DeleteMovieButton.UseVisualStyleBackColor = false;
-            this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieButton_Click);
             // 
             // MoviesDisplayed
             // 
@@ -1302,7 +1309,6 @@
             this.MoviesDisplayed.Name = "MoviesDisplayed";
             this.MoviesDisplayed.Size = new System.Drawing.Size(549, 276);
             this.MoviesDisplayed.TabIndex = 14;
-            this.MoviesDisplayed.SelectedIndexChanged += new System.EventHandler(this.MoviesDisplayed_SelectedIndexChanged);
             // 
             // MovieSearchbutton
             // 
@@ -1316,7 +1322,6 @@
             this.MovieSearchbutton.TabIndex = 13;
             this.MovieSearchbutton.Text = "Search";
             this.MovieSearchbutton.UseVisualStyleBackColor = false;
-            this.MovieSearchbutton.Click += new System.EventHandler(this.MovieSearchbutton_Click);
             // 
             // MovieSearchTextBox
             // 
@@ -1326,7 +1331,6 @@
             this.MovieSearchTextBox.Name = "MovieSearchTextBox";
             this.MovieSearchTextBox.Size = new System.Drawing.Size(549, 26);
             this.MovieSearchTextBox.TabIndex = 12;
-            this.MovieSearchTextBox.TextChanged += new System.EventHandler(this.MovieSearchTextBox_TextChanged);
             // 
             // SearchMoviesLabel
             // 
@@ -1338,7 +1342,6 @@
             this.SearchMoviesLabel.Size = new System.Drawing.Size(114, 17);
             this.SearchMoviesLabel.TabIndex = 11;
             this.SearchMoviesLabel.Text = "Search Movies";
-            this.SearchMoviesLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // RentalsTabPage
             // 
