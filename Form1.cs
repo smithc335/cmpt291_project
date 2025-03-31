@@ -31,7 +31,7 @@ namespace CMPT291_Project
             //SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
             // Starting the connection
-            SqlConnection myConnection = new SqlConnection("user id=movieadmin;" + // Username
+            this.myConnection = new SqlConnection("user id=movieadmin;" + // Username
                                          "password=1234;" + // Password
                                          "server=localhost;" + // IP for the server
                                          "Trusted_Connection=yes;" +
@@ -560,5 +560,151 @@ namespace CMPT291_Project
         {
             VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
         }
+
+        private void MovieSearchbutton_Click(object sender, EventArgs e)
+        {
+            // Check connection (using class-level variable, not local)
+            if (this.myConnection == null || this.myConnection.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not initialized or open.");
+                return;
+            }
+
+            string userInput = MovieSearchTextBox.Text.Trim();
+            string query = "";
+
+            if (radioButton1.Checked) // Search by Actor
+            {
+                query = @"
+            SELECT DISTINCT M.MovieID, M.Name, M.Type, M.NumCopies, M.DistributionFee
+            FROM Movie M
+            JOIN AppearedIn AI ON M.MovieID = AI.MovieID
+            JOIN Actor A ON AI.ActorID = A.ActorID
+            WHERE A.Name LIKE @search";
+            }
+            else if (radioButton2.Checked) // Search by Title
+            {
+                query = @"
+            SELECT MovieID, Name, Type, NumCopies, DistributionFee
+            FROM Movie
+            WHERE Name LIKE @search";
+            }
+            else if (radioButton3.Checked) // Search by Genre
+            {
+                query = @"
+            SELECT MovieID, Name, Type, NumCopies, DistributionFee
+            FROM Movie
+            WHERE Type LIKE @search";
+            }
+            else
+            {
+                MessageBox.Show("Please select a search filter (Actor, Title, Genre).");
+                return;
+            }
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, this.myConnection))
+                {
+                    cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        MovieDetailsGrid.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading movies: " + ex.Message);
+            }
+        }
+
+        private void AddMovieButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteMovieButton_Click(object sender, EventArgs e)
+        {
+            if (MovieDetailsGrid.SelectedRows.Count > 0)
+            {
+                string movieId = MovieDetailsGrid.SelectedRows[0].Cells["MovieID"].Value.ToString();
+
+                DialogResult confirm = MessageBox.Show("Are you sure you want to delete this movie?",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Start a transaction to ensure all deletes succeed or fail together
+                        SqlTransaction transaction = myConnection.BeginTransaction();
+
+                        try
+                        {
+                            // First delete related records in child tables
+                            // 1. Delete from RateActor (through Rental)
+                            myCommand.CommandText = @"
+                        DELETE FROM RateActor 
+                        WHERE RentalID IN (
+                            SELECT RentalID FROM Rental WHERE MovieID = @MovieID
+                        )";
+                            myCommand.Parameters.Clear();
+                            myCommand.Parameters.AddWithValue("@MovieID", movieId);
+                            myCommand.Transaction = transaction;
+                            myCommand.ExecuteNonQuery();
+
+                            // 2. Delete from Rental
+                            myCommand.CommandText = "DELETE FROM Rental WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // 3. Delete from QueueUp
+                            myCommand.CommandText = "DELETE FROM QueueUp WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // 4. Delete from AppearedIn
+                            myCommand.CommandText = "DELETE FROM AppearedIn WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // Finally delete the movie itself
+                            myCommand.CommandText = "DELETE FROM Movie WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            transaction.Commit();
+                            MessageBox.Show("Movie deleted successfully.");
+
+                            // Refresh the movie list
+                            MovieSearchbutton_Click(null, null);
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Error deleting movie: " + ex.Message);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error starting transaction: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a movie to delete.");
+            }
+        }
+        private void LoadAllMovies()
+        {
+            string query = "SELECT MovieID, MovieName, MovieGenre, NumCopies, NumRented, DistributionFee FROM Movie";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, myConnection);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            MovieDetailsGrid.DataSource = dt;
+        }
+
     }
 }
