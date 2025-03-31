@@ -42,6 +42,7 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.CustomersTabPage = new System.Windows.Forms.TabPage();
             this.ViewCustomerPanel = new System.Windows.Forms.Panel();
+            this.VUDeletePhoneButton = new System.Windows.Forms.Button();
             this.VUPhoneButton = new System.Windows.Forms.Button();
             this.VUPhoneComboBox = new System.Windows.Forms.ComboBox();
             this.VUPhoneTextbox = new System.Windows.Forms.TextBox();
@@ -118,6 +119,7 @@
             this.MoveToAddButton = new System.Windows.Forms.Button();
             this.MoviesTabPage = new System.Windows.Forms.TabPage();
             this.SearchMoviePanel = new System.Windows.Forms.Panel();
+            this.MovieDetailsGrid = new System.Windows.Forms.DataGridView();
             this.AddMovieButton = new System.Windows.Forms.Button();
             this.EditMoviesButton = new System.Windows.Forms.Button();
             this.DeleteMovieButton = new System.Windows.Forms.Button();
@@ -183,6 +185,7 @@
             this.rentDispensePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -335,6 +338,7 @@
             // ViewCustomerPanel
             // 
             this.ViewCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.ViewCustomerPanel.Controls.Add(this.VUDeletePhoneButton);
             this.ViewCustomerPanel.Controls.Add(this.VUPhoneButton);
             this.ViewCustomerPanel.Controls.Add(this.VUPhoneComboBox);
             this.ViewCustomerPanel.Controls.Add(this.VUPhoneTextbox);
@@ -370,6 +374,21 @@
             this.ViewCustomerPanel.Size = new System.Drawing.Size(853, 484);
             this.ViewCustomerPanel.TabIndex = 49;
             this.ViewCustomerPanel.Visible = false;
+            // 
+            // VUDeletePhoneButton
+            // 
+            this.VUDeletePhoneButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.VUDeletePhoneButton.Enabled = false;
+            this.VUDeletePhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VUDeletePhoneButton.ForeColor = System.Drawing.Color.White;
+            this.VUDeletePhoneButton.Location = new System.Drawing.Point(427, 214);
+            this.VUDeletePhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.VUDeletePhoneButton.Name = "VUDeletePhoneButton";
+            this.VUDeletePhoneButton.Size = new System.Drawing.Size(180, 39);
+            this.VUDeletePhoneButton.TabIndex = 56;
+            this.VUDeletePhoneButton.Text = "Delete Phone Number";
+            this.VUDeletePhoneButton.UseVisualStyleBackColor = false;
+            this.VUDeletePhoneButton.Click += new System.EventHandler(this.VUDeletePhoneButton_Click);
             // 
             // VUPhoneButton
             // 
@@ -420,6 +439,7 @@
             this.VUPhoneListBox.Name = "VUPhoneListBox";
             this.VUPhoneListBox.Size = new System.Drawing.Size(244, 100);
             this.VUPhoneListBox.TabIndex = 52;
+            this.VUPhoneListBox.SelectedIndexChanged += new System.EventHandler(this.VUPhoneListBox_SelectedIndexChanged);
             // 
             // DeleteCustomerButton
             // 
@@ -444,7 +464,7 @@
             this.VUPhoneLabel.Location = new System.Drawing.Point(23, 180);
             this.VUPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUPhoneLabel.Name = "VUPhoneLabel";
-            this.VUPhoneLabel.Size = new System.Drawing.Size(124, 17);
+            this.VUPhoneLabel.Size = new System.Drawing.Size(124,17);
             this.VUPhoneLabel.TabIndex = 31;
             this.VUPhoneLabel.Text = "Phone Number(s):";
             // 
@@ -461,6 +481,7 @@
             this.SaveUpdatesButton.Text = "Save Customer Information";
             this.SaveUpdatesButton.UseVisualStyleBackColor = false;
             this.SaveUpdatesButton.Visible = false;
+            this.SaveUpdatesButton.Click += new System.EventHandler(this.SaveUpdatesButton_Click);
             // 
             // UpdateTitleLabel
             // 
@@ -1163,39 +1184,49 @@
             // CustomerID
             // 
             this.CustomerID.HeaderText = "ID";
+            this.CustomerID.MinimumWidth = 8;
             this.CustomerID.Name = "CustomerID";
             this.CustomerID.Width = 50;
             // 
             // FirstName
             // 
             this.FirstName.HeaderText = "First Name";
+            this.FirstName.MinimumWidth = 8;
             this.FirstName.Name = "FirstName";
+            this.FirstName.Width = 150;
             // 
             // LastName
             // 
             this.LastName.HeaderText = "Last Name";
+            this.LastName.MinimumWidth = 8;
             this.LastName.Name = "LastName";
+            this.LastName.Width = 150;
             // 
             // EmailAddress
             // 
             this.EmailAddress.HeaderText = "Email Address";
+            this.EmailAddress.MinimumWidth = 8;
             this.EmailAddress.Name = "EmailAddress";
             this.EmailAddress.Width = 200;
             // 
             // AcctNum
             // 
             this.AcctNum.HeaderText = "Account Number";
+            this.AcctNum.MinimumWidth = 8;
             this.AcctNum.Name = "AcctNum";
+            this.AcctNum.Width = 150;
             // 
             // City
             // 
             this.City.HeaderText = "City";
+            this.City.MinimumWidth = 8;
             this.City.Name = "City";
             this.City.Width = 125;
             // 
             // Province
             // 
             this.Province.HeaderText = "Province";
+            this.Province.MinimumWidth = 8;
             this.Province.Name = "Province";
             this.Province.Width = 75;
             // 
@@ -1250,6 +1281,10 @@
             // SearchMoviePanel
             // 
             this.SearchMoviePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.SearchMoviePanel.Controls.Add(this.radioButton3);
+            this.SearchMoviePanel.Controls.Add(this.radioButton2);
+            this.SearchMoviePanel.Controls.Add(this.radioButton1);
+            this.SearchMoviePanel.Controls.Add(this.MovieDetailsGrid);
             this.SearchMoviePanel.Controls.Add(this.AddMovieButton);
             this.SearchMoviePanel.Controls.Add(this.EditMoviesButton);
             this.SearchMoviePanel.Controls.Add(this.DeleteMovieButton);
@@ -1261,6 +1296,17 @@
             this.SearchMoviePanel.Name = "SearchMoviePanel";
             this.SearchMoviePanel.Size = new System.Drawing.Size(843, 470);
             this.SearchMoviePanel.TabIndex = 0;
+            // 
+            // MovieDetailsGrid
+            // 
+            this.MovieDetailsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MovieDetailsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MovieDetailsGrid.Location = new System.Drawing.Point(23, 106);
+            this.MovieDetailsGrid.Name = "MovieDetailsGrid";
+            this.MovieDetailsGrid.RowHeadersWidth = 62;
+            this.MovieDetailsGrid.RowTemplate.Height = 28;
+            this.MovieDetailsGrid.Size = new System.Drawing.Size(549, 254);
+            this.MovieDetailsGrid.TabIndex = 18;
             // 
             // AddMovieButton
             // 
@@ -1274,6 +1320,7 @@
             this.AddMovieButton.TabIndex = 17;
             this.AddMovieButton.Text = "Add Movie";
             this.AddMovieButton.UseVisualStyleBackColor = false;
+            this.AddMovieButton.Click += new System.EventHandler(this.AddMovieButton_Click);
             // 
             // EditMoviesButton
             // 
@@ -1300,6 +1347,7 @@
             this.DeleteMovieButton.TabIndex = 15;
             this.DeleteMovieButton.Text = "Delete";
             this.DeleteMovieButton.UseVisualStyleBackColor = false;
+            this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieButton_Click);
             // 
             // MoviesDisplayed
             // 
@@ -1322,6 +1370,7 @@
             this.MovieSearchbutton.TabIndex = 13;
             this.MovieSearchbutton.Text = "Search";
             this.MovieSearchbutton.UseVisualStyleBackColor = false;
+            this.MovieSearchbutton.Click += new System.EventHandler(this.MovieSearchbutton_Click);
             // 
             // MovieSearchTextBox
             // 
@@ -1740,8 +1789,38 @@
             this.rentHistReturnD.Name = "rentHistReturnD";
             // 
             // timer1
+            // radioButton1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(601, 177);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(111, 29);
+            this.radioButton1.TabIndex = 19;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "By Actor";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(601, 213);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(102, 29);
+            this.radioButton2.TabIndex = 20;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "By Title";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(601, 249);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(119, 29);
+            this.radioButton3.TabIndex = 21;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "By Genre";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1779,6 +1858,7 @@
             this.rentDispensePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1922,6 +2002,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rentHistCheckD;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentHistReturnD;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button VUDeletePhoneButton;
+        private System.Windows.Forms.DataGridView MovieDetailsGrid;
+        private System.Windows.Forms.RadioButton byTitleRadio;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
