@@ -607,29 +607,13 @@ namespace CMPT291_Project
                 }
                 myReader.Close();
 
-                //SqlCommand command1 = new SqlCommand("INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie)" +
-                //    "VALUES (NEXT VALUE FOR Rental_RentalID_Seq, " + movieID + ", '" + rentCustIdResultLabel.Text + "', "  + currentEmployee + ", '" + currentDate + "', NULL, NULL)");
-                //command1.ExecuteNonQuery();
 
-
-                //SqlCommand command2 = new SqlCommand(""
-                //command2.ExecuteNonQuery();
-
-                //// Insert into Rental table
-                //myCommand.CommandText = "INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie)" + 
-                //    "VALUES (NEXT VALUE FOR Rental_RentalID_Seq, " + movieID + ", '" + rentCustIdResultLabel.Text + "', "  + currentEmployee + ", '" + currentDate + "', NULL, NULL)");
-                //myCommand.ExecuteNonQuery();
-
-                //// Delete from QueueUp Table 
-                //myCommand.CommandText = "DELETE FROM QueueUp WHERE CustomerID = " + "'" + rentCustIdResultLabel.Text + "' AND MovieID = " + movieID;
-                //myCommand.ExecuteNonQuery();
-
-                //// Insert into Rental table
+                // Insert into Rental table
                 myCommand.CommandText = "INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie)" +
                     "VALUES (NEXT VALUE FOR Rental_RentalID_Seq, " + movieID + ", " + rentCustIdResultLabel.Text + ", " + currentEmployee + ", '" + currentDate + "', NULL, NULL)";
                 myCommand.ExecuteNonQuery();
 
-                //// Delete from QueueUp Table 
+                // Delete from QueueUp Table 
                 myCommand.CommandText = "DELETE FROM QueueUp WHERE CustomerID = " + rentCustIdResultLabel.Text + " AND MovieID = " + movieID;
                 myCommand.ExecuteNonQuery();
 
