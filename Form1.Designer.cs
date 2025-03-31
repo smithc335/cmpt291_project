@@ -140,11 +140,6 @@
             this.byGenreRadio = new System.Windows.Forms.RadioButton();
             this.byIdRadio = new System.Windows.Forms.RadioButton();
             this.byTitleRadio = new System.Windows.Forms.RadioButton();
-            this.Movie = new System.Windows.Forms.DataGridView();
-            this.MovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddMovieButton = new System.Windows.Forms.Button();
             this.EditMoviesButton = new System.Windows.Forms.Button();
             this.DeleteMovieButton = new System.Windows.Forms.Button();
@@ -152,15 +147,15 @@
             this.MovieSearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
-            this.ReportsTabPage = new System.Windows.Forms.TabPage();
             this.RentalsSearchPanel = new System.Windows.Forms.Panel();
-            this.RentalCustSearchLabel = new System.Windows.Forms.Label();
-            this.RentalCustSearchTBox = new System.Windows.Forms.TextBox();
-            this.byCustNameRadio = new System.Windows.Forms.RadioButton();
-            this.byCustIdRadio = new System.Windows.Forms.RadioButton();
             this.rentalCustdataGridView = new System.Windows.Forms.DataGridView();
             this.rentalCustId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentalCustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.byCustIdRadio = new System.Windows.Forms.RadioButton();
+            this.byCustNameRadio = new System.Windows.Forms.RadioButton();
+            this.RentalCustSearchTBox = new System.Windows.Forms.TextBox();
+            this.RentalCustSearchLabel = new System.Windows.Forms.Label();
+            this.ReportsTabPage = new System.Windows.Forms.TabPage();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -173,7 +168,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.MoviesTabPage.SuspendLayout();
             this.SearchMoviePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Movie)).BeginInit();
             this.RentalsTabPage.SuspendLayout();
             this.RentalsSearchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentalCustdataGridView)).BeginInit();
@@ -1529,7 +1523,6 @@
             this.SearchMoviePanel.Controls.Add(this.byGenreRadio);
             this.SearchMoviePanel.Controls.Add(this.byIdRadio);
             this.SearchMoviePanel.Controls.Add(this.byTitleRadio);
-            this.SearchMoviePanel.Controls.Add(this.Movie);
             this.SearchMoviePanel.Controls.Add(this.AddMovieButton);
             this.SearchMoviePanel.Controls.Add(this.EditMoviesButton);
             this.SearchMoviePanel.Controls.Add(this.DeleteMovieButton);
@@ -1575,49 +1568,6 @@
             this.byTitleRadio.Text = "By Title";
             this.byTitleRadio.UseMnemonic = false;
             this.byTitleRadio.UseVisualStyleBackColor = true;
-            // 
-            // Movie
-            // 
-            this.Movie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Movie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MovieID,
-            this.Name,
-            this.Type,
-            this.NumCopies});
-            this.Movie.Location = new System.Drawing.Point(31, 142);
-            this.Movie.Name = "Movie";
-            this.Movie.RowHeadersWidth = 51;
-            this.Movie.RowTemplate.Height = 24;
-            this.Movie.Size = new System.Drawing.Size(730, 311);
-            this.Movie.TabIndex = 18;
-            // 
-            // MovieID
-            // 
-            this.MovieID.HeaderText = "MovieID";
-            this.MovieID.MinimumWidth = 6;
-            this.MovieID.Name = "MovieID";
-            this.MovieID.Width = 125;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 6;
-            this.Type.Name = "Type";
-            this.Type.Width = 125;
-            // 
-            // NumCopies
-            // 
-            this.NumCopies.HeaderText = "Number of Copies";
-            this.NumCopies.MinimumWidth = 6;
-            this.NumCopies.Name = "NumCopies";
-            this.NumCopies.Width = 125;
             // 
             // AddMovieButton
             // 
@@ -1707,16 +1657,6 @@
             this.RentalsTabPage.Text = "Rentals";
             this.RentalsTabPage.UseVisualStyleBackColor = true;
             // 
-            // ReportsTabPage
-            // 
-            this.ReportsTabPage.Location = new System.Drawing.Point(4, 29);
-            this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.ReportsTabPage.Name = "ReportsTabPage";
-            this.ReportsTabPage.Size = new System.Drawing.Size(1173, 625);
-            this.ReportsTabPage.TabIndex = 4;
-            this.ReportsTabPage.Text = "Reports";
-            this.ReportsTabPage.UseVisualStyleBackColor = true;
-            // 
             // RentalsSearchPanel
             // 
             this.RentalsSearchPanel.BackColor = System.Drawing.Color.AliceBlue;
@@ -1729,45 +1669,6 @@
             this.RentalsSearchPanel.Name = "RentalsSearchPanel";
             this.RentalsSearchPanel.Size = new System.Drawing.Size(1139, 592);
             this.RentalsSearchPanel.TabIndex = 0;
-            // 
-            // RentalCustSearchLabel
-            // 
-            this.RentalCustSearchLabel.AutoSize = true;
-            this.RentalCustSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.RentalCustSearchLabel.Location = new System.Drawing.Point(45, 26);
-            this.RentalCustSearchLabel.Name = "RentalCustSearchLabel";
-            this.RentalCustSearchLabel.Size = new System.Drawing.Size(155, 20);
-            this.RentalCustSearchLabel.TabIndex = 0;
-            this.RentalCustSearchLabel.Text = "Customer Search";
-            // 
-            // RentalCustSearchTBox
-            // 
-            this.RentalCustSearchTBox.Location = new System.Drawing.Point(49, 76);
-            this.RentalCustSearchTBox.Name = "RentalCustSearchTBox";
-            this.RentalCustSearchTBox.Size = new System.Drawing.Size(506, 26);
-            this.RentalCustSearchTBox.TabIndex = 1;
-            // 
-            // byCustNameRadio
-            // 
-            this.byCustNameRadio.AutoSize = true;
-            this.byCustNameRadio.Location = new System.Drawing.Point(49, 130);
-            this.byCustNameRadio.Name = "byCustNameRadio";
-            this.byCustNameRadio.Size = new System.Drawing.Size(177, 24);
-            this.byCustNameRadio.TabIndex = 2;
-            this.byCustNameRadio.TabStop = true;
-            this.byCustNameRadio.Text = "By Customer Name";
-            this.byCustNameRadio.UseVisualStyleBackColor = true;
-            // 
-            // byCustIdRadio
-            // 
-            this.byCustIdRadio.AutoSize = true;
-            this.byCustIdRadio.Location = new System.Drawing.Point(248, 130);
-            this.byCustIdRadio.Name = "byCustIdRadio";
-            this.byCustIdRadio.Size = new System.Drawing.Size(150, 24);
-            this.byCustIdRadio.TabIndex = 3;
-            this.byCustIdRadio.TabStop = true;
-            this.byCustIdRadio.Text = "By Customer ID";
-            this.byCustIdRadio.UseVisualStyleBackColor = true;
             // 
             // rentalCustdataGridView
             // 
@@ -1795,6 +1696,55 @@
             this.rentalCustName.MinimumWidth = 6;
             this.rentalCustName.Name = "rentalCustName";
             this.rentalCustName.Width = 125;
+            // 
+            // byCustIdRadio
+            // 
+            this.byCustIdRadio.AutoSize = true;
+            this.byCustIdRadio.Location = new System.Drawing.Point(248, 130);
+            this.byCustIdRadio.Name = "byCustIdRadio";
+            this.byCustIdRadio.Size = new System.Drawing.Size(150, 24);
+            this.byCustIdRadio.TabIndex = 3;
+            this.byCustIdRadio.TabStop = true;
+            this.byCustIdRadio.Text = "By Customer ID";
+            this.byCustIdRadio.UseVisualStyleBackColor = true;
+            // 
+            // byCustNameRadio
+            // 
+            this.byCustNameRadio.AutoSize = true;
+            this.byCustNameRadio.Location = new System.Drawing.Point(49, 130);
+            this.byCustNameRadio.Name = "byCustNameRadio";
+            this.byCustNameRadio.Size = new System.Drawing.Size(177, 24);
+            this.byCustNameRadio.TabIndex = 2;
+            this.byCustNameRadio.TabStop = true;
+            this.byCustNameRadio.Text = "By Customer Name";
+            this.byCustNameRadio.UseVisualStyleBackColor = true;
+            // 
+            // RentalCustSearchTBox
+            // 
+            this.RentalCustSearchTBox.Location = new System.Drawing.Point(49, 76);
+            this.RentalCustSearchTBox.Name = "RentalCustSearchTBox";
+            this.RentalCustSearchTBox.Size = new System.Drawing.Size(506, 26);
+            this.RentalCustSearchTBox.TabIndex = 1;
+            // 
+            // RentalCustSearchLabel
+            // 
+            this.RentalCustSearchLabel.AutoSize = true;
+            this.RentalCustSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.RentalCustSearchLabel.Location = new System.Drawing.Point(45, 26);
+            this.RentalCustSearchLabel.Name = "RentalCustSearchLabel";
+            this.RentalCustSearchLabel.Size = new System.Drawing.Size(155, 20);
+            this.RentalCustSearchLabel.TabIndex = 0;
+            this.RentalCustSearchLabel.Text = "Customer Search";
+            // 
+            // ReportsTabPage
+            // 
+            this.ReportsTabPage.Location = new System.Drawing.Point(4, 29);
+            this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.ReportsTabPage.Name = "ReportsTabPage";
+            this.ReportsTabPage.Size = new System.Drawing.Size(1173, 625);
+            this.ReportsTabPage.TabIndex = 4;
+            this.ReportsTabPage.Text = "Reports";
+            this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1826,7 +1776,6 @@
             this.MoviesTabPage.ResumeLayout(false);
             this.SearchMoviePanel.ResumeLayout(false);
             this.SearchMoviePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Movie)).EndInit();
             this.RentalsTabPage.ResumeLayout(false);
             this.RentalsSearchPanel.ResumeLayout(false);
             this.RentalsSearchPanel.PerformLayout();
@@ -1957,11 +1906,6 @@
         private System.Windows.Forms.RadioButton byGenreRadio;
         private System.Windows.Forms.RadioButton byIdRadio;
         private System.Windows.Forms.RadioButton byTitleRadio;
-        private System.Windows.Forms.DataGridView Movie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MovieID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumCopies;
         private System.Windows.Forms.Panel RentalsSearchPanel;
         private System.Windows.Forms.Label RentalCustSearchLabel;
         private System.Windows.Forms.RadioButton byCustIdRadio;
