@@ -18,6 +18,7 @@ namespace CMPT291_Project
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public SqlTransaction myTransaction;
 
         public Form1()
         {
@@ -334,7 +335,7 @@ namespace CMPT291_Project
 
         private void AddSaveCustomerButton_Click(object sender, EventArgs e)
         {
-            // ADDS CUSTOMERS WHEN FIELDS ARE EMPTY!! NEED TO FIX
+            // ADDS CUSTOMERS WHEN FIELDS ARE EMPTY!! NEED TO FIX 
 
             if (AddAcctNumTextbox.Text == string.Empty)
             {
@@ -468,6 +469,192 @@ namespace CMPT291_Project
         }
 
         private void DeleteMovieButton_Click(object sender, EventArgs e)
+        {
+
+        }
+// RENT / DISPENSE SCREEN CODE
+
+        private void rentCustSearchBttn_Click(object sender, EventArgs e)
+        {
+            if (rentCustByIdRadio.Checked)
+            {
+                myCommand.CommandText = "select * from Customer where CustomerID = " + rentCustSearchTB.Text;
+
+            }
+            else if (rentCustByEmailRadio.Checked)
+            {
+                myCommand.CommandText = "select * from Customer where EmailAddress = '" + rentCustSearchTB.Text + "'";
+            }
+            else
+            {
+                myCommand.CommandText = "select * from Customer where LastName = '" + rentCustSearchTB.Text + "'";
+            }
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                rentCustSearchDGV.Rows.Clear();
+                while (myReader.Read())
+                {
+                    rentCustSearchDGV.Rows.Add(myReader["CustomerID"].ToString(), 
+                        myReader["LastName"].ToString(), myReader["AcctNum"].ToString(), 
+                        myReader["EmailAddress"].ToString());
+                }
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
+        }
+
+        private void rentCustViewBttn_Click(object sender, EventArgs e)
+        {
+            rentDispensePanel.Visible = true;
+            rentCustSearchPanel.Visible = false;
+
+            int customerID = Convert.ToInt32(rentCustSearchDGV.SelectedCells[0].OwningRow.Cells[0].Value);
+            myCommand.CommandText = "select * from Customer where CustomerID = " + customerID;
+
+            try
+            {
+                // Display Customer Information
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    rentCustIdResultLabel.Text = myReader.GetInt32(0).ToString();
+                    rentLNResultLabel.Text = myReader.GetString(1);
+                    rentFNResultLabel.Text = myReader.GetString(2);
+                    rentEmailResultLabel.Text = myReader.GetString(7);
+                    rentAcctResultLabel.Text = myReader.GetInt32(8).ToString();
+                }
+
+                myReader.Close();
+
+                // Display Customer Movie Queue in Data Grid View
+                myCommand.CommandText = "select * from QueueUp where CustomerID = " + customerID;
+
+                myReader = myCommand.ExecuteReader();
+
+                rentCustQueueDGV.Rows.Clear();
+                while (myReader.Read())
+                {
+                    rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString());
+                }
+
+                myReader.Close();
+
+                // Display Customer Rental History in Data Grid View
+                myCommand.CommandText = "select * from Rental where CustomerID = " + customerID;
+
+                myReader = myCommand.ExecuteReader();
+
+                rentCustHistoryDGV.Rows.Clear();
+                while (myReader.Read())
+                {
+                    rentCustHistoryDGV.Rows.Add(myReader["RentalID"].ToString(),
+                        myReader["MovieID"].ToString(), myReader["EmployeeID"].ToString(),
+                        myReader["CheckoutDate"].ToString(), myReader["ReturnDate"].ToString());
+                }
+
+                myReader.Close();
+
+
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
+        }
+
+        private void rentCancelBttn_Click(object sender, EventArgs e)
+        {
+            // Try to understand Claire's logic behind their code. :)
+            rentCustSearchPanel.Visible = true;
+            rentDispensePanel.Visible = false;
+        }
+
+        private void rentDispenseBttn_Click(object sender, EventArgs e)
+        {
+            int movieID = Convert.ToInt32(rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value);
+            string currentUserName = Environment.UserName;
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd"); // Get current date
+
+            SqlTransaction myTransaction = null;
+
+
+
+            try
+            {
+                // Start Transaction
+                myTransaction = myConnection.BeginTransaction();
+                // Attach transaction to myCommand
+                myCommand.Transaction = myTransaction;
+
+                int currentEmployee = -1; // Default value if not found
+                myCommand.CommandText = "select EmployeeID from Employee where LastName like '" + currentUserName + "%'";
+
+
+
+                myReader = myCommand.ExecuteReader();
+
+                if (myReader.Read()) // If employee exists
+                {
+                    currentEmployee = myReader.GetInt32(0);
+                }
+                myReader.Close();
+
+                //SqlCommand command1 = new SqlCommand("INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie)" +
+                //    "VALUES (NEXT VALUE FOR Rental_RentalID_Seq, " + movieID + ", '" + rentCustIdResultLabel.Text + "', "  + currentEmployee + ", '" + currentDate + "', NULL, NULL)");
+                //command1.ExecuteNonQuery();
+
+
+                //SqlCommand command2 = new SqlCommand(""
+                //command2.ExecuteNonQuery();
+
+                //// Insert into Rental table
+                //myCommand.CommandText = "INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie)" + 
+                //    "VALUES (NEXT VALUE FOR Rental_RentalID_Seq, " + movieID + ", '" + rentCustIdResultLabel.Text + "', "  + currentEmployee + ", '" + currentDate + "', NULL, NULL)");
+                //myCommand.ExecuteNonQuery();
+
+                //// Delete from QueueUp Table 
+                //myCommand.CommandText = "DELETE FROM QueueUp WHERE CustomerID = " + "'" + rentCustIdResultLabel.Text + "' AND MovieID = " + movieID;
+                //myCommand.ExecuteNonQuery();
+
+                //// Insert into Rental table
+                myCommand.CommandText = "INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie)" +
+                    "VALUES (NEXT VALUE FOR Rental_RentalID_Seq, " + movieID + ", " + rentCustIdResultLabel.Text + ", " + currentEmployee + ", '" + currentDate + "', NULL, NULL)";
+                myCommand.ExecuteNonQuery();
+
+                //// Delete from QueueUp Table 
+                myCommand.CommandText = "DELETE FROM QueueUp WHERE CustomerID = " + rentCustIdResultLabel.Text + " AND MovieID = " + movieID;
+                myCommand.ExecuteNonQuery();
+
+
+
+                // Commit transaction
+                myTransaction.Commit(); 
+
+            }
+            catch (Exception e3)
+            {
+                if (myTransaction != null)
+                {
+                    // Rollback in case of an error
+                    myTransaction.Rollback();
+                }
+
+                MessageBox.Show(e3.ToString(), "Error");
+            }
+
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
 
         }
