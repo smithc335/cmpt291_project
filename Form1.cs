@@ -31,7 +31,7 @@ namespace CMPT291_Project
             //SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
             // Starting the connection
-            SqlConnection myConnection = new SqlConnection("user id=movieadmin;" + // Username
+            this.myConnection = new SqlConnection("user id=movieadmin;" + // Username
                                          "password=1234;" + // Password
                                          "server=localhost;" + // IP for the server
                                          "Trusted_Connection=yes;" +
@@ -206,6 +206,25 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e3.ToString(), "Error");
             }
+
+            myCommand.CommandText = "select * from CustomerPhone where CustomerID = " + Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            VUPhoneListBox.Items.Clear();
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    VUPhoneListBox.Items.Add(myReader["PhoneNum"].ToString() + " - " + myReader["PhoneType"].ToString());
+                }
+
+                myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+            }
         }
 
         private void CancelViewingButton_Click(object sender, EventArgs e)
@@ -229,6 +248,8 @@ namespace CMPT291_Project
             VUEmailTextbox.ReadOnly = true;
             VUFirstNameTextbox.ReadOnly = true;
             VULastNameTextbox.ReadOnly = true;
+            VUPhoneComboBox.Enabled = false;
+            VUPhoneTextbox.ReadOnly = true;
             VUPostalCodeTextbox.ReadOnly = true;
             VUProvinceComboBox.Enabled = false;
         }
@@ -250,6 +271,8 @@ namespace CMPT291_Project
             VUEmailTextbox.ReadOnly = false;
             VUFirstNameTextbox.ReadOnly = false;
             VULastNameTextbox.ReadOnly = false;
+            VUPhoneComboBox.Enabled = true;
+            VUPhoneTextbox.ReadOnly = false;
             VUPostalCodeTextbox.ReadOnly = false;
             VUProvinceComboBox.Enabled = true;
         }
@@ -303,96 +326,385 @@ namespace CMPT291_Project
             VUEmailTextbox.ReadOnly = true;
             VUFirstNameTextbox.ReadOnly = true;
             VULastNameTextbox.ReadOnly = true;
+            VUPhoneComboBox.Enabled = false;
+            VUPhoneTextbox.ReadOnly = true;
             VUPostalCodeTextbox.ReadOnly = true;
             VUProvinceComboBox.Enabled = false;
         }
 
-        private void AddNewPhoneButton_Click(object sender, EventArgs e)
+        private void SetAddNewCustomerButton()
         {
-            if (AddPhoneTextbox2.Visible == false)
+            AddSaveCustomerButton.Enabled = (AddFirstNameTextbox.Text != "" && AddLastNameTextbox.Text != "" && AddEmailTextbox.Text != "" &&
+                AddCreditTextbox.Text != "" && AddAddressTextbox.Text != "" && AddCityTextbox.Text != "" && AddProvinceComboBox.Text != "" &&
+                AddPostalCodeTextbox.Text != "");
+        }
+
+        private void AddFirstNameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddLastNameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddEmailTextbox_TextChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddCreditTextbox_TextChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddAddressTextbox_TextChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddCityTextbox_TextChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddProvinceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddPostalCodeTextbox_TextChanged(object sender, EventArgs e)
+        {
+            SetAddNewCustomerButton();
+        }
+
+        private void AddSaveCustomerButton_Click(object sender, EventArgs e)
+        {
+            // DOESN'T CHECK IF CUSTOMER EXISTS OR NOT (unique combination of first name, last name, and email?)
+            string[] phoneNumbers;
+
+            // Add customer to Customer table
+            if (AddAcctNumTextbox.Text == "")
             {
-                AddPhoneTextbox2.Visible = true;
-                AddPhoneComboBox2.Visible = true;
-            }
-            else if (AddPhoneTextbox3.Visible == false)
-            {
-                AddPhoneTextbox3.Visible = true;
-                AddPhoneComboBox3.Visible = true;
-            }
-            else if (AddPhoneTextbox4.Visible == false)
-            {
-                AddPhoneTextbox4.Visible = true;
-                AddPhoneComboBox4.Visible = true;
-            }
-            else if (AddPhoneTextbox5.Visible == false)
-            {
-                AddPhoneTextbox5.Visible = true;
-                AddPhoneComboBox5.Visible = true;
+                // Customer is creating new acct num
+                myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
+                    "EmailAddress, AcctNum, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" + AddLastNameTextbox.Text +
+                    "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text + "', '" +
+                    AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text +
+                    "', next value for Customer_AcctNum_Seq, '" + AddCreditTextbox.Text + "')";
             }
             else
             {
-                AddPhoneTextbox6.Visible = true;
-                AddPhoneComboBox6.Visible = true;
+                // Adding customer to existing acct
+                myCommand.CommandText = "insert into Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, " +
+                    "EmailAddress, AcctNum, AcctCreateDate, CreditCardNum) values (next value for Customer_CustomerID_Seq, '" +
+                    AddLastNameTextbox.Text + "', '" + AddFirstNameTextbox.Text + "', '" + AddAddressTextbox.Text + "', '" + AddCityTextbox.Text +
+                    "', '" + AddProvinceComboBox.Text + "', '" + AddPostalCodeTextbox.Text + "', '" + AddEmailTextbox.Text + "', " +
+                    AddAcctNumTextbox.Text + ", (select distinct AcctCreateDate from Customer where AcctNum = " + AddAcctNumTextbox.Text + "), '" +
+                    AddCreditTextbox.Text + "')";
+            }
+
+            myCommand.ExecuteNonQuery();
+
+            // Add phone numbers to CustomerPhone table
+            if (AddPhoneListBox.Items.Count > 0)
+            {
+                for (int i = 0; i < AddPhoneListBox.Items.Count;  i++)
+                {
+                    myCommand.CommandText = "insert into CustomerPhone (CustomerID, PhoneNum, PhoneType) values ((select CustomerID from Customer " +
+                        "where EmailAddress = '" + AddEmailTextbox.Text + "'), '";
+
+                    phoneNumbers = AddPhoneListBox.Items[i].ToString().Split(' ');
+                    myCommand.CommandText += phoneNumbers[0] + "', '" + phoneNumbers[2] + "')";
+
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+
+            AddAcctNumTextbox.Text = "";
+            AddAddressTextbox.Text = "";
+            AddCityTextbox.Text = "";
+            AddCreditTextbox.Text = "";
+            AddEmailTextbox.Text = "";
+            AddFirstNameTextbox.Text = "";
+            AddLastNameTextbox.Text = "";
+            AddPhoneListBox.Items.Clear();
+            AddPhoneComboBox.Text = "";
+            AddPhoneTextbox.Text = "";
+            AddPostalCodeTextbox.Text = "";
+            AddProvinceComboBox.Text = "";
+
+            MessageBox.Show("Customer has been added.");
+
+            // Change screens back to search screen
+            SearchCustomerPanel.Visible = true;
+            SearchButton.PerformClick(); // FIX THIS LATER (pull query into its own UpdateCustomerDataGrid method)
+            ViewCustomerPanel.Visible = false;
+            AddCustomerPanel.Visible = false;
+        }
+
+        private void AddPhoneButton_Click(object sender, EventArgs e)
+        {
+            if (AddPhoneTextbox.Text.Length > 0 && AddPhoneComboBox.Text.Length > 0)
+            {
+                AddPhoneListBox.Items.Add(AddPhoneTextbox.Text + " - " + AddPhoneComboBox.Text);
+                AddPhoneTextbox.Text = "";
+                AddPhoneComboBox.Text = "";
             }
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void AddPhoneTextbox_TextChanged(object sender, EventArgs e)
         {
-
+            if (AddPhoneComboBox.Text.Length > 0 && AddPhoneTextbox.Text.Length == 10)
+            {
+                AddPhoneButton.Enabled = true;
+            }
+            else
+            {
+                AddPhoneButton.Enabled = false;
+            }
         }
 
-        private void EditMoviesButton_Click(object sender, EventArgs e)
+        private void AddPhoneComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (AddPhoneComboBox.Text.Length > 0 && AddPhoneTextbox.Text.Length == 10)
+            {
+                AddPhoneButton.Enabled = true;
+            }
+            else
+            {
+                AddPhoneButton.Enabled = false;
+            }
         }
 
-        private void MovieSearchTextBox_TextChanged(object sender, EventArgs e)
+        private void VUPhoneButton_Click(object sender, EventArgs e)
         {
-        //    if (byTitleRadio.Checked)
-        //    {
-        //        myCommand.CommandText = "select * from Movie where Name = '" + SearchTextBox.Text + "'";
-        //    }
-        //    else if (byIdRadio.Checked)
-        //    {
-        //        myCommand.CommandText = "select * from Movie where MovieID = '" + SearchTextBox.Text + "'";
-        //    }
-        //    else
-        //    {
-        //        myCommand.CommandText = "select * from Movie where Type = '" + SearchTextBox.Text + "'";
-        //    }
+            if (VUPhoneTextbox.Text.Length > 0 && VUPhoneComboBox.Text.Length > 0)
+            {
+                VUPhoneListBox.Items.Add(VUPhoneTextbox.Text + " - " + VUPhoneComboBox.Text);
+                VUPhoneTextbox.Text = "";
+                VUPhoneComboBox.Text = "";
+            }
+        }
 
-        //    try
-        //    {
-        //        myReader = myCommand.ExecuteReader();
+        private void VUPhoneTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (VUPhoneComboBox.Text.Length > 0 && VUPhoneTextbox.Text.Length == 10)
+            {
+                VUPhoneButton.Enabled = true;
+            }
+            else
+            {
+                VUPhoneButton.Enabled = false;
+            }
+        }
 
-        //        Movie.Rows.Clear();
-        //        while (myReader.Read())
-        //        {
-        //            Movie.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(),
-        //                myReader["Type"].ToString(), myReader["NumCopies"].ToString());
-        //        }
+        private void VUPhoneComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (VUPhoneComboBox.Text.Length > 0 && VUPhoneTextbox.Text.Length == 10)
+            {
+                VUPhoneButton.Enabled = true;
+            }
+            else
+            {
+                VUPhoneButton.Enabled = false;
+            }
+        }
 
-        //        myReader.Close();
-        //    }
-        //    catch (Exception e3)
-        //    {
-        //        MessageBox.Show(e3.ToString(), "Error");
-        //    }
+        private void SaveUpdatesButton_Click(object sender, EventArgs e)
+        {
+            string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            string[] phoneNumbers;
+
+            // Update record in Customer table
+            myCommand.CommandText = "update Customer set FirstName = '" + VUFirstNameTextbox.Text + "', LastName = '" + VULastNameTextbox.Text +
+                "', EmailAddress = '" + VUEmailTextbox.Text + "', CreditCardNum = '" + VUCreditTextbox.Text + "', AcctNum = " +
+                VUAcctNumTextbox.Text + ", Address = '" + VUAddressTextbox.Text + "', City = '" + VUCityTextbox.Text + "', Province = '" +
+                VUProvinceComboBox.Text + "', PostalCode = '" + VUPostalCodeTextbox.Text + "' where CustomerID = " + customerID;
+
+            myCommand.ExecuteNonQuery();
+
+            // Update records in CustomerPhone table
+            myCommand.CommandText = "delete from CustomerPhone where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+
+            if (VUPhoneListBox.Items.Count > 0)
+            {
+                for (int i = 0; i < VUPhoneListBox.Items.Count; i++)
+                {
+                    myCommand.CommandText = "insert into CustomerPhone (CustomerID, PhoneNum, PhoneType) values (" + customerID + ", '";
+
+                    phoneNumbers = VUPhoneListBox.Items[i].ToString().Split(' ');
+                    myCommand.CommandText += phoneNumbers[0] + "', '" + phoneNumbers[2] + "')";
+
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Customer information has been updated.");
+
+            // Change screens back to search screen
+            SearchCustomerPanel.Visible = true;
+            SearchButton.PerformClick(); // FIX THIS LATER (pull query into its own UpdateCustomerDataGrid method)
+            ViewCustomerPanel.Visible = false;
+            AddCustomerPanel.Visible = false;
+        }
+
+        private void VUPhoneListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VUDeletePhoneButton.Enabled = (VUPhoneListBox.SelectedItem != null);
+        }
+
+        private void VUDeletePhoneButton_Click(object sender, EventArgs e)
+        {
+            VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
         }
 
         private void MovieSearchbutton_Click(object sender, EventArgs e)
         {
+            // Check connection (using class-level variable, not local)
+            if (this.myConnection == null || this.myConnection.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not initialized or open.");
+                return;
+            }
 
+            string userInput = MovieSearchTextBox.Text.Trim();
+            string query = "";
+
+            if (radioButton1.Checked) // Search by Actor
+            {
+                query = @"
+            SELECT DISTINCT M.MovieID, M.Name, M.Type, M.NumCopies, M.DistributionFee
+            FROM Movie M
+            JOIN AppearedIn AI ON M.MovieID = AI.MovieID
+            JOIN Actor A ON AI.ActorID = A.ActorID
+            WHERE A.Name LIKE @search";
+            }
+            else if (radioButton2.Checked) // Search by Title
+            {
+                query = @"
+            SELECT MovieID, Name, Type, NumCopies, DistributionFee
+            FROM Movie
+            WHERE Name LIKE @search";
+            }
+            else if (radioButton3.Checked) // Search by Genre
+            {
+                query = @"
+            SELECT MovieID, Name, Type, NumCopies, DistributionFee
+            FROM Movie
+            WHERE Type LIKE @search";
+            }
+            else
+            {
+                MessageBox.Show("Please select a search filter (Actor, Title, Genre).");
+                return;
+            }
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, this.myConnection))
+                {
+                    cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        MovieDetailsGrid.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading movies: " + ex.Message);
+            }
         }
 
-        private void MoviesDisplayed_SelectedIndexChanged(object sender, EventArgs e)
+        private void AddMovieButton_Click(object sender, EventArgs e)
         {
 
         }
 
         private void DeleteMovieButton_Click(object sender, EventArgs e)
         {
+            if (MovieDetailsGrid.SelectedRows.Count > 0)
+            {
+                string movieId = MovieDetailsGrid.SelectedRows[0].Cells["MovieID"].Value.ToString();
 
+                DialogResult confirm = MessageBox.Show("Are you sure you want to delete this movie?",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Start a transaction to ensure all deletes succeed or fail together
+                        SqlTransaction transaction = myConnection.BeginTransaction();
+
+                        try
+                        {
+                            // First delete related records in child tables
+                            // 1. Delete from RateActor (through Rental)
+                            myCommand.CommandText = @"
+                        DELETE FROM RateActor 
+                        WHERE RentalID IN (
+                            SELECT RentalID FROM Rental WHERE MovieID = @MovieID
+                        )";
+                            myCommand.Parameters.Clear();
+                            myCommand.Parameters.AddWithValue("@MovieID", movieId);
+                            myCommand.Transaction = transaction;
+                            myCommand.ExecuteNonQuery();
+
+                            // 2. Delete from Rental
+                            myCommand.CommandText = "DELETE FROM Rental WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // 3. Delete from QueueUp
+                            myCommand.CommandText = "DELETE FROM QueueUp WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // 4. Delete from AppearedIn
+                            myCommand.CommandText = "DELETE FROM AppearedIn WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // Finally delete the movie itself
+                            myCommand.CommandText = "DELETE FROM Movie WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            transaction.Commit();
+                            MessageBox.Show("Movie deleted successfully.");
+
+                            // Refresh the movie list
+                            MovieSearchbutton_Click(null, null);
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Error deleting movie: " + ex.Message);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error starting transaction: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a movie to delete.");
+            }
         }
+        private void LoadAllMovies()
+        {
+            string query = "SELECT MovieID, MovieName, MovieGenre, NumCopies, NumRented, DistributionFee FROM Movie";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, myConnection);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            MovieDetailsGrid.DataSource = dt;
+        }
+
     }
 }
