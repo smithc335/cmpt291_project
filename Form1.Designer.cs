@@ -117,7 +117,21 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.MoveToAddButton = new System.Windows.Forms.Button();
             this.MoviesTabPage = new System.Windows.Forms.TabPage();
+            this.AddMoviePanel = new System.Windows.Forms.Panel();
+            this.CancelAddMovieButton = new System.Windows.Forms.Button();
+            this.SaveNewMovieButton = new System.Windows.Forms.Button();
+            this.AddMovieFeeTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieCopiesTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieGenreTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieNameTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieFeeLabel = new System.Windows.Forms.Label();
+            this.AddMovieCopiesLabel = new System.Windows.Forms.Label();
+            this.AddMovieGenreLabel = new System.Windows.Forms.Label();
+            this.AddMovieNameLabel = new System.Windows.Forms.Label();
             this.SearchMoviePanel = new System.Windows.Forms.Panel();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.MovieDetailsGrid = new System.Windows.Forms.DataGridView();
             this.AddMovieButton = new System.Windows.Forms.Button();
             this.EditMoviesButton = new System.Windows.Forms.Button();
@@ -126,11 +140,20 @@
             this.MovieSearchbutton = new System.Windows.Forms.Button();
             this.MovieSearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
+            this.EditMoviePanel = new System.Windows.Forms.Panel();
+            this.EditMovieIDLabel = new System.Windows.Forms.Label();
+            this.CancelEditMovieButton = new System.Windows.Forms.Button();
+            this.SaveMovieChangesButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.EditMovieFeeTextbox = new System.Windows.Forms.TextBox();
+            this.EditMovieCopiesTextbox = new System.Windows.Forms.TextBox();
+            this.EditMovieGenreTextbox = new System.Windows.Forms.TextBox();
+            this.EditMovieNameTextbox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -140,8 +163,10 @@
             this.SearchCustomerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.MoviesTabPage.SuspendLayout();
+            this.AddMoviePanel.SuspendLayout();
             this.SearchMoviePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).BeginInit();
+            this.EditMoviePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -1226,6 +1251,8 @@
             // MoviesTabPage
             // 
             this.MoviesTabPage.Controls.Add(this.SearchMoviePanel);
+            this.MoviesTabPage.Controls.Add(this.EditMoviePanel);
+            this.MoviesTabPage.Controls.Add(this.AddMoviePanel);
             this.MoviesTabPage.Location = new System.Drawing.Point(4, 34);
             this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.MoviesTabPage.Name = "MoviesTabPage";
@@ -1233,6 +1260,114 @@
             this.MoviesTabPage.TabIndex = 2;
             this.MoviesTabPage.Text = "Movies";
             this.MoviesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // AddMoviePanel
+            // 
+            this.AddMoviePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.AddMoviePanel.Controls.Add(this.CancelAddMovieButton);
+            this.AddMoviePanel.Controls.Add(this.SaveNewMovieButton);
+            this.AddMoviePanel.Controls.Add(this.AddMovieFeeTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieCopiesTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieGenreTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieNameTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieFeeLabel);
+            this.AddMoviePanel.Controls.Add(this.AddMovieCopiesLabel);
+            this.AddMoviePanel.Controls.Add(this.AddMovieGenreLabel);
+            this.AddMoviePanel.Controls.Add(this.AddMovieNameLabel);
+            this.AddMoviePanel.Location = new System.Drawing.Point(17, 23);
+            this.AddMoviePanel.Name = "AddMoviePanel";
+            this.AddMoviePanel.Size = new System.Drawing.Size(839, 467);
+            this.AddMoviePanel.TabIndex = 22;
+            this.AddMoviePanel.Visible = false;
+            // 
+            // CancelAddMovieButton
+            // 
+            this.CancelAddMovieButton.BackColor = System.Drawing.Color.Red;
+            this.CancelAddMovieButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CancelAddMovieButton.Location = new System.Drawing.Point(264, 356);
+            this.CancelAddMovieButton.Name = "CancelAddMovieButton";
+            this.CancelAddMovieButton.Size = new System.Drawing.Size(108, 45);
+            this.CancelAddMovieButton.TabIndex = 9;
+            this.CancelAddMovieButton.Text = "Cancel";
+            this.CancelAddMovieButton.UseVisualStyleBackColor = false;
+            this.CancelAddMovieButton.Click += new System.EventHandler(this.CancelAddMovieButton_Click);
+            // 
+            // SaveNewMovieButton
+            // 
+            this.SaveNewMovieButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveNewMovieButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SaveNewMovieButton.Location = new System.Drawing.Point(79, 356);
+            this.SaveNewMovieButton.Name = "SaveNewMovieButton";
+            this.SaveNewMovieButton.Size = new System.Drawing.Size(106, 45);
+            this.SaveNewMovieButton.TabIndex = 8;
+            this.SaveNewMovieButton.Text = "Save";
+            this.SaveNewMovieButton.UseVisualStyleBackColor = false;
+            this.SaveNewMovieButton.Click += new System.EventHandler(this.SaveNewMovieButton_Click);
+            // 
+            // AddMovieFeeTextbox
+            // 
+            this.AddMovieFeeTextbox.Location = new System.Drawing.Point(223, 229);
+            this.AddMovieFeeTextbox.Name = "AddMovieFeeTextbox";
+            this.AddMovieFeeTextbox.Size = new System.Drawing.Size(226, 30);
+            this.AddMovieFeeTextbox.TabIndex = 7;
+            // 
+            // AddMovieCopiesTextbox
+            // 
+            this.AddMovieCopiesTextbox.Location = new System.Drawing.Point(223, 168);
+            this.AddMovieCopiesTextbox.Name = "AddMovieCopiesTextbox";
+            this.AddMovieCopiesTextbox.Size = new System.Drawing.Size(226, 30);
+            this.AddMovieCopiesTextbox.TabIndex = 6;
+            // 
+            // AddMovieGenreTextbox
+            // 
+            this.AddMovieGenreTextbox.Location = new System.Drawing.Point(223, 106);
+            this.AddMovieGenreTextbox.Name = "AddMovieGenreTextbox";
+            this.AddMovieGenreTextbox.Size = new System.Drawing.Size(226, 30);
+            this.AddMovieGenreTextbox.TabIndex = 5;
+            // 
+            // AddMovieNameTextbox
+            // 
+            this.AddMovieNameTextbox.Location = new System.Drawing.Point(223, 46);
+            this.AddMovieNameTextbox.Name = "AddMovieNameTextbox";
+            this.AddMovieNameTextbox.Size = new System.Drawing.Size(226, 30);
+            this.AddMovieNameTextbox.TabIndex = 4;
+            // 
+            // AddMovieFeeLabel
+            // 
+            this.AddMovieFeeLabel.AutoSize = true;
+            this.AddMovieFeeLabel.Location = new System.Drawing.Point(75, 229);
+            this.AddMovieFeeLabel.Name = "AddMovieFeeLabel";
+            this.AddMovieFeeLabel.Size = new System.Drawing.Size(110, 25);
+            this.AddMovieFeeLabel.TabIndex = 3;
+            this.AddMovieFeeLabel.Text = "Movie Fee:";
+            // 
+            // AddMovieCopiesLabel
+            // 
+            this.AddMovieCopiesLabel.AutoSize = true;
+            this.AddMovieCopiesLabel.Location = new System.Drawing.Point(75, 166);
+            this.AddMovieCopiesLabel.Name = "AddMovieCopiesLabel";
+            this.AddMovieCopiesLabel.Size = new System.Drawing.Size(133, 25);
+            this.AddMovieCopiesLabel.TabIndex = 2;
+            this.AddMovieCopiesLabel.Text = "MovieCopies:";
+            this.AddMovieCopiesLabel.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // AddMovieGenreLabel
+            // 
+            this.AddMovieGenreLabel.AutoSize = true;
+            this.AddMovieGenreLabel.Location = new System.Drawing.Point(75, 106);
+            this.AddMovieGenreLabel.Name = "AddMovieGenreLabel";
+            this.AddMovieGenreLabel.Size = new System.Drawing.Size(130, 25);
+            this.AddMovieGenreLabel.TabIndex = 1;
+            this.AddMovieGenreLabel.Text = "Movie Genre:";
+            // 
+            // AddMovieNameLabel
+            // 
+            this.AddMovieNameLabel.AutoSize = true;
+            this.AddMovieNameLabel.Location = new System.Drawing.Point(75, 49);
+            this.AddMovieNameLabel.Name = "AddMovieNameLabel";
+            this.AddMovieNameLabel.Size = new System.Drawing.Size(128, 25);
+            this.AddMovieNameLabel.TabIndex = 0;
+            this.AddMovieNameLabel.Text = "Movie Name:";
             // 
             // SearchMoviePanel
             // 
@@ -1252,6 +1387,39 @@
             this.SearchMoviePanel.Name = "SearchMoviePanel";
             this.SearchMoviePanel.Size = new System.Drawing.Size(843, 470);
             this.SearchMoviePanel.TabIndex = 0;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(601, 249);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(119, 29);
+            this.radioButton3.TabIndex = 21;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "By Genre";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(601, 213);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(102, 29);
+            this.radioButton2.TabIndex = 20;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "By Title";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(601, 177);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(111, 29);
+            this.radioButton1.TabIndex = 19;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "By Actor";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // MovieDetailsGrid
             // 
@@ -1290,6 +1458,7 @@
             this.EditMoviesButton.TabIndex = 16;
             this.EditMoviesButton.Text = "Edit";
             this.EditMoviesButton.UseVisualStyleBackColor = false;
+            this.EditMoviesButton.Click += new System.EventHandler(this.EditMoviesButton_Click);
             // 
             // DeleteMovieButton
             // 
@@ -1348,6 +1517,123 @@
             this.SearchMoviesLabel.TabIndex = 11;
             this.SearchMoviesLabel.Text = "Search Movies";
             // 
+            // EditMoviePanel
+            // 
+            this.EditMoviePanel.Controls.Add(this.EditMovieIDLabel);
+            this.EditMoviePanel.Controls.Add(this.CancelEditMovieButton);
+            this.EditMoviePanel.Controls.Add(this.SaveMovieChangesButton);
+            this.EditMoviePanel.Controls.Add(this.label4);
+            this.EditMoviePanel.Controls.Add(this.label3);
+            this.EditMoviePanel.Controls.Add(this.label2);
+            this.EditMoviePanel.Controls.Add(this.EditMovieFeeTextbox);
+            this.EditMoviePanel.Controls.Add(this.EditMovieCopiesTextbox);
+            this.EditMoviePanel.Controls.Add(this.EditMovieGenreTextbox);
+            this.EditMoviePanel.Controls.Add(this.EditMovieNameTextbox);
+            this.EditMoviePanel.Controls.Add(this.label1);
+            this.EditMoviePanel.Location = new System.Drawing.Point(17, 20);
+            this.EditMoviePanel.Name = "EditMoviePanel";
+            this.EditMoviePanel.Size = new System.Drawing.Size(842, 474);
+            this.EditMoviePanel.TabIndex = 22;
+            this.EditMoviePanel.Visible = false;
+            // 
+            // EditMovieIDLabel
+            // 
+            this.EditMovieIDLabel.AutoSize = true;
+            this.EditMovieIDLabel.Location = new System.Drawing.Point(57, 287);
+            this.EditMovieIDLabel.Name = "EditMovieIDLabel";
+            this.EditMovieIDLabel.Size = new System.Drawing.Size(95, 25);
+            this.EditMovieIDLabel.TabIndex = 10;
+            this.EditMovieIDLabel.Text = "Movie ID:";
+            this.EditMovieIDLabel.Visible = false;
+            // 
+            // CancelEditMovieButton
+            // 
+            this.CancelEditMovieButton.BackColor = System.Drawing.Color.Red;
+            this.CancelEditMovieButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CancelEditMovieButton.Location = new System.Drawing.Point(274, 385);
+            this.CancelEditMovieButton.Name = "CancelEditMovieButton";
+            this.CancelEditMovieButton.Size = new System.Drawing.Size(90, 44);
+            this.CancelEditMovieButton.TabIndex = 9;
+            this.CancelEditMovieButton.Text = "Cancel";
+            this.CancelEditMovieButton.UseVisualStyleBackColor = false;
+            this.CancelEditMovieButton.Click += new System.EventHandler(this.CancelEditMovieButton_Click);
+            // 
+            // SaveMovieChangesButton
+            // 
+            this.SaveMovieChangesButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveMovieChangesButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SaveMovieChangesButton.Location = new System.Drawing.Point(63, 385);
+            this.SaveMovieChangesButton.Name = "SaveMovieChangesButton";
+            this.SaveMovieChangesButton.Size = new System.Drawing.Size(89, 44);
+            this.SaveMovieChangesButton.TabIndex = 8;
+            this.SaveMovieChangesButton.Text = "Save";
+            this.SaveMovieChangesButton.UseVisualStyleBackColor = false;
+            this.SaveMovieChangesButton.Click += new System.EventHandler(this.SaveMovieChangesButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(58, 229);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 25);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Movie Fee:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Movie Copies:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Movie Genre:";
+            // 
+            // EditMovieFeeTextbox
+            // 
+            this.EditMovieFeeTextbox.Location = new System.Drawing.Point(185, 226);
+            this.EditMovieFeeTextbox.Name = "EditMovieFeeTextbox";
+            this.EditMovieFeeTextbox.Size = new System.Drawing.Size(212, 30);
+            this.EditMovieFeeTextbox.TabIndex = 4;
+            // 
+            // EditMovieCopiesTextbox
+            // 
+            this.EditMovieCopiesTextbox.Location = new System.Drawing.Point(185, 163);
+            this.EditMovieCopiesTextbox.Name = "EditMovieCopiesTextbox";
+            this.EditMovieCopiesTextbox.Size = new System.Drawing.Size(212, 30);
+            this.EditMovieCopiesTextbox.TabIndex = 3;
+            // 
+            // EditMovieGenreTextbox
+            // 
+            this.EditMovieGenreTextbox.Location = new System.Drawing.Point(185, 97);
+            this.EditMovieGenreTextbox.Name = "EditMovieGenreTextbox";
+            this.EditMovieGenreTextbox.Size = new System.Drawing.Size(212, 30);
+            this.EditMovieGenreTextbox.TabIndex = 2;
+            // 
+            // EditMovieNameTextbox
+            // 
+            this.EditMovieNameTextbox.Location = new System.Drawing.Point(185, 40);
+            this.EditMovieNameTextbox.Name = "EditMovieNameTextbox";
+            this.EditMovieNameTextbox.Size = new System.Drawing.Size(212, 30);
+            this.EditMovieNameTextbox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(58, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Movie Name:";
+            // 
             // RentalsTabPage
             // 
             this.RentalsTabPage.Location = new System.Drawing.Point(4, 34);
@@ -1367,39 +1653,6 @@
             this.ReportsTabPage.TabIndex = 4;
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(601, 177);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(111, 29);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "By Actor";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(601, 213);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(102, 29);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "By Title";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(601, 249);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(119, 29);
-            this.radioButton3.TabIndex = 21;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "By Genre";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1425,9 +1678,13 @@
             this.SearchCustomerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).EndInit();
             this.MoviesTabPage.ResumeLayout(false);
+            this.AddMoviePanel.ResumeLayout(false);
+            this.AddMoviePanel.PerformLayout();
             this.SearchMoviePanel.ResumeLayout(false);
             this.SearchMoviePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).EndInit();
+            this.EditMoviePanel.ResumeLayout(false);
+            this.EditMoviePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1538,6 +1795,29 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Panel EditMoviePanel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox EditMovieFeeTextbox;
+        private System.Windows.Forms.TextBox EditMovieCopiesTextbox;
+        private System.Windows.Forms.TextBox EditMovieGenreTextbox;
+        private System.Windows.Forms.TextBox EditMovieNameTextbox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CancelEditMovieButton;
+        private System.Windows.Forms.Button SaveMovieChangesButton;
+        private System.Windows.Forms.Label EditMovieIDLabel;
+        private System.Windows.Forms.Panel AddMoviePanel;
+        private System.Windows.Forms.Button CancelAddMovieButton;
+        private System.Windows.Forms.Button SaveNewMovieButton;
+        private System.Windows.Forms.TextBox AddMovieFeeTextbox;
+        private System.Windows.Forms.TextBox AddMovieCopiesTextbox;
+        private System.Windows.Forms.TextBox AddMovieGenreTextbox;
+        private System.Windows.Forms.TextBox AddMovieNameTextbox;
+        private System.Windows.Forms.Label AddMovieFeeLabel;
+        private System.Windows.Forms.Label AddMovieCopiesLabel;
+        private System.Windows.Forms.Label AddMovieGenreLabel;
+        private System.Windows.Forms.Label AddMovieNameLabel;
     }
 }
 

@@ -624,7 +624,13 @@ namespace CMPT291_Project
 
         private void AddMovieButton_Click(object sender, EventArgs e)
         {
+            AddMovieNameTextbox.Text = "";
+            AddMovieGenreTextbox.Text = "";
+            AddMovieCopiesTextbox.Text = "";
+            AddMovieFeeTextbox.Text = "";
 
+            SearchMoviePanel.Visible = false;
+            AddMoviePanel.Visible = true;
         }
 
         private void DeleteMovieButton_Click(object sender, EventArgs e)
@@ -706,5 +712,116 @@ namespace CMPT291_Project
             MovieDetailsGrid.DataSource = dt;
         }
 
+        private void EditMoviesButton_Click(object sender, EventArgs e)
+        {
+            if (MovieDetailsGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = MovieDetailsGrid.SelectedRows[0];
+
+                EditMovieIDLabel.Text = selectedRow.Cells["MovieID"].Value.ToString();
+                EditMovieNameTextbox.Text = selectedRow.Cells["Name"].Value.ToString();
+                EditMovieGenreTextbox.Text = selectedRow.Cells["Type"].Value.ToString();
+                EditMovieCopiesTextbox.Text = selectedRow.Cells["NumCopies"].Value.ToString();
+                EditMovieFeeTextbox.Text = selectedRow.Cells["DistributionFee"].Value.ToString();
+
+                SearchMoviePanel.Visible = false;
+                EditMoviePanel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Please select a movie to edit.");
+            }
+
+        }
+
+        private void SaveMovieChangesButton_Click(object sender, EventArgs e)
+        {
+            string movieId = EditMovieIDLabel.Text;
+            string newName = EditMovieNameTextbox.Text;
+            string newGenre = EditMovieGenreTextbox.Text;
+            int newCopies = int.Parse(EditMovieCopiesTextbox.Text);
+            decimal newFee = decimal.Parse(EditMovieFeeTextbox.Text);
+
+            try
+            {
+                string query = "UPDATE Movie SET Name = @name, Type = @genre, NumCopies = @copies, DistributionFee = @fee WHERE MovieID = @id";
+                using (SqlCommand cmd = new SqlCommand(query, myConnection))
+                {
+                    cmd.Parameters.AddWithValue("@name", newName);
+                    cmd.Parameters.AddWithValue("@genre", newGenre);
+                    cmd.Parameters.AddWithValue("@copies", newCopies);
+                    cmd.Parameters.AddWithValue("@fee", newFee);
+                    cmd.Parameters.AddWithValue("@id", movieId);
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Movie details updated.");
+                SearchMoviePanel.Visible = true;
+                EditMoviePanel.Visible = false;
+                MovieSearchbutton.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating movie: " + ex.Message);
+            }
+        }
+
+        private void CancelEditMovieButton_Click(object sender, EventArgs e)
+        {
+            SearchMoviePanel.Visible = true;
+            EditMoviePanel.Visible = false;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveNewMovieButton_Click(object sender, EventArgs e)
+        {
+            string name = AddMovieNameTextbox.Text;
+            string genre = AddMovieGenreTextbox.Text;
+            int copies;
+            decimal fee;
+
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(genre) ||
+                !int.TryParse(AddMovieCopiesTextbox.Text, out copies) ||
+                !decimal.TryParse(AddMovieFeeTextbox.Text, out fee))
+            {
+                MessageBox.Show("Please fill all fields with valid values.");
+                return;
+            }
+
+            try
+            {
+                string query = @"
+            INSERT INTO Movie (MovieID, Name, Type, NumCopies, DistributionFee)
+            VALUES (NEXT VALUE FOR Movie_MovieID_Seq, @name, @genre, @copies, @fee)";
+
+                using (SqlCommand cmd = new SqlCommand(query, myConnection))
+                {
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@genre", genre);
+                    cmd.Parameters.AddWithValue("@copies", copies);
+                    cmd.Parameters.AddWithValue("@fee", fee);
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("New movie added.");
+                AddMoviePanel.Visible = false;
+                SearchMoviePanel.Visible = true;
+                MovieSearchbutton.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding movie: " + ex.Message);
+            }
+        }
+
+        private void CancelAddMovieButton_Click(object sender, EventArgs e)
+        {
+            AddMoviePanel.Visible = false;
+            SearchMoviePanel.Visible = true;
+        }
     }
 }
