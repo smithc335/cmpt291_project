@@ -168,6 +168,9 @@
             this.rentHistCheckD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentHistReturnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -185,6 +188,7 @@
             this.rentDispensePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,11 +211,11 @@
             // 
             this.LogInTabPage.Controls.Add(this.LoginPanel);
             this.LogInTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogInTabPage.Location = new System.Drawing.Point(4, 25);
+            this.LogInTabPage.Location = new System.Drawing.Point(4, 34);
             this.LogInTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.LogInTabPage.Name = "LogInTabPage";
             this.LogInTabPage.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.LogInTabPage.Size = new System.Drawing.Size(878, 506);
+            this.LogInTabPage.Size = new System.Drawing.Size(878, 497);
             this.LogInTabPage.TabIndex = 0;
             this.LogInTabPage.Text = "Log In";
             this.LogInTabPage.UseVisualStyleBackColor = true;
@@ -240,7 +244,7 @@
             this.SystemNameLabel.Location = new System.Drawing.Point(100, 81);
             this.SystemNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.SystemNameLabel.Name = "SystemNameLabel";
-            this.SystemNameLabel.Size = new System.Drawing.Size(238, 26);
+            this.SystemNameLabel.Size = new System.Drawing.Size(333, 37);
             this.SystemNameLabel.TabIndex = 7;
             this.SystemNameLabel.Text = "Movie Rental System";
             // 
@@ -251,7 +255,7 @@
             this.LoginTitleLabel.Location = new System.Drawing.Point(101, 119);
             this.LoginTitleLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LoginTitleLabel.Name = "LoginTitleLabel";
-            this.LoginTitleLabel.Size = new System.Drawing.Size(148, 24);
+            this.LoginTitleLabel.Size = new System.Drawing.Size(219, 32);
             this.LoginTitleLabel.TabIndex = 6;
             this.LoginTitleLabel.Text = "Employee Login";
             // 
@@ -261,7 +265,7 @@
             this.PasswordTextbox.Location = new System.Drawing.Point(206, 248);
             this.PasswordTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.PasswordTextbox.Name = "PasswordTextbox";
-            this.PasswordTextbox.Size = new System.Drawing.Size(422, 23);
+            this.PasswordTextbox.Size = new System.Drawing.Size(422, 30);
             this.PasswordTextbox.TabIndex = 3;
             // 
             // UsernameLabel
@@ -271,7 +275,7 @@
             this.UsernameLabel.Location = new System.Drawing.Point(101, 191);
             this.UsernameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(96, 20);
+            this.UsernameLabel.Size = new System.Drawing.Size(139, 29);
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username:";
             // 
@@ -281,7 +285,7 @@
             this.UsernameTextbox.Location = new System.Drawing.Point(206, 191);
             this.UsernameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.UsernameTextbox.Name = "UsernameTextbox";
-            this.UsernameTextbox.Size = new System.Drawing.Size(422, 23);
+            this.UsernameTextbox.Size = new System.Drawing.Size(422, 30);
             this.UsernameTextbox.TabIndex = 2;
             // 
             // LoginResultLabel
@@ -291,7 +295,7 @@
             this.LoginResultLabel.Location = new System.Drawing.Point(254, 323);
             this.LoginResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LoginResultLabel.Name = "LoginResultLabel";
-            this.LoginResultLabel.Size = new System.Drawing.Size(87, 17);
+            this.LoginResultLabel.Size = new System.Drawing.Size(119, 25);
             this.LoginResultLabel.TabIndex = 5;
             this.LoginResultLabel.Text = "Login Result";
             this.LoginResultLabel.Visible = false;
@@ -317,7 +321,7 @@
             this.PasswordLabel.Location = new System.Drawing.Point(101, 248);
             this.PasswordLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(91, 20);
+            this.PasswordLabel.Size = new System.Drawing.Size(135, 29);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password:";
             // 
@@ -326,11 +330,11 @@
             this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
-            this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
+            this.CustomersTabPage.Location = new System.Drawing.Point(4, 34);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
             this.CustomersTabPage.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.CustomersTabPage.Size = new System.Drawing.Size(878, 506);
+            this.CustomersTabPage.Size = new System.Drawing.Size(878, 497);
             this.CustomersTabPage.TabIndex = 1;
             this.CustomersTabPage.Text = "Customers";
             this.CustomersTabPage.UseVisualStyleBackColor = true;
@@ -798,7 +802,7 @@
             "Other"});
             this.AddPhoneComboBox.Location = new System.Drawing.Point(672, 180);
             this.AddPhoneComboBox.Name = "AddPhoneComboBox";
-            this.AddPhoneComboBox.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox.Size = new System.Drawing.Size(121, 33);
             this.AddPhoneComboBox.TabIndex = 30;
             this.AddPhoneComboBox.SelectedIndexChanged += new System.EventHandler(this.AddPhoneComboBox_SelectedIndexChanged);
             // 
@@ -808,17 +812,17 @@
             this.AddPhoneTextbox.Location = new System.Drawing.Point(430, 180);
             this.AddPhoneTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddPhoneTextbox.Name = "AddPhoneTextbox";
-            this.AddPhoneTextbox.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox.Size = new System.Drawing.Size(231, 30);
             this.AddPhoneTextbox.TabIndex = 31;
             this.AddPhoneTextbox.TextChanged += new System.EventHandler(this.AddPhoneTextbox_TextChanged);
             // 
             // AddPhoneListBox
             // 
             this.AddPhoneListBox.FormattingEnabled = true;
-            this.AddPhoneListBox.ItemHeight = 16;
+            this.AddPhoneListBox.ItemHeight = 25;
             this.AddPhoneListBox.Location = new System.Drawing.Point(160, 180);
             this.AddPhoneListBox.Name = "AddPhoneListBox";
-            this.AddPhoneListBox.Size = new System.Drawing.Size(244, 100);
+            this.AddPhoneListBox.Size = new System.Drawing.Size(244, 79);
             this.AddPhoneListBox.TabIndex = 29;
             // 
             // AddPhoneLabel
@@ -828,7 +832,7 @@
             this.AddPhoneLabel.Location = new System.Drawing.Point(25, 180);
             this.AddPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddPhoneLabel.Name = "AddPhoneLabel";
-            this.AddPhoneLabel.Size = new System.Drawing.Size(124, 17);
+            this.AddPhoneLabel.Size = new System.Drawing.Size(173, 25);
             this.AddPhoneLabel.TabIndex = 28;
             this.AddPhoneLabel.Text = "Phone Number(s):";
             // 
@@ -851,7 +855,7 @@
             "YT"});
             this.AddProvinceComboBox.Location = new System.Drawing.Point(470, 352);
             this.AddProvinceComboBox.Name = "AddProvinceComboBox";
-            this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 24);
+            this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 33);
             this.AddProvinceComboBox.TabIndex = 26;
             this.AddProvinceComboBox.SelectedIndexChanged += new System.EventHandler(this.AddProvinceComboBox_SelectedIndexChanged);
             // 
@@ -877,7 +881,7 @@
             this.AddCreditLabel.Location = new System.Drawing.Point(439, 102);
             this.AddCreditLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddCreditLabel.Name = "AddCreditLabel";
-            this.AddCreditLabel.Size = new System.Drawing.Size(137, 17);
+            this.AddCreditLabel.Size = new System.Drawing.Size(192, 25);
             this.AddCreditLabel.TabIndex = 23;
             this.AddCreditLabel.Text = "Credit Card Number:";
             // 
@@ -887,7 +891,7 @@
             this.AddCreditTextbox.Location = new System.Drawing.Point(590, 99);
             this.AddCreditTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddCreditTextbox.Name = "AddCreditTextbox";
-            this.AddCreditTextbox.Size = new System.Drawing.Size(224, 23);
+            this.AddCreditTextbox.Size = new System.Drawing.Size(224, 30);
             this.AddCreditTextbox.TabIndex = 24;
             this.AddCreditTextbox.TextChanged += new System.EventHandler(this.AddCreditTextbox_TextChanged);
             // 
@@ -898,7 +902,7 @@
             this.AddAcctNumInstLabel.Location = new System.Drawing.Point(288, 139);
             this.AddAcctNumInstLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAcctNumInstLabel.Name = "AddAcctNumInstLabel";
-            this.AddAcctNumInstLabel.Size = new System.Drawing.Size(248, 13);
+            this.AddAcctNumInstLabel.Size = new System.Drawing.Size(363, 20);
             this.AddAcctNumInstLabel.TabIndex = 22;
             this.AddAcctNumInstLabel.Text = "Leave blank if customer is creating a new account.";
             // 
@@ -909,7 +913,7 @@
             this.AddAcctNumLabel.Location = new System.Drawing.Point(24, 137);
             this.AddAcctNumLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAcctNumLabel.Name = "AddAcctNumLabel";
-            this.AddAcctNumLabel.Size = new System.Drawing.Size(117, 17);
+            this.AddAcctNumLabel.Size = new System.Drawing.Size(164, 25);
             this.AddAcctNumLabel.TabIndex = 20;
             this.AddAcctNumLabel.Text = "Account Number:";
             // 
@@ -919,7 +923,7 @@
             this.AddAcctNumTextbox.Location = new System.Drawing.Point(155, 134);
             this.AddAcctNumTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddAcctNumTextbox.Name = "AddAcctNumTextbox";
-            this.AddAcctNumTextbox.Size = new System.Drawing.Size(119, 23);
+            this.AddAcctNumTextbox.Size = new System.Drawing.Size(119, 30);
             this.AddAcctNumTextbox.TabIndex = 21;
             // 
             // AddEmailLabel
@@ -929,7 +933,7 @@
             this.AddEmailLabel.Location = new System.Drawing.Point(25, 102);
             this.AddEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddEmailLabel.Name = "AddEmailLabel";
-            this.AddEmailLabel.Size = new System.Drawing.Size(102, 17);
+            this.AddEmailLabel.Size = new System.Drawing.Size(144, 25);
             this.AddEmailLabel.TabIndex = 18;
             this.AddEmailLabel.Text = "Email Address:";
             // 
@@ -939,7 +943,7 @@
             this.AddEmailTextbox.Location = new System.Drawing.Point(141, 99);
             this.AddEmailTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddEmailTextbox.Name = "AddEmailTextbox";
-            this.AddEmailTextbox.Size = new System.Drawing.Size(258, 23);
+            this.AddEmailTextbox.Size = new System.Drawing.Size(258, 30);
             this.AddEmailTextbox.TabIndex = 19;
             this.AddEmailTextbox.TextChanged += new System.EventHandler(this.AddEmailTextbox_TextChanged);
             // 
@@ -950,7 +954,7 @@
             this.AddPostalCodeLabel.Location = new System.Drawing.Point(24, 390);
             this.AddPostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddPostalCodeLabel.Name = "AddPostalCodeLabel";
-            this.AddPostalCodeLabel.Size = new System.Drawing.Size(88, 17);
+            this.AddPostalCodeLabel.Size = new System.Drawing.Size(125, 25);
             this.AddPostalCodeLabel.TabIndex = 16;
             this.AddPostalCodeLabel.Text = "Postal Code:";
             // 
@@ -960,7 +964,7 @@
             this.AddPostalCodeTextbox.Location = new System.Drawing.Point(127, 387);
             this.AddPostalCodeTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddPostalCodeTextbox.Name = "AddPostalCodeTextbox";
-            this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 30);
             this.AddPostalCodeTextbox.TabIndex = 17;
             this.AddPostalCodeTextbox.TextChanged += new System.EventHandler(this.AddPostalCodeTextbox_TextChanged);
             // 
@@ -971,7 +975,7 @@
             this.AddProvinceLabel.Location = new System.Drawing.Point(393, 355);
             this.AddProvinceLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddProvinceLabel.Name = "AddProvinceLabel";
-            this.AddProvinceLabel.Size = new System.Drawing.Size(67, 17);
+            this.AddProvinceLabel.Size = new System.Drawing.Size(94, 25);
             this.AddProvinceLabel.TabIndex = 14;
             this.AddProvinceLabel.Text = "Province:";
             // 
@@ -982,7 +986,7 @@
             this.AddCityLabel.Location = new System.Drawing.Point(24, 355);
             this.AddCityLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddCityLabel.Name = "AddCityLabel";
-            this.AddCityLabel.Size = new System.Drawing.Size(35, 17);
+            this.AddCityLabel.Size = new System.Drawing.Size(52, 25);
             this.AddCityLabel.TabIndex = 12;
             this.AddCityLabel.Text = "City:";
             // 
@@ -992,7 +996,7 @@
             this.AddCityTextbox.Location = new System.Drawing.Point(73, 352);
             this.AddCityTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddCityTextbox.Name = "AddCityTextbox";
-            this.AddCityTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddCityTextbox.Size = new System.Drawing.Size(282, 30);
             this.AddCityTextbox.TabIndex = 13;
             this.AddCityTextbox.TextChanged += new System.EventHandler(this.AddCityTextbox_TextChanged);
             // 
@@ -1003,7 +1007,7 @@
             this.AddAddressLabel.Location = new System.Drawing.Point(24, 320);
             this.AddAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAddressLabel.Name = "AddAddressLabel";
-            this.AddAddressLabel.Size = new System.Drawing.Size(64, 17);
+            this.AddAddressLabel.Size = new System.Drawing.Size(91, 25);
             this.AddAddressLabel.TabIndex = 10;
             this.AddAddressLabel.Text = "Address:";
             // 
@@ -1013,7 +1017,7 @@
             this.AddAddressTextbox.Location = new System.Drawing.Point(102, 317);
             this.AddAddressTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddAddressTextbox.Name = "AddAddressTextbox";
-            this.AddAddressTextbox.Size = new System.Drawing.Size(328, 23);
+            this.AddAddressTextbox.Size = new System.Drawing.Size(328, 30);
             this.AddAddressTextbox.TabIndex = 11;
             this.AddAddressTextbox.TextChanged += new System.EventHandler(this.AddAddressTextbox_TextChanged);
             // 
@@ -1024,7 +1028,7 @@
             this.AddLastNameLabel.Location = new System.Drawing.Point(439, 65);
             this.AddLastNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddLastNameLabel.Name = "AddLastNameLabel";
-            this.AddLastNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.AddLastNameLabel.Size = new System.Drawing.Size(112, 25);
             this.AddLastNameLabel.TabIndex = 8;
             this.AddLastNameLabel.Text = "Last Name:";
             // 
@@ -1034,7 +1038,7 @@
             this.AddLastNameTextbox.Location = new System.Drawing.Point(533, 62);
             this.AddLastNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddLastNameTextbox.Name = "AddLastNameTextbox";
-            this.AddLastNameTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddLastNameTextbox.Size = new System.Drawing.Size(282, 30);
             this.AddLastNameTextbox.TabIndex = 9;
             this.AddLastNameTextbox.TextChanged += new System.EventHandler(this.AddLastNameTextbox_TextChanged);
             // 
@@ -1045,7 +1049,7 @@
             this.AddFirstNameLabel.Location = new System.Drawing.Point(24, 65);
             this.AddFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddFirstNameLabel.Name = "AddFirstNameLabel";
-            this.AddFirstNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.AddFirstNameLabel.Size = new System.Drawing.Size(112, 25);
             this.AddFirstNameLabel.TabIndex = 6;
             this.AddFirstNameLabel.Text = "First Name:";
             // 
@@ -1055,7 +1059,7 @@
             this.AddFirstNameTextbox.Location = new System.Drawing.Point(118, 62);
             this.AddFirstNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddFirstNameTextbox.Name = "AddFirstNameTextbox";
-            this.AddFirstNameTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddFirstNameTextbox.Size = new System.Drawing.Size(282, 30);
             this.AddFirstNameTextbox.TabIndex = 7;
             this.AddFirstNameTextbox.TextChanged += new System.EventHandler(this.AddFirstNameTextbox_TextChanged);
             // 
@@ -1080,7 +1084,7 @@
             this.AddCustomersLabel.Location = new System.Drawing.Point(23, 18);
             this.AddCustomersLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.AddCustomersLabel.Name = "AddCustomersLabel";
-            this.AddCustomersLabel.Size = new System.Drawing.Size(162, 20);
+            this.AddCustomersLabel.Size = new System.Drawing.Size(238, 29);
             this.AddCustomersLabel.TabIndex = 1;
             this.AddCustomersLabel.Text = "Add New Customer";
             // 
@@ -1122,7 +1126,7 @@
             this.EmailRadioButton.AutoSize = true;
             this.EmailRadioButton.Location = new System.Drawing.Point(417, 21);
             this.EmailRadioButton.Name = "EmailRadioButton";
-            this.EmailRadioButton.Size = new System.Drawing.Size(114, 21);
+            this.EmailRadioButton.Size = new System.Drawing.Size(158, 29);
             this.EmailRadioButton.TabIndex = 15;
             this.EmailRadioButton.Text = "email address";
             this.EmailRadioButton.UseVisualStyleBackColor = true;
@@ -1133,7 +1137,7 @@
             this.FirstNameRadioButton.Checked = true;
             this.FirstNameRadioButton.Location = new System.Drawing.Point(209, 21);
             this.FirstNameRadioButton.Name = "FirstNameRadioButton";
-            this.FirstNameRadioButton.Size = new System.Drawing.Size(88, 21);
+            this.FirstNameRadioButton.Size = new System.Drawing.Size(121, 29);
             this.FirstNameRadioButton.TabIndex = 14;
             this.FirstNameRadioButton.TabStop = true;
             this.FirstNameRadioButton.Text = "first name";
@@ -1144,7 +1148,7 @@
             this.LastNameRadioButton.AutoSize = true;
             this.LastNameRadioButton.Location = new System.Drawing.Point(312, 21);
             this.LastNameRadioButton.Name = "LastNameRadioButton";
-            this.LastNameRadioButton.Size = new System.Drawing.Size(87, 21);
+            this.LastNameRadioButton.Size = new System.Drawing.Size(121, 29);
             this.LastNameRadioButton.TabIndex = 13;
             this.LastNameRadioButton.Text = "last name";
             this.LastNameRadioButton.UseVisualStyleBackColor = true;
@@ -1156,7 +1160,7 @@
             this.CustSearchInstructionsLabel.Location = new System.Drawing.Point(24, 23);
             this.CustSearchInstructionsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.CustSearchInstructionsLabel.Name = "CustSearchInstructionsLabel";
-            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(165, 17);
+            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(222, 25);
             this.CustSearchInstructionsLabel.TabIndex = 10;
             this.CustSearchInstructionsLabel.Text = "Search customers by:";
             // 
@@ -1250,7 +1254,7 @@
             this.SearchTextBox.Location = new System.Drawing.Point(27, 57);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(549, 26);
+            this.SearchTextBox.Size = new System.Drawing.Size(549, 35);
             this.SearchTextBox.TabIndex = 7;
             // 
             // MoveToAddButton
@@ -1270,10 +1274,10 @@
             // MoviesTabPage
             // 
             this.MoviesTabPage.Controls.Add(this.SearchMoviePanel);
-            this.MoviesTabPage.Location = new System.Drawing.Point(4, 25);
+            this.MoviesTabPage.Location = new System.Drawing.Point(4, 34);
             this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.MoviesTabPage.Name = "MoviesTabPage";
-            this.MoviesTabPage.Size = new System.Drawing.Size(878, 506);
+            this.MoviesTabPage.Size = new System.Drawing.Size(878, 497);
             this.MoviesTabPage.TabIndex = 2;
             this.MoviesTabPage.Text = "Movies";
             this.MoviesTabPage.UseVisualStyleBackColor = true;
@@ -1352,10 +1356,10 @@
             // MoviesDisplayed
             // 
             this.MoviesDisplayed.FormattingEnabled = true;
-            this.MoviesDisplayed.ItemHeight = 16;
+            this.MoviesDisplayed.ItemHeight = 25;
             this.MoviesDisplayed.Location = new System.Drawing.Point(23, 106);
             this.MoviesDisplayed.Name = "MoviesDisplayed";
-            this.MoviesDisplayed.Size = new System.Drawing.Size(549, 276);
+            this.MoviesDisplayed.Size = new System.Drawing.Size(549, 254);
             this.MoviesDisplayed.TabIndex = 14;
             // 
             // MovieSearchbutton
@@ -1378,7 +1382,7 @@
             this.MovieSearchTextBox.Location = new System.Drawing.Point(23, 54);
             this.MovieSearchTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.MovieSearchTextBox.Name = "MovieSearchTextBox";
-            this.MovieSearchTextBox.Size = new System.Drawing.Size(549, 26);
+            this.MovieSearchTextBox.Size = new System.Drawing.Size(549, 35);
             this.MovieSearchTextBox.TabIndex = 12;
             // 
             // SearchMoviesLabel
@@ -1388,7 +1392,7 @@
             this.SearchMoviesLabel.Location = new System.Drawing.Point(20, 20);
             this.SearchMoviesLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.SearchMoviesLabel.Name = "SearchMoviesLabel";
-            this.SearchMoviesLabel.Size = new System.Drawing.Size(114, 17);
+            this.SearchMoviesLabel.Size = new System.Drawing.Size(156, 25);
             this.SearchMoviesLabel.TabIndex = 11;
             this.SearchMoviesLabel.Text = "Search Movies";
             // 
@@ -1399,7 +1403,7 @@
             this.RentalsTabPage.Location = new System.Drawing.Point(4, 25);
             this.RentalsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.RentalsTabPage.Name = "RentalsTabPage";
-            this.RentalsTabPage.Size = new System.Drawing.Size(878, 506);
+            this.RentalsTabPage.Size = new System.Drawing.Size(878, 497);
             this.RentalsTabPage.TabIndex = 3;
             this.RentalsTabPage.Text = "Rentals";
             this.RentalsTabPage.UseVisualStyleBackColor = true;
@@ -1538,10 +1542,10 @@
             // 
             // ReportsTabPage
             // 
-            this.ReportsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.ReportsTabPage.Location = new System.Drawing.Point(4, 34);
             this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.ReportsTabPage.Name = "ReportsTabPage";
-            this.ReportsTabPage.Size = new System.Drawing.Size(878, 506);
+            this.ReportsTabPage.Size = new System.Drawing.Size(878, 497);
             this.ReportsTabPage.TabIndex = 4;
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
@@ -1824,7 +1828,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 565);
             this.Controls.Add(this.MovieRentalTabControl);
