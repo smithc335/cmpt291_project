@@ -1347,7 +1347,7 @@
             this.DeleteMovieButton.TabIndex = 15;
             this.DeleteMovieButton.Text = "Delete";
             this.DeleteMovieButton.UseVisualStyleBackColor = false;
-            this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieButton_Click);
+            //this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieButton_Click);
             // 
             // MoviesDisplayed
             // 
@@ -1370,7 +1370,7 @@
             this.MovieSearchbutton.TabIndex = 13;
             this.MovieSearchbutton.Text = "Search";
             this.MovieSearchbutton.UseVisualStyleBackColor = false;
-            this.MovieSearchbutton.Click += new System.EventHandler(this.MovieSearchbutton_Click);
+            //this.MovieSearchbutton.Click += new System.EventHandler(this.MovieSearchbutton_Click);
             // 
             // MovieSearchTextBox
             // 
@@ -1789,38 +1789,38 @@
             this.rentHistReturnD.Name = "rentHistReturnD";
             // 
             // timer1
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(601, 177);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(111, 29);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "By Actor";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(601, 213);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(102, 29);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "By Title";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(601, 249);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(119, 29);
-            this.radioButton3.TabIndex = 21;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "By Genre";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            //// radioButton1
+            //// 
+            //this.radioButton1.AutoSize = true;
+            //this.radioButton1.Location = new System.Drawing.Point(601, 177);
+            //this.radioButton1.Name = "radioButton1";
+            //this.radioButton1.Size = new System.Drawing.Size(111, 29);
+            //this.radioButton1.TabIndex = 19;
+            //this.radioButton1.TabStop = true;
+            //this.radioButton1.Text = "By Actor";
+            //this.radioButton1.UseVisualStyleBackColor = true;
+            //// 
+            //// radioButton2
+            //// 
+            //this.radioButton2.AutoSize = true;
+            //this.radioButton2.Location = new System.Drawing.Point(601, 213);
+            //this.radioButton2.Name = "radioButton2";
+            //this.radioButton2.Size = new System.Drawing.Size(102, 29);
+            //this.radioButton2.TabIndex = 20;
+            //this.radioButton2.TabStop = true;
+            //this.radioButton2.Text = "By Title";
+            //this.radioButton2.UseVisualStyleBackColor = true;
+            //// 
+            //// radioButton3
+            //// 
+            //this.radioButton3.AutoSize = true;
+            //this.radioButton3.Location = new System.Drawing.Point(601, 249);
+            //this.radioButton3.Name = "radioButton3";
+            //this.radioButton3.Size = new System.Drawing.Size(119, 29);
+            //this.radioButton3.TabIndex = 21;
+            //this.radioButton3.TabStop = true;
+            //this.radioButton3.Text = "By Genre";
+            //this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
