@@ -60,9 +60,6 @@ INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
 INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
 	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'p.mckay@hotmail.ca'), '7805776766', 'Mobile');
 
-INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
-	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'), '5871174658', 'Home');
-
 -- Add test data for Employee
 
 INSERT INTO Employee (EmployeeID, SSN, LastName, FirstName, Address, City, Province, PostalCode, StartDate) 
