@@ -141,7 +141,7 @@ namespace CMPT291_Project
             ViewCustomerPanel.Visible = false;
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e) // Customer Search Button
         {
             if (FirstNameRadioButton.Checked)
             {
@@ -286,8 +286,6 @@ namespace CMPT291_Project
 
         private void DeleteCustomerButton_Click(object sender, EventArgs e)
         {
-            //  CAN WE MAKE DELETE CUSTOMER CHANGE CUSTOMER FROM ACTIVE TO INACTIVE INSTEAD OF DELETING ALL RECORDS?
-
             string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
 
             // Delete records from all tables with CustomerID as foreign key
@@ -304,11 +302,11 @@ namespace CMPT291_Project
             myCommand.CommandText = "delete from Customer where CustomerID = " + customerID;
             myCommand.ExecuteNonQuery();
 
-            MessageBox.Show("Customer has been deleted."); // should have an "are you sure?" message maybe??
+            MessageBox.Show("Customer has been deleted.");
 
             // Change screens back to search screen
             SearchCustomerPanel.Visible = true;
-            SearchButton.PerformClick(); // FIX THIS LATER (pull query into its own UpdateCustomerDataGrid method)
+            SearchButton.PerformClick(); // could pull query into its own UpdateCustomerDataGrid method
             ViewCustomerPanel.Visible = false;
             AddCustomerPanel.Visible = false;
 
@@ -440,7 +438,7 @@ namespace CMPT291_Project
 
             // Change screens back to search screen
             SearchCustomerPanel.Visible = true;
-            SearchButton.PerformClick(); // FIX THIS LATER (pull query into its own UpdateCustomerDataGrid method)
+            SearchButton.PerformClick();
             ViewCustomerPanel.Visible = false;
             AddCustomerPanel.Visible = false;
         }
@@ -513,6 +511,55 @@ namespace CMPT291_Project
             }
         }
 
+        private void SaveUpdatesButton_Click(object sender, EventArgs e)
+        {
+            string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            string[] phoneNumbers;
+
+            // Update record in Customer table
+            myCommand.CommandText = "update Customer set FirstName = '" + VUFirstNameTextbox.Text + "', LastName = '" + VULastNameTextbox.Text +
+                "', EmailAddress = '" + VUEmailTextbox.Text + "', CreditCardNum = '" + VUCreditTextbox.Text + "', AcctNum = " +
+                VUAcctNumTextbox.Text + ", Address = '" + VUAddressTextbox.Text + "', City = '" + VUCityTextbox.Text + "', Province = '" +
+                VUProvinceComboBox.Text + "', PostalCode = '" + VUPostalCodeTextbox.Text + "' where CustomerID = " + customerID;
+
+            myCommand.ExecuteNonQuery();
+
+            // Update records in CustomerPhone table
+            myCommand.CommandText = "delete from CustomerPhone where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+
+            if (VUPhoneListBox.Items.Count > 0)
+            {
+                for (int i = 0; i < VUPhoneListBox.Items.Count; i++)
+                {
+                    myCommand.CommandText = "insert into CustomerPhone (CustomerID, PhoneNum, PhoneType) values (" + customerID + ", '";
+
+                    phoneNumbers = VUPhoneListBox.Items[i].ToString().Split(' ');
+                    myCommand.CommandText += phoneNumbers[0] + "', '" + phoneNumbers[2] + "')";
+
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Customer information has been updated.");
+
+            // Change screens back to search screen
+            SearchCustomerPanel.Visible = true;
+            SearchButton.PerformClick();
+            ViewCustomerPanel.Visible = false;
+            AddCustomerPanel.Visible = false;
+        }
+
+        private void VUPhoneListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VUDeletePhoneButton.Enabled = (VUPhoneListBox.SelectedItem != null);
+        }
+
+        private void VUDeletePhoneButton_Click(object sender, EventArgs e)
+        {
+            VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
+        }
+
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -542,6 +589,8 @@ namespace CMPT291_Project
         {
 
         }
+
+
 // RENT / DISPENSE SCREEN CODE
 
         private void rentCustSearchBttn_Click(object sender, EventArgs e)
@@ -712,55 +761,6 @@ namespace CMPT291_Project
         {
             // Test
             // test  2
-        }
-
-        private void SaveUpdatesButton_Click(object sender, EventArgs e)
-        {
-            string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
-            string[] phoneNumbers;
-
-            // Update record in Customer table
-            myCommand.CommandText = "update Customer set FirstName = '" + VUFirstNameTextbox.Text + "', LastName = '" + VULastNameTextbox.Text +
-                "', EmailAddress = '" + VUEmailTextbox.Text + "', CreditCardNum = '" + VUCreditTextbox.Text + "', AcctNum = " +
-                VUAcctNumTextbox.Text + ", Address = '" + VUAddressTextbox.Text + "', City = '" + VUCityTextbox.Text + "', Province = '" +
-                VUProvinceComboBox.Text + "', PostalCode = '" + VUPostalCodeTextbox.Text + "' where CustomerID = " + customerID;
-
-            myCommand.ExecuteNonQuery();
-
-            // Update records in CustomerPhone table
-            myCommand.CommandText = "delete from CustomerPhone where CustomerID = " + customerID;
-            myCommand.ExecuteNonQuery();
-
-            if (VUPhoneListBox.Items.Count > 0)
-            {
-                for (int i = 0; i < VUPhoneListBox.Items.Count; i++)
-                {
-                    myCommand.CommandText = "insert into CustomerPhone (CustomerID, PhoneNum, PhoneType) values (" + customerID + ", '";
-
-                    phoneNumbers = VUPhoneListBox.Items[i].ToString().Split(' ');
-                    myCommand.CommandText += phoneNumbers[0] + "', '" + phoneNumbers[2] + "')";
-
-                    myCommand.ExecuteNonQuery();
-                }
-            }
-
-            MessageBox.Show("Customer information has been updated.");
-
-            // Change screens back to search screen
-            SearchCustomerPanel.Visible = true;
-            SearchButton.PerformClick(); // FIX THIS LATER (pull query into its own UpdateCustomerDataGrid method)
-            ViewCustomerPanel.Visible = false;
-            AddCustomerPanel.Visible = false;
-        }
-
-        private void VUPhoneListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            VUDeletePhoneButton.Enabled = (VUPhoneListBox.SelectedItem != null);
-        }
-
-        private void VUDeletePhoneButton_Click(object sender, EventArgs e)
-        {
-            VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
         }
 
         //private void MovieSearchbutton_Click(object sender, EventArgs e)
