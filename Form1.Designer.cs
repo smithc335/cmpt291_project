@@ -128,6 +128,30 @@
             this.MovieSearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
+            this.rentDispensePanel = new System.Windows.Forms.Panel();
+            this.rentCustHistoryDGV = new System.Windows.Forms.DataGridView();
+            this.rentHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistCheckD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistReturnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rentCustQueueDGV = new System.Windows.Forms.DataGridView();
+            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rentCustIdResultLabel = new System.Windows.Forms.Label();
+            this.rentCustIdLabel = new System.Windows.Forms.Label();
+            this.rentAcctResultLabel = new System.Windows.Forms.Label();
+            this.rentFNResultLabel = new System.Windows.Forms.Label();
+            this.rentEmailResultLabel = new System.Windows.Forms.Label();
+            this.rentLNResultLabel = new System.Windows.Forms.Label();
+            this.rentDispenseBttn = new System.Windows.Forms.Button();
+            this.rentAcctLabel = new System.Windows.Forms.Label();
+            this.rentEmailLabel = new System.Windows.Forms.Label();
+            this.rentFirstNameLabel = new System.Windows.Forms.Label();
+            this.rentCancelBttn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rentLastNameLabel = new System.Windows.Forms.Label();
             this.rentCustSearchPanel = new System.Windows.Forms.Panel();
             this.rentCustViewBttn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -143,30 +167,6 @@
             this.rentCustSearchTB = new System.Windows.Forms.TextBox();
             this.rentCustSearchLabel = new System.Windows.Forms.Label();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
-            this.rentDispensePanel = new System.Windows.Forms.Panel();
-            this.rentLastNameLabel = new System.Windows.Forms.Label();
-            this.rentDispenseBttn = new System.Windows.Forms.Button();
-            this.rentAcctLabel = new System.Windows.Forms.Label();
-            this.rentEmailLabel = new System.Windows.Forms.Label();
-            this.rentFirstNameLabel = new System.Windows.Forms.Label();
-            this.rentCancelBttn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rentEmailResultLabel = new System.Windows.Forms.Label();
-            this.rentLNResultLabel = new System.Windows.Forms.Label();
-            this.rentFNResultLabel = new System.Windows.Forms.Label();
-            this.rentAcctResultLabel = new System.Windows.Forms.Label();
-            this.rentCustIdResultLabel = new System.Windows.Forms.Label();
-            this.rentCustIdLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rentCustQueueDGV = new System.Windows.Forms.DataGridView();
-            this.rentCustHistoryDGV = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistCheckD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistReturnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
@@ -178,14 +178,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.MoviesTabPage.SuspendLayout();
             this.SearchMoviePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).BeginInit();
             this.RentalsTabPage.SuspendLayout();
+            this.rentDispensePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).BeginInit();
             this.rentCustSearchPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).BeginInit();
-            this.rentDispensePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -207,11 +207,11 @@
             // 
             this.LogInTabPage.Controls.Add(this.LoginPanel);
             this.LogInTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogInTabPage.Location = new System.Drawing.Point(4, 25);
+            this.LogInTabPage.Location = new System.Drawing.Point(4, 29);
             this.LogInTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.LogInTabPage.Name = "LogInTabPage";
             this.LogInTabPage.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.LogInTabPage.Size = new System.Drawing.Size(878, 506);
+            this.LogInTabPage.Size = new System.Drawing.Size(878, 502);
             this.LogInTabPage.TabIndex = 0;
             this.LogInTabPage.Text = "Log In";
             this.LogInTabPage.UseVisualStyleBackColor = true;
@@ -240,7 +240,7 @@
             this.SystemNameLabel.Location = new System.Drawing.Point(100, 81);
             this.SystemNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.SystemNameLabel.Name = "SystemNameLabel";
-            this.SystemNameLabel.Size = new System.Drawing.Size(238, 26);
+            this.SystemNameLabel.Size = new System.Drawing.Size(289, 31);
             this.SystemNameLabel.TabIndex = 7;
             this.SystemNameLabel.Text = "Movie Rental System";
             // 
@@ -251,7 +251,7 @@
             this.LoginTitleLabel.Location = new System.Drawing.Point(101, 119);
             this.LoginTitleLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LoginTitleLabel.Name = "LoginTitleLabel";
-            this.LoginTitleLabel.Size = new System.Drawing.Size(148, 24);
+            this.LoginTitleLabel.Size = new System.Drawing.Size(188, 29);
             this.LoginTitleLabel.TabIndex = 6;
             this.LoginTitleLabel.Text = "Employee Login";
             // 
@@ -261,7 +261,7 @@
             this.PasswordTextbox.Location = new System.Drawing.Point(206, 248);
             this.PasswordTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.PasswordTextbox.Name = "PasswordTextbox";
-            this.PasswordTextbox.Size = new System.Drawing.Size(422, 23);
+            this.PasswordTextbox.Size = new System.Drawing.Size(422, 26);
             this.PasswordTextbox.TabIndex = 3;
             // 
             // UsernameLabel
@@ -271,7 +271,7 @@
             this.UsernameLabel.Location = new System.Drawing.Point(101, 191);
             this.UsernameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(96, 20);
+            this.UsernameLabel.Size = new System.Drawing.Size(117, 25);
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username:";
             // 
@@ -281,7 +281,7 @@
             this.UsernameTextbox.Location = new System.Drawing.Point(206, 191);
             this.UsernameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.UsernameTextbox.Name = "UsernameTextbox";
-            this.UsernameTextbox.Size = new System.Drawing.Size(422, 23);
+            this.UsernameTextbox.Size = new System.Drawing.Size(422, 26);
             this.UsernameTextbox.TabIndex = 2;
             // 
             // LoginResultLabel
@@ -291,7 +291,7 @@
             this.LoginResultLabel.Location = new System.Drawing.Point(254, 323);
             this.LoginResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LoginResultLabel.Name = "LoginResultLabel";
-            this.LoginResultLabel.Size = new System.Drawing.Size(87, 17);
+            this.LoginResultLabel.Size = new System.Drawing.Size(103, 20);
             this.LoginResultLabel.TabIndex = 5;
             this.LoginResultLabel.Text = "Login Result";
             this.LoginResultLabel.Visible = false;
@@ -317,7 +317,7 @@
             this.PasswordLabel.Location = new System.Drawing.Point(101, 248);
             this.PasswordLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(91, 20);
+            this.PasswordLabel.Size = new System.Drawing.Size(113, 25);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password:";
             // 
@@ -326,11 +326,11 @@
             this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
-            this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
+            this.CustomersTabPage.Location = new System.Drawing.Point(4, 29);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
             this.CustomersTabPage.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.CustomersTabPage.Size = new System.Drawing.Size(878, 506);
+            this.CustomersTabPage.Size = new System.Drawing.Size(878, 502);
             this.CustomersTabPage.TabIndex = 1;
             this.CustomersTabPage.Text = "Customers";
             this.CustomersTabPage.UseVisualStyleBackColor = true;
@@ -381,7 +381,7 @@
             this.VUDeletePhoneButton.Enabled = false;
             this.VUDeletePhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VUDeletePhoneButton.ForeColor = System.Drawing.Color.White;
-            this.VUDeletePhoneButton.Location = new System.Drawing.Point(427, 214);
+            this.VUDeletePhoneButton.Location = new System.Drawing.Point(643, 214);
             this.VUDeletePhoneButton.Margin = new System.Windows.Forms.Padding(5);
             this.VUDeletePhoneButton.Name = "VUDeletePhoneButton";
             this.VUDeletePhoneButton.Size = new System.Drawing.Size(180, 39);
@@ -399,7 +399,7 @@
             this.VUPhoneButton.Location = new System.Drawing.Point(427, 214);
             this.VUPhoneButton.Margin = new System.Windows.Forms.Padding(5);
             this.VUPhoneButton.Name = "VUPhoneButton";
-            this.VUPhoneButton.Size = new System.Drawing.Size(180, 39);
+            this.VUPhoneButton.Size = new System.Drawing.Size(206, 39);
             this.VUPhoneButton.TabIndex = 55;
             this.VUPhoneButton.Text = "Add New Phone Number";
             this.VUPhoneButton.UseVisualStyleBackColor = false;
@@ -416,7 +416,7 @@
             "Other"});
             this.VUPhoneComboBox.Location = new System.Drawing.Point(669, 180);
             this.VUPhoneComboBox.Name = "VUPhoneComboBox";
-            this.VUPhoneComboBox.Size = new System.Drawing.Size(121, 24);
+            this.VUPhoneComboBox.Size = new System.Drawing.Size(121, 28);
             this.VUPhoneComboBox.TabIndex = 53;
             this.VUPhoneComboBox.SelectedIndexChanged += new System.EventHandler(this.VUPhoneComboBox_SelectedIndexChanged);
             // 
@@ -427,17 +427,17 @@
             this.VUPhoneTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUPhoneTextbox.Name = "VUPhoneTextbox";
             this.VUPhoneTextbox.ReadOnly = true;
-            this.VUPhoneTextbox.Size = new System.Drawing.Size(231, 23);
+            this.VUPhoneTextbox.Size = new System.Drawing.Size(231, 26);
             this.VUPhoneTextbox.TabIndex = 54;
             this.VUPhoneTextbox.TextChanged += new System.EventHandler(this.VUPhoneTextbox_TextChanged);
             // 
             // VUPhoneListBox
             // 
             this.VUPhoneListBox.FormattingEnabled = true;
-            this.VUPhoneListBox.ItemHeight = 16;
+            this.VUPhoneListBox.ItemHeight = 20;
             this.VUPhoneListBox.Location = new System.Drawing.Point(157, 180);
             this.VUPhoneListBox.Name = "VUPhoneListBox";
-            this.VUPhoneListBox.Size = new System.Drawing.Size(244, 100);
+            this.VUPhoneListBox.Size = new System.Drawing.Size(244, 84);
             this.VUPhoneListBox.TabIndex = 52;
             this.VUPhoneListBox.SelectedIndexChanged += new System.EventHandler(this.VUPhoneListBox_SelectedIndexChanged);
             // 
@@ -464,7 +464,7 @@
             this.VUPhoneLabel.Location = new System.Drawing.Point(23, 180);
             this.VUPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUPhoneLabel.Name = "VUPhoneLabel";
-            this.VUPhoneLabel.Size = new System.Drawing.Size(124,17);
+            this.VUPhoneLabel.Size = new System.Drawing.Size(146, 20);
             this.VUPhoneLabel.TabIndex = 31;
             this.VUPhoneLabel.Text = "Phone Number(s):";
             // 
@@ -490,7 +490,7 @@
             this.UpdateTitleLabel.Location = new System.Drawing.Point(24, 18);
             this.UpdateTitleLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UpdateTitleLabel.Name = "UpdateTitleLabel";
-            this.UpdateTitleLabel.Size = new System.Drawing.Size(247, 20);
+            this.UpdateTitleLabel.Size = new System.Drawing.Size(293, 25);
             this.UpdateTitleLabel.TabIndex = 49;
             this.UpdateTitleLabel.Text = "Update Customer Information";
             this.UpdateTitleLabel.Visible = false;
@@ -515,7 +515,7 @@
             "YT"});
             this.VUProvinceComboBox.Location = new System.Drawing.Point(469, 353);
             this.VUProvinceComboBox.Name = "VUProvinceComboBox";
-            this.VUProvinceComboBox.Size = new System.Drawing.Size(121, 24);
+            this.VUProvinceComboBox.Size = new System.Drawing.Size(121, 28);
             this.VUProvinceComboBox.TabIndex = 48;
             // 
             // MoveToUpdateButton
@@ -539,7 +539,7 @@
             this.VUCreditLabel.Location = new System.Drawing.Point(438, 102);
             this.VUCreditLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUCreditLabel.Name = "VUCreditLabel";
-            this.VUCreditLabel.Size = new System.Drawing.Size(137, 17);
+            this.VUCreditLabel.Size = new System.Drawing.Size(164, 20);
             this.VUCreditLabel.TabIndex = 45;
             this.VUCreditLabel.Text = "Credit Card Number:";
             // 
@@ -550,7 +550,7 @@
             this.VUCreditTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUCreditTextbox.Name = "VUCreditTextbox";
             this.VUCreditTextbox.ReadOnly = true;
-            this.VUCreditTextbox.Size = new System.Drawing.Size(226, 23);
+            this.VUCreditTextbox.Size = new System.Drawing.Size(226, 26);
             this.VUCreditTextbox.TabIndex = 46;
             // 
             // VUAcctNumLabel
@@ -560,7 +560,7 @@
             this.VUAcctNumLabel.Location = new System.Drawing.Point(25, 137);
             this.VUAcctNumLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUAcctNumLabel.Name = "VUAcctNumLabel";
-            this.VUAcctNumLabel.Size = new System.Drawing.Size(117, 17);
+            this.VUAcctNumLabel.Size = new System.Drawing.Size(139, 20);
             this.VUAcctNumLabel.TabIndex = 42;
             this.VUAcctNumLabel.Text = "Account Number:";
             // 
@@ -571,7 +571,7 @@
             this.VUAcctNumTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUAcctNumTextbox.Name = "VUAcctNumTextbox";
             this.VUAcctNumTextbox.ReadOnly = true;
-            this.VUAcctNumTextbox.Size = new System.Drawing.Size(119, 23);
+            this.VUAcctNumTextbox.Size = new System.Drawing.Size(119, 26);
             this.VUAcctNumTextbox.TabIndex = 43;
             // 
             // VUEmailLabel
@@ -581,7 +581,7 @@
             this.VUEmailLabel.Location = new System.Drawing.Point(24, 102);
             this.VUEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUEmailLabel.Name = "VUEmailLabel";
-            this.VUEmailLabel.Size = new System.Drawing.Size(102, 17);
+            this.VUEmailLabel.Size = new System.Drawing.Size(123, 20);
             this.VUEmailLabel.TabIndex = 40;
             this.VUEmailLabel.Text = "Email Address:";
             // 
@@ -592,7 +592,7 @@
             this.VUEmailTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUEmailTextbox.Name = "VUEmailTextbox";
             this.VUEmailTextbox.ReadOnly = true;
-            this.VUEmailTextbox.Size = new System.Drawing.Size(259, 23);
+            this.VUEmailTextbox.Size = new System.Drawing.Size(259, 26);
             this.VUEmailTextbox.TabIndex = 41;
             // 
             // VUPostalCodeLabel
@@ -602,7 +602,7 @@
             this.VUPostalCodeLabel.Location = new System.Drawing.Point(23, 391);
             this.VUPostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUPostalCodeLabel.Name = "VUPostalCodeLabel";
-            this.VUPostalCodeLabel.Size = new System.Drawing.Size(88, 17);
+            this.VUPostalCodeLabel.Size = new System.Drawing.Size(105, 20);
             this.VUPostalCodeLabel.TabIndex = 38;
             this.VUPostalCodeLabel.Text = "Postal Code:";
             // 
@@ -613,7 +613,7 @@
             this.VUPostalCodeTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUPostalCodeTextbox.Name = "VUPostalCodeTextbox";
             this.VUPostalCodeTextbox.ReadOnly = true;
-            this.VUPostalCodeTextbox.Size = new System.Drawing.Size(282, 23);
+            this.VUPostalCodeTextbox.Size = new System.Drawing.Size(282, 26);
             this.VUPostalCodeTextbox.TabIndex = 39;
             // 
             // VUProvinceLabel
@@ -623,7 +623,7 @@
             this.VUProvinceLabel.Location = new System.Drawing.Point(392, 356);
             this.VUProvinceLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUProvinceLabel.Name = "VUProvinceLabel";
-            this.VUProvinceLabel.Size = new System.Drawing.Size(67, 17);
+            this.VUProvinceLabel.Size = new System.Drawing.Size(79, 20);
             this.VUProvinceLabel.TabIndex = 37;
             this.VUProvinceLabel.Text = "Province:";
             // 
@@ -634,7 +634,7 @@
             this.VUCityLabel.Location = new System.Drawing.Point(23, 356);
             this.VUCityLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUCityLabel.Name = "VUCityLabel";
-            this.VUCityLabel.Size = new System.Drawing.Size(35, 17);
+            this.VUCityLabel.Size = new System.Drawing.Size(43, 20);
             this.VUCityLabel.TabIndex = 35;
             this.VUCityLabel.Text = "City:";
             // 
@@ -645,7 +645,7 @@
             this.VUCityTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUCityTextbox.Name = "VUCityTextbox";
             this.VUCityTextbox.ReadOnly = true;
-            this.VUCityTextbox.Size = new System.Drawing.Size(282, 23);
+            this.VUCityTextbox.Size = new System.Drawing.Size(282, 26);
             this.VUCityTextbox.TabIndex = 36;
             // 
             // VUAddressLabel
@@ -655,7 +655,7 @@
             this.VUAddressLabel.Location = new System.Drawing.Point(23, 321);
             this.VUAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUAddressLabel.Name = "VUAddressLabel";
-            this.VUAddressLabel.Size = new System.Drawing.Size(64, 17);
+            this.VUAddressLabel.Size = new System.Drawing.Size(76, 20);
             this.VUAddressLabel.TabIndex = 33;
             this.VUAddressLabel.Text = "Address:";
             // 
@@ -666,7 +666,7 @@
             this.VUAddressTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUAddressTextbox.Name = "VUAddressTextbox";
             this.VUAddressTextbox.ReadOnly = true;
-            this.VUAddressTextbox.Size = new System.Drawing.Size(328, 23);
+            this.VUAddressTextbox.Size = new System.Drawing.Size(328, 26);
             this.VUAddressTextbox.TabIndex = 34;
             // 
             // VULastNameLabel
@@ -676,7 +676,7 @@
             this.VULastNameLabel.Location = new System.Drawing.Point(438, 65);
             this.VULastNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VULastNameLabel.Name = "VULastNameLabel";
-            this.VULastNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.VULastNameLabel.Size = new System.Drawing.Size(96, 20);
             this.VULastNameLabel.TabIndex = 31;
             this.VULastNameLabel.Text = "Last Name:";
             // 
@@ -687,7 +687,7 @@
             this.VULastNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VULastNameTextbox.Name = "VULastNameTextbox";
             this.VULastNameTextbox.ReadOnly = true;
-            this.VULastNameTextbox.Size = new System.Drawing.Size(282, 23);
+            this.VULastNameTextbox.Size = new System.Drawing.Size(282, 26);
             this.VULastNameTextbox.TabIndex = 32;
             // 
             // VUFirstNameLabel
@@ -697,7 +697,7 @@
             this.VUFirstNameLabel.Location = new System.Drawing.Point(23, 65);
             this.VUFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.VUFirstNameLabel.Name = "VUFirstNameLabel";
-            this.VUFirstNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.VUFirstNameLabel.Size = new System.Drawing.Size(97, 20);
             this.VUFirstNameLabel.TabIndex = 29;
             this.VUFirstNameLabel.Text = "First Name:";
             // 
@@ -708,7 +708,7 @@
             this.VUFirstNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.VUFirstNameTextbox.Name = "VUFirstNameTextbox";
             this.VUFirstNameTextbox.ReadOnly = true;
-            this.VUFirstNameTextbox.Size = new System.Drawing.Size(282, 23);
+            this.VUFirstNameTextbox.Size = new System.Drawing.Size(282, 26);
             this.VUFirstNameTextbox.TabIndex = 30;
             // 
             // ViewTitleLabel
@@ -718,7 +718,7 @@
             this.ViewTitleLabel.Location = new System.Drawing.Point(22, 18);
             this.ViewTitleLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ViewTitleLabel.Name = "ViewTitleLabel";
-            this.ViewTitleLabel.Size = new System.Drawing.Size(226, 20);
+            this.ViewTitleLabel.Size = new System.Drawing.Size(271, 25);
             this.ViewTitleLabel.TabIndex = 27;
             this.ViewTitleLabel.Text = "View Customer Information";
             // 
@@ -798,7 +798,7 @@
             "Other"});
             this.AddPhoneComboBox.Location = new System.Drawing.Point(672, 180);
             this.AddPhoneComboBox.Name = "AddPhoneComboBox";
-            this.AddPhoneComboBox.Size = new System.Drawing.Size(121, 24);
+            this.AddPhoneComboBox.Size = new System.Drawing.Size(121, 28);
             this.AddPhoneComboBox.TabIndex = 30;
             this.AddPhoneComboBox.SelectedIndexChanged += new System.EventHandler(this.AddPhoneComboBox_SelectedIndexChanged);
             // 
@@ -808,17 +808,17 @@
             this.AddPhoneTextbox.Location = new System.Drawing.Point(430, 180);
             this.AddPhoneTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddPhoneTextbox.Name = "AddPhoneTextbox";
-            this.AddPhoneTextbox.Size = new System.Drawing.Size(231, 23);
+            this.AddPhoneTextbox.Size = new System.Drawing.Size(231, 26);
             this.AddPhoneTextbox.TabIndex = 31;
             this.AddPhoneTextbox.TextChanged += new System.EventHandler(this.AddPhoneTextbox_TextChanged);
             // 
             // AddPhoneListBox
             // 
             this.AddPhoneListBox.FormattingEnabled = true;
-            this.AddPhoneListBox.ItemHeight = 16;
+            this.AddPhoneListBox.ItemHeight = 20;
             this.AddPhoneListBox.Location = new System.Drawing.Point(160, 180);
             this.AddPhoneListBox.Name = "AddPhoneListBox";
-            this.AddPhoneListBox.Size = new System.Drawing.Size(244, 100);
+            this.AddPhoneListBox.Size = new System.Drawing.Size(244, 84);
             this.AddPhoneListBox.TabIndex = 29;
             // 
             // AddPhoneLabel
@@ -828,7 +828,7 @@
             this.AddPhoneLabel.Location = new System.Drawing.Point(25, 180);
             this.AddPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddPhoneLabel.Name = "AddPhoneLabel";
-            this.AddPhoneLabel.Size = new System.Drawing.Size(124, 17);
+            this.AddPhoneLabel.Size = new System.Drawing.Size(146, 20);
             this.AddPhoneLabel.TabIndex = 28;
             this.AddPhoneLabel.Text = "Phone Number(s):";
             // 
@@ -851,7 +851,7 @@
             "YT"});
             this.AddProvinceComboBox.Location = new System.Drawing.Point(470, 352);
             this.AddProvinceComboBox.Name = "AddProvinceComboBox";
-            this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 24);
+            this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 28);
             this.AddProvinceComboBox.TabIndex = 26;
             this.AddProvinceComboBox.SelectedIndexChanged += new System.EventHandler(this.AddProvinceComboBox_SelectedIndexChanged);
             // 
@@ -877,7 +877,7 @@
             this.AddCreditLabel.Location = new System.Drawing.Point(439, 102);
             this.AddCreditLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddCreditLabel.Name = "AddCreditLabel";
-            this.AddCreditLabel.Size = new System.Drawing.Size(137, 17);
+            this.AddCreditLabel.Size = new System.Drawing.Size(164, 20);
             this.AddCreditLabel.TabIndex = 23;
             this.AddCreditLabel.Text = "Credit Card Number:";
             // 
@@ -887,7 +887,7 @@
             this.AddCreditTextbox.Location = new System.Drawing.Point(590, 99);
             this.AddCreditTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddCreditTextbox.Name = "AddCreditTextbox";
-            this.AddCreditTextbox.Size = new System.Drawing.Size(224, 23);
+            this.AddCreditTextbox.Size = new System.Drawing.Size(224, 26);
             this.AddCreditTextbox.TabIndex = 24;
             this.AddCreditTextbox.TextChanged += new System.EventHandler(this.AddCreditTextbox_TextChanged);
             // 
@@ -898,7 +898,7 @@
             this.AddAcctNumInstLabel.Location = new System.Drawing.Point(288, 139);
             this.AddAcctNumInstLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAcctNumInstLabel.Name = "AddAcctNumInstLabel";
-            this.AddAcctNumInstLabel.Size = new System.Drawing.Size(248, 13);
+            this.AddAcctNumInstLabel.Size = new System.Drawing.Size(326, 17);
             this.AddAcctNumInstLabel.TabIndex = 22;
             this.AddAcctNumInstLabel.Text = "Leave blank if customer is creating a new account.";
             // 
@@ -909,7 +909,7 @@
             this.AddAcctNumLabel.Location = new System.Drawing.Point(24, 137);
             this.AddAcctNumLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAcctNumLabel.Name = "AddAcctNumLabel";
-            this.AddAcctNumLabel.Size = new System.Drawing.Size(117, 17);
+            this.AddAcctNumLabel.Size = new System.Drawing.Size(139, 20);
             this.AddAcctNumLabel.TabIndex = 20;
             this.AddAcctNumLabel.Text = "Account Number:";
             // 
@@ -919,7 +919,7 @@
             this.AddAcctNumTextbox.Location = new System.Drawing.Point(155, 134);
             this.AddAcctNumTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddAcctNumTextbox.Name = "AddAcctNumTextbox";
-            this.AddAcctNumTextbox.Size = new System.Drawing.Size(119, 23);
+            this.AddAcctNumTextbox.Size = new System.Drawing.Size(119, 26);
             this.AddAcctNumTextbox.TabIndex = 21;
             // 
             // AddEmailLabel
@@ -929,7 +929,7 @@
             this.AddEmailLabel.Location = new System.Drawing.Point(25, 102);
             this.AddEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddEmailLabel.Name = "AddEmailLabel";
-            this.AddEmailLabel.Size = new System.Drawing.Size(102, 17);
+            this.AddEmailLabel.Size = new System.Drawing.Size(123, 20);
             this.AddEmailLabel.TabIndex = 18;
             this.AddEmailLabel.Text = "Email Address:";
             // 
@@ -939,7 +939,7 @@
             this.AddEmailTextbox.Location = new System.Drawing.Point(141, 99);
             this.AddEmailTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddEmailTextbox.Name = "AddEmailTextbox";
-            this.AddEmailTextbox.Size = new System.Drawing.Size(258, 23);
+            this.AddEmailTextbox.Size = new System.Drawing.Size(258, 26);
             this.AddEmailTextbox.TabIndex = 19;
             this.AddEmailTextbox.TextChanged += new System.EventHandler(this.AddEmailTextbox_TextChanged);
             // 
@@ -950,7 +950,7 @@
             this.AddPostalCodeLabel.Location = new System.Drawing.Point(24, 390);
             this.AddPostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddPostalCodeLabel.Name = "AddPostalCodeLabel";
-            this.AddPostalCodeLabel.Size = new System.Drawing.Size(88, 17);
+            this.AddPostalCodeLabel.Size = new System.Drawing.Size(105, 20);
             this.AddPostalCodeLabel.TabIndex = 16;
             this.AddPostalCodeLabel.Text = "Postal Code:";
             // 
@@ -960,7 +960,7 @@
             this.AddPostalCodeTextbox.Location = new System.Drawing.Point(127, 387);
             this.AddPostalCodeTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddPostalCodeTextbox.Name = "AddPostalCodeTextbox";
-            this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 26);
             this.AddPostalCodeTextbox.TabIndex = 17;
             this.AddPostalCodeTextbox.TextChanged += new System.EventHandler(this.AddPostalCodeTextbox_TextChanged);
             // 
@@ -971,7 +971,7 @@
             this.AddProvinceLabel.Location = new System.Drawing.Point(393, 355);
             this.AddProvinceLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddProvinceLabel.Name = "AddProvinceLabel";
-            this.AddProvinceLabel.Size = new System.Drawing.Size(67, 17);
+            this.AddProvinceLabel.Size = new System.Drawing.Size(79, 20);
             this.AddProvinceLabel.TabIndex = 14;
             this.AddProvinceLabel.Text = "Province:";
             // 
@@ -982,7 +982,7 @@
             this.AddCityLabel.Location = new System.Drawing.Point(24, 355);
             this.AddCityLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddCityLabel.Name = "AddCityLabel";
-            this.AddCityLabel.Size = new System.Drawing.Size(35, 17);
+            this.AddCityLabel.Size = new System.Drawing.Size(43, 20);
             this.AddCityLabel.TabIndex = 12;
             this.AddCityLabel.Text = "City:";
             // 
@@ -992,7 +992,7 @@
             this.AddCityTextbox.Location = new System.Drawing.Point(73, 352);
             this.AddCityTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddCityTextbox.Name = "AddCityTextbox";
-            this.AddCityTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddCityTextbox.Size = new System.Drawing.Size(282, 26);
             this.AddCityTextbox.TabIndex = 13;
             this.AddCityTextbox.TextChanged += new System.EventHandler(this.AddCityTextbox_TextChanged);
             // 
@@ -1003,7 +1003,7 @@
             this.AddAddressLabel.Location = new System.Drawing.Point(24, 320);
             this.AddAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddAddressLabel.Name = "AddAddressLabel";
-            this.AddAddressLabel.Size = new System.Drawing.Size(64, 17);
+            this.AddAddressLabel.Size = new System.Drawing.Size(76, 20);
             this.AddAddressLabel.TabIndex = 10;
             this.AddAddressLabel.Text = "Address:";
             // 
@@ -1013,7 +1013,7 @@
             this.AddAddressTextbox.Location = new System.Drawing.Point(102, 317);
             this.AddAddressTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddAddressTextbox.Name = "AddAddressTextbox";
-            this.AddAddressTextbox.Size = new System.Drawing.Size(328, 23);
+            this.AddAddressTextbox.Size = new System.Drawing.Size(328, 26);
             this.AddAddressTextbox.TabIndex = 11;
             this.AddAddressTextbox.TextChanged += new System.EventHandler(this.AddAddressTextbox_TextChanged);
             // 
@@ -1024,7 +1024,7 @@
             this.AddLastNameLabel.Location = new System.Drawing.Point(439, 65);
             this.AddLastNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddLastNameLabel.Name = "AddLastNameLabel";
-            this.AddLastNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.AddLastNameLabel.Size = new System.Drawing.Size(96, 20);
             this.AddLastNameLabel.TabIndex = 8;
             this.AddLastNameLabel.Text = "Last Name:";
             // 
@@ -1034,7 +1034,7 @@
             this.AddLastNameTextbox.Location = new System.Drawing.Point(533, 62);
             this.AddLastNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddLastNameTextbox.Name = "AddLastNameTextbox";
-            this.AddLastNameTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddLastNameTextbox.Size = new System.Drawing.Size(282, 26);
             this.AddLastNameTextbox.TabIndex = 9;
             this.AddLastNameTextbox.TextChanged += new System.EventHandler(this.AddLastNameTextbox_TextChanged);
             // 
@@ -1045,7 +1045,7 @@
             this.AddFirstNameLabel.Location = new System.Drawing.Point(24, 65);
             this.AddFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddFirstNameLabel.Name = "AddFirstNameLabel";
-            this.AddFirstNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.AddFirstNameLabel.Size = new System.Drawing.Size(97, 20);
             this.AddFirstNameLabel.TabIndex = 6;
             this.AddFirstNameLabel.Text = "First Name:";
             // 
@@ -1055,7 +1055,7 @@
             this.AddFirstNameTextbox.Location = new System.Drawing.Point(118, 62);
             this.AddFirstNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.AddFirstNameTextbox.Name = "AddFirstNameTextbox";
-            this.AddFirstNameTextbox.Size = new System.Drawing.Size(282, 23);
+            this.AddFirstNameTextbox.Size = new System.Drawing.Size(282, 26);
             this.AddFirstNameTextbox.TabIndex = 7;
             this.AddFirstNameTextbox.TextChanged += new System.EventHandler(this.AddFirstNameTextbox_TextChanged);
             // 
@@ -1080,7 +1080,7 @@
             this.AddCustomersLabel.Location = new System.Drawing.Point(23, 18);
             this.AddCustomersLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.AddCustomersLabel.Name = "AddCustomersLabel";
-            this.AddCustomersLabel.Size = new System.Drawing.Size(162, 20);
+            this.AddCustomersLabel.Size = new System.Drawing.Size(198, 25);
             this.AddCustomersLabel.TabIndex = 1;
             this.AddCustomersLabel.Text = "Add New Customer";
             // 
@@ -1122,7 +1122,7 @@
             this.EmailRadioButton.AutoSize = true;
             this.EmailRadioButton.Location = new System.Drawing.Point(417, 21);
             this.EmailRadioButton.Name = "EmailRadioButton";
-            this.EmailRadioButton.Size = new System.Drawing.Size(114, 21);
+            this.EmailRadioButton.Size = new System.Drawing.Size(135, 24);
             this.EmailRadioButton.TabIndex = 15;
             this.EmailRadioButton.Text = "email address";
             this.EmailRadioButton.UseVisualStyleBackColor = true;
@@ -1133,7 +1133,7 @@
             this.FirstNameRadioButton.Checked = true;
             this.FirstNameRadioButton.Location = new System.Drawing.Point(209, 21);
             this.FirstNameRadioButton.Name = "FirstNameRadioButton";
-            this.FirstNameRadioButton.Size = new System.Drawing.Size(88, 21);
+            this.FirstNameRadioButton.Size = new System.Drawing.Size(105, 24);
             this.FirstNameRadioButton.TabIndex = 14;
             this.FirstNameRadioButton.TabStop = true;
             this.FirstNameRadioButton.Text = "first name";
@@ -1144,7 +1144,7 @@
             this.LastNameRadioButton.AutoSize = true;
             this.LastNameRadioButton.Location = new System.Drawing.Point(312, 21);
             this.LastNameRadioButton.Name = "LastNameRadioButton";
-            this.LastNameRadioButton.Size = new System.Drawing.Size(87, 21);
+            this.LastNameRadioButton.Size = new System.Drawing.Size(103, 24);
             this.LastNameRadioButton.TabIndex = 13;
             this.LastNameRadioButton.Text = "last name";
             this.LastNameRadioButton.UseVisualStyleBackColor = true;
@@ -1156,7 +1156,7 @@
             this.CustSearchInstructionsLabel.Location = new System.Drawing.Point(24, 23);
             this.CustSearchInstructionsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.CustSearchInstructionsLabel.Name = "CustSearchInstructionsLabel";
-            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(165, 17);
+            this.CustSearchInstructionsLabel.Size = new System.Drawing.Size(193, 20);
             this.CustSearchInstructionsLabel.TabIndex = 10;
             this.CustSearchInstructionsLabel.Text = "Search customers by:";
             // 
@@ -1250,7 +1250,7 @@
             this.SearchTextBox.Location = new System.Drawing.Point(27, 57);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(549, 26);
+            this.SearchTextBox.Size = new System.Drawing.Size(549, 30);
             this.SearchTextBox.TabIndex = 7;
             // 
             // MoveToAddButton
@@ -1270,10 +1270,10 @@
             // MoviesTabPage
             // 
             this.MoviesTabPage.Controls.Add(this.SearchMoviePanel);
-            this.MoviesTabPage.Location = new System.Drawing.Point(4, 25);
+            this.MoviesTabPage.Location = new System.Drawing.Point(4, 29);
             this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.MoviesTabPage.Name = "MoviesTabPage";
-            this.MoviesTabPage.Size = new System.Drawing.Size(878, 506);
+            this.MoviesTabPage.Size = new System.Drawing.Size(878, 502);
             this.MoviesTabPage.TabIndex = 2;
             this.MoviesTabPage.Text = "Movies";
             this.MoviesTabPage.UseVisualStyleBackColor = true;
@@ -1281,9 +1281,6 @@
             // SearchMoviePanel
             // 
             this.SearchMoviePanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.SearchMoviePanel.Controls.Add(this.radioButton3);
-            this.SearchMoviePanel.Controls.Add(this.radioButton2);
-            this.SearchMoviePanel.Controls.Add(this.radioButton1);
             this.SearchMoviePanel.Controls.Add(this.MovieDetailsGrid);
             this.SearchMoviePanel.Controls.Add(this.AddMovieButton);
             this.SearchMoviePanel.Controls.Add(this.EditMoviesButton);
@@ -1347,15 +1344,14 @@
             this.DeleteMovieButton.TabIndex = 15;
             this.DeleteMovieButton.Text = "Delete";
             this.DeleteMovieButton.UseVisualStyleBackColor = false;
-            //this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieButton_Click);
             // 
             // MoviesDisplayed
             // 
             this.MoviesDisplayed.FormattingEnabled = true;
-            this.MoviesDisplayed.ItemHeight = 16;
+            this.MoviesDisplayed.ItemHeight = 20;
             this.MoviesDisplayed.Location = new System.Drawing.Point(23, 106);
             this.MoviesDisplayed.Name = "MoviesDisplayed";
-            this.MoviesDisplayed.Size = new System.Drawing.Size(549, 276);
+            this.MoviesDisplayed.Size = new System.Drawing.Size(549, 264);
             this.MoviesDisplayed.TabIndex = 14;
             // 
             // MovieSearchbutton
@@ -1370,7 +1366,6 @@
             this.MovieSearchbutton.TabIndex = 13;
             this.MovieSearchbutton.Text = "Search";
             this.MovieSearchbutton.UseVisualStyleBackColor = false;
-            //this.MovieSearchbutton.Click += new System.EventHandler(this.MovieSearchbutton_Click);
             // 
             // MovieSearchTextBox
             // 
@@ -1378,7 +1373,7 @@
             this.MovieSearchTextBox.Location = new System.Drawing.Point(23, 54);
             this.MovieSearchTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.MovieSearchTextBox.Name = "MovieSearchTextBox";
-            this.MovieSearchTextBox.Size = new System.Drawing.Size(549, 26);
+            this.MovieSearchTextBox.Size = new System.Drawing.Size(549, 30);
             this.MovieSearchTextBox.TabIndex = 12;
             // 
             // SearchMoviesLabel
@@ -1388,7 +1383,7 @@
             this.SearchMoviesLabel.Location = new System.Drawing.Point(20, 20);
             this.SearchMoviesLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.SearchMoviesLabel.Name = "SearchMoviesLabel";
-            this.SearchMoviesLabel.Size = new System.Drawing.Size(114, 17);
+            this.SearchMoviesLabel.Size = new System.Drawing.Size(133, 20);
             this.SearchMoviesLabel.TabIndex = 11;
             this.SearchMoviesLabel.Text = "Search Movies";
             // 
@@ -1396,13 +1391,269 @@
             // 
             this.RentalsTabPage.Controls.Add(this.rentDispensePanel);
             this.RentalsTabPage.Controls.Add(this.rentCustSearchPanel);
-            this.RentalsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.RentalsTabPage.Location = new System.Drawing.Point(4, 29);
             this.RentalsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.RentalsTabPage.Name = "RentalsTabPage";
-            this.RentalsTabPage.Size = new System.Drawing.Size(878, 506);
+            this.RentalsTabPage.Size = new System.Drawing.Size(878, 502);
             this.RentalsTabPage.TabIndex = 3;
             this.RentalsTabPage.Text = "Rentals";
             this.RentalsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // rentDispensePanel
+            // 
+            this.rentDispensePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.rentDispensePanel.Controls.Add(this.rentCustHistoryDGV);
+            this.rentDispensePanel.Controls.Add(this.label2);
+            this.rentDispensePanel.Controls.Add(this.rentCustQueueDGV);
+            this.rentDispensePanel.Controls.Add(this.label1);
+            this.rentDispensePanel.Controls.Add(this.rentCustIdResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentCustIdLabel);
+            this.rentDispensePanel.Controls.Add(this.rentAcctResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentFNResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentEmailResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentLNResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentDispenseBttn);
+            this.rentDispensePanel.Controls.Add(this.rentAcctLabel);
+            this.rentDispensePanel.Controls.Add(this.rentEmailLabel);
+            this.rentDispensePanel.Controls.Add(this.rentFirstNameLabel);
+            this.rentDispensePanel.Controls.Add(this.rentCancelBttn);
+            this.rentDispensePanel.Controls.Add(this.label5);
+            this.rentDispensePanel.Controls.Add(this.rentLastNameLabel);
+            this.rentDispensePanel.Location = new System.Drawing.Point(3, 3);
+            this.rentDispensePanel.Name = "rentDispensePanel";
+            this.rentDispensePanel.Size = new System.Drawing.Size(875, 503);
+            this.rentDispensePanel.TabIndex = 1;
+            this.rentDispensePanel.Visible = false;
+            // 
+            // rentCustHistoryDGV
+            // 
+            this.rentCustHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentCustHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentHistID,
+            this.rentHistMovieID,
+            this.rentHistEmpID,
+            this.rentHistCheckD,
+            this.rentHistReturnD});
+            this.rentCustHistoryDGV.Location = new System.Drawing.Point(313, 235);
+            this.rentCustHistoryDGV.Name = "rentCustHistoryDGV";
+            this.rentCustHistoryDGV.RowHeadersWidth = 51;
+            this.rentCustHistoryDGV.Size = new System.Drawing.Size(545, 150);
+            this.rentCustHistoryDGV.TabIndex = 44;
+            // 
+            // rentHistID
+            // 
+            this.rentHistID.HeaderText = "Rental ID";
+            this.rentHistID.MinimumWidth = 6;
+            this.rentHistID.Name = "rentHistID";
+            this.rentHistID.Width = 125;
+            // 
+            // rentHistMovieID
+            // 
+            this.rentHistMovieID.HeaderText = "Movie ID";
+            this.rentHistMovieID.MinimumWidth = 6;
+            this.rentHistMovieID.Name = "rentHistMovieID";
+            this.rentHistMovieID.Width = 125;
+            // 
+            // rentHistEmpID
+            // 
+            this.rentHistEmpID.HeaderText = "Dispensing Employee ID";
+            this.rentHistEmpID.MinimumWidth = 6;
+            this.rentHistEmpID.Name = "rentHistEmpID";
+            this.rentHistEmpID.Width = 125;
+            // 
+            // rentHistCheckD
+            // 
+            this.rentHistCheckD.HeaderText = "Checkout Date";
+            this.rentHistCheckD.MinimumWidth = 6;
+            this.rentHistCheckD.Name = "rentHistCheckD";
+            this.rentHistCheckD.Width = 125;
+            // 
+            // rentHistReturnD
+            // 
+            this.rentHistReturnD.HeaderText = "Return Date";
+            this.rentHistReturnD.MinimumWidth = 6;
+            this.rentHistReturnD.Name = "rentHistReturnD";
+            this.rentHistReturnD.Width = 125;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(310, 200);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Rental History";
+            // 
+            // rentCustQueueDGV
+            // 
+            this.rentCustQueueDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentCustQueueDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.queueMovieID});
+            this.rentCustQueueDGV.Location = new System.Drawing.Point(37, 235);
+            this.rentCustQueueDGV.Name = "rentCustQueueDGV";
+            this.rentCustQueueDGV.RowHeadersWidth = 51;
+            this.rentCustQueueDGV.Size = new System.Drawing.Size(240, 150);
+            this.rentCustQueueDGV.TabIndex = 42;
+            // 
+            // queueMovieID
+            // 
+            this.queueMovieID.HeaderText = "Movie ID";
+            this.queueMovieID.MinimumWidth = 6;
+            this.queueMovieID.Name = "queueMovieID";
+            this.queueMovieID.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(34, 200);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Queue";
+            // 
+            // rentCustIdResultLabel
+            // 
+            this.rentCustIdResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentCustIdResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentCustIdResultLabel.Location = new System.Drawing.Point(149, 111);
+            this.rentCustIdResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentCustIdResultLabel.Name = "rentCustIdResultLabel";
+            this.rentCustIdResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentCustIdResultLabel.TabIndex = 40;
+            // 
+            // rentCustIdLabel
+            // 
+            this.rentCustIdLabel.AutoSize = true;
+            this.rentCustIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentCustIdLabel.Location = new System.Drawing.Point(34, 111);
+            this.rentCustIdLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentCustIdLabel.Name = "rentCustIdLabel";
+            this.rentCustIdLabel.Size = new System.Drawing.Size(109, 20);
+            this.rentCustIdLabel.TabIndex = 39;
+            this.rentCustIdLabel.Text = "Customer ID:";
+            // 
+            // rentAcctResultLabel
+            // 
+            this.rentAcctResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentAcctResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentAcctResultLabel.Location = new System.Drawing.Point(523, 111);
+            this.rentAcctResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentAcctResultLabel.Name = "rentAcctResultLabel";
+            this.rentAcctResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentAcctResultLabel.TabIndex = 38;
+            // 
+            // rentFNResultLabel
+            // 
+            this.rentFNResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentFNResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentFNResultLabel.Location = new System.Drawing.Point(149, 74);
+            this.rentFNResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentFNResultLabel.Name = "rentFNResultLabel";
+            this.rentFNResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentFNResultLabel.TabIndex = 37;
+            // 
+            // rentEmailResultLabel
+            // 
+            this.rentEmailResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentEmailResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentEmailResultLabel.Location = new System.Drawing.Point(149, 151);
+            this.rentEmailResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentEmailResultLabel.Name = "rentEmailResultLabel";
+            this.rentEmailResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentEmailResultLabel.TabIndex = 35;
+            // 
+            // rentLNResultLabel
+            // 
+            this.rentLNResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentLNResultLabel.Location = new System.Drawing.Point(523, 74);
+            this.rentLNResultLabel.Name = "rentLNResultLabel";
+            this.rentLNResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentLNResultLabel.TabIndex = 33;
+            // 
+            // rentDispenseBttn
+            // 
+            this.rentDispenseBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentDispenseBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentDispenseBttn.ForeColor = System.Drawing.Color.White;
+            this.rentDispenseBttn.Location = new System.Drawing.Point(36, 437);
+            this.rentDispenseBttn.Margin = new System.Windows.Forms.Padding(5);
+            this.rentDispenseBttn.Name = "rentDispenseBttn";
+            this.rentDispenseBttn.Size = new System.Drawing.Size(185, 39);
+            this.rentDispenseBttn.TabIndex = 32;
+            this.rentDispenseBttn.Text = "Dispense Order";
+            this.rentDispenseBttn.UseVisualStyleBackColor = false;
+            this.rentDispenseBttn.Click += new System.EventHandler(this.rentDispenseBttn_Click);
+            // 
+            // rentAcctLabel
+            // 
+            this.rentAcctLabel.AutoSize = true;
+            this.rentAcctLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentAcctLabel.Location = new System.Drawing.Point(397, 111);
+            this.rentAcctLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentAcctLabel.Name = "rentAcctLabel";
+            this.rentAcctLabel.Size = new System.Drawing.Size(139, 20);
+            this.rentAcctLabel.TabIndex = 31;
+            this.rentAcctLabel.Text = "Account Number:";
+            // 
+            // rentEmailLabel
+            // 
+            this.rentEmailLabel.AutoSize = true;
+            this.rentEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentEmailLabel.Location = new System.Drawing.Point(33, 151);
+            this.rentEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentEmailLabel.Name = "rentEmailLabel";
+            this.rentEmailLabel.Size = new System.Drawing.Size(123, 20);
+            this.rentEmailLabel.TabIndex = 30;
+            this.rentEmailLabel.Text = "Email Address:";
+            // 
+            // rentFirstNameLabel
+            // 
+            this.rentFirstNameLabel.AutoSize = true;
+            this.rentFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentFirstNameLabel.Location = new System.Drawing.Point(34, 74);
+            this.rentFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentFirstNameLabel.Name = "rentFirstNameLabel";
+            this.rentFirstNameLabel.Size = new System.Drawing.Size(97, 20);
+            this.rentFirstNameLabel.TabIndex = 28;
+            this.rentFirstNameLabel.Text = "First Name:";
+            // 
+            // rentCancelBttn
+            // 
+            this.rentCancelBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentCancelBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentCancelBttn.ForeColor = System.Drawing.Color.White;
+            this.rentCancelBttn.Location = new System.Drawing.Point(716, 437);
+            this.rentCancelBttn.Margin = new System.Windows.Forms.Padding(5);
+            this.rentCancelBttn.Name = "rentCancelBttn";
+            this.rentCancelBttn.Size = new System.Drawing.Size(125, 39);
+            this.rentCancelBttn.TabIndex = 27;
+            this.rentCancelBttn.Text = "Cancel";
+            this.rentCancelBttn.UseVisualStyleBackColor = false;
+            this.rentCancelBttn.Click += new System.EventHandler(this.rentCancelBttn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(33, 27);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(239, 25);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Customer Rental Profile";
+            // 
+            // rentLastNameLabel
+            // 
+            this.rentLastNameLabel.AutoSize = true;
+            this.rentLastNameLabel.Location = new System.Drawing.Point(397, 74);
+            this.rentLastNameLabel.Name = "rentLastNameLabel";
+            this.rentLastNameLabel.Size = new System.Drawing.Size(96, 20);
+            this.rentLastNameLabel.TabIndex = 0;
+            this.rentLastNameLabel.Text = "Last Name:";
             // 
             // rentCustSearchPanel
             // 
@@ -1446,7 +1697,7 @@
             this.rentCustByEmailRadio.AutoSize = true;
             this.rentCustByEmailRadio.Location = new System.Drawing.Point(17, 70);
             this.rentCustByEmailRadio.Name = "rentCustByEmailRadio";
-            this.rentCustByEmailRadio.Size = new System.Drawing.Size(144, 21);
+            this.rentCustByEmailRadio.Size = new System.Drawing.Size(175, 24);
             this.rentCustByEmailRadio.TabIndex = 4;
             this.rentCustByEmailRadio.Text = "By Customer Email";
             this.rentCustByEmailRadio.UseVisualStyleBackColor = true;
@@ -1457,7 +1708,7 @@
             this.rentCustByIdRadio.Checked = true;
             this.rentCustByIdRadio.Location = new System.Drawing.Point(17, 15);
             this.rentCustByIdRadio.Name = "rentCustByIdRadio";
-            this.rentCustByIdRadio.Size = new System.Drawing.Size(123, 21);
+            this.rentCustByIdRadio.Size = new System.Drawing.Size(150, 24);
             this.rentCustByIdRadio.TabIndex = 2;
             this.rentCustByIdRadio.TabStop = true;
             this.rentCustByIdRadio.Text = "By Customer ID";
@@ -1468,7 +1719,7 @@
             this.rentCustByNameRadio.AutoSize = true;
             this.rentCustByNameRadio.Location = new System.Drawing.Point(17, 43);
             this.rentCustByNameRadio.Name = "rentCustByNameRadio";
-            this.rentCustByNameRadio.Size = new System.Drawing.Size(178, 21);
+            this.rentCustByNameRadio.Size = new System.Drawing.Size(215, 24);
             this.rentCustByNameRadio.TabIndex = 3;
             this.rentCustByNameRadio.Text = "By Customer Last Name";
             this.rentCustByNameRadio.UseVisualStyleBackColor = true;
@@ -1483,28 +1734,37 @@
             this.rentCustSearchEmailHeader});
             this.rentCustSearchDGV.Location = new System.Drawing.Point(26, 121);
             this.rentCustSearchDGV.Name = "rentCustSearchDGV";
+            this.rentCustSearchDGV.RowHeadersWidth = 51;
             this.rentCustSearchDGV.Size = new System.Drawing.Size(526, 252);
             this.rentCustSearchDGV.TabIndex = 5;
             // 
             // rentCustSearchIdHeader
             // 
             this.rentCustSearchIdHeader.HeaderText = "Customer ID";
+            this.rentCustSearchIdHeader.MinimumWidth = 6;
             this.rentCustSearchIdHeader.Name = "rentCustSearchIdHeader";
+            this.rentCustSearchIdHeader.Width = 125;
             // 
             // rentCustSearchNameHeader
             // 
             this.rentCustSearchNameHeader.HeaderText = "Last Name";
+            this.rentCustSearchNameHeader.MinimumWidth = 6;
             this.rentCustSearchNameHeader.Name = "rentCustSearchNameHeader";
+            this.rentCustSearchNameHeader.Width = 125;
             // 
             // rentCustSearchAcctHeader
             // 
             this.rentCustSearchAcctHeader.HeaderText = "Account Number";
+            this.rentCustSearchAcctHeader.MinimumWidth = 6;
             this.rentCustSearchAcctHeader.Name = "rentCustSearchAcctHeader";
+            this.rentCustSearchAcctHeader.Width = 125;
             // 
             // rentCustSearchEmailHeader
             // 
             this.rentCustSearchEmailHeader.HeaderText = "Email";
+            this.rentCustSearchEmailHeader.MinimumWidth = 6;
             this.rentCustSearchEmailHeader.Name = "rentCustSearchEmailHeader";
+            this.rentCustSearchEmailHeader.Width = 125;
             // 
             // rentCustSearchBttn
             // 
@@ -1523,7 +1783,7 @@
             // 
             this.rentCustSearchTB.Location = new System.Drawing.Point(26, 56);
             this.rentCustSearchTB.Name = "rentCustSearchTB";
-            this.rentCustSearchTB.Size = new System.Drawing.Size(526, 23);
+            this.rentCustSearchTB.Size = new System.Drawing.Size(526, 26);
             this.rentCustSearchTB.TabIndex = 1;
             // 
             // rentCustSearchLabel
@@ -1532,299 +1792,23 @@
             this.rentCustSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.rentCustSearchLabel.Location = new System.Drawing.Point(22, 19);
             this.rentCustSearchLabel.Name = "rentCustSearchLabel";
-            this.rentCustSearchLabel.Size = new System.Drawing.Size(148, 20);
+            this.rentCustSearchLabel.Size = new System.Drawing.Size(180, 25);
             this.rentCustSearchLabel.TabIndex = 0;
             this.rentCustSearchLabel.Text = "Customer Search";
             // 
             // ReportsTabPage
             // 
-            this.ReportsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.ReportsTabPage.Location = new System.Drawing.Point(4, 29);
             this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.ReportsTabPage.Name = "ReportsTabPage";
-            this.ReportsTabPage.Size = new System.Drawing.Size(878, 506);
+            this.ReportsTabPage.Size = new System.Drawing.Size(878, 502);
             this.ReportsTabPage.TabIndex = 4;
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
-            // rentDispensePanel
-            // 
-            this.rentDispensePanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.rentDispensePanel.Controls.Add(this.rentCustHistoryDGV);
-            this.rentDispensePanel.Controls.Add(this.label2);
-            this.rentDispensePanel.Controls.Add(this.rentCustQueueDGV);
-            this.rentDispensePanel.Controls.Add(this.label1);
-            this.rentDispensePanel.Controls.Add(this.rentCustIdResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentCustIdLabel);
-            this.rentDispensePanel.Controls.Add(this.rentAcctResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentFNResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentEmailResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentLNResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentDispenseBttn);
-            this.rentDispensePanel.Controls.Add(this.rentAcctLabel);
-            this.rentDispensePanel.Controls.Add(this.rentEmailLabel);
-            this.rentDispensePanel.Controls.Add(this.rentFirstNameLabel);
-            this.rentDispensePanel.Controls.Add(this.rentCancelBttn);
-            this.rentDispensePanel.Controls.Add(this.label5);
-            this.rentDispensePanel.Controls.Add(this.rentLastNameLabel);
-            this.rentDispensePanel.Location = new System.Drawing.Point(3, 3);
-            this.rentDispensePanel.Name = "rentDispensePanel";
-            this.rentDispensePanel.Size = new System.Drawing.Size(875, 503);
-            this.rentDispensePanel.TabIndex = 1;
-            this.rentDispensePanel.Visible = false;
-            // 
-            // rentLastNameLabel
-            // 
-            this.rentLastNameLabel.AutoSize = true;
-            this.rentLastNameLabel.Location = new System.Drawing.Point(397, 74);
-            this.rentLastNameLabel.Name = "rentLastNameLabel";
-            this.rentLastNameLabel.Size = new System.Drawing.Size(80, 17);
-            this.rentLastNameLabel.TabIndex = 0;
-            this.rentLastNameLabel.Text = "Last Name:";
-            // 
-            // rentDispenseBttn
-            // 
-            this.rentDispenseBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentDispenseBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentDispenseBttn.ForeColor = System.Drawing.Color.White;
-            this.rentDispenseBttn.Location = new System.Drawing.Point(36, 437);
-            this.rentDispenseBttn.Margin = new System.Windows.Forms.Padding(5);
-            this.rentDispenseBttn.Name = "rentDispenseBttn";
-            this.rentDispenseBttn.Size = new System.Drawing.Size(185, 39);
-            this.rentDispenseBttn.TabIndex = 32;
-            this.rentDispenseBttn.Text = "Dispense Order";
-            this.rentDispenseBttn.UseVisualStyleBackColor = false;
-            this.rentDispenseBttn.Click += new System.EventHandler(this.rentDispenseBttn_Click);
-            // 
-            // rentAcctLabel
-            // 
-            this.rentAcctLabel.AutoSize = true;
-            this.rentAcctLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentAcctLabel.Location = new System.Drawing.Point(397, 111);
-            this.rentAcctLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentAcctLabel.Name = "rentAcctLabel";
-            this.rentAcctLabel.Size = new System.Drawing.Size(117, 17);
-            this.rentAcctLabel.TabIndex = 31;
-            this.rentAcctLabel.Text = "Account Number:";
-            // 
-            // rentEmailLabel
-            // 
-            this.rentEmailLabel.AutoSize = true;
-            this.rentEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentEmailLabel.Location = new System.Drawing.Point(33, 151);
-            this.rentEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentEmailLabel.Name = "rentEmailLabel";
-            this.rentEmailLabel.Size = new System.Drawing.Size(102, 17);
-            this.rentEmailLabel.TabIndex = 30;
-            this.rentEmailLabel.Text = "Email Address:";
-            // 
-            // rentFirstNameLabel
-            // 
-            this.rentFirstNameLabel.AutoSize = true;
-            this.rentFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentFirstNameLabel.Location = new System.Drawing.Point(34, 74);
-            this.rentFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentFirstNameLabel.Name = "rentFirstNameLabel";
-            this.rentFirstNameLabel.Size = new System.Drawing.Size(80, 17);
-            this.rentFirstNameLabel.TabIndex = 28;
-            this.rentFirstNameLabel.Text = "First Name:";
-            // 
-            // rentCancelBttn
-            // 
-            this.rentCancelBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentCancelBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentCancelBttn.ForeColor = System.Drawing.Color.White;
-            this.rentCancelBttn.Location = new System.Drawing.Point(716, 437);
-            this.rentCancelBttn.Margin = new System.Windows.Forms.Padding(5);
-            this.rentCancelBttn.Name = "rentCancelBttn";
-            this.rentCancelBttn.Size = new System.Drawing.Size(125, 39);
-            this.rentCancelBttn.TabIndex = 27;
-            this.rentCancelBttn.Text = "Cancel";
-            this.rentCancelBttn.UseVisualStyleBackColor = false;
-            this.rentCancelBttn.Click += new System.EventHandler(this.rentCancelBttn_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 27);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 20);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Customer Rental Profile";
-            // 
-            // rentEmailResultLabel
-            // 
-            this.rentEmailResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentEmailResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentEmailResultLabel.Location = new System.Drawing.Point(149, 151);
-            this.rentEmailResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentEmailResultLabel.Name = "rentEmailResultLabel";
-            this.rentEmailResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentEmailResultLabel.TabIndex = 35;
-            // 
-            // rentLNResultLabel
-            // 
-            this.rentLNResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentLNResultLabel.Location = new System.Drawing.Point(523, 74);
-            this.rentLNResultLabel.Name = "rentLNResultLabel";
-            this.rentLNResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentLNResultLabel.TabIndex = 33;
-            // 
-            // rentFNResultLabel
-            // 
-            this.rentFNResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentFNResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentFNResultLabel.Location = new System.Drawing.Point(149, 74);
-            this.rentFNResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentFNResultLabel.Name = "rentFNResultLabel";
-            this.rentFNResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentFNResultLabel.TabIndex = 37;
-            // 
-            // rentAcctResultLabel
-            // 
-            this.rentAcctResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentAcctResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentAcctResultLabel.Location = new System.Drawing.Point(523, 111);
-            this.rentAcctResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentAcctResultLabel.Name = "rentAcctResultLabel";
-            this.rentAcctResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentAcctResultLabel.TabIndex = 38;
-            // 
-            // rentCustIdResultLabel
-            // 
-            this.rentCustIdResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentCustIdResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentCustIdResultLabel.Location = new System.Drawing.Point(149, 111);
-            this.rentCustIdResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentCustIdResultLabel.Name = "rentCustIdResultLabel";
-            this.rentCustIdResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentCustIdResultLabel.TabIndex = 40;
-            // 
-            // rentCustIdLabel
-            // 
-            this.rentCustIdLabel.AutoSize = true;
-            this.rentCustIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentCustIdLabel.Location = new System.Drawing.Point(34, 111);
-            this.rentCustIdLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentCustIdLabel.Name = "rentCustIdLabel";
-            this.rentCustIdLabel.Size = new System.Drawing.Size(89, 17);
-            this.rentCustIdLabel.TabIndex = 39;
-            this.rentCustIdLabel.Text = "Customer ID:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(34, 200);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Queue";
-            // 
-            // rentCustQueueDGV
-            // 
-            this.rentCustQueueDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentCustQueueDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.queueMovieID});
-            this.rentCustQueueDGV.Location = new System.Drawing.Point(37, 235);
-            this.rentCustQueueDGV.Name = "rentCustQueueDGV";
-            this.rentCustQueueDGV.Size = new System.Drawing.Size(240, 150);
-            this.rentCustQueueDGV.TabIndex = 42;
-            // 
-            // rentCustHistoryDGV
-            // 
-            this.rentCustHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentCustHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rentHistID,
-            this.rentHistMovieID,
-            this.rentHistEmpID,
-            this.rentHistCheckD,
-            this.rentHistReturnD});
-            this.rentCustHistoryDGV.Location = new System.Drawing.Point(313, 235);
-            this.rentCustHistoryDGV.Name = "rentCustHistoryDGV";
-            this.rentCustHistoryDGV.Size = new System.Drawing.Size(545, 150);
-            this.rentCustHistoryDGV.TabIndex = 44;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(310, 200);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Rental History";
-            // 
-            // queueMovieID
-            // 
-            this.queueMovieID.HeaderText = "Movie ID";
-            this.queueMovieID.Name = "queueMovieID";
-            // 
-            // rentHistID
-            // 
-            this.rentHistID.HeaderText = "Rental ID";
-            this.rentHistID.Name = "rentHistID";
-            // 
-            // rentHistMovieID
-            // 
-            this.rentHistMovieID.HeaderText = "Movie ID";
-            this.rentHistMovieID.Name = "rentHistMovieID";
-            // 
-            // rentHistEmpID
-            // 
-            this.rentHistEmpID.HeaderText = "Dispensing Employee ID";
-            this.rentHistEmpID.Name = "rentHistEmpID";
-            // 
-            // rentHistCheckD
-            // 
-            this.rentHistCheckD.HeaderText = "Checkout Date";
-            this.rentHistCheckD.Name = "rentHistCheckD";
-            // 
-            // rentHistReturnD
-            // 
-            this.rentHistReturnD.HeaderText = "Return Date";
-            this.rentHistReturnD.Name = "rentHistReturnD";
-            // 
-            // timer1
-            //// radioButton1
-            //// 
-            //this.radioButton1.AutoSize = true;
-            //this.radioButton1.Location = new System.Drawing.Point(601, 177);
-            //this.radioButton1.Name = "radioButton1";
-            //this.radioButton1.Size = new System.Drawing.Size(111, 29);
-            //this.radioButton1.TabIndex = 19;
-            //this.radioButton1.TabStop = true;
-            //this.radioButton1.Text = "By Actor";
-            //this.radioButton1.UseVisualStyleBackColor = true;
-            //// 
-            //// radioButton2
-            //// 
-            //this.radioButton2.AutoSize = true;
-            //this.radioButton2.Location = new System.Drawing.Point(601, 213);
-            //this.radioButton2.Name = "radioButton2";
-            //this.radioButton2.Size = new System.Drawing.Size(102, 29);
-            //this.radioButton2.TabIndex = 20;
-            //this.radioButton2.TabStop = true;
-            //this.radioButton2.Text = "By Title";
-            //this.radioButton2.UseVisualStyleBackColor = true;
-            //// 
-            //// radioButton3
-            //// 
-            //this.radioButton3.AutoSize = true;
-            //this.radioButton3.Location = new System.Drawing.Point(601, 249);
-            //this.radioButton3.Name = "radioButton3";
-            //this.radioButton3.Size = new System.Drawing.Size(119, 29);
-            //this.radioButton3.TabIndex = 21;
-            //this.radioButton3.TabStop = true;
-            //this.radioButton3.Text = "By Genre";
-            //this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 565);
             this.Controls.Add(this.MovieRentalTabControl);
@@ -1848,17 +1832,17 @@
             this.MoviesTabPage.ResumeLayout(false);
             this.SearchMoviePanel.ResumeLayout(false);
             this.SearchMoviePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).EndInit();
             this.RentalsTabPage.ResumeLayout(false);
+            this.rentDispensePanel.ResumeLayout(false);
+            this.rentDispensePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).EndInit();
             this.rentCustSearchPanel.ResumeLayout(false);
             this.rentCustSearchPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).EndInit();
-            this.rentDispensePanel.ResumeLayout(false);
-            this.rentDispensePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
