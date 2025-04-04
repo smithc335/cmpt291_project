@@ -193,7 +193,10 @@
             this.CustRentProfileLabel = new System.Windows.Forms.Label();
             this.rentLastNameLabel = new System.Windows.Forms.Label();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ReportsAvailablePanel = new System.Windows.Forms.Panel();
+            this.YearlyIncomeComboBox = new System.Windows.Forms.ComboBox();
+            this.YearlyIncomeLabel = new System.Windows.Forms.Label();
+            this.SortEmployeesLabel = new System.Windows.Forms.Label();
             this.Top5ActorsLabel = new System.Windows.Forms.Label();
             this.Top5CustLabel = new System.Windows.Forms.Label();
             this.Top5MoviesLabel = new System.Windows.Forms.Label();
@@ -204,9 +207,11 @@
             this.Top5MoviesRadioButton = new System.Windows.Forms.RadioButton();
             this.Top5CustRadioButton = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SortEmployeesLabel = new System.Windows.Forms.Label();
-            this.YearlyIncomeLabel = new System.Windows.Forms.Label();
-            this.YearlyIncomeComboBox = new System.Windows.Forms.ComboBox();
+            this.ReportDisplayPanel = new System.Windows.Forms.Panel();
+            this.ReportTypeLabel = new System.Windows.Forms.Label();
+            this.ExecuteReportButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ExitReportViewButton = new System.Windows.Forms.Button();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -228,7 +233,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).BeginInit();
             this.ReportsTabPage.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ReportsAvailablePanel.SuspendLayout();
+            this.ReportDisplayPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -369,8 +376,6 @@
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
-
-
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
@@ -2109,7 +2114,8 @@
             // 
             // ReportsTabPage
             // 
-            this.ReportsTabPage.Controls.Add(this.panel1);
+            this.ReportsTabPage.Controls.Add(this.ReportDisplayPanel);
+            this.ReportsTabPage.Controls.Add(this.ReportsAvailablePanel);
             this.ReportsTabPage.Location = new System.Drawing.Point(4, 25);
             this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.ReportsTabPage.Name = "ReportsTabPage";
@@ -2118,26 +2124,60 @@
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // ReportsAvailablePanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel1.Controls.Add(this.YearlyIncomeComboBox);
-            this.panel1.Controls.Add(this.YearlyIncomeLabel);
-            this.panel1.Controls.Add(this.SortEmployeesLabel);
-            this.panel1.Controls.Add(this.Top5ActorsLabel);
-            this.panel1.Controls.Add(this.Top5CustLabel);
-            this.panel1.Controls.Add(this.Top5MoviesLabel);
-            this.panel1.Controls.Add(this.YearlyIncomeRadioButton);
-            this.panel1.Controls.Add(this.SortEmployeesRadioButton);
-            this.panel1.Controls.Add(this.ReportsTitleLabel);
-            this.panel1.Controls.Add(this.Top5ActorsRadioButton);
-            this.panel1.Controls.Add(this.Top5MoviesRadioButton);
-            this.panel1.Controls.Add(this.Top5CustRadioButton);
-            this.panel1.Location = new System.Drawing.Point(13, 11);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(853, 484);
-            this.panel1.TabIndex = 3;
+            this.ReportsAvailablePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.ReportsAvailablePanel.Controls.Add(this.ExecuteReportButton);
+            this.ReportsAvailablePanel.Controls.Add(this.YearlyIncomeComboBox);
+            this.ReportsAvailablePanel.Controls.Add(this.YearlyIncomeLabel);
+            this.ReportsAvailablePanel.Controls.Add(this.SortEmployeesLabel);
+            this.ReportsAvailablePanel.Controls.Add(this.Top5ActorsLabel);
+            this.ReportsAvailablePanel.Controls.Add(this.Top5CustLabel);
+            this.ReportsAvailablePanel.Controls.Add(this.Top5MoviesLabel);
+            this.ReportsAvailablePanel.Controls.Add(this.YearlyIncomeRadioButton);
+            this.ReportsAvailablePanel.Controls.Add(this.SortEmployeesRadioButton);
+            this.ReportsAvailablePanel.Controls.Add(this.ReportsTitleLabel);
+            this.ReportsAvailablePanel.Controls.Add(this.Top5ActorsRadioButton);
+            this.ReportsAvailablePanel.Controls.Add(this.Top5MoviesRadioButton);
+            this.ReportsAvailablePanel.Controls.Add(this.Top5CustRadioButton);
+            this.ReportsAvailablePanel.Location = new System.Drawing.Point(13, 11);
+            this.ReportsAvailablePanel.Margin = new System.Windows.Forms.Padding(5);
+            this.ReportsAvailablePanel.Name = "ReportsAvailablePanel";
+            this.ReportsAvailablePanel.Size = new System.Drawing.Size(853, 484);
+            this.ReportsAvailablePanel.TabIndex = 3;
+            // 
+            // YearlyIncomeComboBox
+            // 
+            this.YearlyIncomeComboBox.Enabled = false;
+            this.YearlyIncomeComboBox.FormattingEnabled = true;
+            this.YearlyIncomeComboBox.Location = new System.Drawing.Point(46, 371);
+            this.YearlyIncomeComboBox.Name = "YearlyIncomeComboBox";
+            this.YearlyIncomeComboBox.Size = new System.Drawing.Size(211, 24);
+            this.YearlyIncomeComboBox.TabIndex = 58;
+            // 
+            // YearlyIncomeLabel
+            // 
+            this.YearlyIncomeLabel.AutoSize = true;
+            this.YearlyIncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearlyIncomeLabel.Location = new System.Drawing.Point(43, 344);
+            this.YearlyIncomeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.YearlyIncomeLabel.Name = "YearlyIncomeLabel";
+            this.YearlyIncomeLabel.Size = new System.Drawing.Size(628, 17);
+            this.YearlyIncomeLabel.TabIndex = 57;
+            this.YearlyIncomeLabel.Text = "Displays the total income from a specified year, sorted by month, from movie rent" +
+    "als in this system.";
+            // 
+            // SortEmployeesLabel
+            // 
+            this.SortEmployeesLabel.AutoSize = true;
+            this.SortEmployeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SortEmployeesLabel.Location = new System.Drawing.Point(43, 280);
+            this.SortEmployeesLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.SortEmployeesLabel.Name = "SortEmployeesLabel";
+            this.SortEmployeesLabel.Size = new System.Drawing.Size(557, 17);
+            this.SortEmployeesLabel.TabIndex = 56;
+            this.SortEmployeesLabel.Text = "Sorts all employees in the system by most rentals dispensed to least rentals disp" +
+    "ensed.";
             // 
             // Top5ActorsLabel
             // 
@@ -2206,7 +2246,6 @@
             this.ReportsTitleLabel.Size = new System.Drawing.Size(150, 20);
             this.ReportsTitleLabel.TabIndex = 50;
             this.ReportsTitleLabel.Text = "Reports Available";
-            this.ReportsTitleLabel.Visible = false;
             // 
             // Top5ActorsRadioButton
             // 
@@ -2240,37 +2279,64 @@
             this.Top5CustRadioButton.Text = "Top 5 Customers Based on Rentals";
             this.Top5CustRadioButton.UseVisualStyleBackColor = true;
             // 
-            // SortEmployeesLabel
+            // ReportDisplayPanel
             // 
-            this.SortEmployeesLabel.AutoSize = true;
-            this.SortEmployeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SortEmployeesLabel.Location = new System.Drawing.Point(43, 280);
-            this.SortEmployeesLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.SortEmployeesLabel.Name = "SortEmployeesLabel";
-            this.SortEmployeesLabel.Size = new System.Drawing.Size(557, 17);
-            this.SortEmployeesLabel.TabIndex = 56;
-            this.SortEmployeesLabel.Text = "Sorts all employees in the system by most rentals dispensed to least rentals disp" +
-    "ensed.";
+            this.ReportDisplayPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.ReportDisplayPanel.Controls.Add(this.ExitReportViewButton);
+            this.ReportDisplayPanel.Controls.Add(this.dataGridView1);
+            this.ReportDisplayPanel.Controls.Add(this.ReportTypeLabel);
+            this.ReportDisplayPanel.Location = new System.Drawing.Point(13, 11);
+            this.ReportDisplayPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.ReportDisplayPanel.Name = "ReportDisplayPanel";
+            this.ReportDisplayPanel.Size = new System.Drawing.Size(853, 484);
+            this.ReportDisplayPanel.TabIndex = 59;
+            this.ReportDisplayPanel.Visible = false;
             // 
-            // YearlyIncomeLabel
+            // ReportTypeLabel
             // 
-            this.YearlyIncomeLabel.AutoSize = true;
-            this.YearlyIncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearlyIncomeLabel.Location = new System.Drawing.Point(43, 344);
-            this.YearlyIncomeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.YearlyIncomeLabel.Name = "YearlyIncomeLabel";
-            this.YearlyIncomeLabel.Size = new System.Drawing.Size(628, 17);
-            this.YearlyIncomeLabel.TabIndex = 57;
-            this.YearlyIncomeLabel.Text = "Displays the total income from a specified year, sorted by month, from movie rent" +
-    "als in this system.";
+            this.ReportTypeLabel.AutoSize = true;
+            this.ReportTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportTypeLabel.Location = new System.Drawing.Point(23, 21);
+            this.ReportTypeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.ReportTypeLabel.Name = "ReportTypeLabel";
+            this.ReportTypeLabel.Size = new System.Drawing.Size(107, 20);
+            this.ReportTypeLabel.TabIndex = 50;
+            this.ReportTypeLabel.Text = "Report Type";
             // 
-            // YearlyIncomeComboBox
+            // ExecuteReportButton
             // 
-            this.YearlyIncomeComboBox.FormattingEnabled = true;
-            this.YearlyIncomeComboBox.Location = new System.Drawing.Point(46, 371);
-            this.YearlyIncomeComboBox.Name = "YearlyIncomeComboBox";
-            this.YearlyIncomeComboBox.Size = new System.Drawing.Size(211, 24);
-            this.YearlyIncomeComboBox.TabIndex = 58;
+            this.ExecuteReportButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ExecuteReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExecuteReportButton.ForeColor = System.Drawing.Color.White;
+            this.ExecuteReportButton.Location = new System.Drawing.Point(635, 417);
+            this.ExecuteReportButton.Margin = new System.Windows.Forms.Padding(5);
+            this.ExecuteReportButton.Name = "ExecuteReportButton";
+            this.ExecuteReportButton.Size = new System.Drawing.Size(185, 39);
+            this.ExecuteReportButton.TabIndex = 59;
+            this.ExecuteReportButton.Text = "Execute Report";
+            this.ExecuteReportButton.UseVisualStyleBackColor = false;
+            this.ExecuteReportButton.Click += new System.EventHandler(this.ExecuteReportButton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 73);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(793, 383);
+            this.dataGridView1.TabIndex = 51;
+            // 
+            // ExitReportViewButton
+            // 
+            this.ExitReportViewButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ExitReportViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitReportViewButton.ForeColor = System.Drawing.Color.White;
+            this.ExitReportViewButton.Location = new System.Drawing.Point(695, 13);
+            this.ExitReportViewButton.Margin = new System.Windows.Forms.Padding(5);
+            this.ExitReportViewButton.Name = "ExitReportViewButton";
+            this.ExitReportViewButton.Size = new System.Drawing.Size(125, 39);
+            this.ExitReportViewButton.TabIndex = 52;
+            this.ExitReportViewButton.Text = "Exit";
+            this.ExitReportViewButton.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -2314,8 +2380,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).EndInit();
             this.ReportsTabPage.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ReportsAvailablePanel.ResumeLayout(false);
+            this.ReportsAvailablePanel.PerformLayout();
+            this.ReportDisplayPanel.ResumeLayout(false);
+            this.ReportDisplayPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2489,7 +2558,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AcctNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn City;
         private System.Windows.Forms.DataGridViewTextBoxColumn Province;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ReportsAvailablePanel;
         private System.Windows.Forms.Label ReportsTitleLabel;
         private System.Windows.Forms.RadioButton Top5ActorsRadioButton;
         private System.Windows.Forms.RadioButton Top5MoviesRadioButton;
@@ -2502,6 +2571,11 @@
         private System.Windows.Forms.Label YearlyIncomeLabel;
         private System.Windows.Forms.Label SortEmployeesLabel;
         private System.Windows.Forms.ComboBox YearlyIncomeComboBox;
+        private System.Windows.Forms.Panel ReportDisplayPanel;
+        private System.Windows.Forms.Label ReportTypeLabel;
+        private System.Windows.Forms.Button ExecuteReportButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button ExitReportViewButton;
         // STOP
     }
 }

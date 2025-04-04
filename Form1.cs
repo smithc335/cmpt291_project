@@ -1042,6 +1042,36 @@ namespace CMPT291_Project
 
                 }
             }
+
+            YearlyIncomeComboBox.Enabled = true;
+        }
+
+        private void ExecuteReportButton_Click(object sender, EventArgs e)
+        {
+            ReportsAvailablePanel.Visible = false;
+
+            if (Top5MoviesRadioButton.Checked)
+            {
+                ReportTypeLabel.Text = Top5MoviesRadioButton.Text;
+            }
+            else if (Top5CustRadioButton.Checked)
+            {
+                ReportTypeLabel.Text = Top5CustRadioButton.Text;
+            }
+            else if (Top5ActorsRadioButton.Checked)
+            {
+                ReportTypeLabel.Text = Top5ActorsRadioButton.Text;
+            }
+            else if (SortEmployeesRadioButton.Checked)
+            {
+                ReportTypeLabel.Text = SortEmployeesRadioButton.Text;
+            }
+            else
+            {
+                ReportTypeLabel.Text = YearlyIncomeRadioButton.Text;
+            }
+
+            ReportDisplayPanel.Visible = true;
         }
     }
 }

@@ -15,19 +15,13 @@ DROP TABLE IF EXISTS QueueUp;
 DROP TABLE IF EXISTS Rental;
 DROP TABLE IF EXISTS Actor;
 DROP TABLE IF EXISTS Movie;
+DROP TABLE IF EXISTS UserLogin;
 DROP TABLE IF EXISTS EmployeePhone;
 DROP TABLE IF EXISTS Employee;
 DROP TABLE IF EXISTS CustomerPhone;
 DROP TABLE IF EXISTS Customer;
-DROP TABLE IF EXISTS UserLogin;
 
 -- Create tables
-
-CREATE TABLE UserLogin(
-Username VARCHAR(40) NOT NULL,
-PasswordHash VARCHAR(40) NOT NULL,
-PRIMARY KEY (Username)
-);
 
 CREATE TABLE Customer (
 CustomerID INT NOT NULL, 
@@ -83,6 +77,14 @@ EndTime DATETIME,
 PRIMARY KEY (EmployeeID, PhoneNum),
 FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
 CONSTRAINT EmployeePhonePeriod CHECK (StartTime < EndTime)
+);
+
+CREATE TABLE UserLogin(
+EmployeeID INT NOT NULL,
+Username VARCHAR(40) NOT NULL,
+PasswordHash VARCHAR(40) NOT NULL,
+PRIMARY KEY (Username),
+FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID)
 );
 
 CREATE TABLE Movie (

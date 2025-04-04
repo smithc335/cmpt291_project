@@ -8,11 +8,11 @@ DELETE QueueUp;
 DELETE Rental;
 DELETE Actor;
 DELETE Movie;
+DELETE UserLogin;
 DELETE EmployeePhone;
 DELETE Employee;
 DELETE CustomerPhone;
 DELETE Customer;
-DELETE UserLogin;
 
 -- Add test data for Customer and CustomerPhone
 
@@ -92,15 +92,15 @@ INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
 	-- Password = claire1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES (2, 'beaulieum', 'B9457A0168DF164F35C9D4289753367F');
+	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Matt' and LastName = 'Beaulieu'), 'beaulieum', 'B9457A0168DF164F35C9D4289753367F');
 	-- Password = matt1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES (3, 'bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
+	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Kovidh' and LastName = 'Bains'), 'bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
 	-- Password = kovidh1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES (4, 'sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
+	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Jaisica' and LastName = 'Sutariya'), 'sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
 	-- Password = jaisica1234
 
 -- Add test data for Movie
