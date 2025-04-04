@@ -8,11 +8,11 @@ DELETE QueueUp;
 DELETE Rental;
 DELETE Actor;
 DELETE Movie;
-DELETE UserLogin;
 DELETE EmployeePhone;
 DELETE Employee;
 DELETE CustomerPhone;
 DELETE Customer;
+DELETE UserLogin;
 
 -- Add test data for Customer and CustomerPhone
 
@@ -92,15 +92,15 @@ INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
 	-- Password = claire1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Matt' and LastName = 'Beaulieu'), 'beaulieum', 'B9457A0168DF164F35C9D4289753367F');
+	VALUES (2, 'beaulieum', 'B9457A0168DF164F35C9D4289753367F');
 	-- Password = matt1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Kovidh' and LastName = 'Bains'), 'bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
+	VALUES (3, 'bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
 	-- Password = kovidh1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Jaisica' and LastName = 'Sutariya'), 'sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
+	VALUES (4, 'sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
 	-- Password = jaisica1234
 
 -- Add test data for Movie
@@ -189,6 +189,48 @@ INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, Ret
 
 INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
 	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 3, 1, 2, '2025-02-20', '2025-02-28', 5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 3, 1, 2, '2025-01-20', '2025-01-28', 4.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 2, 3, 1, '2026-02-26', '2026-03-03', 4);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 14, 5, 1, '2025-04-20', '2025-04-25', 3.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 10, 5, 1, '2025-05-25', '2025-05-27', 3);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 4, 4, 1, '2025-06-10', '2025-06-20', 2);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 4, 2, 1, '2025-07-12', '2025-07-22', 3);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 7, 2, 1, '2025-07-10', '2025-07-15', 4);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 12, 1, 3, '2025-08-05', '2025-08-15', 4.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 12, 2, 3, '2025-09-04', '2025-09-14', 5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 12, 1, 3, '2025-10-25', '2025-10-27', 4);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 13, 1, 3, '2025-11-01', '2025-11-11', 3.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 8, 3, 3, '2025-12-20', '2025-12-25', 1);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 11, 4, 2, '2025-12-21', '2025-12-26', 4);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+    VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 11, 5, 2, '2025-12-21', '2025-12-26', 4);
 
 -- Add test data for QueueUp
 
