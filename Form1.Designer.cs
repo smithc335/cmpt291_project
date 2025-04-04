@@ -206,6 +206,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SortEmployeesLabel = new System.Windows.Forms.Label();
             this.YearlyIncomeLabel = new System.Windows.Forms.Label();
+            this.YearlyIncomeComboBox = new System.Windows.Forms.ComboBox();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -2118,6 +2119,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel1.Controls.Add(this.YearlyIncomeComboBox);
             this.panel1.Controls.Add(this.YearlyIncomeLabel);
             this.panel1.Controls.Add(this.SortEmployeesLabel);
             this.panel1.Controls.Add(this.Top5ActorsLabel);
@@ -2139,7 +2141,7 @@
             // 
             this.Top5ActorsLabel.AutoSize = true;
             this.Top5ActorsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Top5ActorsLabel.Location = new System.Drawing.Point(43, 218);
+            this.Top5ActorsLabel.Location = new System.Drawing.Point(43, 216);
             this.Top5ActorsLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Top5ActorsLabel.Name = "Top5ActorsLabel";
             this.Top5ActorsLabel.Size = new System.Drawing.Size(681, 17);
@@ -2151,7 +2153,7 @@
             // 
             this.Top5CustLabel.AutoSize = true;
             this.Top5CustLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Top5CustLabel.Location = new System.Drawing.Point(43, 154);
+            this.Top5CustLabel.Location = new System.Drawing.Point(43, 152);
             this.Top5CustLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Top5CustLabel.Name = "Top5CustLabel";
             this.Top5CustLabel.Size = new System.Drawing.Size(611, 17);
@@ -2163,7 +2165,7 @@
             // 
             this.Top5MoviesLabel.AutoSize = true;
             this.Top5MoviesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Top5MoviesLabel.Location = new System.Drawing.Point(43, 90);
+            this.Top5MoviesLabel.Location = new System.Drawing.Point(43, 88);
             this.Top5MoviesLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.Top5MoviesLabel.Name = "Top5MoviesLabel";
             this.Top5MoviesLabel.Size = new System.Drawing.Size(630, 17);
@@ -2180,6 +2182,7 @@
             this.YearlyIncomeRadioButton.TabIndex = 52;
             this.YearlyIncomeRadioButton.Text = "Total Income in a Specified Year";
             this.YearlyIncomeRadioButton.UseVisualStyleBackColor = true;
+            this.YearlyIncomeRadioButton.CheckedChanged += new System.EventHandler(this.YearlyIncomeRadioButton_CheckedChanged);
             // 
             // SortEmployeesRadioButton
             // 
@@ -2239,7 +2242,7 @@
             // 
             this.SortEmployeesLabel.AutoSize = true;
             this.SortEmployeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SortEmployeesLabel.Location = new System.Drawing.Point(43, 282);
+            this.SortEmployeesLabel.Location = new System.Drawing.Point(43, 280);
             this.SortEmployeesLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.SortEmployeesLabel.Name = "SortEmployeesLabel";
             this.SortEmployeesLabel.Size = new System.Drawing.Size(557, 17);
@@ -2251,13 +2254,21 @@
             // 
             this.YearlyIncomeLabel.AutoSize = true;
             this.YearlyIncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearlyIncomeLabel.Location = new System.Drawing.Point(43, 346);
+            this.YearlyIncomeLabel.Location = new System.Drawing.Point(43, 344);
             this.YearlyIncomeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.YearlyIncomeLabel.Name = "YearlyIncomeLabel";
             this.YearlyIncomeLabel.Size = new System.Drawing.Size(628, 17);
             this.YearlyIncomeLabel.TabIndex = 57;
             this.YearlyIncomeLabel.Text = "Displays the total income from a specified year, sorted by month, from movie rent" +
     "als in this system.";
+            // 
+            // YearlyIncomeComboBox
+            // 
+            this.YearlyIncomeComboBox.FormattingEnabled = true;
+            this.YearlyIncomeComboBox.Location = new System.Drawing.Point(46, 371);
+            this.YearlyIncomeComboBox.Name = "YearlyIncomeComboBox";
+            this.YearlyIncomeComboBox.Size = new System.Drawing.Size(211, 24);
+            this.YearlyIncomeComboBox.TabIndex = 58;
             // 
             // Form1
             // 
@@ -2488,6 +2499,7 @@
         private System.Windows.Forms.Label Top5MoviesLabel;
         private System.Windows.Forms.Label YearlyIncomeLabel;
         private System.Windows.Forms.Label SortEmployeesLabel;
+        private System.Windows.Forms.ComboBox YearlyIncomeComboBox;
         // STOP
     }
 }

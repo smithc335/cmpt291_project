@@ -994,5 +994,30 @@ namespace CMPT291_Project
             AddMoviePanel.Visible = false;
             SearchMoviePanel.Visible = true;
         }
+
+        private void YearlyIncomeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (YearlyIncomeRadioButton.Checked)
+            {
+                myCommand.CommandText = "select distinct year(CheckoutDate) as Year from Rental";
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        YearlyIncomeComboBox.Items.Add(myReader["Year"].ToString());
+                    }
+
+                    myReader.Close();
+                }
+                catch (Exception e3)
+                {
+                    MessageBox.Show(e3.ToString(), "Error");
+
+                }
+            }
+        }
     }
 }
