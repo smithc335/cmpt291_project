@@ -154,20 +154,6 @@
             this.AddMovieGenreLabel = new System.Windows.Forms.Label();
             this.AddMovieNameLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
-            this.rentCustSearchPanel = new System.Windows.Forms.Panel();
-            this.rentCustViewBttn = new System.Windows.Forms.Button();
-            this.RentCustSearchRadiosPanel = new System.Windows.Forms.Panel();
-            this.rentCustByEmailRadio = new System.Windows.Forms.RadioButton();
-            this.rentCustByIdRadio = new System.Windows.Forms.RadioButton();
-            this.rentCustByNameRadio = new System.Windows.Forms.RadioButton();
-            this.rentCustSearchDGV = new System.Windows.Forms.DataGridView();
-            this.rentCustSearchIdHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentCustSearchNameHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentCustSearchAcctHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentCustSearchEmailHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentCustSearchBttn = new System.Windows.Forms.Button();
-            this.rentCustSearchTB = new System.Windows.Forms.TextBox();
-            this.rentCustSearchLabel = new System.Windows.Forms.Label();
             this.rentDispensePanel = new System.Windows.Forms.Panel();
             this.rentCustHistoryDGV = new System.Windows.Forms.DataGridView();
             this.rentHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -177,6 +163,9 @@
             this.rentHistReturnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RentalHistoryLabel = new System.Windows.Forms.Label();
             this.rentCustQueueDGV = new System.Windows.Forms.DataGridView();
+            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MovieName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RentQueueLabel = new System.Windows.Forms.Label();
             this.rentCustIdResultLabel = new System.Windows.Forms.Label();
             this.rentCustIdLabel = new System.Windows.Forms.Label();
@@ -191,6 +180,20 @@
             this.rentCancelBttn = new System.Windows.Forms.Button();
             this.CustRentProfileLabel = new System.Windows.Forms.Label();
             this.rentLastNameLabel = new System.Windows.Forms.Label();
+            this.rentCustSearchPanel = new System.Windows.Forms.Panel();
+            this.rentCustViewBttn = new System.Windows.Forms.Button();
+            this.RentCustSearchRadiosPanel = new System.Windows.Forms.Panel();
+            this.rentCustByEmailRadio = new System.Windows.Forms.RadioButton();
+            this.rentCustByIdRadio = new System.Windows.Forms.RadioButton();
+            this.rentCustByNameRadio = new System.Windows.Forms.RadioButton();
+            this.rentCustSearchDGV = new System.Windows.Forms.DataGridView();
+            this.rentCustSearchIdHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentCustSearchNameHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentCustSearchAcctHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentCustSearchEmailHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentCustSearchBttn = new System.Windows.Forms.Button();
+            this.rentCustSearchTB = new System.Windows.Forms.TextBox();
+            this.rentCustSearchLabel = new System.Windows.Forms.Label();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsAvailablePanel = new System.Windows.Forms.Panel();
             this.ExecuteReportButton = new System.Windows.Forms.Button();
@@ -211,9 +214,6 @@
             this.ReportDataGrid = new System.Windows.Forms.DataGridView();
             this.ReportTypeLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MovieName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -228,12 +228,12 @@
             this.EditMoviePanel.SuspendLayout();
             this.AddMoviePanel.SuspendLayout();
             this.RentalsTabPage.SuspendLayout();
-            this.rentCustSearchPanel.SuspendLayout();
-            this.RentCustSearchRadiosPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).BeginInit();
             this.rentDispensePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).BeginInit();
+            this.rentCustSearchPanel.SuspendLayout();
+            this.RentCustSearchRadiosPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).BeginInit();
             this.ReportsTabPage.SuspendLayout();
             this.ReportsAvailablePanel.SuspendLayout();
             this.ReportDisplayPanel.SuspendLayout();
@@ -1717,6 +1717,274 @@
             this.RentalsTabPage.Text = "Rentals";
             this.RentalsTabPage.UseVisualStyleBackColor = true;
             // 
+            // rentDispensePanel
+            // 
+            this.rentDispensePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.rentDispensePanel.Controls.Add(this.rentCustHistoryDGV);
+            this.rentDispensePanel.Controls.Add(this.RentalHistoryLabel);
+            this.rentDispensePanel.Controls.Add(this.rentCustQueueDGV);
+            this.rentDispensePanel.Controls.Add(this.RentQueueLabel);
+            this.rentDispensePanel.Controls.Add(this.rentCustIdResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentCustIdLabel);
+            this.rentDispensePanel.Controls.Add(this.rentAcctResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentFNResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentEmailResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentLNResultLabel);
+            this.rentDispensePanel.Controls.Add(this.rentDispenseBttn);
+            this.rentDispensePanel.Controls.Add(this.rentAcctLabel);
+            this.rentDispensePanel.Controls.Add(this.rentEmailLabel);
+            this.rentDispensePanel.Controls.Add(this.rentFirstNameLabel);
+            this.rentDispensePanel.Controls.Add(this.rentCancelBttn);
+            this.rentDispensePanel.Controls.Add(this.CustRentProfileLabel);
+            this.rentDispensePanel.Controls.Add(this.rentLastNameLabel);
+            this.rentDispensePanel.Location = new System.Drawing.Point(3, 3);
+            this.rentDispensePanel.Name = "rentDispensePanel";
+            this.rentDispensePanel.Size = new System.Drawing.Size(875, 503);
+            this.rentDispensePanel.TabIndex = 1;
+            this.rentDispensePanel.Visible = false;
+            // 
+            // rentCustHistoryDGV
+            // 
+            this.rentCustHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentCustHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentHistID,
+            this.rentHistMovieID,
+            this.rentHistEmpID,
+            this.rentHistCheckD,
+            this.rentHistReturnD});
+            this.rentCustHistoryDGV.Location = new System.Drawing.Point(400, 235);
+            this.rentCustHistoryDGV.Name = "rentCustHistoryDGV";
+            this.rentCustHistoryDGV.RowHeadersWidth = 51;
+            this.rentCustHistoryDGV.Size = new System.Drawing.Size(458, 150);
+            this.rentCustHistoryDGV.TabIndex = 44;
+            // 
+            // rentHistID
+            // 
+            this.rentHistID.HeaderText = "Rental ID";
+            this.rentHistID.MinimumWidth = 6;
+            this.rentHistID.Name = "rentHistID";
+            this.rentHistID.Width = 125;
+            // 
+            // rentHistMovieID
+            // 
+            this.rentHistMovieID.HeaderText = "Movie ID";
+            this.rentHistMovieID.MinimumWidth = 6;
+            this.rentHistMovieID.Name = "rentHistMovieID";
+            this.rentHistMovieID.Width = 125;
+            // 
+            // rentHistEmpID
+            // 
+            this.rentHistEmpID.HeaderText = "Dispensing Employee ID";
+            this.rentHistEmpID.MinimumWidth = 6;
+            this.rentHistEmpID.Name = "rentHistEmpID";
+            this.rentHistEmpID.Width = 125;
+            // 
+            // rentHistCheckD
+            // 
+            this.rentHistCheckD.HeaderText = "Checkout Date";
+            this.rentHistCheckD.MinimumWidth = 6;
+            this.rentHistCheckD.Name = "rentHistCheckD";
+            this.rentHistCheckD.Width = 125;
+            // 
+            // rentHistReturnD
+            // 
+            this.rentHistReturnD.HeaderText = "Return Date";
+            this.rentHistReturnD.MinimumWidth = 6;
+            this.rentHistReturnD.Name = "rentHistReturnD";
+            this.rentHistReturnD.Width = 125;
+            // 
+            // RentalHistoryLabel
+            // 
+            this.RentalHistoryLabel.AutoSize = true;
+            this.RentalHistoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.RentalHistoryLabel.Location = new System.Drawing.Point(397, 200);
+            this.RentalHistoryLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.RentalHistoryLabel.Name = "RentalHistoryLabel";
+            this.RentalHistoryLabel.Size = new System.Drawing.Size(111, 17);
+            this.RentalHistoryLabel.TabIndex = 43;
+            this.RentalHistoryLabel.Text = "Rental History";
+            // 
+            // rentCustQueueDGV
+            // 
+            this.rentCustQueueDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentCustQueueDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.queueMovieID,
+            this.MovieName,
+            this.NumberCopies});
+            this.rentCustQueueDGV.Location = new System.Drawing.Point(37, 235);
+            this.rentCustQueueDGV.Name = "rentCustQueueDGV";
+            this.rentCustQueueDGV.RowHeadersWidth = 51;
+            this.rentCustQueueDGV.Size = new System.Drawing.Size(312, 150);
+            this.rentCustQueueDGV.TabIndex = 42;
+            // 
+            // queueMovieID
+            // 
+            this.queueMovieID.HeaderText = "Movie ID";
+            this.queueMovieID.MinimumWidth = 6;
+            this.queueMovieID.Name = "queueMovieID";
+            this.queueMovieID.Width = 125;
+            // 
+            // MovieName
+            // 
+            this.MovieName.HeaderText = "Movie Title";
+            this.MovieName.Name = "MovieName";
+            // 
+            // NumberCopies
+            // 
+            this.NumberCopies.HeaderText = "Number of Copies";
+            this.NumberCopies.Name = "NumberCopies";
+            // 
+            // RentQueueLabel
+            // 
+            this.RentQueueLabel.AutoSize = true;
+            this.RentQueueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.RentQueueLabel.Location = new System.Drawing.Point(34, 200);
+            this.RentQueueLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.RentQueueLabel.Name = "RentQueueLabel";
+            this.RentQueueLabel.Size = new System.Drawing.Size(56, 17);
+            this.RentQueueLabel.TabIndex = 41;
+            this.RentQueueLabel.Text = "Queue";
+            // 
+            // rentCustIdResultLabel
+            // 
+            this.rentCustIdResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentCustIdResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentCustIdResultLabel.Location = new System.Drawing.Point(149, 111);
+            this.rentCustIdResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentCustIdResultLabel.Name = "rentCustIdResultLabel";
+            this.rentCustIdResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentCustIdResultLabel.TabIndex = 40;
+            // 
+            // rentCustIdLabel
+            // 
+            this.rentCustIdLabel.AutoSize = true;
+            this.rentCustIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentCustIdLabel.Location = new System.Drawing.Point(34, 111);
+            this.rentCustIdLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentCustIdLabel.Name = "rentCustIdLabel";
+            this.rentCustIdLabel.Size = new System.Drawing.Size(89, 17);
+            this.rentCustIdLabel.TabIndex = 39;
+            this.rentCustIdLabel.Text = "Customer ID:";
+            // 
+            // rentAcctResultLabel
+            // 
+            this.rentAcctResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentAcctResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentAcctResultLabel.Location = new System.Drawing.Point(523, 111);
+            this.rentAcctResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentAcctResultLabel.Name = "rentAcctResultLabel";
+            this.rentAcctResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentAcctResultLabel.TabIndex = 38;
+            // 
+            // rentFNResultLabel
+            // 
+            this.rentFNResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentFNResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentFNResultLabel.Location = new System.Drawing.Point(149, 74);
+            this.rentFNResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentFNResultLabel.Name = "rentFNResultLabel";
+            this.rentFNResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentFNResultLabel.TabIndex = 37;
+            // 
+            // rentEmailResultLabel
+            // 
+            this.rentEmailResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentEmailResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentEmailResultLabel.Location = new System.Drawing.Point(149, 151);
+            this.rentEmailResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentEmailResultLabel.Name = "rentEmailResultLabel";
+            this.rentEmailResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentEmailResultLabel.TabIndex = 35;
+            // 
+            // rentLNResultLabel
+            // 
+            this.rentLNResultLabel.BackColor = System.Drawing.Color.White;
+            this.rentLNResultLabel.Location = new System.Drawing.Point(523, 74);
+            this.rentLNResultLabel.Name = "rentLNResultLabel";
+            this.rentLNResultLabel.Size = new System.Drawing.Size(200, 17);
+            this.rentLNResultLabel.TabIndex = 33;
+            // 
+            // rentDispenseBttn
+            // 
+            this.rentDispenseBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentDispenseBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentDispenseBttn.ForeColor = System.Drawing.Color.White;
+            this.rentDispenseBttn.Location = new System.Drawing.Point(36, 424);
+            this.rentDispenseBttn.Margin = new System.Windows.Forms.Padding(5);
+            this.rentDispenseBttn.Name = "rentDispenseBttn";
+            this.rentDispenseBttn.Size = new System.Drawing.Size(197, 52);
+            this.rentDispenseBttn.TabIndex = 32;
+            this.rentDispenseBttn.Text = "Dispense Order";
+            this.rentDispenseBttn.UseVisualStyleBackColor = false;
+            this.rentDispenseBttn.Click += new System.EventHandler(this.rentDispenseBttn_Click);
+            // 
+            // rentAcctLabel
+            // 
+            this.rentAcctLabel.AutoSize = true;
+            this.rentAcctLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentAcctLabel.Location = new System.Drawing.Point(397, 111);
+            this.rentAcctLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentAcctLabel.Name = "rentAcctLabel";
+            this.rentAcctLabel.Size = new System.Drawing.Size(117, 17);
+            this.rentAcctLabel.TabIndex = 31;
+            this.rentAcctLabel.Text = "Account Number:";
+            // 
+            // rentEmailLabel
+            // 
+            this.rentEmailLabel.AutoSize = true;
+            this.rentEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentEmailLabel.Location = new System.Drawing.Point(33, 151);
+            this.rentEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentEmailLabel.Name = "rentEmailLabel";
+            this.rentEmailLabel.Size = new System.Drawing.Size(102, 17);
+            this.rentEmailLabel.TabIndex = 30;
+            this.rentEmailLabel.Text = "Email Address:";
+            // 
+            // rentFirstNameLabel
+            // 
+            this.rentFirstNameLabel.AutoSize = true;
+            this.rentFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentFirstNameLabel.Location = new System.Drawing.Point(34, 74);
+            this.rentFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.rentFirstNameLabel.Name = "rentFirstNameLabel";
+            this.rentFirstNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.rentFirstNameLabel.TabIndex = 28;
+            this.rentFirstNameLabel.Text = "First Name:";
+            // 
+            // rentCancelBttn
+            // 
+            this.rentCancelBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentCancelBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentCancelBttn.ForeColor = System.Drawing.Color.White;
+            this.rentCancelBttn.Location = new System.Drawing.Point(675, 424);
+            this.rentCancelBttn.Margin = new System.Windows.Forms.Padding(5);
+            this.rentCancelBttn.Name = "rentCancelBttn";
+            this.rentCancelBttn.Size = new System.Drawing.Size(166, 52);
+            this.rentCancelBttn.TabIndex = 27;
+            this.rentCancelBttn.Text = "Cancel";
+            this.rentCancelBttn.UseVisualStyleBackColor = false;
+            this.rentCancelBttn.Click += new System.EventHandler(this.rentCancelBttn_Click);
+            // 
+            // CustRentProfileLabel
+            // 
+            this.CustRentProfileLabel.AutoSize = true;
+            this.CustRentProfileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustRentProfileLabel.Location = new System.Drawing.Point(33, 27);
+            this.CustRentProfileLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CustRentProfileLabel.Name = "CustRentProfileLabel";
+            this.CustRentProfileLabel.Size = new System.Drawing.Size(200, 20);
+            this.CustRentProfileLabel.TabIndex = 26;
+            this.CustRentProfileLabel.Text = "Customer Rental Profile";
+            // 
+            // rentLastNameLabel
+            // 
+            this.rentLastNameLabel.AutoSize = true;
+            this.rentLastNameLabel.Location = new System.Drawing.Point(397, 74);
+            this.rentLastNameLabel.Name = "rentLastNameLabel";
+            this.rentLastNameLabel.Size = new System.Drawing.Size(80, 17);
+            this.rentLastNameLabel.TabIndex = 0;
+            this.rentLastNameLabel.Text = "Last Name:";
+            // 
             // rentCustSearchPanel
             // 
             this.rentCustSearchPanel.BackColor = System.Drawing.Color.AliceBlue;
@@ -1857,257 +2125,6 @@
             this.rentCustSearchLabel.Size = new System.Drawing.Size(148, 20);
             this.rentCustSearchLabel.TabIndex = 0;
             this.rentCustSearchLabel.Text = "Customer Search";
-            // 
-            // rentDispensePanel
-            // 
-            this.rentDispensePanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.rentDispensePanel.Controls.Add(this.rentCustHistoryDGV);
-            this.rentDispensePanel.Controls.Add(this.RentalHistoryLabel);
-            this.rentDispensePanel.Controls.Add(this.rentCustQueueDGV);
-            this.rentDispensePanel.Controls.Add(this.RentQueueLabel);
-            this.rentDispensePanel.Controls.Add(this.rentCustIdResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentCustIdLabel);
-            this.rentDispensePanel.Controls.Add(this.rentAcctResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentFNResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentEmailResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentLNResultLabel);
-            this.rentDispensePanel.Controls.Add(this.rentDispenseBttn);
-            this.rentDispensePanel.Controls.Add(this.rentAcctLabel);
-            this.rentDispensePanel.Controls.Add(this.rentEmailLabel);
-            this.rentDispensePanel.Controls.Add(this.rentFirstNameLabel);
-            this.rentDispensePanel.Controls.Add(this.rentCancelBttn);
-            this.rentDispensePanel.Controls.Add(this.CustRentProfileLabel);
-            this.rentDispensePanel.Controls.Add(this.rentLastNameLabel);
-            this.rentDispensePanel.Location = new System.Drawing.Point(3, 3);
-            this.rentDispensePanel.Name = "rentDispensePanel";
-            this.rentDispensePanel.Size = new System.Drawing.Size(875, 503);
-            this.rentDispensePanel.TabIndex = 1;
-            this.rentDispensePanel.Visible = false;
-            // 
-            // rentCustHistoryDGV
-            // 
-            this.rentCustHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentCustHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rentHistID,
-            this.rentHistMovieID,
-            this.rentHistEmpID,
-            this.rentHistCheckD,
-            this.rentHistReturnD});
-            this.rentCustHistoryDGV.Location = new System.Drawing.Point(400, 235);
-            this.rentCustHistoryDGV.Name = "rentCustHistoryDGV";
-            this.rentCustHistoryDGV.RowHeadersWidth = 51;
-            this.rentCustHistoryDGV.Size = new System.Drawing.Size(458, 150);
-            this.rentCustHistoryDGV.TabIndex = 44;
-            // 
-            // rentHistID
-            // 
-            this.rentHistID.HeaderText = "Rental ID";
-            this.rentHistID.MinimumWidth = 6;
-            this.rentHistID.Name = "rentHistID";
-            this.rentHistID.Width = 125;
-            // 
-            // rentHistMovieID
-            // 
-            this.rentHistMovieID.HeaderText = "Movie ID";
-            this.rentHistMovieID.MinimumWidth = 6;
-            this.rentHistMovieID.Name = "rentHistMovieID";
-            this.rentHistMovieID.Width = 125;
-            // 
-            // rentHistEmpID
-            // 
-            this.rentHistEmpID.HeaderText = "Dispensing Employee ID";
-            this.rentHistEmpID.MinimumWidth = 6;
-            this.rentHistEmpID.Name = "rentHistEmpID";
-            this.rentHistEmpID.Width = 125;
-            // 
-            // rentHistCheckD
-            // 
-            this.rentHistCheckD.HeaderText = "Checkout Date";
-            this.rentHistCheckD.MinimumWidth = 6;
-            this.rentHistCheckD.Name = "rentHistCheckD";
-            this.rentHistCheckD.Width = 125;
-            // 
-            // rentHistReturnD
-            // 
-            this.rentHistReturnD.HeaderText = "Return Date";
-            this.rentHistReturnD.MinimumWidth = 6;
-            this.rentHistReturnD.Name = "rentHistReturnD";
-            this.rentHistReturnD.Width = 125;
-            // 
-            // RentalHistoryLabel
-            // 
-            this.RentalHistoryLabel.AutoSize = true;
-            this.RentalHistoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.RentalHistoryLabel.Location = new System.Drawing.Point(397, 200);
-            this.RentalHistoryLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.RentalHistoryLabel.Name = "RentalHistoryLabel";
-            this.RentalHistoryLabel.Size = new System.Drawing.Size(111, 17);
-            this.RentalHistoryLabel.TabIndex = 43;
-            this.RentalHistoryLabel.Text = "Rental History";
-            // 
-            // rentCustQueueDGV
-            // 
-            this.rentCustQueueDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentCustQueueDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.queueMovieID,
-            this.MovieName,
-            this.NumberCopies});
-            this.rentCustQueueDGV.Location = new System.Drawing.Point(37, 235);
-            this.rentCustQueueDGV.Name = "rentCustQueueDGV";
-            this.rentCustQueueDGV.RowHeadersWidth = 51;
-            this.rentCustQueueDGV.Size = new System.Drawing.Size(312, 150);
-            this.rentCustQueueDGV.TabIndex = 42;
-            // 
-            // RentQueueLabel
-            // 
-            this.RentQueueLabel.AutoSize = true;
-            this.RentQueueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.RentQueueLabel.Location = new System.Drawing.Point(34, 200);
-            this.RentQueueLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.RentQueueLabel.Name = "RentQueueLabel";
-            this.RentQueueLabel.Size = new System.Drawing.Size(56, 17);
-            this.RentQueueLabel.TabIndex = 41;
-            this.RentQueueLabel.Text = "Queue";
-            // 
-            // rentCustIdResultLabel
-            // 
-            this.rentCustIdResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentCustIdResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentCustIdResultLabel.Location = new System.Drawing.Point(149, 111);
-            this.rentCustIdResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentCustIdResultLabel.Name = "rentCustIdResultLabel";
-            this.rentCustIdResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentCustIdResultLabel.TabIndex = 40;
-            // 
-            // rentCustIdLabel
-            // 
-            this.rentCustIdLabel.AutoSize = true;
-            this.rentCustIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentCustIdLabel.Location = new System.Drawing.Point(34, 111);
-            this.rentCustIdLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentCustIdLabel.Name = "rentCustIdLabel";
-            this.rentCustIdLabel.Size = new System.Drawing.Size(89, 17);
-            this.rentCustIdLabel.TabIndex = 39;
-            this.rentCustIdLabel.Text = "Customer ID:";
-            // 
-            // rentAcctResultLabel
-            // 
-            this.rentAcctResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentAcctResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentAcctResultLabel.Location = new System.Drawing.Point(523, 111);
-            this.rentAcctResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentAcctResultLabel.Name = "rentAcctResultLabel";
-            this.rentAcctResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentAcctResultLabel.TabIndex = 38;
-            // 
-            // rentFNResultLabel
-            // 
-            this.rentFNResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentFNResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentFNResultLabel.Location = new System.Drawing.Point(149, 74);
-            this.rentFNResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentFNResultLabel.Name = "rentFNResultLabel";
-            this.rentFNResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentFNResultLabel.TabIndex = 37;
-            // 
-            // rentEmailResultLabel
-            // 
-            this.rentEmailResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentEmailResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentEmailResultLabel.Location = new System.Drawing.Point(149, 151);
-            this.rentEmailResultLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentEmailResultLabel.Name = "rentEmailResultLabel";
-            this.rentEmailResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentEmailResultLabel.TabIndex = 35;
-            // 
-            // rentLNResultLabel
-            // 
-            this.rentLNResultLabel.BackColor = System.Drawing.Color.White;
-            this.rentLNResultLabel.Location = new System.Drawing.Point(523, 74);
-            this.rentLNResultLabel.Name = "rentLNResultLabel";
-            this.rentLNResultLabel.Size = new System.Drawing.Size(200, 17);
-            this.rentLNResultLabel.TabIndex = 33;
-            // 
-            // rentDispenseBttn
-            // 
-            this.rentDispenseBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentDispenseBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentDispenseBttn.ForeColor = System.Drawing.Color.White;
-            this.rentDispenseBttn.Location = new System.Drawing.Point(36, 437);
-            this.rentDispenseBttn.Margin = new System.Windows.Forms.Padding(5);
-            this.rentDispenseBttn.Name = "rentDispenseBttn";
-            this.rentDispenseBttn.Size = new System.Drawing.Size(185, 39);
-            this.rentDispenseBttn.TabIndex = 32;
-            this.rentDispenseBttn.Text = "Dispense Order";
-            this.rentDispenseBttn.UseVisualStyleBackColor = false;
-            this.rentDispenseBttn.Click += new System.EventHandler(this.rentDispenseBttn_Click);
-            // 
-            // rentAcctLabel
-            // 
-            this.rentAcctLabel.AutoSize = true;
-            this.rentAcctLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentAcctLabel.Location = new System.Drawing.Point(397, 111);
-            this.rentAcctLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentAcctLabel.Name = "rentAcctLabel";
-            this.rentAcctLabel.Size = new System.Drawing.Size(117, 17);
-            this.rentAcctLabel.TabIndex = 31;
-            this.rentAcctLabel.Text = "Account Number:";
-            // 
-            // rentEmailLabel
-            // 
-            this.rentEmailLabel.AutoSize = true;
-            this.rentEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentEmailLabel.Location = new System.Drawing.Point(33, 151);
-            this.rentEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentEmailLabel.Name = "rentEmailLabel";
-            this.rentEmailLabel.Size = new System.Drawing.Size(102, 17);
-            this.rentEmailLabel.TabIndex = 30;
-            this.rentEmailLabel.Text = "Email Address:";
-            // 
-            // rentFirstNameLabel
-            // 
-            this.rentFirstNameLabel.AutoSize = true;
-            this.rentFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentFirstNameLabel.Location = new System.Drawing.Point(34, 74);
-            this.rentFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.rentFirstNameLabel.Name = "rentFirstNameLabel";
-            this.rentFirstNameLabel.Size = new System.Drawing.Size(80, 17);
-            this.rentFirstNameLabel.TabIndex = 28;
-            this.rentFirstNameLabel.Text = "First Name:";
-            // 
-            // rentCancelBttn
-            // 
-            this.rentCancelBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentCancelBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentCancelBttn.ForeColor = System.Drawing.Color.White;
-            this.rentCancelBttn.Location = new System.Drawing.Point(716, 437);
-            this.rentCancelBttn.Margin = new System.Windows.Forms.Padding(5);
-            this.rentCancelBttn.Name = "rentCancelBttn";
-            this.rentCancelBttn.Size = new System.Drawing.Size(125, 39);
-            this.rentCancelBttn.TabIndex = 27;
-            this.rentCancelBttn.Text = "Cancel";
-            this.rentCancelBttn.UseVisualStyleBackColor = false;
-            this.rentCancelBttn.Click += new System.EventHandler(this.rentCancelBttn_Click);
-            // 
-            // CustRentProfileLabel
-            // 
-            this.CustRentProfileLabel.AutoSize = true;
-            this.CustRentProfileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustRentProfileLabel.Location = new System.Drawing.Point(33, 27);
-            this.CustRentProfileLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CustRentProfileLabel.Name = "CustRentProfileLabel";
-            this.CustRentProfileLabel.Size = new System.Drawing.Size(200, 20);
-            this.CustRentProfileLabel.TabIndex = 26;
-            this.CustRentProfileLabel.Text = "Customer Rental Profile";
-            // 
-            // rentLastNameLabel
-            // 
-            this.rentLastNameLabel.AutoSize = true;
-            this.rentLastNameLabel.Location = new System.Drawing.Point(397, 74);
-            this.rentLastNameLabel.Name = "rentLastNameLabel";
-            this.rentLastNameLabel.Size = new System.Drawing.Size(80, 17);
-            this.rentLastNameLabel.TabIndex = 0;
-            this.rentLastNameLabel.Text = "Last Name:";
             // 
             // ReportsTabPage
             // 
@@ -2338,23 +2355,6 @@
             this.ReportTypeLabel.TabIndex = 50;
             this.ReportTypeLabel.Text = "Report Type";
             // 
-            // queueMovieID
-            // 
-            this.queueMovieID.HeaderText = "Movie ID";
-            this.queueMovieID.MinimumWidth = 6;
-            this.queueMovieID.Name = "queueMovieID";
-            this.queueMovieID.Width = 125;
-            // 
-            // MovieName
-            // 
-            this.MovieName.HeaderText = "Movie Title";
-            this.MovieName.Name = "MovieName";
-            // 
-            // NumberCopies
-            // 
-            this.NumberCopies.HeaderText = "Number of Copies";
-            this.NumberCopies.Name = "NumberCopies";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2387,15 +2387,15 @@
             this.AddMoviePanel.ResumeLayout(false);
             this.AddMoviePanel.PerformLayout();
             this.RentalsTabPage.ResumeLayout(false);
+            this.rentDispensePanel.ResumeLayout(false);
+            this.rentDispensePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).EndInit();
             this.rentCustSearchPanel.ResumeLayout(false);
             this.rentCustSearchPanel.PerformLayout();
             this.RentCustSearchRadiosPanel.ResumeLayout(false);
             this.RentCustSearchRadiosPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).EndInit();
-            this.rentDispensePanel.ResumeLayout(false);
-            this.rentDispensePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).EndInit();
             this.ReportsTabPage.ResumeLayout(false);
             this.ReportsAvailablePanel.ResumeLayout(false);
             this.ReportsAvailablePanel.PerformLayout();

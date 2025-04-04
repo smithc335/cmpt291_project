@@ -662,7 +662,6 @@ namespace CMPT291_Project
 
         private void rentCancelBttn_Click(object sender, EventArgs e)
         {
-            // Try to understand Claire's logic behind their code. :)
             rentCustSearchPanel.Visible = true;
             rentDispensePanel.Visible = false;
         }
@@ -695,7 +694,7 @@ namespace CMPT291_Project
                 //}
                 //myReader.Close();
 
-                MessageBox.Show(currentEmployee);
+                //MessageBox.Show(currentEmployee);
 
 
                 // Insert into Rental table
@@ -711,8 +710,10 @@ namespace CMPT291_Project
 
                 // Commit transaction
                 myTransaction.Commit();
+                ReduceNumCopies();
                 LoadQueueUPData();
                 LoadRentalHistoryData();
+                rentCancelBttn.Text = "Back to Search";
 
             }
             catch (Exception e3)
@@ -725,8 +726,6 @@ namespace CMPT291_Project
 
                 MessageBox.Show(e3.ToString(), "Error");
             }
-
-
 
         }
 
@@ -750,12 +749,13 @@ namespace CMPT291_Project
             rentCustHistoryDGV.DataSource = dataTable;
         }
 
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void ReduceNumCopies()
         {
-            // Test
-            // test  2
+            string movieID = rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            myCommand.CommandText = "UPDATE Movie SET NumCopies = NumCopies - 1 WHERE MovieID = " + movieID + "AND NumCopies > 0";
+            myCommand.ExecuteNonQuery();
         }
+
 
         // MOVIE FEATURE CODE
 
