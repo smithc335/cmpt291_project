@@ -739,7 +739,9 @@ namespace CMPT291_Project
 
 
                 // Commit transaction
-                myTransaction.Commit(); 
+                myTransaction.Commit();
+                LoadQueueUPData();
+                LoadRentalHistoryData();
 
             }
             catch (Exception e3)
@@ -756,6 +758,26 @@ namespace CMPT291_Project
 
 
         }
+
+
+        private void LoadQueueUPData()
+        {
+            rentCustQueueDGV.Columns.Clear();
+            SqlDataAdapter myAdapter = new SqlDataAdapter("SELECT * FROM QueueUp WHERE CustomerID = " + rentCustIdResultLabel.Text, myConnection);
+            DataTable dataTable = new DataTable();
+            myAdapter.Fill(dataTable);
+            rentCustQueueDGV.DataSource = dataTable;
+        }
+
+        private void LoadRentalHistoryData()
+        {
+            rentCustHistoryDGV.Columns.Clear();
+            SqlDataAdapter myAdapter = new SqlDataAdapter("SELECT * FROM Rental WHERE CustomerID = " + rentCustIdResultLabel.Text, myConnection);
+            DataTable dataTable = new DataTable();
+            myAdapter.Fill(dataTable);
+            rentCustHistoryDGV.DataSource = dataTable;
+        }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
