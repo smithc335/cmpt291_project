@@ -177,15 +177,16 @@
             this.rentAcctLabel = new System.Windows.Forms.Label();
             this.rentEmailLabel = new System.Windows.Forms.Label();
             this.rentFirstNameLabel = new System.Windows.Forms.Label();
-            this.rentCancelBttn = new System.Windows.Forms.Button();
             this.CustRentProfileLabel = new System.Windows.Forms.Label();
             this.rentLastNameLabel = new System.Windows.Forms.Label();
+            this.rentBackBttn = new System.Windows.Forms.Button();
+            this.rentCancelBttn = new System.Windows.Forms.Button();
             this.rentCustSearchPanel = new System.Windows.Forms.Panel();
             this.rentCustViewBttn = new System.Windows.Forms.Button();
             this.RentCustSearchRadiosPanel = new System.Windows.Forms.Panel();
             this.rentCustByEmailRadio = new System.Windows.Forms.RadioButton();
-            this.rentCustByIdRadio = new System.Windows.Forms.RadioButton();
-            this.rentCustByNameRadio = new System.Windows.Forms.RadioButton();
+            this.rentCustByFirstNameRadio = new System.Windows.Forms.RadioButton();
+            this.rentCustByLastNameRadio = new System.Windows.Forms.RadioButton();
             this.rentCustSearchDGV = new System.Windows.Forms.DataGridView();
             this.rentCustSearchIdHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentCustSearchNameHeader = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -214,7 +215,8 @@
             this.ReportDataGrid = new System.Windows.Forms.DataGridView();
             this.ReportTypeLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.rentBackBttn = new System.Windows.Forms.Button();
+            this.AddNewMovieLabel = new System.Windows.Forms.Label();
+            this.UpdateMovieLabel = new System.Windows.Forms.Label();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -376,9 +378,9 @@
             // 
             // CustomersTabPage
             // 
+            this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.AddCustomerPanel);
             this.CustomersTabPage.Controls.Add(this.SearchCustomerPanel);
-            this.CustomersTabPage.Controls.Add(this.ViewCustomerPanel);
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 25);
             this.CustomersTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CustomersTabPage.Name = "CustomersTabPage";
@@ -1322,9 +1324,9 @@
             // 
             // MoviesTabPage
             // 
-            this.MoviesTabPage.Controls.Add(this.SearchMoviePanel);
             this.MoviesTabPage.Controls.Add(this.EditMoviePanel);
             this.MoviesTabPage.Controls.Add(this.AddMoviePanel);
+            this.MoviesTabPage.Controls.Add(this.SearchMoviePanel);
             this.MoviesTabPage.Location = new System.Drawing.Point(4, 25);
             this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.MoviesTabPage.Name = "MoviesTabPage";
@@ -1484,6 +1486,7 @@
             // 
             // EditMoviePanel
             // 
+            this.EditMoviePanel.Controls.Add(this.UpdateMovieLabel);
             this.EditMoviePanel.Controls.Add(this.EditMovieIDLabel);
             this.EditMoviePanel.Controls.Add(this.CancelEditMovieButton);
             this.EditMoviePanel.Controls.Add(this.SaveMovieChangesButton);
@@ -1504,7 +1507,7 @@
             // EditMovieIDLabel
             // 
             this.EditMovieIDLabel.AutoSize = true;
-            this.EditMovieIDLabel.Location = new System.Drawing.Point(57, 287);
+            this.EditMovieIDLabel.Location = new System.Drawing.Point(57, 325);
             this.EditMovieIDLabel.Name = "EditMovieIDLabel";
             this.EditMovieIDLabel.Size = new System.Drawing.Size(66, 17);
             this.EditMovieIDLabel.TabIndex = 10;
@@ -1538,7 +1541,7 @@
             // EditMovieFeeLabel
             // 
             this.EditMovieFeeLabel.AutoSize = true;
-            this.EditMovieFeeLabel.Location = new System.Drawing.Point(58, 229);
+            this.EditMovieFeeLabel.Location = new System.Drawing.Point(58, 267);
             this.EditMovieFeeLabel.Name = "EditMovieFeeLabel";
             this.EditMovieFeeLabel.Size = new System.Drawing.Size(77, 17);
             this.EditMovieFeeLabel.TabIndex = 7;
@@ -1547,7 +1550,7 @@
             // EditMovieCopiesLabel
             // 
             this.EditMovieCopiesLabel.AutoSize = true;
-            this.EditMovieCopiesLabel.Location = new System.Drawing.Point(58, 168);
+            this.EditMovieCopiesLabel.Location = new System.Drawing.Point(58, 206);
             this.EditMovieCopiesLabel.Name = "EditMovieCopiesLabel";
             this.EditMovieCopiesLabel.Size = new System.Drawing.Size(96, 17);
             this.EditMovieCopiesLabel.TabIndex = 6;
@@ -1556,7 +1559,7 @@
             // EditMovieGenreLabel
             // 
             this.EditMovieGenreLabel.AutoSize = true;
-            this.EditMovieGenreLabel.Location = new System.Drawing.Point(58, 106);
+            this.EditMovieGenreLabel.Location = new System.Drawing.Point(58, 144);
             this.EditMovieGenreLabel.Name = "EditMovieGenreLabel";
             this.EditMovieGenreLabel.Size = new System.Drawing.Size(93, 17);
             this.EditMovieGenreLabel.TabIndex = 5;
@@ -1564,28 +1567,28 @@
             // 
             // EditMovieFeeTextbox
             // 
-            this.EditMovieFeeTextbox.Location = new System.Drawing.Point(185, 226);
+            this.EditMovieFeeTextbox.Location = new System.Drawing.Point(185, 264);
             this.EditMovieFeeTextbox.Name = "EditMovieFeeTextbox";
             this.EditMovieFeeTextbox.Size = new System.Drawing.Size(212, 23);
             this.EditMovieFeeTextbox.TabIndex = 4;
             // 
             // EditMovieCopiesTextbox
             // 
-            this.EditMovieCopiesTextbox.Location = new System.Drawing.Point(185, 163);
+            this.EditMovieCopiesTextbox.Location = new System.Drawing.Point(185, 201);
             this.EditMovieCopiesTextbox.Name = "EditMovieCopiesTextbox";
             this.EditMovieCopiesTextbox.Size = new System.Drawing.Size(212, 23);
             this.EditMovieCopiesTextbox.TabIndex = 3;
             // 
             // EditMovieGenreTextbox
             // 
-            this.EditMovieGenreTextbox.Location = new System.Drawing.Point(185, 97);
+            this.EditMovieGenreTextbox.Location = new System.Drawing.Point(185, 135);
             this.EditMovieGenreTextbox.Name = "EditMovieGenreTextbox";
             this.EditMovieGenreTextbox.Size = new System.Drawing.Size(212, 23);
             this.EditMovieGenreTextbox.TabIndex = 2;
             // 
             // EditMovieNameTextbox
             // 
-            this.EditMovieNameTextbox.Location = new System.Drawing.Point(185, 40);
+            this.EditMovieNameTextbox.Location = new System.Drawing.Point(185, 78);
             this.EditMovieNameTextbox.Name = "EditMovieNameTextbox";
             this.EditMovieNameTextbox.Size = new System.Drawing.Size(212, 23);
             this.EditMovieNameTextbox.TabIndex = 1;
@@ -1593,7 +1596,7 @@
             // EditMovieNameLabel
             // 
             this.EditMovieNameLabel.AutoSize = true;
-            this.EditMovieNameLabel.Location = new System.Drawing.Point(58, 45);
+            this.EditMovieNameLabel.Location = new System.Drawing.Point(58, 83);
             this.EditMovieNameLabel.Name = "EditMovieNameLabel";
             this.EditMovieNameLabel.Size = new System.Drawing.Size(90, 17);
             this.EditMovieNameLabel.TabIndex = 0;
@@ -1602,6 +1605,7 @@
             // AddMoviePanel
             // 
             this.AddMoviePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.AddMoviePanel.Controls.Add(this.AddNewMovieLabel);
             this.AddMoviePanel.Controls.Add(this.CancelAddMovieButton);
             this.AddMoviePanel.Controls.Add(this.SaveNewMovieButton);
             this.AddMoviePanel.Controls.Add(this.AddMovieFeeTextbox);
@@ -1644,28 +1648,28 @@
             // 
             // AddMovieFeeTextbox
             // 
-            this.AddMovieFeeTextbox.Location = new System.Drawing.Point(223, 229);
+            this.AddMovieFeeTextbox.Location = new System.Drawing.Point(223, 277);
             this.AddMovieFeeTextbox.Name = "AddMovieFeeTextbox";
             this.AddMovieFeeTextbox.Size = new System.Drawing.Size(226, 23);
             this.AddMovieFeeTextbox.TabIndex = 7;
             // 
             // AddMovieCopiesTextbox
             // 
-            this.AddMovieCopiesTextbox.Location = new System.Drawing.Point(223, 168);
+            this.AddMovieCopiesTextbox.Location = new System.Drawing.Point(223, 216);
             this.AddMovieCopiesTextbox.Name = "AddMovieCopiesTextbox";
             this.AddMovieCopiesTextbox.Size = new System.Drawing.Size(226, 23);
             this.AddMovieCopiesTextbox.TabIndex = 6;
             // 
             // AddMovieGenreTextbox
             // 
-            this.AddMovieGenreTextbox.Location = new System.Drawing.Point(223, 106);
+            this.AddMovieGenreTextbox.Location = new System.Drawing.Point(223, 154);
             this.AddMovieGenreTextbox.Name = "AddMovieGenreTextbox";
             this.AddMovieGenreTextbox.Size = new System.Drawing.Size(226, 23);
             this.AddMovieGenreTextbox.TabIndex = 5;
             // 
             // AddMovieNameTextbox
             // 
-            this.AddMovieNameTextbox.Location = new System.Drawing.Point(223, 46);
+            this.AddMovieNameTextbox.Location = new System.Drawing.Point(223, 94);
             this.AddMovieNameTextbox.Name = "AddMovieNameTextbox";
             this.AddMovieNameTextbox.Size = new System.Drawing.Size(226, 23);
             this.AddMovieNameTextbox.TabIndex = 4;
@@ -1673,7 +1677,7 @@
             // AddMovieFeeLabel
             // 
             this.AddMovieFeeLabel.AutoSize = true;
-            this.AddMovieFeeLabel.Location = new System.Drawing.Point(75, 229);
+            this.AddMovieFeeLabel.Location = new System.Drawing.Point(75, 277);
             this.AddMovieFeeLabel.Name = "AddMovieFeeLabel";
             this.AddMovieFeeLabel.Size = new System.Drawing.Size(77, 17);
             this.AddMovieFeeLabel.TabIndex = 3;
@@ -1682,16 +1686,16 @@
             // AddMovieCopiesLabel
             // 
             this.AddMovieCopiesLabel.AutoSize = true;
-            this.AddMovieCopiesLabel.Location = new System.Drawing.Point(75, 166);
+            this.AddMovieCopiesLabel.Location = new System.Drawing.Point(75, 214);
             this.AddMovieCopiesLabel.Name = "AddMovieCopiesLabel";
-            this.AddMovieCopiesLabel.Size = new System.Drawing.Size(92, 17);
+            this.AddMovieCopiesLabel.Size = new System.Drawing.Size(96, 17);
             this.AddMovieCopiesLabel.TabIndex = 2;
-            this.AddMovieCopiesLabel.Text = "MovieCopies:";
+            this.AddMovieCopiesLabel.Text = "Movie Copies:";
             // 
             // AddMovieGenreLabel
             // 
             this.AddMovieGenreLabel.AutoSize = true;
-            this.AddMovieGenreLabel.Location = new System.Drawing.Point(75, 106);
+            this.AddMovieGenreLabel.Location = new System.Drawing.Point(75, 154);
             this.AddMovieGenreLabel.Name = "AddMovieGenreLabel";
             this.AddMovieGenreLabel.Size = new System.Drawing.Size(93, 17);
             this.AddMovieGenreLabel.TabIndex = 1;
@@ -1700,7 +1704,7 @@
             // AddMovieNameLabel
             // 
             this.AddMovieNameLabel.AutoSize = true;
-            this.AddMovieNameLabel.Location = new System.Drawing.Point(75, 49);
+            this.AddMovieNameLabel.Location = new System.Drawing.Point(75, 97);
             this.AddMovieNameLabel.Name = "AddMovieNameLabel";
             this.AddMovieNameLabel.Size = new System.Drawing.Size(90, 17);
             this.AddMovieNameLabel.TabIndex = 0;
@@ -1953,20 +1957,6 @@
             this.rentFirstNameLabel.TabIndex = 28;
             this.rentFirstNameLabel.Text = "First Name:";
             // 
-            // rentCancelBttn
-            // 
-            this.rentCancelBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentCancelBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentCancelBttn.ForeColor = System.Drawing.Color.White;
-            this.rentCancelBttn.Location = new System.Drawing.Point(675, 424);
-            this.rentCancelBttn.Margin = new System.Windows.Forms.Padding(5);
-            this.rentCancelBttn.Name = "rentCancelBttn";
-            this.rentCancelBttn.Size = new System.Drawing.Size(166, 52);
-            this.rentCancelBttn.TabIndex = 27;
-            this.rentCancelBttn.Text = "Cancel";
-            this.rentCancelBttn.UseVisualStyleBackColor = false;
-            this.rentCancelBttn.Click += new System.EventHandler(this.rentCancelBttn_Click);
-            // 
             // CustRentProfileLabel
             // 
             this.CustRentProfileLabel.AutoSize = true;
@@ -1986,6 +1976,36 @@
             this.rentLastNameLabel.Size = new System.Drawing.Size(80, 17);
             this.rentLastNameLabel.TabIndex = 0;
             this.rentLastNameLabel.Text = "Last Name:";
+            // 
+            // rentBackBttn
+            // 
+            this.rentBackBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentBackBttn.Enabled = false;
+            this.rentBackBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentBackBttn.ForeColor = System.Drawing.Color.White;
+            this.rentBackBttn.Location = new System.Drawing.Point(675, 424);
+            this.rentBackBttn.Margin = new System.Windows.Forms.Padding(5);
+            this.rentBackBttn.Name = "rentBackBttn";
+            this.rentBackBttn.Size = new System.Drawing.Size(166, 52);
+            this.rentBackBttn.TabIndex = 45;
+            this.rentBackBttn.Text = "Back to Search";
+            this.rentBackBttn.UseVisualStyleBackColor = false;
+            this.rentBackBttn.Visible = false;
+            this.rentBackBttn.Click += new System.EventHandler(this.rentBackBttn_Click);
+            // 
+            // rentCancelBttn
+            // 
+            this.rentCancelBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentCancelBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentCancelBttn.ForeColor = System.Drawing.Color.White;
+            this.rentCancelBttn.Location = new System.Drawing.Point(675, 424);
+            this.rentCancelBttn.Margin = new System.Windows.Forms.Padding(5);
+            this.rentCancelBttn.Name = "rentCancelBttn";
+            this.rentCancelBttn.Size = new System.Drawing.Size(166, 52);
+            this.rentCancelBttn.TabIndex = 27;
+            this.rentCancelBttn.Text = "Cancel";
+            this.rentCancelBttn.UseVisualStyleBackColor = false;
+            this.rentCancelBttn.Click += new System.EventHandler(this.rentCancelBttn_Click);
             // 
             // rentCustSearchPanel
             // 
@@ -2017,8 +2037,8 @@
             // RentCustSearchRadiosPanel
             // 
             this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByEmailRadio);
-            this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByIdRadio);
-            this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByNameRadio);
+            this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByFirstNameRadio);
+            this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByLastNameRadio);
             this.RentCustSearchRadiosPanel.Location = new System.Drawing.Point(588, 121);
             this.RentCustSearchRadiosPanel.Name = "RentCustSearchRadiosPanel";
             this.RentCustSearchRadiosPanel.Size = new System.Drawing.Size(208, 96);
@@ -2034,27 +2054,27 @@
             this.rentCustByEmailRadio.Text = "By Customer Email";
             this.rentCustByEmailRadio.UseVisualStyleBackColor = true;
             // 
-            // rentCustByIdRadio
+            // rentCustByFirstNameRadio
             // 
-            this.rentCustByIdRadio.AutoSize = true;
-            this.rentCustByIdRadio.Checked = true;
-            this.rentCustByIdRadio.Location = new System.Drawing.Point(17, 15);
-            this.rentCustByIdRadio.Name = "rentCustByIdRadio";
-            this.rentCustByIdRadio.Size = new System.Drawing.Size(123, 21);
-            this.rentCustByIdRadio.TabIndex = 2;
-            this.rentCustByIdRadio.TabStop = true;
-            this.rentCustByIdRadio.Text = "By Customer ID";
-            this.rentCustByIdRadio.UseVisualStyleBackColor = true;
+            this.rentCustByFirstNameRadio.AutoSize = true;
+            this.rentCustByFirstNameRadio.Checked = true;
+            this.rentCustByFirstNameRadio.Location = new System.Drawing.Point(17, 15);
+            this.rentCustByFirstNameRadio.Name = "rentCustByFirstNameRadio";
+            this.rentCustByFirstNameRadio.Size = new System.Drawing.Size(178, 21);
+            this.rentCustByFirstNameRadio.TabIndex = 2;
+            this.rentCustByFirstNameRadio.TabStop = true;
+            this.rentCustByFirstNameRadio.Text = "By Customer First Name";
+            this.rentCustByFirstNameRadio.UseVisualStyleBackColor = true;
             // 
-            // rentCustByNameRadio
+            // rentCustByLastNameRadio
             // 
-            this.rentCustByNameRadio.AutoSize = true;
-            this.rentCustByNameRadio.Location = new System.Drawing.Point(17, 43);
-            this.rentCustByNameRadio.Name = "rentCustByNameRadio";
-            this.rentCustByNameRadio.Size = new System.Drawing.Size(178, 21);
-            this.rentCustByNameRadio.TabIndex = 3;
-            this.rentCustByNameRadio.Text = "By Customer Last Name";
-            this.rentCustByNameRadio.UseVisualStyleBackColor = true;
+            this.rentCustByLastNameRadio.AutoSize = true;
+            this.rentCustByLastNameRadio.Location = new System.Drawing.Point(17, 43);
+            this.rentCustByLastNameRadio.Name = "rentCustByLastNameRadio";
+            this.rentCustByLastNameRadio.Size = new System.Drawing.Size(178, 21);
+            this.rentCustByLastNameRadio.TabIndex = 3;
+            this.rentCustByLastNameRadio.Text = "By Customer Last Name";
+            this.rentCustByLastNameRadio.UseVisualStyleBackColor = true;
             // 
             // rentCustSearchDGV
             // 
@@ -2357,21 +2377,28 @@
             this.ReportTypeLabel.TabIndex = 50;
             this.ReportTypeLabel.Text = "Report Type";
             // 
-            // rentBackBttn
+            // AddNewMovieLabel
             // 
-            this.rentBackBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentBackBttn.Enabled = false;
-            this.rentBackBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentBackBttn.ForeColor = System.Drawing.Color.White;
-            this.rentBackBttn.Location = new System.Drawing.Point(675, 424);
-            this.rentBackBttn.Margin = new System.Windows.Forms.Padding(5);
-            this.rentBackBttn.Name = "rentBackBttn";
-            this.rentBackBttn.Size = new System.Drawing.Size(166, 52);
-            this.rentBackBttn.TabIndex = 45;
-            this.rentBackBttn.Text = "Back to Search";
-            this.rentBackBttn.UseVisualStyleBackColor = false;
-            this.rentBackBttn.Visible = false;
-            this.rentBackBttn.Click += new System.EventHandler(this.rentBackBttn_Click);
+            this.AddNewMovieLabel.AutoSize = true;
+            this.AddNewMovieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewMovieLabel.Location = new System.Drawing.Point(75, 34);
+            this.AddNewMovieLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.AddNewMovieLabel.Name = "AddNewMovieLabel";
+            this.AddNewMovieLabel.Size = new System.Drawing.Size(131, 20);
+            this.AddNewMovieLabel.TabIndex = 10;
+            this.AddNewMovieLabel.Text = "Add New Movie";
+            // 
+            // UpdateMovieLabel
+            // 
+            this.UpdateMovieLabel.AutoSize = true;
+            this.UpdateMovieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateMovieLabel.Location = new System.Drawing.Point(56, 29);
+            this.UpdateMovieLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.UpdateMovieLabel.Name = "UpdateMovieLabel";
+            this.UpdateMovieLabel.Size = new System.Drawing.Size(216, 20);
+            this.UpdateMovieLabel.TabIndex = 50;
+            this.UpdateMovieLabel.Text = "Update Movie Information";
+            this.UpdateMovieLabel.Visible = false;
             // 
             // Form1
             // 
@@ -2521,8 +2548,8 @@
         private System.Windows.Forms.Button rentCustViewBttn;
         private System.Windows.Forms.Panel RentCustSearchRadiosPanel;
         private System.Windows.Forms.RadioButton rentCustByEmailRadio;
-        private System.Windows.Forms.RadioButton rentCustByIdRadio;
-        private System.Windows.Forms.RadioButton rentCustByNameRadio;
+        private System.Windows.Forms.RadioButton rentCustByFirstNameRadio;
+        private System.Windows.Forms.RadioButton rentCustByLastNameRadio;
         private System.Windows.Forms.DataGridView rentCustSearchDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentCustSearchIdHeader;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentCustSearchNameHeader;
@@ -2614,6 +2641,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MovieName;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberCopies;
         private System.Windows.Forms.Button rentBackBttn;
+        private System.Windows.Forms.Label UpdateMovieLabel;
+        private System.Windows.Forms.Label AddNewMovieLabel;
         // STOP
     }
 }

@@ -566,9 +566,9 @@ namespace CMPT291_Project
 
         private void rentCustSearchBttn_Click(object sender, EventArgs e)
         {
-            if (rentCustByIdRadio.Checked)
+            if (rentCustByFirstNameRadio.Checked)
             {
-                myCommand.CommandText = "select * from Customer where CustomerID = " + rentCustSearchTB.Text;
+                myCommand.CommandText = "select * from Customer where FirstName = '" + rentCustSearchTB.Text + "'";
 
             }
             else if (rentCustByEmailRadio.Checked)
@@ -631,8 +631,8 @@ namespace CMPT291_Project
                 myReader = myCommand.ExecuteReader();
 
                 //bool firstRowChecked = false;
-               
 
+                rentCustQueueDGV.Rows.Clear();
                 while (myReader.Read())
                 {
                     //if (!firstRowChecked)
@@ -656,6 +656,7 @@ namespace CMPT291_Project
 
                 myReader = myCommand.ExecuteReader();
 
+                rentCustHistoryDGV.Rows.Clear();
                 while (myReader.Read())
                 {
                     if (myReader["ReturnDate"] == DBNull.Value)
@@ -692,8 +693,8 @@ namespace CMPT291_Project
         {
             rentCustSearchPanel.Visible = true;
             rentDispensePanel.Visible = false;
-            rentCustQueueDGV.Rows.Clear();
-            rentCustHistoryDGV.Rows.Clear();
+            //rentCustQueueDGV.Rows.Clear();
+            //rentCustHistoryDGV.Rows.Clear();
         }
 
         private void rentDispenseBttn_Click(object sender, EventArgs e)

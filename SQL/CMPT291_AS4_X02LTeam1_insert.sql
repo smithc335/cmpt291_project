@@ -252,6 +252,15 @@ INSERT INTO QueueUp (MovieID, CustomerID)
 INSERT INTO QueueUp (MovieID, CustomerID)
 	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Parasite'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'stacell13@yahoo.com'));
 
+INSERT INTO QueueUp (MovieID, CustomerID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Spirited Away'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'));
+
+INSERT INTO QueueUp (MovieID, CustomerID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Spirited Away'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'cathy@mcdonald.ca'));
+
+INSERT INTO QueueUp (MovieID, CustomerID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Spirited Away'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'claire@redfire.ca'));
+
 -- Add test data for AppearedIn
 
 INSERT INTO AppearedIn (MovieID, ActorID)
