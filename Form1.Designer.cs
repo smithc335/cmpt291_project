@@ -210,8 +210,10 @@
             this.ReportDisplayPanel = new System.Windows.Forms.Panel();
             this.ReportTypeLabel = new System.Windows.Forms.Label();
             this.ExecuteReportButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ReportDataGrid = new System.Windows.Forms.DataGridView();
             this.ExitReportViewButton = new System.Windows.Forms.Button();
+            this.NumViewed2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -235,7 +237,7 @@
             this.ReportsTabPage.SuspendLayout();
             this.ReportsAvailablePanel.SuspendLayout();
             this.ReportDisplayPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -2283,7 +2285,7 @@
             // 
             this.ReportDisplayPanel.BackColor = System.Drawing.Color.AliceBlue;
             this.ReportDisplayPanel.Controls.Add(this.ExitReportViewButton);
-            this.ReportDisplayPanel.Controls.Add(this.dataGridView1);
+            this.ReportDisplayPanel.Controls.Add(this.ReportDataGrid);
             this.ReportDisplayPanel.Controls.Add(this.ReportTypeLabel);
             this.ReportDisplayPanel.Location = new System.Drawing.Point(13, 11);
             this.ReportDisplayPanel.Margin = new System.Windows.Forms.Padding(5);
@@ -2296,7 +2298,7 @@
             // 
             this.ReportTypeLabel.AutoSize = true;
             this.ReportTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportTypeLabel.Location = new System.Drawing.Point(23, 21);
+            this.ReportTypeLabel.Location = new System.Drawing.Point(23, 25);
             this.ReportTypeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ReportTypeLabel.Name = "ReportTypeLabel";
             this.ReportTypeLabel.Size = new System.Drawing.Size(107, 20);
@@ -2317,26 +2319,40 @@
             this.ExecuteReportButton.UseVisualStyleBackColor = false;
             this.ExecuteReportButton.Click += new System.EventHandler(this.ExecuteReportButton_Click);
             // 
-            // dataGridView1
+            // ReportDataGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(793, 383);
-            this.dataGridView1.TabIndex = 51;
+            this.ReportDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReportDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ActorName,
+            this.NumViewed2});
+            this.ReportDataGrid.Location = new System.Drawing.Point(27, 73);
+            this.ReportDataGrid.Name = "ReportDataGrid";
+            this.ReportDataGrid.Size = new System.Drawing.Size(793, 383);
+            this.ReportDataGrid.TabIndex = 51;
             // 
             // ExitReportViewButton
             // 
             this.ExitReportViewButton.BackColor = System.Drawing.Color.SteelBlue;
             this.ExitReportViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitReportViewButton.ForeColor = System.Drawing.Color.White;
-            this.ExitReportViewButton.Location = new System.Drawing.Point(695, 13);
+            this.ExitReportViewButton.Location = new System.Drawing.Point(695, 15);
             this.ExitReportViewButton.Margin = new System.Windows.Forms.Padding(5);
             this.ExitReportViewButton.Name = "ExitReportViewButton";
             this.ExitReportViewButton.Size = new System.Drawing.Size(125, 39);
             this.ExitReportViewButton.TabIndex = 52;
             this.ExitReportViewButton.Text = "Exit";
             this.ExitReportViewButton.UseVisualStyleBackColor = false;
+            this.ExitReportViewButton.Click += new System.EventHandler(this.ExitReportViewButton_Click);
+            // 
+            // NumViewed2
+            // 
+            this.NumViewed2.HeaderText = "Number of Movie Rentals";
+            this.NumViewed2.Name = "NumViewed2";
+            // 
+            // ActorName
+            // 
+            this.ActorName.HeaderText = "Actor Name";
+            this.ActorName.Name = "ActorName";
             // 
             // Form1
             // 
@@ -2384,7 +2400,7 @@
             this.ReportsAvailablePanel.PerformLayout();
             this.ReportDisplayPanel.ResumeLayout(false);
             this.ReportDisplayPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2574,8 +2590,10 @@
         private System.Windows.Forms.Panel ReportDisplayPanel;
         private System.Windows.Forms.Label ReportTypeLabel;
         private System.Windows.Forms.Button ExecuteReportButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ReportDataGrid;
         private System.Windows.Forms.Button ExitReportViewButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActorName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumViewed2;
         // STOP
     }
 }

@@ -1053,14 +1053,90 @@ namespace CMPT291_Project
             if (Top5MoviesRadioButton.Checked)
             {
                 ReportTypeLabel.Text = Top5MoviesRadioButton.Text;
+
+                //try
+                //{
+                //    myReader = myCommand.ExecuteReader();
+
+                //    ReportDataGrid.Rows.Clear();
+                //    while (myReader.Read())
+                //    {
+                //        ReportDataGrid.Rows.Add(myReader["CustomerID"].ToString());
+                //    }
+
+                //    myReader.Close();
+                //}
+                //catch (Exception e3)
+                //{
+                //    MessageBox.Show(e3.ToString(), "Error");
+                //}
             }
             else if (Top5CustRadioButton.Checked)
             {
                 ReportTypeLabel.Text = Top5CustRadioButton.Text;
+
+                //myCommand.CommandText = "SELECT * FROM (SELECT C.CustomerID, (SELECT (C1.FirstName) + ', ' + (C1.LastName) FROM Customer C1 " +
+                //    "WHERE C1.CustomerID = C.CustomerID) AS FullName, (SELECT COUNT(R1.RentalID) FROM Rental R1 WHERE R1.CustomerID = C.CustomerID) AS NumberOfRentals, " +
+                //    "ROW_NUMBER() OVER (ORDER BY (SELECT COUNT(*) FROM Rental R1 WHERE R1.CustomerID = C.CustomerID) DESC) AS RankOfRentals FROM Customer C) AS RankedCustomers" +
+                //    "WHERE (RankOfRentals <= 5) ORDER BY NumberOfRentals DESC";
+
+                //try
+                //{
+                //    myReader = myCommand.ExecuteReader();
+
+                //    ReportDataGrid.Rows.Clear();
+                //    while (myReader.Read())
+                //    {
+                //        ReportDataGrid.Rows.Add(myReader["CustomerID"].ToString(), myReader["FullName"].ToString(), 
+                //            myReader["NumberOfRentals"].ToString(), myReader["RankedCustomers"].ToString());
+                //    }
+
+                //    myReader.Close();
+                //}
+                //catch (Exception e3)
+                //{
+                //    MessageBox.Show(e3.ToString(), "Error");
+                //}
             }
             else if (Top5ActorsRadioButton.Checked)
             {
                 ReportTypeLabel.Text = Top5ActorsRadioButton.Text;
+
+                myCommand.CommandText = "SELECT * " +
+                    "FROM (SELECT A2.Name AS ActorName, COUNT(*) AS NumViewed2 " +
+                    "FROM Actor A2, AppearedIn AI2, Rental R2 " +
+                    "WHERE A2.ActorID = AI2.ActorID and AI2.MovieID = R2.MovieID " +
+                    "GROUP BY A2.Name) AS Ranked " +
+                    "WHERE Ranked.NumViewed2 >= (SELECT NumViewed " +
+                    "FROM (SELECT A.Name, COUNT(*) AS NumViewed, ROW_NUMBER() OVER " +
+                    "(ORDER BY COUNT(*) DESC) AS rowNum " +
+                    "FROM Actor A, AppearedIn AI, Rental R " +
+                    "WHERE A.ActorID = AI.ActorID and AI.MovieID = R.MovieID " +
+                    "GROUP BY A.Name) AS Ranked2 " +
+                    "WHERE rowNum = 5) " +
+                    "ORDER BY Ranked.NumViewed2 DESC";
+
+                MessageBox.Show(myCommand.CommandText);
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+
+                    //MessageBox.Show(myReader.GetName(0) + "  " + myReader.GetName(1));
+                    //MessageBox.Show(myReader.GetString(0) + "  " + myReader.GetString(1));
+
+                    ReportDataGrid.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        ReportDataGrid.Rows.Add(myReader["ActorName"].ToString(), myReader["NumViewed2"].ToString());
+                    }
+
+                    myReader.Close();
+                }
+                catch (Exception e3)
+                {
+                    MessageBox.Show(e3.ToString(), "Error");
+                }
             }
             else if (SortEmployeesRadioButton.Checked)
             {
@@ -1072,6 +1148,12 @@ namespace CMPT291_Project
             }
 
             ReportDisplayPanel.Visible = true;
+        }
+
+        private void ExitReportViewButton_Click(object sender, EventArgs e)
+        {
+            ReportsAvailablePanel.Visible = true;
+            ReportDisplayPanel.Visible = false;
         }
     }
 }
