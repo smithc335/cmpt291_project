@@ -148,7 +148,7 @@ INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies)
 	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'The Shawshank Redemption', 'Drama', 210.00, 4);
 
 INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies)
-	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Fast & Furious', 'Action', 150.00, 10);
+	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Fast & Furious', 'Action', 150.00, 1);
 
 INSERT INTO Movie (MovieID, Name, Type, DistributionFee, NumCopies) 
 	VALUES (NEXT VALUE FOR Movie_MovieID_Seq, 'Superbad', 'Comedy', 120.50, 5);
@@ -253,13 +253,7 @@ INSERT INTO QueueUp (MovieID, CustomerID)
 	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Parasite'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'stacell13@yahoo.com'));
 
 INSERT INTO QueueUp (MovieID, CustomerID)
-	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Spirited Away'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'));
-
-INSERT INTO QueueUp (MovieID, CustomerID)
-	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Spirited Away'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'cathy@mcdonald.ca'));
-
-INSERT INTO QueueUp (MovieID, CustomerID)
-	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Spirited Away'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'claire@redfire.ca'));
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'The Notebook'), (SELECT CustomerID FROM Customer WHERE EmailAddress = 'eliza.smith@gmail.com'));
 
 -- Add test data for AppearedIn
 
