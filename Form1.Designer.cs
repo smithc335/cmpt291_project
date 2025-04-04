@@ -212,8 +212,6 @@
             this.ExecuteReportButton = new System.Windows.Forms.Button();
             this.ReportDataGrid = new System.Windows.Forms.DataGridView();
             this.ExitReportViewButton = new System.Windows.Forms.Button();
-            this.NumViewed2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -2321,10 +2319,9 @@
             // 
             // ReportDataGrid
             // 
+            this.ReportDataGrid.AllowUserToResizeColumns = false;
+            this.ReportDataGrid.AllowUserToResizeRows = false;
             this.ReportDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReportDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ActorName,
-            this.NumViewed2});
             this.ReportDataGrid.Location = new System.Drawing.Point(27, 73);
             this.ReportDataGrid.Name = "ReportDataGrid";
             this.ReportDataGrid.Size = new System.Drawing.Size(793, 383);
@@ -2343,16 +2340,6 @@
             this.ExitReportViewButton.Text = "Exit";
             this.ExitReportViewButton.UseVisualStyleBackColor = false;
             this.ExitReportViewButton.Click += new System.EventHandler(this.ExitReportViewButton_Click);
-            // 
-            // NumViewed2
-            // 
-            this.NumViewed2.HeaderText = "Number of Movie Rentals";
-            this.NumViewed2.Name = "NumViewed2";
-            // 
-            // ActorName
-            // 
-            this.ActorName.HeaderText = "Actor Name";
-            this.ActorName.Name = "ActorName";
             // 
             // Form1
             // 
@@ -2592,8 +2579,6 @@
         private System.Windows.Forms.Button ExecuteReportButton;
         private System.Windows.Forms.DataGridView ReportDataGrid;
         private System.Windows.Forms.Button ExitReportViewButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActorName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumViewed2;
         // STOP
     }
 }

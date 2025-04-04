@@ -1054,22 +1054,42 @@ namespace CMPT291_Project
             {
                 ReportTypeLabel.Text = Top5MoviesRadioButton.Text;
 
-                //try
-                //{
-                //    myReader = myCommand.ExecuteReader();
+                myCommand.CommandText = "SELECT * " +
+                    "FROM (SELECT M2.Name as MovieName, AVG(R2.CustRateMovie) as avgRating2 " +
+                    "FROM Movie M2, Rental R2 " +
+                    "WHERE M2.MovieID = R2.RentalID " +
+                    "GROUP BY M2.Name) as Ranked " +
+                    "WHERE Ranked.avgRating2 >= (SELECT avgRating " +
+                    "FROM (SELECT M.Name, AVG(R.CustRateMovie) as avgRating, " +
+                    "ROW_NUMBER() OVER (ORDER BY AVG(R.CustRateMovie) DESC) as rowNum " +
+                    "FROM Movie M, Rental R " +
+                    "WHERE M.MovieID = R.RentalID " +
+                    "GROUP BY M.Name) As Ranked2 " +
+                    "WHERE rowNum = 5) " +
+                    "ORDER BY Ranked.avgRating2 DESC";
 
-                //    ReportDataGrid.Rows.Clear();
-                //    while (myReader.Read())
-                //    {
-                //        ReportDataGrid.Rows.Add(myReader["CustomerID"].ToString());
-                //    }
+                ReportDataGrid.Columns.Clear();
+                ReportDataGrid.Columns.Add("MovieName", "Movie Name");
+                ReportDataGrid.Columns.Add("avgRating2", "Average Rating");
+                ReportDataGrid.Columns[0].Width = 300;
+                ReportDataGrid.Columns[1].Width = 300;
 
-                //    myReader.Close();
-                //}
-                //catch (Exception e3)
-                //{
-                //    MessageBox.Show(e3.ToString(), "Error");
-                //}
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+
+                    ReportDataGrid.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        ReportDataGrid.Rows.Add(myReader["MovieName"].ToString(), myReader["avgRating2"].ToString());
+                    }
+
+                    myReader.Close();
+                }
+                catch (Exception e3)
+                {
+                    MessageBox.Show(e3.ToString(), "Error");
+                }
             }
             else if (Top5CustRadioButton.Checked)
             {
@@ -1116,7 +1136,11 @@ namespace CMPT291_Project
                     "WHERE rowNum = 5) " +
                     "ORDER BY Ranked.NumViewed2 DESC";
 
-                MessageBox.Show(myCommand.CommandText);
+                ReportDataGrid.Columns.Clear();
+                ReportDataGrid.Columns.Add("ActorName", "Actor Name");
+                ReportDataGrid.Columns.Add("NumViewed2", "Number of Appearances in Movie Rentals");
+                ReportDataGrid.Columns[0].Width = 300;
+                ReportDataGrid.Columns[1].Width = 300;
 
                 try
                 {
