@@ -2114,8 +2114,8 @@
             // 
             // ReportsTabPage
             // 
-            this.ReportsTabPage.Controls.Add(this.ReportDisplayPanel);
             this.ReportsTabPage.Controls.Add(this.ReportsAvailablePanel);
+            this.ReportsTabPage.Controls.Add(this.ReportDisplayPanel);
             this.ReportsTabPage.Location = new System.Drawing.Point(4, 25);
             this.ReportsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.ReportsTabPage.Name = "ReportsTabPage";

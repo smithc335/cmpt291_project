@@ -1234,7 +1234,36 @@ namespace CMPT291_Project
             }
             else // Total Income Specified by Year
             {
-                ReportTypeLabel.Text = YearlyIncomeRadioButton.Text;
+                ReportTypeLabel.Text = YearlyIncomeRadioButton.Text + ": " + YearlyIncomeComboBox.Text;
+
+                myCommand.CommandText = "SELECT Month(CheckoutDate) as monthDate, SUM(DistributionFee) as monthlyIncome " +
+                    "FROM Rental R, Movie M " +
+                    "WHERE M.MovieID = R.MovieID and Year(CheckoutDate) = " + YearlyIncomeComboBox.Text + " " +
+                    "GROUP BY Month(CheckoutDate) " +
+                    "ORDER BY monthDate";
+
+                ReportDataGrid.Columns.Clear();
+                ReportDataGrid.Columns.Add("monthDate", "Month");
+                ReportDataGrid.Columns.Add("monthlyIncome", "Income");
+                ReportDataGrid.Columns[0].Width = 300;
+                ReportDataGrid.Columns[1].Width = 300;
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+
+                    ReportDataGrid.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        ReportDataGrid.Rows.Add(myReader["monthDate"].ToString(), myReader["monthlyIncome"].ToString());
+                    }
+
+                    myReader.Close();
+                }
+                catch (Exception e3)
+                {
+                    MessageBox.Show(e3.ToString(), "Error");
+                }
             }
 
             ReportDisplayPanel.Visible = true;

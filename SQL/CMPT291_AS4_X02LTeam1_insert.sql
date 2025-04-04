@@ -31,6 +31,9 @@ INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, 
 INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, AcctCreateDate, CreditCardNum)
 	VALUES (NEXT VALUE FOR Customer_CustomerID_Seq, 'Mckay', 'Phoebe', '318 Cole Walk', 'Calgary', 'AB', 'T6T0H7', 'p.mckay@hotmail.ca', NEXT VALUE FOR Customer_AcctNum_Seq, '2025-02-23', '4134199034560738');
 
+INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, AcctCreateDate, CreditCardNum)
+	VALUES (NEXT VALUE FOR Customer_CustomerID_Seq, 'Smith', 'Claire', '1234 144 Ave', 'Penticton', 'BC', 'T5E6M6', 'claire@redfire.ca', NEXT VALUE FOR Customer_AcctNum_Seq, '2021-09-14', '1234567890123456');
+
 -- Add test data for CustomerPhone
 
 INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
@@ -44,6 +47,12 @@ INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
 
 INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
 	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'john.smith@gmail.com'), '5871174658', 'Home');
+
+INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
+	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'claire@redfire.ca'), '5875947011', 'Mobile');
+
+INSERT INTO CustomerPhone (CustomerID, PhoneNum, PhoneType)
+	VALUES ((SELECT CustomerID FROM Customer WHERE EmailAddress = 'claire@redfire.ca'), '7804713673', 'Home');
 
 -- Add test data for Employee
 
@@ -92,15 +101,15 @@ INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
 	-- Password = claire1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES (2, 'beaulieum', 'B9457A0168DF164F35C9D4289753367F');
+	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Matt' and LastName = 'Beaulieu'), 'beaulieum', 'B9457A0168DF164F35C9D4289753367F');
 	-- Password = matt1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES (3, 'bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
+	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Kovidh' and LastName = 'Bains'), 'bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
 	-- Password = kovidh1234
 
 INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
-	VALUES (4, 'sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
+	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Jaisica' and LastName = 'Sutariya'), 'sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
 	-- Password = jaisica1234
 
 -- Add test data for Movie
@@ -276,8 +285,8 @@ INSERT INTO RateActor (RentalID, ActorID, ActorRating)
 
 -- View whole tables
 
-SELECT * FROM UserLogin;
-SELECT * FROM Customer;
+--SELECT * FROM UserLogin;
+--SELECT * FROM Customer;
 --SELECT * FROM CustomerPhone;
 --SELECT * FROM Employee;
 --SELECT * FROM EmployeePhone;
@@ -287,5 +296,3 @@ SELECT * FROM Customer;
 --SELECT * FROM QueueUp;
 --SELECT * FROM AppearedIn;
 --SELECT * FROM RateActor;
-
-select distinct year(CheckoutDate) from Rental
