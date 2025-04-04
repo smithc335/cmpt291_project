@@ -19,6 +19,7 @@ namespace CMPT291_Project
         public SqlCommand myCommand;
         public SqlDataReader myReader;
         public SqlTransaction myTransaction;
+        public string currentEmployee;
 
         public Form1()
         {
@@ -79,7 +80,7 @@ namespace CMPT291_Project
             //Console.WriteLine(ByteArrayToString(passwordHash));
 
             // Check whether hash matches entry in database
-            myCommand.CommandText = "select PasswordHash from UserLogin where Username = '" + UsernameTextbox.Text + "'";
+            myCommand.CommandText = "select EmployeeID, PasswordHash from UserLogin where Username = '" + UsernameTextbox.Text + "'";
 
             // Set incorrect message before executing query
             LoginResultLabel.Text = "Username and/or password is incorrect.";
@@ -90,6 +91,7 @@ namespace CMPT291_Project
 
                 while (myReader.Read())
                 {
+                    currentEmployee = myReader["EmployeeID"].ToString();
                     int col = myReader.GetOrdinal("PasswordHash");
 
                     // Checks password hash with inputted password hash and prints a message.
@@ -113,7 +115,6 @@ namespace CMPT291_Project
             {
                 MessageBox.Show(e3.ToString(), "Error");
             }
-
         }
 
         private static string ByteArrayToString(byte[] arrInput) // Hash Code Function
@@ -668,13 +669,11 @@ namespace CMPT291_Project
 
         private void rentDispenseBttn_Click(object sender, EventArgs e)
         {
-            int movieID = Convert.ToInt32(rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value);
-            string currentUserName = Environment.UserName;
+            string movieID = rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            //string currentUserName = Environment.UserName;
             string currentDate = DateTime.Now.ToString("yyyy-MM-dd"); // Get current date
 
             SqlTransaction myTransaction = null;
-
-
 
             try
             {
@@ -683,18 +682,20 @@ namespace CMPT291_Project
                 // Attach transaction to myCommand
                 myCommand.Transaction = myTransaction;
 
-                int currentEmployee = -1; // Default value if not found
-                myCommand.CommandText = "select EmployeeID from Employee where LastName like '" + currentUserName + "%'";
+                //string currentEmployee = "-1"; // Default value if not found
+                //myCommand.CommandText = "select EmployeeID from Employee where LastName like '" + currentEmployee + "%'";
 
+                //MessageBox.Show(myCommand.CommandText);
 
+                //myReader = myCommand.ExecuteReader();
 
-                myReader = myCommand.ExecuteReader();
+                //while (myReader.Read()) // If employee exists
+                //{
+                //    currentEmployee = myReader.GetString(0);
+                //}
+                //myReader.Close();
 
-                if (myReader.Read()) // If employee exists
-                {
-                    currentEmployee = myReader.GetInt32(0);
-                }
-                myReader.Close();
+                MessageBox.Show(currentEmployee);
 
 
                 // Insert into Rental table
@@ -709,7 +710,9 @@ namespace CMPT291_Project
 
 
                 // Commit transaction
-                myTransaction.Commit(); 
+                myTransaction.Commit();
+                LoadQueueUPData();
+                LoadRentalHistoryData();
 
             }
             catch (Exception e3)
@@ -727,12 +730,32 @@ namespace CMPT291_Project
 
         }
 
+
+
+        private void LoadQueueUPData()
+        {
+            rentCustQueueDGV.Columns.Clear();
+            SqlDataAdapter myAdapter = new SqlDataAdapter("SELECT * FROM QueueUp WHERE CustomerID = " + rentCustIdResultLabel.Text, myConnection);
+            DataTable dataTable = new DataTable();
+            myAdapter.Fill(dataTable);
+            rentCustQueueDGV.DataSource = dataTable;
+        }
+
+        private void LoadRentalHistoryData()
+        {
+            rentCustHistoryDGV.Columns.Clear();
+            SqlDataAdapter myAdapter = new SqlDataAdapter("SELECT * FROM Rental WHERE CustomerID = " + rentCustIdResultLabel.Text, myConnection);
+            DataTable dataTable = new DataTable();
+            myAdapter.Fill(dataTable);
+            rentCustHistoryDGV.DataSource = dataTable;
+        }
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Test
             // test  2
         }
-
 
         // MOVIE FEATURE CODE
 
@@ -878,6 +901,7 @@ namespace CMPT291_Project
             {
                 MessageBox.Show("Please select a movie to delete.");
             }
+
         }
 
         private void LoadAllMovies()

@@ -14,24 +14,6 @@ DELETE CustomerPhone;
 DELETE Customer;
 DELETE UserLogin;
 
--- Add test data for UserLogin
-
-INSERT INTO UserLogin (Username, PasswordHash)
-	VALUES ('smithc', '3FE92FCD855752C77DEE500FABF6C309');
-	-- Password = claire1234
-
-INSERT INTO UserLogin (Username, PasswordHash)
-	VALUES ('beaulieum', 'B9457A0168DF164F35C9D4289753367F');
-	-- Password = matt1234
-
-INSERT INTO UserLogin (Username, PasswordHash)
-	VALUES ('bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
-	-- Password = kovidh1234
-
-INSERT INTO UserLogin (Username, PasswordHash)
-	VALUES ('sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
-	-- Password = jaisica1234
-
 -- Add test data for Customer and CustomerPhone
 
 INSERT INTO Customer (CustomerID, LastName, FirstName, Address, City, Province, PostalCode, EmailAddress, AcctNum, AcctCreateDate, CreditCardNum)
@@ -102,6 +84,24 @@ INSERT INTO EmployeePhone (EmployeeID, PhoneNum, PhoneType)
 
 INSERT INTO EmployeePhone (EmployeeID, PhoneNum, PhoneType)
 	VALUES ((SELECT EmployeeID FROM Employee WHERE SSN = '345678901'), '5879971002', 'Mobile');
+
+-- Add test data for UserLogin
+
+INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
+	VALUES ((SELECT EmployeeID FROM Employee WHERE FirstName = 'Claire' and LastName = 'Smith'), 'smithc', '3FE92FCD855752C77DEE500FABF6C309');
+	-- Password = claire1234
+
+INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
+	VALUES (2, 'beaulieum', 'B9457A0168DF164F35C9D4289753367F');
+	-- Password = matt1234
+
+INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
+	VALUES (3, 'bainsk', '7F4C9AEC5A9D6A01C508224AF1729478');
+	-- Password = kovidh1234
+
+INSERT INTO UserLogin (EmployeeID, Username, PasswordHash)
+	VALUES (4, 'sutariyaj', '2E01A20F8E63F62721E59E9E372511CE');
+	-- Password = jaisica1234
 
 -- Add test data for Movie
 
@@ -245,3 +245,5 @@ SELECT * FROM Customer;
 --SELECT * FROM QueueUp;
 --SELECT * FROM AppearedIn;
 --SELECT * FROM RateActor;
+
+select distinct year(CheckoutDate) from Rental
