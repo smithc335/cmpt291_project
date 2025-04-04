@@ -604,15 +604,17 @@ namespace CMPT291_Project
         {
             rentDispensePanel.Visible = true;
             rentCustSearchPanel.Visible = false;
-            //DispenseBttnDisable();
 
             int customerID = Convert.ToInt32(rentCustSearchDGV.SelectedCells[0].OwningRow.Cells[0].Value);
             myCommand.CommandText = "select * from Customer where CustomerID = " + customerID;
 
             try
             {
+                rentCustQueueDGV.DataSource = null;
+                rentCustQueueDGV.Rows.Clear();
                 // Display Customer Information
                 myReader = myCommand.ExecuteReader();
+
 
                 while (myReader.Read())
                 {
@@ -628,48 +630,59 @@ namespace CMPT291_Project
                 // Display Customer Movie Queue in Data Grid View
                 myCommand.CommandText = "select * from QueueUp as Q, Movie as M where Q.MovieID = M.MovieID and CustomerID = " + customerID;
 
-                myReader = myCommand.ExecuteReader();
+                //rentCustHistoryDGV.DataSource = null;
+                //rentCustHistoryDGV.Rows.Clear();
+                //myReader = myCommand.ExecuteReader();
 
-                //bool firstRowChecked = false;
+                //while (myReader.Read())
+                //{
+                //        rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(), myReader["NumCopies"].ToString());
+                //}
 
-                rentCustQueueDGV.Rows.Clear();
-                while (myReader.Read())
-                {
-                    //if (!firstRowChecked)
-                    //{
-                    //    firstRowChecked = true;
-                    //    if (myReader["MovieID"] == DBNull.Value)
-                    //    {
-                    //        MessageBox.Show("First is Null");
-                    //    }
-                    //}
+                //myReader.Close();
 
-                        rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(), myReader["NumCopies"].ToString());
-                }
+                SqlDataAdapter myRentalAdapter1 = new SqlDataAdapter("select * from QueueUp as Q, Movie as M where Q.MovieID = M.MovieID and CustomerID = " + customerID, myConnection);
 
-                myReader.Close();
+                DataTable queueTable = new DataTable();
+                myRentalAdapter1.Fill(queueTable);
+                rentCustQueueDGV.AutoGenerateColumns = true;
+                rentCustQueueDGV.DataSource = queueTable;
+
+
+
 
                 // Display Customer Rental History in Data Grid View
-                myCommand.CommandText = "select * from Rental where CustomerID = " + customerID;
+                //myCommand.CommandText = "select * from Rental where CustomerID = " + customerID;
 
-                bool hasUnreturnedMovie = false;
+                //bool hasUnreturnedMovie = false;
 
-                myReader = myCommand.ExecuteReader();
+                //myReader = myCommand.ExecuteReader();
 
-                rentCustHistoryDGV.Rows.Clear();
-                while (myReader.Read())
-                {
-                    if (myReader["ReturnDate"] == DBNull.Value)
-                    {
-                        hasUnreturnedMovie = true;
-                    }
 
-                    rentCustHistoryDGV.Rows.Add(myReader["RentalID"].ToString(),
-                        myReader["MovieID"].ToString(), myReader["EmployeeID"].ToString(),
-                        myReader["CheckoutDate"].ToString(), myReader["ReturnDate"].ToString());
-                }
+                ////rentCustHistoryDGV.Rows.Clear();
+                //while (myReader.Read())
+                //{
+                //    if (myReader["ReturnDate"] == DBNull.Value)
+                //    {
+                //        hasUnreturnedMovie = true;
+                //    }
 
-                myReader.Close();
+                //    rentCustHistoryDGV.Rows.Add(myReader["RentalID"].ToString(),
+                //        myReader["MovieID"].ToString(), myReader["EmployeeID"].ToString(),
+                //        myReader["CheckoutDate"].ToString(), myReader["ReturnDate"].ToString());
+                //}
+
+                //myReader.Close();
+
+
+                SqlDataAdapter myRentalAdapter2 = new SqlDataAdapter("select * from Rental where CustomerID = " + customerID, myConnection);
+
+                DataTable rentalTable = new DataTable();
+                myRentalAdapter2.Fill(rentalTable);
+                rentCustHistoryDGV.AutoGenerateColumns = true;
+                rentCustHistoryDGV.DataSource = rentalTable;
+                bool hasUnreturnedMovie = rentalTable.AsEnumerable().Any(row => row.IsNull("ReturnDate"));
+  
 
 
                 if (hasUnreturnedMovie)
@@ -697,6 +710,10 @@ namespace CMPT291_Project
             //rentCustHistoryDGV.Rows.Clear();
         }
 
+
+
+
+
         private void rentDispenseBttn_Click(object sender, EventArgs e)
         {
             string movieID = rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
@@ -711,20 +728,6 @@ namespace CMPT291_Project
                 // Attach transaction to myCommand
                 myCommand.Transaction = myTransaction;
 
-                //string currentEmployee = "-1"; // Default value if not found
-                //myCommand.CommandText = "select EmployeeID from Employee where LastName like '" + currentEmployee + "%'";
-
-                //MessageBox.Show(myCommand.CommandText);
-
-                //myReader = myCommand.ExecuteReader();
-
-                //while (myReader.Read()) // If employee exists
-                //{
-                //    currentEmployee = myReader.GetString(0);
-                //}
-                //myReader.Close();
-
-                //MessageBox.Show(currentEmployee);
 
 
                 // Insert into Rental table
@@ -736,14 +739,13 @@ namespace CMPT291_Project
                 myCommand.CommandText = "DELETE FROM QueueUp WHERE CustomerID = " + rentCustIdResultLabel.Text + " AND MovieID = " + movieID;
                 myCommand.ExecuteNonQuery();
 
-
+                ReduceNumCopies();
 
                 // Commit transaction
                 myTransaction.Commit();
-                ReduceNumCopies();
                 LoadQueueUPData();
                 LoadRentalHistoryData();
-                rentBackBttnReveal();
+                //rentBackBttnReveal();
 
 
             }
@@ -761,7 +763,6 @@ namespace CMPT291_Project
         }
 
 
-
         private void LoadQueueUPData()
         {
             rentCustQueueDGV.Columns.Clear();
@@ -769,6 +770,20 @@ namespace CMPT291_Project
             DataTable dataTable = new DataTable();
             myAdapter.Fill(dataTable);
             rentCustQueueDGV.DataSource = dataTable;
+            //int customerID = Convert.ToInt32(rentCustSearchDGV.SelectedCells[0].OwningRow.Cells[0].Value);
+            //rentCustHistoryDGV.DataSource = null;
+            //rentCustHistoryDGV.Rows.Clear();
+            //myCommand.CommandText = "select * from QueueUp as Q, Movie as M where Q.MovieID = M.MovieID and CustomerID = " + customerID;
+
+
+            //myReader = myCommand.ExecuteReader();
+
+            //while (myReader.Read())
+            //{
+            //    rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(), myReader["NumCopies"].ToString());
+            //}
+
+            //myReader.Close();
         }
 
         private void LoadRentalHistoryData()
@@ -778,23 +793,44 @@ namespace CMPT291_Project
             DataTable dataTable = new DataTable();
             myAdapter.Fill(dataTable);
             rentCustHistoryDGV.DataSource = dataTable;
+            //int customerID = Convert.ToInt32(rentCustSearchDGV.SelectedCells[0].OwningRow.Cells[0].Value);
+            //rentCustHistoryDGV.DataSource = null;
+            //rentCustHistoryDGV.Rows.Clear();
+            //myCommand.CommandText = "select * from QueueUp as Q, Movie as M where Q.MovieID = M.MovieID and CustomerID = " + customerID;
+
+            //myReader = myCommand.ExecuteReader();
+
+            //while (myReader.Read())
+            //{
+            //    rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(), myReader["NumCopies"].ToString());
+            //}
+
+            //myReader.Close();
         }
 
         private void ReduceNumCopies()
         {
             string movieID = rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
             myCommand.CommandText = "UPDATE Movie SET NumCopies = NumCopies - 1 WHERE MovieID = " + movieID + "AND NumCopies > 0";
-            myCommand.ExecuteNonQuery();
+            int rowsAffected = myCommand.ExecuteNonQuery();
+
+            if (rowsAffected == 0)
+            {
+                throw new Exception("No more copies left to rent for this movie. Transaction canceled.");
+            }
+        
         }
 
-        private void rentBackBttnReveal()
-        {
-            rentCancelBttn.Visible = false;
-            rentBackBttn.Visible = true;
-            rentCancelBttn.Enabled = false;
-            rentBackBttn.Enabled = true;
 
-        }
+
+        //private void rentBackBttnReveal()
+        //{
+                
+        //    rentCancelBttn.Visible = false;
+        //    rentBackBttn.Visible = true;
+        //    rentCancelBttn.Enabled = false;
+        //    rentBackBttn.Enabled = true;
+        //}
 
 
         // MOVIE FEATURE CODE
