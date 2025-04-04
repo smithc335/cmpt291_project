@@ -625,14 +625,14 @@ namespace CMPT291_Project
                 myReader.Close();
 
                 // Display Customer Movie Queue in Data Grid View
-                myCommand.CommandText = "select * from QueueUp where CustomerID = " + customerID;
+                myCommand.CommandText = "select * from QueueUp as Q, Movie as M where Q.MovieID = M.MovieID and CustomerID = " + customerID;
 
                 myReader = myCommand.ExecuteReader();
 
                 rentCustQueueDGV.Rows.Clear();
                 while (myReader.Read())
                 {
-                    rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString());
+                    rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(), myReader["NumCopies"].ToString());
                 }
 
                 myReader.Close();
