@@ -214,6 +214,7 @@
             this.ReportDataGrid = new System.Windows.Forms.DataGridView();
             this.ReportTypeLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.rentBackBttn = new System.Windows.Forms.Button();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -1734,9 +1735,10 @@
             this.rentDispensePanel.Controls.Add(this.rentAcctLabel);
             this.rentDispensePanel.Controls.Add(this.rentEmailLabel);
             this.rentDispensePanel.Controls.Add(this.rentFirstNameLabel);
-            this.rentDispensePanel.Controls.Add(this.rentCancelBttn);
             this.rentDispensePanel.Controls.Add(this.CustRentProfileLabel);
             this.rentDispensePanel.Controls.Add(this.rentLastNameLabel);
+            this.rentDispensePanel.Controls.Add(this.rentBackBttn);
+            this.rentDispensePanel.Controls.Add(this.rentCancelBttn);
             this.rentDispensePanel.Location = new System.Drawing.Point(3, 3);
             this.rentDispensePanel.Name = "rentDispensePanel";
             this.rentDispensePanel.Size = new System.Drawing.Size(875, 503);
@@ -2355,6 +2357,22 @@
             this.ReportTypeLabel.TabIndex = 50;
             this.ReportTypeLabel.Text = "Report Type";
             // 
+            // rentBackBttn
+            // 
+            this.rentBackBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentBackBttn.Enabled = false;
+            this.rentBackBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rentBackBttn.ForeColor = System.Drawing.Color.White;
+            this.rentBackBttn.Location = new System.Drawing.Point(675, 424);
+            this.rentBackBttn.Margin = new System.Windows.Forms.Padding(5);
+            this.rentBackBttn.Name = "rentBackBttn";
+            this.rentBackBttn.Size = new System.Drawing.Size(166, 52);
+            this.rentBackBttn.TabIndex = 45;
+            this.rentBackBttn.Text = "Back to Search";
+            this.rentBackBttn.UseVisualStyleBackColor = false;
+            this.rentBackBttn.Visible = false;
+            this.rentBackBttn.Click += new System.EventHandler(this.rentBackBttn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2595,6 +2613,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn queueMovieID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MovieName;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberCopies;
+        private System.Windows.Forms.Button rentBackBttn;
         // STOP
     }
 }

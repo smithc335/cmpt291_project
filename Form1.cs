@@ -604,6 +604,7 @@ namespace CMPT291_Project
         {
             rentDispensePanel.Visible = true;
             rentCustSearchPanel.Visible = false;
+            //DispenseBttnDisable();
 
             int customerID = Convert.ToInt32(rentCustSearchDGV.SelectedCells[0].OwningRow.Cells[0].Value);
             myCommand.CommandText = "select * from Customer where CustomerID = " + customerID;
@@ -629,10 +630,21 @@ namespace CMPT291_Project
 
                 myReader = myCommand.ExecuteReader();
 
-                rentCustQueueDGV.Rows.Clear();
+                //bool firstRowChecked = false;
+               
+
                 while (myReader.Read())
                 {
-                    rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(), myReader["NumCopies"].ToString());
+                    //if (!firstRowChecked)
+                    //{
+                    //    firstRowChecked = true;
+                    //    if (myReader["MovieID"] == DBNull.Value)
+                    //    {
+                    //        MessageBox.Show("First is Null");
+                    //    }
+                    //}
+
+                        rentCustQueueDGV.Rows.Add(myReader["MovieID"].ToString(), myReader["Name"].ToString(), myReader["NumCopies"].ToString());
                 }
 
                 myReader.Close();
@@ -640,17 +652,33 @@ namespace CMPT291_Project
                 // Display Customer Rental History in Data Grid View
                 myCommand.CommandText = "select * from Rental where CustomerID = " + customerID;
 
+                bool hasUnreturnedMovie = false;
+
                 myReader = myCommand.ExecuteReader();
 
-                rentCustHistoryDGV.Rows.Clear();
                 while (myReader.Read())
                 {
+                    if (myReader["ReturnDate"] == DBNull.Value)
+                    {
+                        hasUnreturnedMovie = true;
+                    }
+
                     rentCustHistoryDGV.Rows.Add(myReader["RentalID"].ToString(),
                         myReader["MovieID"].ToString(), myReader["EmployeeID"].ToString(),
                         myReader["CheckoutDate"].ToString(), myReader["ReturnDate"].ToString());
                 }
 
                 myReader.Close();
+
+
+                if (hasUnreturnedMovie)
+                {
+                    rentDispenseBttn.Enabled = false;
+                }
+                else
+                {
+                    rentDispenseBttn.Enabled = true;
+                }
 
 
             }
@@ -664,12 +692,13 @@ namespace CMPT291_Project
         {
             rentCustSearchPanel.Visible = true;
             rentDispensePanel.Visible = false;
+            rentCustQueueDGV.Rows.Clear();
+            rentCustHistoryDGV.Rows.Clear();
         }
 
         private void rentDispenseBttn_Click(object sender, EventArgs e)
         {
             string movieID = rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
-            //string currentUserName = Environment.UserName;
             string currentDate = DateTime.Now.ToString("yyyy-MM-dd"); // Get current date
 
             SqlTransaction myTransaction = null;
@@ -713,7 +742,8 @@ namespace CMPT291_Project
                 ReduceNumCopies();
                 LoadQueueUPData();
                 LoadRentalHistoryData();
-                rentCancelBttn.Text = "Back to Search";
+                rentBackBttnReveal();
+
 
             }
             catch (Exception e3)
@@ -754,6 +784,15 @@ namespace CMPT291_Project
             string movieID = rentCustQueueDGV.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
             myCommand.CommandText = "UPDATE Movie SET NumCopies = NumCopies - 1 WHERE MovieID = " + movieID + "AND NumCopies > 0";
             myCommand.ExecuteNonQuery();
+        }
+
+        private void rentBackBttnReveal()
+        {
+            rentCancelBttn.Visible = false;
+            rentBackBttn.Visible = true;
+            rentCancelBttn.Enabled = false;
+            rentBackBttn.Enabled = true;
+
         }
 
 
@@ -1273,6 +1312,12 @@ namespace CMPT291_Project
         {
             ReportsAvailablePanel.Visible = true;
             ReportDisplayPanel.Visible = false;
+        }
+
+        private void rentBackBttn_Click(object sender, EventArgs e)
+        {
+            rentCustSearchPanel.Visible = true;
+            rentDispensePanel.Visible = false;
         }
     }
 }
