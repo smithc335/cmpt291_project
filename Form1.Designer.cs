@@ -41,34 +41,6 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.CustomersTabPage = new System.Windows.Forms.TabPage();
-            this.AddCustomerPanel = new System.Windows.Forms.Panel();
-            this.AddPhoneButton = new System.Windows.Forms.Button();
-            this.AddPhoneComboBox = new System.Windows.Forms.ComboBox();
-            this.AddPhoneTextbox = new System.Windows.Forms.TextBox();
-            this.AddPhoneListBox = new System.Windows.Forms.ListBox();
-            this.AddPhoneLabel = new System.Windows.Forms.Label();
-            this.AddProvinceComboBox = new System.Windows.Forms.ComboBox();
-            this.AddSaveCustomerButton = new System.Windows.Forms.Button();
-            this.AddCreditLabel = new System.Windows.Forms.Label();
-            this.AddCreditTextbox = new System.Windows.Forms.TextBox();
-            this.AddAcctNumInstLabel = new System.Windows.Forms.Label();
-            this.AddAcctNumLabel = new System.Windows.Forms.Label();
-            this.AddAcctNumTextbox = new System.Windows.Forms.TextBox();
-            this.AddEmailLabel = new System.Windows.Forms.Label();
-            this.AddEmailTextbox = new System.Windows.Forms.TextBox();
-            this.AddPostalCodeLabel = new System.Windows.Forms.Label();
-            this.AddPostalCodeTextbox = new System.Windows.Forms.TextBox();
-            this.AddProvinceLabel = new System.Windows.Forms.Label();
-            this.AddCityLabel = new System.Windows.Forms.Label();
-            this.AddCityTextbox = new System.Windows.Forms.TextBox();
-            this.AddAddressLabel = new System.Windows.Forms.Label();
-            this.AddAddressTextbox = new System.Windows.Forms.TextBox();
-            this.AddLastNameLabel = new System.Windows.Forms.Label();
-            this.AddLastNameTextbox = new System.Windows.Forms.TextBox();
-            this.AddFirstNameLabel = new System.Windows.Forms.Label();
-            this.AddFirstNameTextbox = new System.Windows.Forms.TextBox();
-            this.MoveToSearchButton = new System.Windows.Forms.Button();
-            this.AddCustomersLabel = new System.Windows.Forms.Label();
             this.SearchCustomerPanel = new System.Windows.Forms.Panel();
             this.ViewDetailsButton = new System.Windows.Forms.Button();
             this.EmailRadioButton = new System.Windows.Forms.RadioButton();
@@ -117,8 +89,39 @@
             this.VUFirstNameTextbox = new System.Windows.Forms.TextBox();
             this.ViewTitleLabel = new System.Windows.Forms.Label();
             this.CancelViewingButton = new System.Windows.Forms.Button();
+            this.AddCustomerPanel = new System.Windows.Forms.Panel();
+            this.AddPhoneButton = new System.Windows.Forms.Button();
+            this.AddPhoneComboBox = new System.Windows.Forms.ComboBox();
+            this.AddPhoneTextbox = new System.Windows.Forms.TextBox();
+            this.AddPhoneListBox = new System.Windows.Forms.ListBox();
+            this.AddPhoneLabel = new System.Windows.Forms.Label();
+            this.AddProvinceComboBox = new System.Windows.Forms.ComboBox();
+            this.AddSaveCustomerButton = new System.Windows.Forms.Button();
+            this.AddCreditLabel = new System.Windows.Forms.Label();
+            this.AddCreditTextbox = new System.Windows.Forms.TextBox();
+            this.AddAcctNumInstLabel = new System.Windows.Forms.Label();
+            this.AddAcctNumLabel = new System.Windows.Forms.Label();
+            this.AddAcctNumTextbox = new System.Windows.Forms.TextBox();
+            this.AddEmailLabel = new System.Windows.Forms.Label();
+            this.AddEmailTextbox = new System.Windows.Forms.TextBox();
+            this.AddPostalCodeLabel = new System.Windows.Forms.Label();
+            this.AddPostalCodeTextbox = new System.Windows.Forms.TextBox();
+            this.AddProvinceLabel = new System.Windows.Forms.Label();
+            this.AddCityLabel = new System.Windows.Forms.Label();
+            this.AddCityTextbox = new System.Windows.Forms.TextBox();
+            this.AddAddressLabel = new System.Windows.Forms.Label();
+            this.AddAddressTextbox = new System.Windows.Forms.TextBox();
+            this.AddLastNameLabel = new System.Windows.Forms.Label();
+            this.AddLastNameTextbox = new System.Windows.Forms.TextBox();
+            this.AddFirstNameLabel = new System.Windows.Forms.Label();
+            this.AddFirstNameTextbox = new System.Windows.Forms.TextBox();
+            this.MoveToSearchButton = new System.Windows.Forms.Button();
+            this.AddCustomersLabel = new System.Windows.Forms.Label();
             this.MoviesTabPage = new System.Windows.Forms.TabPage();
             this.SearchMoviePanel = new System.Windows.Forms.Panel();
+            this.GenreRadioButton = new System.Windows.Forms.RadioButton();
+            this.TitleRadioButton = new System.Windows.Forms.RadioButton();
+            this.ActorRadioButton = new System.Windows.Forms.RadioButton();
             this.MovieDetailsGrid = new System.Windows.Forms.DataGridView();
             this.AddMovieButton = new System.Windows.Forms.Button();
             this.EditMoviesButton = new System.Windows.Forms.Button();
@@ -127,34 +130,33 @@
             this.MovieSearchButton = new System.Windows.Forms.Button();
             this.MovieSearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchMoviesLabel = new System.Windows.Forms.Label();
+            this.EditMoviePanel = new System.Windows.Forms.Panel();
+            this.EditMovieIDLabel = new System.Windows.Forms.Label();
+            this.CancelEditMovieButton = new System.Windows.Forms.Button();
+            this.SaveMovieChangesButton = new System.Windows.Forms.Button();
+            this.EditMovieFeeLabel = new System.Windows.Forms.Label();
+            this.EditMovieCopiesLabel = new System.Windows.Forms.Label();
+            this.EditMovieGenreLabel = new System.Windows.Forms.Label();
+            this.EditMovieFeeTextbox = new System.Windows.Forms.TextBox();
+            this.EditMovieCopiesTextbox = new System.Windows.Forms.TextBox();
+            this.EditMovieGenreTextbox = new System.Windows.Forms.TextBox();
+            this.EditMovieNameTextbox = new System.Windows.Forms.TextBox();
+            this.EditMovieNameLabel = new System.Windows.Forms.Label();
+            this.AddMoviePanel = new System.Windows.Forms.Panel();
+            this.CancelAddMovieButton = new System.Windows.Forms.Button();
+            this.SaveNewMovieButton = new System.Windows.Forms.Button();
+            this.AddMovieFeeTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieCopiesTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieGenreTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieNameTextbox = new System.Windows.Forms.TextBox();
+            this.AddMovieFeeLabel = new System.Windows.Forms.Label();
+            this.AddMovieCopiesLabel = new System.Windows.Forms.Label();
+            this.AddMovieGenreLabel = new System.Windows.Forms.Label();
+            this.AddMovieNameLabel = new System.Windows.Forms.Label();
             this.RentalsTabPage = new System.Windows.Forms.TabPage();
-            this.rentDispensePanel = new System.Windows.Forms.Panel();
-            this.rentCustHistoryDGV = new System.Windows.Forms.DataGridView();
-            this.rentHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistCheckD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentHistReturnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rentCustQueueDGV = new System.Windows.Forms.DataGridView();
-            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rentCustIdResultLabel = new System.Windows.Forms.Label();
-            this.rentCustIdLabel = new System.Windows.Forms.Label();
-            this.rentAcctResultLabel = new System.Windows.Forms.Label();
-            this.rentFNResultLabel = new System.Windows.Forms.Label();
-            this.rentEmailResultLabel = new System.Windows.Forms.Label();
-            this.rentLNResultLabel = new System.Windows.Forms.Label();
-            this.rentDispenseBttn = new System.Windows.Forms.Button();
-            this.rentAcctLabel = new System.Windows.Forms.Label();
-            this.rentEmailLabel = new System.Windows.Forms.Label();
-            this.rentFirstNameLabel = new System.Windows.Forms.Label();
-            this.rentCancelBttn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rentLastNameLabel = new System.Windows.Forms.Label();
             this.rentCustSearchPanel = new System.Windows.Forms.Panel();
             this.rentCustViewBttn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.RentCustSearchRadiosPanel = new System.Windows.Forms.Panel();
             this.rentCustByEmailRadio = new System.Windows.Forms.RadioButton();
             this.rentCustByIdRadio = new System.Windows.Forms.RadioButton();
             this.rentCustByNameRadio = new System.Windows.Forms.RadioButton();
@@ -166,29 +168,52 @@
             this.rentCustSearchBttn = new System.Windows.Forms.Button();
             this.rentCustSearchTB = new System.Windows.Forms.TextBox();
             this.rentCustSearchLabel = new System.Windows.Forms.Label();
+            this.rentDispensePanel = new System.Windows.Forms.Panel();
+            this.rentCustHistoryDGV = new System.Windows.Forms.DataGridView();
+            this.rentHistID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistCheckD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentHistReturnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RentalHistoryLabel = new System.Windows.Forms.Label();
+            this.rentCustQueueDGV = new System.Windows.Forms.DataGridView();
+            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RentQueueLabel = new System.Windows.Forms.Label();
+            this.rentCustIdResultLabel = new System.Windows.Forms.Label();
+            this.rentCustIdLabel = new System.Windows.Forms.Label();
+            this.rentAcctResultLabel = new System.Windows.Forms.Label();
+            this.rentFNResultLabel = new System.Windows.Forms.Label();
+            this.rentEmailResultLabel = new System.Windows.Forms.Label();
+            this.rentLNResultLabel = new System.Windows.Forms.Label();
+            this.rentDispenseBttn = new System.Windows.Forms.Button();
+            this.rentAcctLabel = new System.Windows.Forms.Label();
+            this.rentEmailLabel = new System.Windows.Forms.Label();
+            this.rentFirstNameLabel = new System.Windows.Forms.Label();
+            this.rentCancelBttn = new System.Windows.Forms.Button();
+            this.CustRentProfileLabel = new System.Windows.Forms.Label();
+            this.rentLastNameLabel = new System.Windows.Forms.Label();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ActorRadioButton = new System.Windows.Forms.RadioButton();
-            this.TitleRadioButton = new System.Windows.Forms.RadioButton();
-            this.GenreRadioButton = new System.Windows.Forms.RadioButton();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
             this.CustomersTabPage.SuspendLayout();
-            this.AddCustomerPanel.SuspendLayout();
             this.SearchCustomerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).BeginInit();
             this.ViewCustomerPanel.SuspendLayout();
+            this.AddCustomerPanel.SuspendLayout();
             this.MoviesTabPage.SuspendLayout();
             this.SearchMoviePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).BeginInit();
+            this.EditMoviePanel.SuspendLayout();
+            this.AddMoviePanel.SuspendLayout();
             this.RentalsTabPage.SuspendLayout();
+            this.rentCustSearchPanel.SuspendLayout();
+            this.RentCustSearchRadiosPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).BeginInit();
             this.rentDispensePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).BeginInit();
-            this.rentCustSearchPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // MovieRentalTabControl
@@ -337,354 +362,6 @@
             this.CustomersTabPage.TabIndex = 1;
             this.CustomersTabPage.Text = "Customers";
             this.CustomersTabPage.UseVisualStyleBackColor = true;
-            // 
-            // AddCustomerPanel
-            // 
-            this.AddCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.AddCustomerPanel.Controls.Add(this.AddPhoneButton);
-            this.AddCustomerPanel.Controls.Add(this.AddPhoneComboBox);
-            this.AddCustomerPanel.Controls.Add(this.AddPhoneTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddPhoneListBox);
-            this.AddCustomerPanel.Controls.Add(this.AddPhoneLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddProvinceComboBox);
-            this.AddCustomerPanel.Controls.Add(this.AddSaveCustomerButton);
-            this.AddCustomerPanel.Controls.Add(this.AddCreditLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddCreditTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddAcctNumInstLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddAcctNumLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddAcctNumTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddEmailLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddEmailTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddPostalCodeLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddPostalCodeTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddProvinceLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddCityLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddCityTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddAddressLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddAddressTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddLastNameLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddLastNameTextbox);
-            this.AddCustomerPanel.Controls.Add(this.AddFirstNameLabel);
-            this.AddCustomerPanel.Controls.Add(this.AddFirstNameTextbox);
-            this.AddCustomerPanel.Controls.Add(this.MoveToSearchButton);
-            this.AddCustomerPanel.Controls.Add(this.AddCustomersLabel);
-            this.AddCustomerPanel.Location = new System.Drawing.Point(12, 11);
-            this.AddCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.AddCustomerPanel.Name = "AddCustomerPanel";
-            this.AddCustomerPanel.Size = new System.Drawing.Size(853, 484);
-            this.AddCustomerPanel.TabIndex = 0;
-            this.AddCustomerPanel.Visible = false;
-            // 
-            // AddPhoneButton
-            // 
-            this.AddPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.AddPhoneButton.Enabled = false;
-            this.AddPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneButton.ForeColor = System.Drawing.Color.White;
-            this.AddPhoneButton.Location = new System.Drawing.Point(430, 214);
-            this.AddPhoneButton.Margin = new System.Windows.Forms.Padding(5);
-            this.AddPhoneButton.Name = "AddPhoneButton";
-            this.AddPhoneButton.Size = new System.Drawing.Size(180, 39);
-            this.AddPhoneButton.TabIndex = 32;
-            this.AddPhoneButton.Text = "Add New Phone Number";
-            this.AddPhoneButton.UseVisualStyleBackColor = false;
-            this.AddPhoneButton.Click += new System.EventHandler(this.AddPhoneButton_Click);
-            // 
-            // AddPhoneComboBox
-            // 
-            this.AddPhoneComboBox.FormattingEnabled = true;
-            this.AddPhoneComboBox.Items.AddRange(new object[] {
-            "Home",
-            "Mobile",
-            "Work",
-            "Other"});
-            this.AddPhoneComboBox.Location = new System.Drawing.Point(672, 180);
-            this.AddPhoneComboBox.Name = "AddPhoneComboBox";
-            this.AddPhoneComboBox.Size = new System.Drawing.Size(121, 28);
-            this.AddPhoneComboBox.TabIndex = 30;
-            this.AddPhoneComboBox.SelectedIndexChanged += new System.EventHandler(this.AddPhoneComboBox_SelectedIndexChanged);
-            // 
-            // AddPhoneTextbox
-            // 
-            this.AddPhoneTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneTextbox.Location = new System.Drawing.Point(430, 180);
-            this.AddPhoneTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPhoneTextbox.Name = "AddPhoneTextbox";
-            this.AddPhoneTextbox.Size = new System.Drawing.Size(231, 26);
-            this.AddPhoneTextbox.TabIndex = 31;
-            this.AddPhoneTextbox.TextChanged += new System.EventHandler(this.AddPhoneTextbox_TextChanged);
-            // 
-            // AddPhoneListBox
-            // 
-            this.AddPhoneListBox.FormattingEnabled = true;
-            this.AddPhoneListBox.ItemHeight = 20;
-            this.AddPhoneListBox.Location = new System.Drawing.Point(160, 180);
-            this.AddPhoneListBox.Name = "AddPhoneListBox";
-            this.AddPhoneListBox.Size = new System.Drawing.Size(244, 84);
-            this.AddPhoneListBox.TabIndex = 29;
-            // 
-            // AddPhoneLabel
-            // 
-            this.AddPhoneLabel.AutoSize = true;
-            this.AddPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPhoneLabel.Location = new System.Drawing.Point(25, 180);
-            this.AddPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddPhoneLabel.Name = "AddPhoneLabel";
-            this.AddPhoneLabel.Size = new System.Drawing.Size(146, 20);
-            this.AddPhoneLabel.TabIndex = 28;
-            this.AddPhoneLabel.Text = "Phone Number(s):";
-            // 
-            // AddProvinceComboBox
-            // 
-            this.AddProvinceComboBox.FormattingEnabled = true;
-            this.AddProvinceComboBox.Items.AddRange(new object[] {
-            "AB",
-            "BC",
-            "MB",
-            "NB",
-            "NL",
-            "NS",
-            "NT",
-            "NU",
-            "ON",
-            "PE",
-            "QC",
-            "SK",
-            "YT"});
-            this.AddProvinceComboBox.Location = new System.Drawing.Point(470, 352);
-            this.AddProvinceComboBox.Name = "AddProvinceComboBox";
-            this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 28);
-            this.AddProvinceComboBox.TabIndex = 26;
-            this.AddProvinceComboBox.SelectedIndexChanged += new System.EventHandler(this.AddProvinceComboBox_SelectedIndexChanged);
-            // 
-            // AddSaveCustomerButton
-            // 
-            this.AddSaveCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.AddSaveCustomerButton.Enabled = false;
-            this.AddSaveCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddSaveCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.AddSaveCustomerButton.Location = new System.Drawing.Point(26, 428);
-            this.AddSaveCustomerButton.Margin = new System.Windows.Forms.Padding(5);
-            this.AddSaveCustomerButton.Name = "AddSaveCustomerButton";
-            this.AddSaveCustomerButton.Size = new System.Drawing.Size(185, 39);
-            this.AddSaveCustomerButton.TabIndex = 25;
-            this.AddSaveCustomerButton.Text = "Add New Customer";
-            this.AddSaveCustomerButton.UseVisualStyleBackColor = false;
-            this.AddSaveCustomerButton.Click += new System.EventHandler(this.AddSaveCustomerButton_Click);
-            // 
-            // AddCreditLabel
-            // 
-            this.AddCreditLabel.AutoSize = true;
-            this.AddCreditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCreditLabel.Location = new System.Drawing.Point(439, 102);
-            this.AddCreditLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddCreditLabel.Name = "AddCreditLabel";
-            this.AddCreditLabel.Size = new System.Drawing.Size(164, 20);
-            this.AddCreditLabel.TabIndex = 23;
-            this.AddCreditLabel.Text = "Credit Card Number:";
-            // 
-            // AddCreditTextbox
-            // 
-            this.AddCreditTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCreditTextbox.Location = new System.Drawing.Point(590, 99);
-            this.AddCreditTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddCreditTextbox.Name = "AddCreditTextbox";
-            this.AddCreditTextbox.Size = new System.Drawing.Size(224, 26);
-            this.AddCreditTextbox.TabIndex = 24;
-            this.AddCreditTextbox.TextChanged += new System.EventHandler(this.AddCreditTextbox_TextChanged);
-            // 
-            // AddAcctNumInstLabel
-            // 
-            this.AddAcctNumInstLabel.AutoSize = true;
-            this.AddAcctNumInstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAcctNumInstLabel.Location = new System.Drawing.Point(288, 139);
-            this.AddAcctNumInstLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddAcctNumInstLabel.Name = "AddAcctNumInstLabel";
-            this.AddAcctNumInstLabel.Size = new System.Drawing.Size(326, 17);
-            this.AddAcctNumInstLabel.TabIndex = 22;
-            this.AddAcctNumInstLabel.Text = "Leave blank if customer is creating a new account.";
-            // 
-            // AddAcctNumLabel
-            // 
-            this.AddAcctNumLabel.AutoSize = true;
-            this.AddAcctNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAcctNumLabel.Location = new System.Drawing.Point(24, 137);
-            this.AddAcctNumLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddAcctNumLabel.Name = "AddAcctNumLabel";
-            this.AddAcctNumLabel.Size = new System.Drawing.Size(139, 20);
-            this.AddAcctNumLabel.TabIndex = 20;
-            this.AddAcctNumLabel.Text = "Account Number:";
-            // 
-            // AddAcctNumTextbox
-            // 
-            this.AddAcctNumTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAcctNumTextbox.Location = new System.Drawing.Point(155, 134);
-            this.AddAcctNumTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddAcctNumTextbox.Name = "AddAcctNumTextbox";
-            this.AddAcctNumTextbox.Size = new System.Drawing.Size(119, 26);
-            this.AddAcctNumTextbox.TabIndex = 21;
-            // 
-            // AddEmailLabel
-            // 
-            this.AddEmailLabel.AutoSize = true;
-            this.AddEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEmailLabel.Location = new System.Drawing.Point(25, 102);
-            this.AddEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddEmailLabel.Name = "AddEmailLabel";
-            this.AddEmailLabel.Size = new System.Drawing.Size(123, 20);
-            this.AddEmailLabel.TabIndex = 18;
-            this.AddEmailLabel.Text = "Email Address:";
-            // 
-            // AddEmailTextbox
-            // 
-            this.AddEmailTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEmailTextbox.Location = new System.Drawing.Point(141, 99);
-            this.AddEmailTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddEmailTextbox.Name = "AddEmailTextbox";
-            this.AddEmailTextbox.Size = new System.Drawing.Size(258, 26);
-            this.AddEmailTextbox.TabIndex = 19;
-            this.AddEmailTextbox.TextChanged += new System.EventHandler(this.AddEmailTextbox_TextChanged);
-            // 
-            // AddPostalCodeLabel
-            // 
-            this.AddPostalCodeLabel.AutoSize = true;
-            this.AddPostalCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPostalCodeLabel.Location = new System.Drawing.Point(24, 390);
-            this.AddPostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddPostalCodeLabel.Name = "AddPostalCodeLabel";
-            this.AddPostalCodeLabel.Size = new System.Drawing.Size(105, 20);
-            this.AddPostalCodeLabel.TabIndex = 16;
-            this.AddPostalCodeLabel.Text = "Postal Code:";
-            // 
-            // AddPostalCodeTextbox
-            // 
-            this.AddPostalCodeTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPostalCodeTextbox.Location = new System.Drawing.Point(127, 387);
-            this.AddPostalCodeTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddPostalCodeTextbox.Name = "AddPostalCodeTextbox";
-            this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 26);
-            this.AddPostalCodeTextbox.TabIndex = 17;
-            this.AddPostalCodeTextbox.TextChanged += new System.EventHandler(this.AddPostalCodeTextbox_TextChanged);
-            // 
-            // AddProvinceLabel
-            // 
-            this.AddProvinceLabel.AutoSize = true;
-            this.AddProvinceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProvinceLabel.Location = new System.Drawing.Point(393, 355);
-            this.AddProvinceLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddProvinceLabel.Name = "AddProvinceLabel";
-            this.AddProvinceLabel.Size = new System.Drawing.Size(79, 20);
-            this.AddProvinceLabel.TabIndex = 14;
-            this.AddProvinceLabel.Text = "Province:";
-            // 
-            // AddCityLabel
-            // 
-            this.AddCityLabel.AutoSize = true;
-            this.AddCityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCityLabel.Location = new System.Drawing.Point(24, 355);
-            this.AddCityLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddCityLabel.Name = "AddCityLabel";
-            this.AddCityLabel.Size = new System.Drawing.Size(43, 20);
-            this.AddCityLabel.TabIndex = 12;
-            this.AddCityLabel.Text = "City:";
-            // 
-            // AddCityTextbox
-            // 
-            this.AddCityTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCityTextbox.Location = new System.Drawing.Point(73, 352);
-            this.AddCityTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddCityTextbox.Name = "AddCityTextbox";
-            this.AddCityTextbox.Size = new System.Drawing.Size(282, 26);
-            this.AddCityTextbox.TabIndex = 13;
-            this.AddCityTextbox.TextChanged += new System.EventHandler(this.AddCityTextbox_TextChanged);
-            // 
-            // AddAddressLabel
-            // 
-            this.AddAddressLabel.AutoSize = true;
-            this.AddAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAddressLabel.Location = new System.Drawing.Point(24, 320);
-            this.AddAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddAddressLabel.Name = "AddAddressLabel";
-            this.AddAddressLabel.Size = new System.Drawing.Size(76, 20);
-            this.AddAddressLabel.TabIndex = 10;
-            this.AddAddressLabel.Text = "Address:";
-            // 
-            // AddAddressTextbox
-            // 
-            this.AddAddressTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAddressTextbox.Location = new System.Drawing.Point(102, 317);
-            this.AddAddressTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddAddressTextbox.Name = "AddAddressTextbox";
-            this.AddAddressTextbox.Size = new System.Drawing.Size(328, 26);
-            this.AddAddressTextbox.TabIndex = 11;
-            this.AddAddressTextbox.TextChanged += new System.EventHandler(this.AddAddressTextbox_TextChanged);
-            // 
-            // AddLastNameLabel
-            // 
-            this.AddLastNameLabel.AutoSize = true;
-            this.AddLastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddLastNameLabel.Location = new System.Drawing.Point(439, 65);
-            this.AddLastNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddLastNameLabel.Name = "AddLastNameLabel";
-            this.AddLastNameLabel.Size = new System.Drawing.Size(96, 20);
-            this.AddLastNameLabel.TabIndex = 8;
-            this.AddLastNameLabel.Text = "Last Name:";
-            // 
-            // AddLastNameTextbox
-            // 
-            this.AddLastNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddLastNameTextbox.Location = new System.Drawing.Point(533, 62);
-            this.AddLastNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddLastNameTextbox.Name = "AddLastNameTextbox";
-            this.AddLastNameTextbox.Size = new System.Drawing.Size(282, 26);
-            this.AddLastNameTextbox.TabIndex = 9;
-            this.AddLastNameTextbox.TextChanged += new System.EventHandler(this.AddLastNameTextbox_TextChanged);
-            // 
-            // AddFirstNameLabel
-            // 
-            this.AddFirstNameLabel.AutoSize = true;
-            this.AddFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddFirstNameLabel.Location = new System.Drawing.Point(24, 65);
-            this.AddFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddFirstNameLabel.Name = "AddFirstNameLabel";
-            this.AddFirstNameLabel.Size = new System.Drawing.Size(97, 20);
-            this.AddFirstNameLabel.TabIndex = 6;
-            this.AddFirstNameLabel.Text = "First Name:";
-            // 
-            // AddFirstNameTextbox
-            // 
-            this.AddFirstNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddFirstNameTextbox.Location = new System.Drawing.Point(118, 62);
-            this.AddFirstNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.AddFirstNameTextbox.Name = "AddFirstNameTextbox";
-            this.AddFirstNameTextbox.Size = new System.Drawing.Size(282, 26);
-            this.AddFirstNameTextbox.TabIndex = 7;
-            this.AddFirstNameTextbox.TextChanged += new System.EventHandler(this.AddFirstNameTextbox_TextChanged);
-            // 
-            // MoveToSearchButton
-            // 
-            this.MoveToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.MoveToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoveToSearchButton.ForeColor = System.Drawing.Color.White;
-            this.MoveToSearchButton.Location = new System.Drawing.Point(706, 428);
-            this.MoveToSearchButton.Margin = new System.Windows.Forms.Padding(5);
-            this.MoveToSearchButton.Name = "MoveToSearchButton";
-            this.MoveToSearchButton.Size = new System.Drawing.Size(125, 39);
-            this.MoveToSearchButton.TabIndex = 5;
-            this.MoveToSearchButton.Text = "Cancel";
-            this.MoveToSearchButton.UseVisualStyleBackColor = false;
-            this.MoveToSearchButton.Click += new System.EventHandler(this.MoveToSearchButton_Click);
-            // 
-            // AddCustomersLabel
-            // 
-            this.AddCustomersLabel.AutoSize = true;
-            this.AddCustomersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddCustomersLabel.Location = new System.Drawing.Point(23, 18);
-            this.AddCustomersLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.AddCustomersLabel.Name = "AddCustomersLabel";
-            this.AddCustomersLabel.Size = new System.Drawing.Size(198, 25);
-            this.AddCustomersLabel.TabIndex = 1;
-            this.AddCustomersLabel.Text = "Add New Customer";
             // 
             // SearchCustomerPanel
             // 
@@ -1270,9 +947,359 @@
             this.CancelViewingButton.UseVisualStyleBackColor = false;
             this.CancelViewingButton.Click += new System.EventHandler(this.CancelViewingButton_Click);
             // 
+            // AddCustomerPanel
+            // 
+            this.AddCustomerPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneButton);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneComboBox);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneListBox);
+            this.AddCustomerPanel.Controls.Add(this.AddPhoneLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddProvinceComboBox);
+            this.AddCustomerPanel.Controls.Add(this.AddSaveCustomerButton);
+            this.AddCustomerPanel.Controls.Add(this.AddCreditLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddCreditTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddAcctNumInstLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddAcctNumLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddAcctNumTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddEmailLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddEmailTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddPostalCodeLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddPostalCodeTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddProvinceLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddCityLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddCityTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddAddressLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddAddressTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddLastNameLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddLastNameTextbox);
+            this.AddCustomerPanel.Controls.Add(this.AddFirstNameLabel);
+            this.AddCustomerPanel.Controls.Add(this.AddFirstNameTextbox);
+            this.AddCustomerPanel.Controls.Add(this.MoveToSearchButton);
+            this.AddCustomerPanel.Controls.Add(this.AddCustomersLabel);
+            this.AddCustomerPanel.Location = new System.Drawing.Point(12, 11);
+            this.AddCustomerPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.AddCustomerPanel.Name = "AddCustomerPanel";
+            this.AddCustomerPanel.Size = new System.Drawing.Size(853, 484);
+            this.AddCustomerPanel.TabIndex = 0;
+            this.AddCustomerPanel.Visible = false;
+            // 
+            // AddPhoneButton
+            // 
+            this.AddPhoneButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.AddPhoneButton.Enabled = false;
+            this.AddPhoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneButton.ForeColor = System.Drawing.Color.White;
+            this.AddPhoneButton.Location = new System.Drawing.Point(430, 214);
+            this.AddPhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.AddPhoneButton.Name = "AddPhoneButton";
+            this.AddPhoneButton.Size = new System.Drawing.Size(180, 39);
+            this.AddPhoneButton.TabIndex = 32;
+            this.AddPhoneButton.Text = "Add New Phone Number";
+            this.AddPhoneButton.UseVisualStyleBackColor = false;
+            this.AddPhoneButton.Click += new System.EventHandler(this.AddPhoneButton_Click);
+            // 
+            // AddPhoneComboBox
+            // 
+            this.AddPhoneComboBox.FormattingEnabled = true;
+            this.AddPhoneComboBox.Items.AddRange(new object[] {
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"});
+            this.AddPhoneComboBox.Location = new System.Drawing.Point(672, 180);
+            this.AddPhoneComboBox.Name = "AddPhoneComboBox";
+            this.AddPhoneComboBox.Size = new System.Drawing.Size(121, 28);
+            this.AddPhoneComboBox.TabIndex = 30;
+            this.AddPhoneComboBox.SelectedIndexChanged += new System.EventHandler(this.AddPhoneComboBox_SelectedIndexChanged);
+            // 
+            // AddPhoneTextbox
+            // 
+            this.AddPhoneTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneTextbox.Location = new System.Drawing.Point(430, 180);
+            this.AddPhoneTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPhoneTextbox.Name = "AddPhoneTextbox";
+            this.AddPhoneTextbox.Size = new System.Drawing.Size(231, 26);
+            this.AddPhoneTextbox.TabIndex = 31;
+            this.AddPhoneTextbox.TextChanged += new System.EventHandler(this.AddPhoneTextbox_TextChanged);
+            // 
+            // AddPhoneListBox
+            // 
+            this.AddPhoneListBox.FormattingEnabled = true;
+            this.AddPhoneListBox.ItemHeight = 20;
+            this.AddPhoneListBox.Location = new System.Drawing.Point(160, 180);
+            this.AddPhoneListBox.Name = "AddPhoneListBox";
+            this.AddPhoneListBox.Size = new System.Drawing.Size(244, 84);
+            this.AddPhoneListBox.TabIndex = 29;
+            // 
+            // AddPhoneLabel
+            // 
+            this.AddPhoneLabel.AutoSize = true;
+            this.AddPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPhoneLabel.Location = new System.Drawing.Point(25, 180);
+            this.AddPhoneLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddPhoneLabel.Name = "AddPhoneLabel";
+            this.AddPhoneLabel.Size = new System.Drawing.Size(146, 20);
+            this.AddPhoneLabel.TabIndex = 28;
+            this.AddPhoneLabel.Text = "Phone Number(s):";
+            // 
+            // AddProvinceComboBox
+            // 
+            this.AddProvinceComboBox.FormattingEnabled = true;
+            this.AddProvinceComboBox.Items.AddRange(new object[] {
+            "AB",
+            "BC",
+            "MB",
+            "NB",
+            "NL",
+            "NS",
+            "NT",
+            "NU",
+            "ON",
+            "PE",
+            "QC",
+            "SK",
+            "YT"});
+            this.AddProvinceComboBox.Location = new System.Drawing.Point(470, 352);
+            this.AddProvinceComboBox.Name = "AddProvinceComboBox";
+            this.AddProvinceComboBox.Size = new System.Drawing.Size(121, 28);
+            this.AddProvinceComboBox.TabIndex = 26;
+            this.AddProvinceComboBox.SelectedIndexChanged += new System.EventHandler(this.AddProvinceComboBox_SelectedIndexChanged);
+            // 
+            // AddSaveCustomerButton
+            // 
+            this.AddSaveCustomerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.AddSaveCustomerButton.Enabled = false;
+            this.AddSaveCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddSaveCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.AddSaveCustomerButton.Location = new System.Drawing.Point(26, 428);
+            this.AddSaveCustomerButton.Margin = new System.Windows.Forms.Padding(5);
+            this.AddSaveCustomerButton.Name = "AddSaveCustomerButton";
+            this.AddSaveCustomerButton.Size = new System.Drawing.Size(185, 39);
+            this.AddSaveCustomerButton.TabIndex = 25;
+            this.AddSaveCustomerButton.Text = "Add New Customer";
+            this.AddSaveCustomerButton.UseVisualStyleBackColor = false;
+            this.AddSaveCustomerButton.Click += new System.EventHandler(this.AddSaveCustomerButton_Click);
+            // 
+            // AddCreditLabel
+            // 
+            this.AddCreditLabel.AutoSize = true;
+            this.AddCreditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCreditLabel.Location = new System.Drawing.Point(439, 102);
+            this.AddCreditLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddCreditLabel.Name = "AddCreditLabel";
+            this.AddCreditLabel.Size = new System.Drawing.Size(164, 20);
+            this.AddCreditLabel.TabIndex = 23;
+            this.AddCreditLabel.Text = "Credit Card Number:";
+            // 
+            // AddCreditTextbox
+            // 
+            this.AddCreditTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCreditTextbox.Location = new System.Drawing.Point(590, 99);
+            this.AddCreditTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddCreditTextbox.Name = "AddCreditTextbox";
+            this.AddCreditTextbox.Size = new System.Drawing.Size(224, 26);
+            this.AddCreditTextbox.TabIndex = 24;
+            this.AddCreditTextbox.TextChanged += new System.EventHandler(this.AddCreditTextbox_TextChanged);
+            // 
+            // AddAcctNumInstLabel
+            // 
+            this.AddAcctNumInstLabel.AutoSize = true;
+            this.AddAcctNumInstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAcctNumInstLabel.Location = new System.Drawing.Point(288, 139);
+            this.AddAcctNumInstLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddAcctNumInstLabel.Name = "AddAcctNumInstLabel";
+            this.AddAcctNumInstLabel.Size = new System.Drawing.Size(326, 17);
+            this.AddAcctNumInstLabel.TabIndex = 22;
+            this.AddAcctNumInstLabel.Text = "Leave blank if customer is creating a new account.";
+            // 
+            // AddAcctNumLabel
+            // 
+            this.AddAcctNumLabel.AutoSize = true;
+            this.AddAcctNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAcctNumLabel.Location = new System.Drawing.Point(24, 137);
+            this.AddAcctNumLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddAcctNumLabel.Name = "AddAcctNumLabel";
+            this.AddAcctNumLabel.Size = new System.Drawing.Size(139, 20);
+            this.AddAcctNumLabel.TabIndex = 20;
+            this.AddAcctNumLabel.Text = "Account Number:";
+            // 
+            // AddAcctNumTextbox
+            // 
+            this.AddAcctNumTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAcctNumTextbox.Location = new System.Drawing.Point(155, 134);
+            this.AddAcctNumTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddAcctNumTextbox.Name = "AddAcctNumTextbox";
+            this.AddAcctNumTextbox.Size = new System.Drawing.Size(119, 26);
+            this.AddAcctNumTextbox.TabIndex = 21;
+            // 
+            // AddEmailLabel
+            // 
+            this.AddEmailLabel.AutoSize = true;
+            this.AddEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddEmailLabel.Location = new System.Drawing.Point(25, 102);
+            this.AddEmailLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddEmailLabel.Name = "AddEmailLabel";
+            this.AddEmailLabel.Size = new System.Drawing.Size(123, 20);
+            this.AddEmailLabel.TabIndex = 18;
+            this.AddEmailLabel.Text = "Email Address:";
+            // 
+            // AddEmailTextbox
+            // 
+            this.AddEmailTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddEmailTextbox.Location = new System.Drawing.Point(141, 99);
+            this.AddEmailTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddEmailTextbox.Name = "AddEmailTextbox";
+            this.AddEmailTextbox.Size = new System.Drawing.Size(258, 26);
+            this.AddEmailTextbox.TabIndex = 19;
+            this.AddEmailTextbox.TextChanged += new System.EventHandler(this.AddEmailTextbox_TextChanged);
+            // 
+            // AddPostalCodeLabel
+            // 
+            this.AddPostalCodeLabel.AutoSize = true;
+            this.AddPostalCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPostalCodeLabel.Location = new System.Drawing.Point(24, 390);
+            this.AddPostalCodeLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddPostalCodeLabel.Name = "AddPostalCodeLabel";
+            this.AddPostalCodeLabel.Size = new System.Drawing.Size(105, 20);
+            this.AddPostalCodeLabel.TabIndex = 16;
+            this.AddPostalCodeLabel.Text = "Postal Code:";
+            // 
+            // AddPostalCodeTextbox
+            // 
+            this.AddPostalCodeTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPostalCodeTextbox.Location = new System.Drawing.Point(127, 387);
+            this.AddPostalCodeTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddPostalCodeTextbox.Name = "AddPostalCodeTextbox";
+            this.AddPostalCodeTextbox.Size = new System.Drawing.Size(282, 26);
+            this.AddPostalCodeTextbox.TabIndex = 17;
+            this.AddPostalCodeTextbox.TextChanged += new System.EventHandler(this.AddPostalCodeTextbox_TextChanged);
+            // 
+            // AddProvinceLabel
+            // 
+            this.AddProvinceLabel.AutoSize = true;
+            this.AddProvinceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddProvinceLabel.Location = new System.Drawing.Point(393, 355);
+            this.AddProvinceLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddProvinceLabel.Name = "AddProvinceLabel";
+            this.AddProvinceLabel.Size = new System.Drawing.Size(79, 20);
+            this.AddProvinceLabel.TabIndex = 14;
+            this.AddProvinceLabel.Text = "Province:";
+            // 
+            // AddCityLabel
+            // 
+            this.AddCityLabel.AutoSize = true;
+            this.AddCityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCityLabel.Location = new System.Drawing.Point(24, 355);
+            this.AddCityLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddCityLabel.Name = "AddCityLabel";
+            this.AddCityLabel.Size = new System.Drawing.Size(43, 20);
+            this.AddCityLabel.TabIndex = 12;
+            this.AddCityLabel.Text = "City:";
+            // 
+            // AddCityTextbox
+            // 
+            this.AddCityTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCityTextbox.Location = new System.Drawing.Point(73, 352);
+            this.AddCityTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddCityTextbox.Name = "AddCityTextbox";
+            this.AddCityTextbox.Size = new System.Drawing.Size(282, 26);
+            this.AddCityTextbox.TabIndex = 13;
+            this.AddCityTextbox.TextChanged += new System.EventHandler(this.AddCityTextbox_TextChanged);
+            // 
+            // AddAddressLabel
+            // 
+            this.AddAddressLabel.AutoSize = true;
+            this.AddAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAddressLabel.Location = new System.Drawing.Point(24, 320);
+            this.AddAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddAddressLabel.Name = "AddAddressLabel";
+            this.AddAddressLabel.Size = new System.Drawing.Size(76, 20);
+            this.AddAddressLabel.TabIndex = 10;
+            this.AddAddressLabel.Text = "Address:";
+            // 
+            // AddAddressTextbox
+            // 
+            this.AddAddressTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAddressTextbox.Location = new System.Drawing.Point(102, 317);
+            this.AddAddressTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddAddressTextbox.Name = "AddAddressTextbox";
+            this.AddAddressTextbox.Size = new System.Drawing.Size(328, 26);
+            this.AddAddressTextbox.TabIndex = 11;
+            this.AddAddressTextbox.TextChanged += new System.EventHandler(this.AddAddressTextbox_TextChanged);
+            // 
+            // AddLastNameLabel
+            // 
+            this.AddLastNameLabel.AutoSize = true;
+            this.AddLastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddLastNameLabel.Location = new System.Drawing.Point(439, 65);
+            this.AddLastNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddLastNameLabel.Name = "AddLastNameLabel";
+            this.AddLastNameLabel.Size = new System.Drawing.Size(96, 20);
+            this.AddLastNameLabel.TabIndex = 8;
+            this.AddLastNameLabel.Text = "Last Name:";
+            // 
+            // AddLastNameTextbox
+            // 
+            this.AddLastNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddLastNameTextbox.Location = new System.Drawing.Point(533, 62);
+            this.AddLastNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddLastNameTextbox.Name = "AddLastNameTextbox";
+            this.AddLastNameTextbox.Size = new System.Drawing.Size(282, 26);
+            this.AddLastNameTextbox.TabIndex = 9;
+            this.AddLastNameTextbox.TextChanged += new System.EventHandler(this.AddLastNameTextbox_TextChanged);
+            // 
+            // AddFirstNameLabel
+            // 
+            this.AddFirstNameLabel.AutoSize = true;
+            this.AddFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddFirstNameLabel.Location = new System.Drawing.Point(24, 65);
+            this.AddFirstNameLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddFirstNameLabel.Name = "AddFirstNameLabel";
+            this.AddFirstNameLabel.Size = new System.Drawing.Size(97, 20);
+            this.AddFirstNameLabel.TabIndex = 6;
+            this.AddFirstNameLabel.Text = "First Name:";
+            // 
+            // AddFirstNameTextbox
+            // 
+            this.AddFirstNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddFirstNameTextbox.Location = new System.Drawing.Point(118, 62);
+            this.AddFirstNameTextbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.AddFirstNameTextbox.Name = "AddFirstNameTextbox";
+            this.AddFirstNameTextbox.Size = new System.Drawing.Size(282, 26);
+            this.AddFirstNameTextbox.TabIndex = 7;
+            this.AddFirstNameTextbox.TextChanged += new System.EventHandler(this.AddFirstNameTextbox_TextChanged);
+            // 
+            // MoveToSearchButton
+            // 
+            this.MoveToSearchButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.MoveToSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveToSearchButton.ForeColor = System.Drawing.Color.White;
+            this.MoveToSearchButton.Location = new System.Drawing.Point(706, 428);
+            this.MoveToSearchButton.Margin = new System.Windows.Forms.Padding(5);
+            this.MoveToSearchButton.Name = "MoveToSearchButton";
+            this.MoveToSearchButton.Size = new System.Drawing.Size(125, 39);
+            this.MoveToSearchButton.TabIndex = 5;
+            this.MoveToSearchButton.Text = "Cancel";
+            this.MoveToSearchButton.UseVisualStyleBackColor = false;
+            this.MoveToSearchButton.Click += new System.EventHandler(this.MoveToSearchButton_Click);
+            // 
+            // AddCustomersLabel
+            // 
+            this.AddCustomersLabel.AutoSize = true;
+            this.AddCustomersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCustomersLabel.Location = new System.Drawing.Point(23, 18);
+            this.AddCustomersLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.AddCustomersLabel.Name = "AddCustomersLabel";
+            this.AddCustomersLabel.Size = new System.Drawing.Size(198, 25);
+            this.AddCustomersLabel.TabIndex = 1;
+            this.AddCustomersLabel.Text = "Add New Customer";
+            // 
             // MoviesTabPage
             // 
             this.MoviesTabPage.Controls.Add(this.SearchMoviePanel);
+            this.MoviesTabPage.Controls.Add(this.EditMoviePanel);
+            this.MoviesTabPage.Controls.Add(this.AddMoviePanel);
             this.MoviesTabPage.Location = new System.Drawing.Point(4, 29);
             this.MoviesTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.MoviesTabPage.Name = "MoviesTabPage";
@@ -1299,6 +1326,40 @@
             this.SearchMoviePanel.Name = "SearchMoviePanel";
             this.SearchMoviePanel.Size = new System.Drawing.Size(843, 470);
             this.SearchMoviePanel.TabIndex = 0;
+            // 
+            // GenreRadioButton
+            // 
+            this.GenreRadioButton.AutoSize = true;
+            this.GenreRadioButton.Location = new System.Drawing.Point(594, 204);
+            this.GenreRadioButton.Name = "GenreRadioButton";
+            this.GenreRadioButton.Size = new System.Drawing.Size(156, 24);
+            this.GenreRadioButton.TabIndex = 21;
+            this.GenreRadioButton.TabStop = true;
+            this.GenreRadioButton.Text = "Search by Genre";
+            this.GenreRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // TitleRadioButton
+            // 
+            this.TitleRadioButton.AutoSize = true;
+            this.TitleRadioButton.Checked = true;
+            this.TitleRadioButton.Location = new System.Drawing.Point(594, 134);
+            this.TitleRadioButton.Name = "TitleRadioButton";
+            this.TitleRadioButton.Size = new System.Drawing.Size(142, 24);
+            this.TitleRadioButton.TabIndex = 20;
+            this.TitleRadioButton.TabStop = true;
+            this.TitleRadioButton.Text = "Search by Title";
+            this.TitleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // ActorRadioButton
+            // 
+            this.ActorRadioButton.AutoSize = true;
+            this.ActorRadioButton.Location = new System.Drawing.Point(594, 169);
+            this.ActorRadioButton.Name = "ActorRadioButton";
+            this.ActorRadioButton.Size = new System.Drawing.Size(150, 24);
+            this.ActorRadioButton.TabIndex = 19;
+            this.ActorRadioButton.TabStop = true;
+            this.ActorRadioButton.Text = "Search by Actor";
+            this.ActorRadioButton.UseVisualStyleBackColor = true;
             // 
             // MovieDetailsGrid
             // 
@@ -1337,6 +1398,7 @@
             this.EditMoviesButton.TabIndex = 16;
             this.EditMoviesButton.Text = "Edit";
             this.EditMoviesButton.UseVisualStyleBackColor = false;
+            this.EditMoviesButton.Click += new System.EventHandler(this.EditMoviesButton_Click);
             // 
             // DeleteMovieButton
             // 
@@ -1395,6 +1457,230 @@
             this.SearchMoviesLabel.TabIndex = 11;
             this.SearchMoviesLabel.Text = "Search Movies";
             // 
+            // EditMoviePanel
+            // 
+            this.EditMoviePanel.Controls.Add(this.EditMovieIDLabel);
+            this.EditMoviePanel.Controls.Add(this.CancelEditMovieButton);
+            this.EditMoviePanel.Controls.Add(this.SaveMovieChangesButton);
+            this.EditMoviePanel.Controls.Add(this.EditMovieFeeLabel);
+            this.EditMoviePanel.Controls.Add(this.EditMovieCopiesLabel);
+            this.EditMoviePanel.Controls.Add(this.EditMovieGenreLabel);
+            this.EditMoviePanel.Controls.Add(this.EditMovieFeeTextbox);
+            this.EditMoviePanel.Controls.Add(this.EditMovieCopiesTextbox);
+            this.EditMoviePanel.Controls.Add(this.EditMovieGenreTextbox);
+            this.EditMoviePanel.Controls.Add(this.EditMovieNameTextbox);
+            this.EditMoviePanel.Controls.Add(this.EditMovieNameLabel);
+            this.EditMoviePanel.Location = new System.Drawing.Point(17, 20);
+            this.EditMoviePanel.Name = "EditMoviePanel";
+            this.EditMoviePanel.Size = new System.Drawing.Size(842, 474);
+            this.EditMoviePanel.TabIndex = 22;
+            this.EditMoviePanel.Visible = false;
+            // 
+            // EditMovieIDLabel
+            // 
+            this.EditMovieIDLabel.AutoSize = true;
+            this.EditMovieIDLabel.Location = new System.Drawing.Point(57, 287);
+            this.EditMovieIDLabel.Name = "EditMovieIDLabel";
+            this.EditMovieIDLabel.Size = new System.Drawing.Size(80, 20);
+            this.EditMovieIDLabel.TabIndex = 10;
+            this.EditMovieIDLabel.Text = "Movie ID:";
+            this.EditMovieIDLabel.Visible = false;
+            // 
+            // CancelEditMovieButton
+            // 
+            this.CancelEditMovieButton.BackColor = System.Drawing.Color.Red;
+            this.CancelEditMovieButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CancelEditMovieButton.Location = new System.Drawing.Point(274, 385);
+            this.CancelEditMovieButton.Name = "CancelEditMovieButton";
+            this.CancelEditMovieButton.Size = new System.Drawing.Size(90, 44);
+            this.CancelEditMovieButton.TabIndex = 9;
+            this.CancelEditMovieButton.Text = "Cancel";
+            this.CancelEditMovieButton.UseVisualStyleBackColor = false;
+            this.CancelEditMovieButton.Click += new System.EventHandler(this.CancelEditMovieButton_Click);
+            // 
+            // SaveMovieChangesButton
+            // 
+            this.SaveMovieChangesButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveMovieChangesButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SaveMovieChangesButton.Location = new System.Drawing.Point(63, 385);
+            this.SaveMovieChangesButton.Name = "SaveMovieChangesButton";
+            this.SaveMovieChangesButton.Size = new System.Drawing.Size(89, 44);
+            this.SaveMovieChangesButton.TabIndex = 8;
+            this.SaveMovieChangesButton.Text = "Save";
+            this.SaveMovieChangesButton.UseVisualStyleBackColor = false;
+            this.SaveMovieChangesButton.Click += new System.EventHandler(this.SaveMovieChangesButton_Click);
+            // 
+            // EditMovieFeeLabel
+            // 
+            this.EditMovieFeeLabel.AutoSize = true;
+            this.EditMovieFeeLabel.Location = new System.Drawing.Point(58, 229);
+            this.EditMovieFeeLabel.Name = "EditMovieFeeLabel";
+            this.EditMovieFeeLabel.Size = new System.Drawing.Size(91, 20);
+            this.EditMovieFeeLabel.TabIndex = 7;
+            this.EditMovieFeeLabel.Text = "Movie Fee:";
+            // 
+            // EditMovieCopiesLabel
+            // 
+            this.EditMovieCopiesLabel.AutoSize = true;
+            this.EditMovieCopiesLabel.Location = new System.Drawing.Point(58, 168);
+            this.EditMovieCopiesLabel.Name = "EditMovieCopiesLabel";
+            this.EditMovieCopiesLabel.Size = new System.Drawing.Size(115, 20);
+            this.EditMovieCopiesLabel.TabIndex = 6;
+            this.EditMovieCopiesLabel.Text = "Movie Copies:";
+            // 
+            // EditMovieGenreLabel
+            // 
+            this.EditMovieGenreLabel.AutoSize = true;
+            this.EditMovieGenreLabel.Location = new System.Drawing.Point(58, 106);
+            this.EditMovieGenreLabel.Name = "EditMovieGenreLabel";
+            this.EditMovieGenreLabel.Size = new System.Drawing.Size(109, 20);
+            this.EditMovieGenreLabel.TabIndex = 5;
+            this.EditMovieGenreLabel.Text = "Movie Genre:";
+            // 
+            // EditMovieFeeTextbox
+            // 
+            this.EditMovieFeeTextbox.Location = new System.Drawing.Point(185, 226);
+            this.EditMovieFeeTextbox.Name = "EditMovieFeeTextbox";
+            this.EditMovieFeeTextbox.Size = new System.Drawing.Size(212, 26);
+            this.EditMovieFeeTextbox.TabIndex = 4;
+            // 
+            // EditMovieCopiesTextbox
+            // 
+            this.EditMovieCopiesTextbox.Location = new System.Drawing.Point(185, 163);
+            this.EditMovieCopiesTextbox.Name = "EditMovieCopiesTextbox";
+            this.EditMovieCopiesTextbox.Size = new System.Drawing.Size(212, 26);
+            this.EditMovieCopiesTextbox.TabIndex = 3;
+            // 
+            // EditMovieGenreTextbox
+            // 
+            this.EditMovieGenreTextbox.Location = new System.Drawing.Point(185, 97);
+            this.EditMovieGenreTextbox.Name = "EditMovieGenreTextbox";
+            this.EditMovieGenreTextbox.Size = new System.Drawing.Size(212, 26);
+            this.EditMovieGenreTextbox.TabIndex = 2;
+            // 
+            // EditMovieNameTextbox
+            // 
+            this.EditMovieNameTextbox.Location = new System.Drawing.Point(185, 40);
+            this.EditMovieNameTextbox.Name = "EditMovieNameTextbox";
+            this.EditMovieNameTextbox.Size = new System.Drawing.Size(212, 26);
+            this.EditMovieNameTextbox.TabIndex = 1;
+            // 
+            // EditMovieNameLabel
+            // 
+            this.EditMovieNameLabel.AutoSize = true;
+            this.EditMovieNameLabel.Location = new System.Drawing.Point(58, 45);
+            this.EditMovieNameLabel.Name = "EditMovieNameLabel";
+            this.EditMovieNameLabel.Size = new System.Drawing.Size(107, 20);
+            this.EditMovieNameLabel.TabIndex = 0;
+            this.EditMovieNameLabel.Text = "Movie Name:";
+            // 
+            // AddMoviePanel
+            // 
+            this.AddMoviePanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.AddMoviePanel.Controls.Add(this.CancelAddMovieButton);
+            this.AddMoviePanel.Controls.Add(this.SaveNewMovieButton);
+            this.AddMoviePanel.Controls.Add(this.AddMovieFeeTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieCopiesTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieGenreTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieNameTextbox);
+            this.AddMoviePanel.Controls.Add(this.AddMovieFeeLabel);
+            this.AddMoviePanel.Controls.Add(this.AddMovieCopiesLabel);
+            this.AddMoviePanel.Controls.Add(this.AddMovieGenreLabel);
+            this.AddMoviePanel.Controls.Add(this.AddMovieNameLabel);
+            this.AddMoviePanel.Location = new System.Drawing.Point(17, 23);
+            this.AddMoviePanel.Name = "AddMoviePanel";
+            this.AddMoviePanel.Size = new System.Drawing.Size(839, 467);
+            this.AddMoviePanel.TabIndex = 22;
+            this.AddMoviePanel.Visible = false;
+            // 
+            // CancelAddMovieButton
+            // 
+            this.CancelAddMovieButton.BackColor = System.Drawing.Color.Red;
+            this.CancelAddMovieButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CancelAddMovieButton.Location = new System.Drawing.Point(264, 356);
+            this.CancelAddMovieButton.Name = "CancelAddMovieButton";
+            this.CancelAddMovieButton.Size = new System.Drawing.Size(108, 45);
+            this.CancelAddMovieButton.TabIndex = 9;
+            this.CancelAddMovieButton.Text = "Cancel";
+            this.CancelAddMovieButton.UseVisualStyleBackColor = false;
+            this.CancelAddMovieButton.Click += new System.EventHandler(this.CancelAddMovieButton_Click);
+            // 
+            // SaveNewMovieButton
+            // 
+            this.SaveNewMovieButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveNewMovieButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SaveNewMovieButton.Location = new System.Drawing.Point(79, 356);
+            this.SaveNewMovieButton.Name = "SaveNewMovieButton";
+            this.SaveNewMovieButton.Size = new System.Drawing.Size(106, 45);
+            this.SaveNewMovieButton.TabIndex = 8;
+            this.SaveNewMovieButton.Text = "Save";
+            this.SaveNewMovieButton.UseVisualStyleBackColor = false;
+            this.SaveNewMovieButton.Click += new System.EventHandler(this.SaveNewMovieButton_Click);
+            // 
+            // AddMovieFeeTextbox
+            // 
+            this.AddMovieFeeTextbox.Location = new System.Drawing.Point(223, 229);
+            this.AddMovieFeeTextbox.Name = "AddMovieFeeTextbox";
+            this.AddMovieFeeTextbox.Size = new System.Drawing.Size(226, 26);
+            this.AddMovieFeeTextbox.TabIndex = 7;
+            // 
+            // AddMovieCopiesTextbox
+            // 
+            this.AddMovieCopiesTextbox.Location = new System.Drawing.Point(223, 168);
+            this.AddMovieCopiesTextbox.Name = "AddMovieCopiesTextbox";
+            this.AddMovieCopiesTextbox.Size = new System.Drawing.Size(226, 26);
+            this.AddMovieCopiesTextbox.TabIndex = 6;
+            // 
+            // AddMovieGenreTextbox
+            // 
+            this.AddMovieGenreTextbox.Location = new System.Drawing.Point(223, 106);
+            this.AddMovieGenreTextbox.Name = "AddMovieGenreTextbox";
+            this.AddMovieGenreTextbox.Size = new System.Drawing.Size(226, 26);
+            this.AddMovieGenreTextbox.TabIndex = 5;
+            // 
+            // AddMovieNameTextbox
+            // 
+            this.AddMovieNameTextbox.Location = new System.Drawing.Point(223, 46);
+            this.AddMovieNameTextbox.Name = "AddMovieNameTextbox";
+            this.AddMovieNameTextbox.Size = new System.Drawing.Size(226, 26);
+            this.AddMovieNameTextbox.TabIndex = 4;
+            // 
+            // AddMovieFeeLabel
+            // 
+            this.AddMovieFeeLabel.AutoSize = true;
+            this.AddMovieFeeLabel.Location = new System.Drawing.Point(75, 229);
+            this.AddMovieFeeLabel.Name = "AddMovieFeeLabel";
+            this.AddMovieFeeLabel.Size = new System.Drawing.Size(91, 20);
+            this.AddMovieFeeLabel.TabIndex = 3;
+            this.AddMovieFeeLabel.Text = "Movie Fee:";
+            // 
+            // AddMovieCopiesLabel
+            // 
+            this.AddMovieCopiesLabel.AutoSize = true;
+            this.AddMovieCopiesLabel.Location = new System.Drawing.Point(75, 166);
+            this.AddMovieCopiesLabel.Name = "AddMovieCopiesLabel";
+            this.AddMovieCopiesLabel.Size = new System.Drawing.Size(110, 20);
+            this.AddMovieCopiesLabel.TabIndex = 2;
+            this.AddMovieCopiesLabel.Text = "MovieCopies:";
+            // 
+            // AddMovieGenreLabel
+            // 
+            this.AddMovieGenreLabel.AutoSize = true;
+            this.AddMovieGenreLabel.Location = new System.Drawing.Point(75, 106);
+            this.AddMovieGenreLabel.Name = "AddMovieGenreLabel";
+            this.AddMovieGenreLabel.Size = new System.Drawing.Size(109, 20);
+            this.AddMovieGenreLabel.TabIndex = 1;
+            this.AddMovieGenreLabel.Text = "Movie Genre:";
+            // 
+            // AddMovieNameLabel
+            // 
+            this.AddMovieNameLabel.AutoSize = true;
+            this.AddMovieNameLabel.Location = new System.Drawing.Point(75, 49);
+            this.AddMovieNameLabel.Name = "AddMovieNameLabel";
+            this.AddMovieNameLabel.Size = new System.Drawing.Size(107, 20);
+            this.AddMovieNameLabel.TabIndex = 0;
+            this.AddMovieNameLabel.Text = "Movie Name:";
+            // 
             // RentalsTabPage
             // 
             this.RentalsTabPage.Controls.Add(this.rentCustSearchPanel);
@@ -1407,13 +1693,154 @@
             this.RentalsTabPage.Text = "Rentals";
             this.RentalsTabPage.UseVisualStyleBackColor = true;
             // 
+            // rentCustSearchPanel
+            // 
+            this.rentCustSearchPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.rentCustSearchPanel.Controls.Add(this.rentCustViewBttn);
+            this.rentCustSearchPanel.Controls.Add(this.RentCustSearchRadiosPanel);
+            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchDGV);
+            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchBttn);
+            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchTB);
+            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchLabel);
+            this.rentCustSearchPanel.Location = new System.Drawing.Point(0, 3);
+            this.rentCustSearchPanel.Name = "rentCustSearchPanel";
+            this.rentCustSearchPanel.Size = new System.Drawing.Size(878, 503);
+            this.rentCustSearchPanel.TabIndex = 0;
+            // 
+            // rentCustViewBttn
+            // 
+            this.rentCustViewBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentCustViewBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.rentCustViewBttn.ForeColor = System.Drawing.Color.White;
+            this.rentCustViewBttn.Location = new System.Drawing.Point(588, 411);
+            this.rentCustViewBttn.Name = "rentCustViewBttn";
+            this.rentCustViewBttn.Size = new System.Drawing.Size(208, 43);
+            this.rentCustViewBttn.TabIndex = 7;
+            this.rentCustViewBttn.Text = "View Customer Rental Profile";
+            this.rentCustViewBttn.UseVisualStyleBackColor = false;
+            this.rentCustViewBttn.Click += new System.EventHandler(this.rentCustViewBttn_Click);
+            // 
+            // RentCustSearchRadiosPanel
+            // 
+            this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByEmailRadio);
+            this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByIdRadio);
+            this.RentCustSearchRadiosPanel.Controls.Add(this.rentCustByNameRadio);
+            this.RentCustSearchRadiosPanel.Location = new System.Drawing.Point(588, 121);
+            this.RentCustSearchRadiosPanel.Name = "RentCustSearchRadiosPanel";
+            this.RentCustSearchRadiosPanel.Size = new System.Drawing.Size(208, 96);
+            this.RentCustSearchRadiosPanel.TabIndex = 6;
+            // 
+            // rentCustByEmailRadio
+            // 
+            this.rentCustByEmailRadio.AutoSize = true;
+            this.rentCustByEmailRadio.Location = new System.Drawing.Point(17, 70);
+            this.rentCustByEmailRadio.Name = "rentCustByEmailRadio";
+            this.rentCustByEmailRadio.Size = new System.Drawing.Size(175, 24);
+            this.rentCustByEmailRadio.TabIndex = 4;
+            this.rentCustByEmailRadio.Text = "By Customer Email";
+            this.rentCustByEmailRadio.UseVisualStyleBackColor = true;
+            // 
+            // rentCustByIdRadio
+            // 
+            this.rentCustByIdRadio.AutoSize = true;
+            this.rentCustByIdRadio.Checked = true;
+            this.rentCustByIdRadio.Location = new System.Drawing.Point(17, 15);
+            this.rentCustByIdRadio.Name = "rentCustByIdRadio";
+            this.rentCustByIdRadio.Size = new System.Drawing.Size(150, 24);
+            this.rentCustByIdRadio.TabIndex = 2;
+            this.rentCustByIdRadio.TabStop = true;
+            this.rentCustByIdRadio.Text = "By Customer ID";
+            this.rentCustByIdRadio.UseVisualStyleBackColor = true;
+            // 
+            // rentCustByNameRadio
+            // 
+            this.rentCustByNameRadio.AutoSize = true;
+            this.rentCustByNameRadio.Location = new System.Drawing.Point(17, 43);
+            this.rentCustByNameRadio.Name = "rentCustByNameRadio";
+            this.rentCustByNameRadio.Size = new System.Drawing.Size(215, 24);
+            this.rentCustByNameRadio.TabIndex = 3;
+            this.rentCustByNameRadio.Text = "By Customer Last Name";
+            this.rentCustByNameRadio.UseVisualStyleBackColor = true;
+            // 
+            // rentCustSearchDGV
+            // 
+            this.rentCustSearchDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentCustSearchDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentCustSearchIdHeader,
+            this.rentCustSearchNameHeader,
+            this.rentCustSearchAcctHeader,
+            this.rentCustSearchEmailHeader});
+            this.rentCustSearchDGV.Location = new System.Drawing.Point(26, 121);
+            this.rentCustSearchDGV.Name = "rentCustSearchDGV";
+            this.rentCustSearchDGV.RowHeadersWidth = 51;
+            this.rentCustSearchDGV.Size = new System.Drawing.Size(526, 252);
+            this.rentCustSearchDGV.TabIndex = 5;
+            // 
+            // rentCustSearchIdHeader
+            // 
+            this.rentCustSearchIdHeader.HeaderText = "Customer ID";
+            this.rentCustSearchIdHeader.MinimumWidth = 6;
+            this.rentCustSearchIdHeader.Name = "rentCustSearchIdHeader";
+            this.rentCustSearchIdHeader.Width = 125;
+            // 
+            // rentCustSearchNameHeader
+            // 
+            this.rentCustSearchNameHeader.HeaderText = "Last Name";
+            this.rentCustSearchNameHeader.MinimumWidth = 6;
+            this.rentCustSearchNameHeader.Name = "rentCustSearchNameHeader";
+            this.rentCustSearchNameHeader.Width = 125;
+            // 
+            // rentCustSearchAcctHeader
+            // 
+            this.rentCustSearchAcctHeader.HeaderText = "Account Number";
+            this.rentCustSearchAcctHeader.MinimumWidth = 6;
+            this.rentCustSearchAcctHeader.Name = "rentCustSearchAcctHeader";
+            this.rentCustSearchAcctHeader.Width = 125;
+            // 
+            // rentCustSearchEmailHeader
+            // 
+            this.rentCustSearchEmailHeader.HeaderText = "Email";
+            this.rentCustSearchEmailHeader.MinimumWidth = 6;
+            this.rentCustSearchEmailHeader.Name = "rentCustSearchEmailHeader";
+            this.rentCustSearchEmailHeader.Width = 125;
+            // 
+            // rentCustSearchBttn
+            // 
+            this.rentCustSearchBttn.BackColor = System.Drawing.Color.SteelBlue;
+            this.rentCustSearchBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.rentCustSearchBttn.ForeColor = System.Drawing.Color.White;
+            this.rentCustSearchBttn.Location = new System.Drawing.Point(588, 56);
+            this.rentCustSearchBttn.Name = "rentCustSearchBttn";
+            this.rentCustSearchBttn.Size = new System.Drawing.Size(138, 43);
+            this.rentCustSearchBttn.TabIndex = 4;
+            this.rentCustSearchBttn.Text = "Search";
+            this.rentCustSearchBttn.UseVisualStyleBackColor = false;
+            this.rentCustSearchBttn.Click += new System.EventHandler(this.rentCustSearchBttn_Click);
+            // 
+            // rentCustSearchTB
+            // 
+            this.rentCustSearchTB.Location = new System.Drawing.Point(26, 56);
+            this.rentCustSearchTB.Name = "rentCustSearchTB";
+            this.rentCustSearchTB.Size = new System.Drawing.Size(526, 26);
+            this.rentCustSearchTB.TabIndex = 1;
+            // 
+            // rentCustSearchLabel
+            // 
+            this.rentCustSearchLabel.AutoSize = true;
+            this.rentCustSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.rentCustSearchLabel.Location = new System.Drawing.Point(22, 19);
+            this.rentCustSearchLabel.Name = "rentCustSearchLabel";
+            this.rentCustSearchLabel.Size = new System.Drawing.Size(180, 25);
+            this.rentCustSearchLabel.TabIndex = 0;
+            this.rentCustSearchLabel.Text = "Customer Search";
+            // 
             // rentDispensePanel
             // 
             this.rentDispensePanel.BackColor = System.Drawing.Color.AliceBlue;
             this.rentDispensePanel.Controls.Add(this.rentCustHistoryDGV);
-            this.rentDispensePanel.Controls.Add(this.label2);
+            this.rentDispensePanel.Controls.Add(this.RentalHistoryLabel);
             this.rentDispensePanel.Controls.Add(this.rentCustQueueDGV);
-            this.rentDispensePanel.Controls.Add(this.label1);
+            this.rentDispensePanel.Controls.Add(this.RentQueueLabel);
             this.rentDispensePanel.Controls.Add(this.rentCustIdResultLabel);
             this.rentDispensePanel.Controls.Add(this.rentCustIdLabel);
             this.rentDispensePanel.Controls.Add(this.rentAcctResultLabel);
@@ -1425,7 +1852,7 @@
             this.rentDispensePanel.Controls.Add(this.rentEmailLabel);
             this.rentDispensePanel.Controls.Add(this.rentFirstNameLabel);
             this.rentDispensePanel.Controls.Add(this.rentCancelBttn);
-            this.rentDispensePanel.Controls.Add(this.label5);
+            this.rentDispensePanel.Controls.Add(this.CustRentProfileLabel);
             this.rentDispensePanel.Controls.Add(this.rentLastNameLabel);
             this.rentDispensePanel.Location = new System.Drawing.Point(3, 3);
             this.rentDispensePanel.Name = "rentDispensePanel";
@@ -1483,16 +1910,16 @@
             this.rentHistReturnD.Name = "rentHistReturnD";
             this.rentHistReturnD.Width = 125;
             // 
-            // label2
+            // RentalHistoryLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(310, 200);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 20);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Rental History";
+            this.RentalHistoryLabel.AutoSize = true;
+            this.RentalHistoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.RentalHistoryLabel.Location = new System.Drawing.Point(310, 200);
+            this.RentalHistoryLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.RentalHistoryLabel.Name = "RentalHistoryLabel";
+            this.RentalHistoryLabel.Size = new System.Drawing.Size(130, 20);
+            this.RentalHistoryLabel.TabIndex = 43;
+            this.RentalHistoryLabel.Text = "Rental History";
             // 
             // rentCustQueueDGV
             // 
@@ -1512,16 +1939,16 @@
             this.queueMovieID.Name = "queueMovieID";
             this.queueMovieID.Width = 125;
             // 
-            // label1
+            // RentQueueLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(34, 200);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Queue";
+            this.RentQueueLabel.AutoSize = true;
+            this.RentQueueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.RentQueueLabel.Location = new System.Drawing.Point(34, 200);
+            this.RentQueueLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.RentQueueLabel.Name = "RentQueueLabel";
+            this.RentQueueLabel.Size = new System.Drawing.Size(63, 20);
+            this.RentQueueLabel.TabIndex = 41;
+            this.RentQueueLabel.Text = "Queue";
             // 
             // rentCustIdResultLabel
             // 
@@ -1643,16 +2070,16 @@
             this.rentCancelBttn.UseVisualStyleBackColor = false;
             this.rentCancelBttn.Click += new System.EventHandler(this.rentCancelBttn_Click);
             // 
-            // label5
+            // CustRentProfileLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 27);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 25);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Customer Rental Profile";
+            this.CustRentProfileLabel.AutoSize = true;
+            this.CustRentProfileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustRentProfileLabel.Location = new System.Drawing.Point(33, 27);
+            this.CustRentProfileLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CustRentProfileLabel.Name = "CustRentProfileLabel";
+            this.CustRentProfileLabel.Size = new System.Drawing.Size(239, 25);
+            this.CustRentProfileLabel.TabIndex = 26;
+            this.CustRentProfileLabel.Text = "Customer Rental Profile";
             // 
             // rentLastNameLabel
             // 
@@ -1663,147 +2090,6 @@
             this.rentLastNameLabel.TabIndex = 0;
             this.rentLastNameLabel.Text = "Last Name:";
             // 
-            // rentCustSearchPanel
-            // 
-            this.rentCustSearchPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.rentCustSearchPanel.Controls.Add(this.rentCustViewBttn);
-            this.rentCustSearchPanel.Controls.Add(this.panel1);
-            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchDGV);
-            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchBttn);
-            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchTB);
-            this.rentCustSearchPanel.Controls.Add(this.rentCustSearchLabel);
-            this.rentCustSearchPanel.Location = new System.Drawing.Point(0, 3);
-            this.rentCustSearchPanel.Name = "rentCustSearchPanel";
-            this.rentCustSearchPanel.Size = new System.Drawing.Size(878, 503);
-            this.rentCustSearchPanel.TabIndex = 0;
-            // 
-            // rentCustViewBttn
-            // 
-            this.rentCustViewBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentCustViewBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.rentCustViewBttn.ForeColor = System.Drawing.Color.White;
-            this.rentCustViewBttn.Location = new System.Drawing.Point(588, 411);
-            this.rentCustViewBttn.Name = "rentCustViewBttn";
-            this.rentCustViewBttn.Size = new System.Drawing.Size(208, 43);
-            this.rentCustViewBttn.TabIndex = 7;
-            this.rentCustViewBttn.Text = "View Customer Rental Profile";
-            this.rentCustViewBttn.UseVisualStyleBackColor = false;
-            this.rentCustViewBttn.Click += new System.EventHandler(this.rentCustViewBttn_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.rentCustByEmailRadio);
-            this.panel1.Controls.Add(this.rentCustByIdRadio);
-            this.panel1.Controls.Add(this.rentCustByNameRadio);
-            this.panel1.Location = new System.Drawing.Point(588, 121);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 96);
-            this.panel1.TabIndex = 6;
-            // 
-            // rentCustByEmailRadio
-            // 
-            this.rentCustByEmailRadio.AutoSize = true;
-            this.rentCustByEmailRadio.Location = new System.Drawing.Point(17, 70);
-            this.rentCustByEmailRadio.Name = "rentCustByEmailRadio";
-            this.rentCustByEmailRadio.Size = new System.Drawing.Size(175, 24);
-            this.rentCustByEmailRadio.TabIndex = 4;
-            this.rentCustByEmailRadio.Text = "By Customer Email";
-            this.rentCustByEmailRadio.UseVisualStyleBackColor = true;
-            // 
-            // rentCustByIdRadio
-            // 
-            this.rentCustByIdRadio.AutoSize = true;
-            this.rentCustByIdRadio.Checked = true;
-            this.rentCustByIdRadio.Location = new System.Drawing.Point(17, 15);
-            this.rentCustByIdRadio.Name = "rentCustByIdRadio";
-            this.rentCustByIdRadio.Size = new System.Drawing.Size(150, 24);
-            this.rentCustByIdRadio.TabIndex = 2;
-            this.rentCustByIdRadio.TabStop = true;
-            this.rentCustByIdRadio.Text = "By Customer ID";
-            this.rentCustByIdRadio.UseVisualStyleBackColor = true;
-            // 
-            // rentCustByNameRadio
-            // 
-            this.rentCustByNameRadio.AutoSize = true;
-            this.rentCustByNameRadio.Location = new System.Drawing.Point(17, 43);
-            this.rentCustByNameRadio.Name = "rentCustByNameRadio";
-            this.rentCustByNameRadio.Size = new System.Drawing.Size(215, 24);
-            this.rentCustByNameRadio.TabIndex = 3;
-            this.rentCustByNameRadio.Text = "By Customer Last Name";
-            this.rentCustByNameRadio.UseVisualStyleBackColor = true;
-            // 
-            // rentCustSearchDGV
-            // 
-            this.rentCustSearchDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentCustSearchDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rentCustSearchIdHeader,
-            this.rentCustSearchNameHeader,
-            this.rentCustSearchAcctHeader,
-            this.rentCustSearchEmailHeader});
-            this.rentCustSearchDGV.Location = new System.Drawing.Point(26, 121);
-            this.rentCustSearchDGV.Name = "rentCustSearchDGV";
-            this.rentCustSearchDGV.RowHeadersWidth = 51;
-            this.rentCustSearchDGV.Size = new System.Drawing.Size(526, 252);
-            this.rentCustSearchDGV.TabIndex = 5;
-            // 
-            // rentCustSearchIdHeader
-            // 
-            this.rentCustSearchIdHeader.HeaderText = "Customer ID";
-            this.rentCustSearchIdHeader.MinimumWidth = 6;
-            this.rentCustSearchIdHeader.Name = "rentCustSearchIdHeader";
-            this.rentCustSearchIdHeader.Width = 125;
-            // 
-            // rentCustSearchNameHeader
-            // 
-            this.rentCustSearchNameHeader.HeaderText = "Last Name";
-            this.rentCustSearchNameHeader.MinimumWidth = 6;
-            this.rentCustSearchNameHeader.Name = "rentCustSearchNameHeader";
-            this.rentCustSearchNameHeader.Width = 125;
-            // 
-            // rentCustSearchAcctHeader
-            // 
-            this.rentCustSearchAcctHeader.HeaderText = "Account Number";
-            this.rentCustSearchAcctHeader.MinimumWidth = 6;
-            this.rentCustSearchAcctHeader.Name = "rentCustSearchAcctHeader";
-            this.rentCustSearchAcctHeader.Width = 125;
-            // 
-            // rentCustSearchEmailHeader
-            // 
-            this.rentCustSearchEmailHeader.HeaderText = "Email";
-            this.rentCustSearchEmailHeader.MinimumWidth = 6;
-            this.rentCustSearchEmailHeader.Name = "rentCustSearchEmailHeader";
-            this.rentCustSearchEmailHeader.Width = 125;
-            // 
-            // rentCustSearchBttn
-            // 
-            this.rentCustSearchBttn.BackColor = System.Drawing.Color.SteelBlue;
-            this.rentCustSearchBttn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.rentCustSearchBttn.ForeColor = System.Drawing.Color.White;
-            this.rentCustSearchBttn.Location = new System.Drawing.Point(588, 56);
-            this.rentCustSearchBttn.Name = "rentCustSearchBttn";
-            this.rentCustSearchBttn.Size = new System.Drawing.Size(138, 43);
-            this.rentCustSearchBttn.TabIndex = 4;
-            this.rentCustSearchBttn.Text = "Search";
-            this.rentCustSearchBttn.UseVisualStyleBackColor = false;
-            this.rentCustSearchBttn.Click += new System.EventHandler(this.rentCustSearchBttn_Click);
-            // 
-            // rentCustSearchTB
-            // 
-            this.rentCustSearchTB.Location = new System.Drawing.Point(26, 56);
-            this.rentCustSearchTB.Name = "rentCustSearchTB";
-            this.rentCustSearchTB.Size = new System.Drawing.Size(526, 26);
-            this.rentCustSearchTB.TabIndex = 1;
-            // 
-            // rentCustSearchLabel
-            // 
-            this.rentCustSearchLabel.AutoSize = true;
-            this.rentCustSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.rentCustSearchLabel.Location = new System.Drawing.Point(22, 19);
-            this.rentCustSearchLabel.Name = "rentCustSearchLabel";
-            this.rentCustSearchLabel.Size = new System.Drawing.Size(180, 25);
-            this.rentCustSearchLabel.TabIndex = 0;
-            this.rentCustSearchLabel.Text = "Customer Search";
-            // 
             // ReportsTabPage
             // 
             this.ReportsTabPage.Location = new System.Drawing.Point(4, 29);
@@ -1813,40 +2099,6 @@
             this.ReportsTabPage.TabIndex = 4;
             this.ReportsTabPage.Text = "Reports";
             this.ReportsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ActorRadioButton
-            // 
-            this.ActorRadioButton.AutoSize = true;
-            this.ActorRadioButton.Location = new System.Drawing.Point(594, 169);
-            this.ActorRadioButton.Name = "ActorRadioButton";
-            this.ActorRadioButton.Size = new System.Drawing.Size(150, 24);
-            this.ActorRadioButton.TabIndex = 19;
-            this.ActorRadioButton.TabStop = true;
-            this.ActorRadioButton.Text = "Search by Actor";
-            this.ActorRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // TitleRadioButton
-            // 
-            this.TitleRadioButton.AutoSize = true;
-            this.TitleRadioButton.Checked = true;
-            this.TitleRadioButton.Location = new System.Drawing.Point(594, 134);
-            this.TitleRadioButton.Name = "TitleRadioButton";
-            this.TitleRadioButton.Size = new System.Drawing.Size(142, 24);
-            this.TitleRadioButton.TabIndex = 20;
-            this.TitleRadioButton.TabStop = true;
-            this.TitleRadioButton.Text = "Search by Title";
-            this.TitleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // GenreRadioButton
-            // 
-            this.GenreRadioButton.AutoSize = true;
-            this.GenreRadioButton.Location = new System.Drawing.Point(594, 204);
-            this.GenreRadioButton.Name = "GenreRadioButton";
-            this.GenreRadioButton.Size = new System.Drawing.Size(156, 24);
-            this.GenreRadioButton.TabIndex = 21;
-            this.GenreRadioButton.TabStop = true;
-            this.GenreRadioButton.Text = "Search by Genre";
-            this.GenreRadioButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1864,27 +2116,31 @@
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.CustomersTabPage.ResumeLayout(false);
-            this.AddCustomerPanel.ResumeLayout(false);
-            this.AddCustomerPanel.PerformLayout();
             this.SearchCustomerPanel.ResumeLayout(false);
             this.SearchCustomerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customer)).EndInit();
             this.ViewCustomerPanel.ResumeLayout(false);
             this.ViewCustomerPanel.PerformLayout();
+            this.AddCustomerPanel.ResumeLayout(false);
+            this.AddCustomerPanel.PerformLayout();
             this.MoviesTabPage.ResumeLayout(false);
             this.SearchMoviePanel.ResumeLayout(false);
             this.SearchMoviePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovieDetailsGrid)).EndInit();
+            this.EditMoviePanel.ResumeLayout(false);
+            this.EditMoviePanel.PerformLayout();
+            this.AddMoviePanel.ResumeLayout(false);
+            this.AddMoviePanel.PerformLayout();
             this.RentalsTabPage.ResumeLayout(false);
+            this.rentCustSearchPanel.ResumeLayout(false);
+            this.rentCustSearchPanel.PerformLayout();
+            this.RentCustSearchRadiosPanel.ResumeLayout(false);
+            this.RentCustSearchRadiosPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).EndInit();
             this.rentDispensePanel.ResumeLayout(false);
             this.rentDispensePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustHistoryDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCustQueueDGV)).EndInit();
-            this.rentCustSearchPanel.ResumeLayout(false);
-            this.rentCustSearchPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCustSearchDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1991,7 +2247,7 @@
         private System.Windows.Forms.ListBox VUPhoneListBox;
         private System.Windows.Forms.Panel rentCustSearchPanel;
         private System.Windows.Forms.Button rentCustViewBttn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel RentCustSearchRadiosPanel;
         private System.Windows.Forms.RadioButton rentCustByEmailRadio;
         private System.Windows.Forms.RadioButton rentCustByIdRadio;
         private System.Windows.Forms.RadioButton rentCustByNameRadio;
@@ -2010,16 +2266,16 @@
         private System.Windows.Forms.Label rentEmailLabel;
         private System.Windows.Forms.Label rentFirstNameLabel;
         private System.Windows.Forms.Button rentCancelBttn;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label CustRentProfileLabel;
         private System.Windows.Forms.Label rentEmailResultLabel;
         private System.Windows.Forms.Label rentLNResultLabel;
         private System.Windows.Forms.Label rentFNResultLabel;
         private System.Windows.Forms.Label rentAcctResultLabel;
         private System.Windows.Forms.Label rentCustIdResultLabel;
         private System.Windows.Forms.Label rentCustIdLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label RentQueueLabel;
         private System.Windows.Forms.DataGridView rentCustHistoryDGV;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label RentalHistoryLabel;
         private System.Windows.Forms.DataGridView rentCustQueueDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn queueMovieID;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentHistID;
@@ -2034,9 +2290,31 @@
         private System.Windows.Forms.RadioButton ActorRadioButton;
         private System.Windows.Forms.RadioButton GenreRadioButton;
         private System.Windows.Forms.RadioButton TitleRadioButton;
-        //private System.Windows.Forms.RadioButton radioButton3;
-        //private System.Windows.Forms.RadioButton radioButton2;
-        //private System.Windows.Forms.RadioButton radioButton1;
+        // ADDED HERE
+        private System.Windows.Forms.Panel EditMoviePanel;
+        private System.Windows.Forms.Label EditMovieFeeLabel;
+        private System.Windows.Forms.Label EditMovieCopiesLabel;
+        private System.Windows.Forms.Label EditMovieGenreLabel;
+        private System.Windows.Forms.TextBox EditMovieFeeTextbox;
+        private System.Windows.Forms.TextBox EditMovieCopiesTextbox;
+        private System.Windows.Forms.TextBox EditMovieGenreTextbox;
+        private System.Windows.Forms.TextBox EditMovieNameTextbox;
+        private System.Windows.Forms.Label EditMovieNameLabel;
+        private System.Windows.Forms.Button CancelEditMovieButton;
+        private System.Windows.Forms.Button SaveMovieChangesButton;
+        private System.Windows.Forms.Label EditMovieIDLabel;
+        private System.Windows.Forms.Panel AddMoviePanel;
+        private System.Windows.Forms.Button CancelAddMovieButton;
+        private System.Windows.Forms.Button SaveNewMovieButton;
+        private System.Windows.Forms.TextBox AddMovieFeeTextbox;
+        private System.Windows.Forms.TextBox AddMovieCopiesTextbox;
+        private System.Windows.Forms.TextBox AddMovieGenreTextbox;
+        private System.Windows.Forms.TextBox AddMovieNameTextbox;
+        private System.Windows.Forms.Label AddMovieFeeLabel;
+        private System.Windows.Forms.Label AddMovieCopiesLabel;
+        private System.Windows.Forms.Label AddMovieGenreLabel;
+        private System.Windows.Forms.Label AddMovieNameLabel;
+        // STOP
     }
 }
 
