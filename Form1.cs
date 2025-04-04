@@ -562,32 +562,51 @@ namespace CMPT291_Project
 
         private void label1_Click_1(object sender, EventArgs e)
         {
+            string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            string[] phoneNumbers;
 
+            // Update record in Customer table
+            myCommand.CommandText = "update Customer set FirstName = '" + VUFirstNameTextbox.Text + "', LastName = '" + VULastNameTextbox.Text +
+                "', EmailAddress = '" + VUEmailTextbox.Text + "', CreditCardNum = '" + VUCreditTextbox.Text + "', AcctNum = " +
+                VUAcctNumTextbox.Text + ", Address = '" + VUAddressTextbox.Text + "', City = '" + VUCityTextbox.Text + "', Province = '" +
+                VUProvinceComboBox.Text + "', PostalCode = '" + VUPostalCodeTextbox.Text + "' where CustomerID = " + customerID;
+
+            myCommand.ExecuteNonQuery();
+
+            // Update records in CustomerPhone table
+            myCommand.CommandText = "delete from CustomerPhone where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+
+            if (VUPhoneListBox.Items.Count > 0)
+            {
+                for (int i = 0; i < VUPhoneListBox.Items.Count; i++)
+                {
+                    myCommand.CommandText = "insert into CustomerPhone (CustomerID, PhoneNum, PhoneType) values (" + customerID + ", '";
+
+                    phoneNumbers = VUPhoneListBox.Items[i].ToString().Split(' ');
+                    myCommand.CommandText += phoneNumbers[0] + "', '" + phoneNumbers[2] + "')";
+
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Customer information has been updated.");
+
+            // Change screens back to search screen
+            SearchCustomerPanel.Visible = true;
+            SearchButton.PerformClick();
+            ViewCustomerPanel.Visible = false;
+            AddCustomerPanel.Visible = false;
         }
 
-        private void EditMoviesButton_Click(object sender, EventArgs e)
+        private void VUPhoneListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            VUDeletePhoneButton.Enabled = (VUPhoneListBox.SelectedItem != null);
         }
 
-        private void MovieSearchTextBox_TextChanged(object sender, EventArgs e)
+        private void VUDeletePhoneButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void MovieSearchbutton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MoviesDisplayed_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DeleteMovieButton_Click(object sender, EventArgs e)
-        {
-
+            VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
         }
 
 
@@ -760,6 +779,7 @@ namespace CMPT291_Project
         }
 
 
+
         private void LoadQueueUPData()
         {
             rentCustQueueDGV.Columns.Clear();
@@ -783,144 +803,155 @@ namespace CMPT291_Project
         {
             // Test
             // test  2
-        }
 
-        //private void MovieSearchbutton_Click(object sender, EventArgs e)
-        //{
-        //    // Check connection (using class-level variable, not local)
-        //    if (this.myConnection == null || this.myConnection.State != ConnectionState.Open)
-        //    {
-        //        MessageBox.Show("Database connection is not initialized or open.");
-        //        return;
-        //    }
 
-        //    string userInput = MovieSearchTextBox.Text.Trim();
-        //    string query = "";
+        // MOVIE FEATURE CODE
 
-        //    if (radioButton1.Checked) // Search by Actor
-        //    {
-        //        query = @"
-        //    SELECT DISTINCT M.MovieID, M.Name, M.Type, M.NumCopies, M.DistributionFee
-        //    FROM Movie M
-        //    JOIN AppearedIn AI ON M.MovieID = AI.MovieID
-        //    JOIN Actor A ON AI.ActorID = A.ActorID
-        //    WHERE A.Name LIKE @search";
-        //    }
-        //    else if (radioButton2.Checked) // Search by Title
-        //    {
-        //        query = @"
-        //    SELECT MovieID, Name, Type, NumCopies, DistributionFee
-        //    FROM Movie
-        //    WHERE Name LIKE @search";
-        //    }
-        //    else if (radioButton3.Checked) // Search by Genre
-        //    {
-        //        query = @"
-        //    SELECT MovieID, Name, Type, NumCopies, DistributionFee
-        //    FROM Movie
-        //    WHERE Type LIKE @search";
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Please select a search filter (Actor, Title, Genre).");
-        //        return;
-        //    }
-
-        //    try
-        //    {
-        //        using (SqlCommand cmd = new SqlCommand(query, this.myConnection))
-        //        {
-        //            cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
-
-        //            using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-        //            {
-        //                DataTable dt = new DataTable();
-        //                adapter.Fill(dt);
-        //                MovieDetailsGrid.DataSource = dt;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error loading movies: " + ex.Message);
-        //    }
-        //}
-
-        private void AddMovieButton_Click(object sender, EventArgs e)
+        private void MovieSearchButton_Click(object sender, EventArgs e)
         {
+            // Check connection (using class-level variable, not local)
+            if (this.myConnection == null || this.myConnection.State != ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not initialized or open.");
+                return;
+            }
+
+            string userInput = MovieSearchTextBox.Text.Trim();
+            string query = "";
+
+            if (ActorRadioButton.Checked) // Search by Actor
+            {
+                query = @"
+            SELECT DISTINCT M.MovieID, M.Name, M.Type, M.NumCopies, M.DistributionFee
+            FROM Movie M
+            JOIN AppearedIn AI ON M.MovieID = AI.MovieID
+            JOIN Actor A ON AI.ActorID = A.ActorID
+            WHERE A.Name LIKE @search";
+            }
+            else if (TitleRadioButton.Checked) // Search by Title
+            {
+                query = @"
+            SELECT MovieID, Name, Type, NumCopies, DistributionFee
+            FROM Movie
+            WHERE Name LIKE @search";
+            }
+            else if (GenreRadioButton.Checked) // Search by Genre
+            {
+                query = @"
+            SELECT MovieID, Name, Type, NumCopies, DistributionFee
+            FROM Movie
+            WHERE Type LIKE @search";
+            }
+            //else
+            //{
+            //    MessageBox.Show("Please select a search filter (Actor, Title, Genre).");
+            //    return;
+            //}
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, this.myConnection))
+                {
+                    cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        MovieDetailsGrid.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading movies: " + ex.Message);
+            }
+        }
+
+        private void AddMovieButton_Click(object sender, EventArgs e) // ADDED CODE FROM KOVIDH'S BRANCH
+        {
+            AddMovieNameTextbox.Text = "";
+            AddMovieGenreTextbox.Text = "";
+            AddMovieCopiesTextbox.Text = "";
+            AddMovieFeeTextbox.Text = "";
+
+            SearchMoviePanel.Visible = false;
+            AddMoviePanel.Visible = true;
+        }
+
+        private void DeleteMovieButton_Click(object sender, EventArgs e)
+        {
+            if (MovieDetailsGrid.SelectedRows.Count > 0)
+            {
+                string movieId = MovieDetailsGrid.SelectedRows[0].Cells["MovieID"].Value.ToString();
+
+                DialogResult confirm = MessageBox.Show("Are you sure you want to delete this movie?",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Start a transaction to ensure all deletes succeed or fail together
+                        SqlTransaction transaction = myConnection.BeginTransaction();
+
+                        try
+                        {
+                            // First delete related records in child tables
+                            // 1. Delete from RateActor (through Rental)
+                            myCommand.CommandText = @"
+                        DELETE FROM RateActor 
+                        WHERE RentalID IN (
+                            SELECT RentalID FROM Rental WHERE MovieID = @MovieID
+                        )";
+                            myCommand.Parameters.Clear();
+                            myCommand.Parameters.AddWithValue("@MovieID", movieId);
+                            myCommand.Transaction = transaction;
+                            myCommand.ExecuteNonQuery();
+
+                            // 2. Delete from Rental
+                            myCommand.CommandText = "DELETE FROM Rental WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // 3. Delete from QueueUp
+                            myCommand.CommandText = "DELETE FROM QueueUp WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // 4. Delete from AppearedIn
+                            myCommand.CommandText = "DELETE FROM AppearedIn WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            // Finally delete the movie itself
+                            myCommand.CommandText = "DELETE FROM Movie WHERE MovieID = @MovieID";
+                            myCommand.ExecuteNonQuery();
+
+                            transaction.Commit();
+                            MessageBox.Show("Movie deleted successfully.");
+
+                            // Refresh the movie list
+                            //MovieSearchbutton_Click(null, null);
+                            MovieSearchButton.PerformClick();
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Error deleting movie: " + ex.Message);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error starting transaction: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a movie to delete.");
+            }
 
         }
 
-        //private void DeleteMovieButton_Click(object sender, EventArgs e)
-        //{
-        //    if (MovieDetailsGrid.SelectedRows.Count > 0)
-        //    {
-        //        string movieId = MovieDetailsGrid.SelectedRows[0].Cells["MovieID"].Value.ToString();
-
-        //        DialogResult confirm = MessageBox.Show("Are you sure you want to delete this movie?",
-        //                                            "Confirm Delete",
-        //                                            MessageBoxButtons.YesNo);
-
-        //        if (confirm == DialogResult.Yes)
-        //        {
-        //            try
-        //            {
-        //                // Start a transaction to ensure all deletes succeed or fail together
-        //                SqlTransaction transaction = myConnection.BeginTransaction();
-
-        //                try
-        //                {
-        //                    // First delete related records in child tables
-        //                    // 1. Delete from RateActor (through Rental)
-        //                    myCommand.CommandText = @"
-        //                DELETE FROM RateActor 
-        //                WHERE RentalID IN (
-        //                    SELECT RentalID FROM Rental WHERE MovieID = @MovieID
-        //                )";
-        //                    myCommand.Parameters.Clear();
-        //                    myCommand.Parameters.AddWithValue("@MovieID", movieId);
-        //                    myCommand.Transaction = transaction;
-        //                    myCommand.ExecuteNonQuery();
-
-        //                    // 2. Delete from Rental
-        //                    myCommand.CommandText = "DELETE FROM Rental WHERE MovieID = @MovieID";
-        //                    myCommand.ExecuteNonQuery();
-
-        //                    // 3. Delete from QueueUp
-        //                    myCommand.CommandText = "DELETE FROM QueueUp WHERE MovieID = @MovieID";
-        //                    myCommand.ExecuteNonQuery();
-
-        //                    // 4. Delete from AppearedIn
-        //                    myCommand.CommandText = "DELETE FROM AppearedIn WHERE MovieID = @MovieID";
-        //                    myCommand.ExecuteNonQuery();
-
-        //                    // Finally delete the movie itself
-        //                    myCommand.CommandText = "DELETE FROM Movie WHERE MovieID = @MovieID";
-        //                    myCommand.ExecuteNonQuery();
-
-        //                    transaction.Commit();
-        //                    MessageBox.Show("Movie deleted successfully.");
-
-        //                    // Refresh the movie list
-        //                    MovieSearchbutton_Click(null, null);
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    transaction.Rollback();
-        //                    MessageBox.Show("Error deleting movie: " + ex.Message);
-        //                }
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                MessageBox.Show("Error starting transaction: " + ex.Message);
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Please select a movie to delete.");
-        //    }
-        //}
         private void LoadAllMovies()
         {
             string query = "SELECT MovieID, MovieName, MovieGenre, NumCopies, NumRented, DistributionFee FROM Movie";
@@ -930,5 +961,110 @@ namespace CMPT291_Project
             MovieDetailsGrid.DataSource = dt;
         }
 
+        private void EditMoviesButton_Click(object sender, EventArgs e) // ADDED CODE FROM KOVIDH'S BRANCH
+        {
+            if (MovieDetailsGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = MovieDetailsGrid.SelectedRows[0];
+
+                EditMovieIDLabel.Text = selectedRow.Cells["MovieID"].Value.ToString();
+                EditMovieNameTextbox.Text = selectedRow.Cells["Name"].Value.ToString();
+                EditMovieGenreTextbox.Text = selectedRow.Cells["Type"].Value.ToString();
+                EditMovieCopiesTextbox.Text = selectedRow.Cells["NumCopies"].Value.ToString();
+                EditMovieFeeTextbox.Text = selectedRow.Cells["DistributionFee"].Value.ToString();
+
+                SearchMoviePanel.Visible = false;
+                EditMoviePanel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Please select a movie to edit.");
+            }
+        }
+
+        private void SaveMovieChangesButton_Click(object sender, EventArgs e) // ADDED CODE FROM KOVIDH'S BRANCH
+        {
+            string movieId = EditMovieIDLabel.Text;
+            string newName = EditMovieNameTextbox.Text;
+            string newGenre = EditMovieGenreTextbox.Text;
+            int newCopies = int.Parse(EditMovieCopiesTextbox.Text);
+            decimal newFee = decimal.Parse(EditMovieFeeTextbox.Text);
+
+            try
+            {
+                string query = "UPDATE Movie SET Name = @name, Type = @genre, NumCopies = @copies, DistributionFee = @fee WHERE MovieID = @id";
+                using (SqlCommand cmd = new SqlCommand(query, myConnection))
+                {
+                    cmd.Parameters.AddWithValue("@name", newName);
+                    cmd.Parameters.AddWithValue("@genre", newGenre);
+                    cmd.Parameters.AddWithValue("@copies", newCopies);
+                    cmd.Parameters.AddWithValue("@fee", newFee);
+                    cmd.Parameters.AddWithValue("@id", movieId);
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Movie details updated.");
+                SearchMoviePanel.Visible = true;
+                EditMoviePanel.Visible = false;
+                MovieSearchButton.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating movie: " + ex.Message);
+            }
+        }
+
+        private void CancelEditMovieButton_Click(object sender, EventArgs e) // ADDED CODE FROM KOVIDH'S BRANCH
+        {
+            SearchMoviePanel.Visible = true;
+            EditMoviePanel.Visible = false;
+        }
+
+        private void SaveNewMovieButton_Click(object sender, EventArgs e) // ADDED CODE FROM KOVIDH'S BRANCH
+        {
+            string name = AddMovieNameTextbox.Text;
+            string genre = AddMovieGenreTextbox.Text;
+            int copies;
+            decimal fee;
+
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(genre) ||
+                !int.TryParse(AddMovieCopiesTextbox.Text, out copies) ||
+                !decimal.TryParse(AddMovieFeeTextbox.Text, out fee))
+            {
+                MessageBox.Show("Please fill all fields with valid values.");
+                return;
+            }
+
+            try
+            {
+                string query = @"
+             INSERT INTO Movie (MovieID, Name, Type, NumCopies, DistributionFee)
+             VALUES (NEXT VALUE FOR Movie_MovieID_Seq, @name, @genre, @copies, @fee)";
+
+                using (SqlCommand cmd = new SqlCommand(query, myConnection))
+                {
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@genre", genre);
+                    cmd.Parameters.AddWithValue("@copies", copies);
+                    cmd.Parameters.AddWithValue("@fee", fee);
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("New movie added.");
+                AddMoviePanel.Visible = false;
+                SearchMoviePanel.Visible = true;
+                MovieSearchButton.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding movie: " + ex.Message);
+            }
+        }
+
+        private void CancelAddMovieButton_Click(object sender, EventArgs e) // ADDED CODE FROM KOVIDH'S BRANCH
+        {
+            AddMoviePanel.Visible = false;
+            SearchMoviePanel.Visible = true;
+        }
     }
 }
