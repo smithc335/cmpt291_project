@@ -177,7 +177,6 @@
             this.rentHistReturnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RentalHistoryLabel = new System.Windows.Forms.Label();
             this.rentCustQueueDGV = new System.Windows.Forms.DataGridView();
-            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RentQueueLabel = new System.Windows.Forms.Label();
             this.rentCustIdResultLabel = new System.Windows.Forms.Label();
             this.rentCustIdLabel = new System.Windows.Forms.Label();
@@ -194,6 +193,7 @@
             this.rentLastNameLabel = new System.Windows.Forms.Label();
             this.ReportsTabPage = new System.Windows.Forms.TabPage();
             this.ReportsAvailablePanel = new System.Windows.Forms.Panel();
+            this.ExecuteReportButton = new System.Windows.Forms.Button();
             this.YearlyIncomeComboBox = new System.Windows.Forms.ComboBox();
             this.YearlyIncomeLabel = new System.Windows.Forms.Label();
             this.SortEmployeesLabel = new System.Windows.Forms.Label();
@@ -206,12 +206,14 @@
             this.Top5ActorsRadioButton = new System.Windows.Forms.RadioButton();
             this.Top5MoviesRadioButton = new System.Windows.Forms.RadioButton();
             this.Top5CustRadioButton = new System.Windows.Forms.RadioButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ReportDisplayPanel = new System.Windows.Forms.Panel();
-            this.ReportTypeLabel = new System.Windows.Forms.Label();
-            this.ExecuteReportButton = new System.Windows.Forms.Button();
-            this.ReportDataGrid = new System.Windows.Forms.DataGridView();
             this.ExitReportViewButton = new System.Windows.Forms.Button();
+            this.ReportDataGrid = new System.Windows.Forms.DataGridView();
+            this.ReportTypeLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.queueMovieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MovieName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberCopies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MovieRentalTabControl.SuspendLayout();
             this.LogInTabPage.SuspendLayout();
             this.LoginPanel.SuspendLayout();
@@ -1705,8 +1707,8 @@
             // 
             // RentalsTabPage
             // 
-            this.RentalsTabPage.Controls.Add(this.rentCustSearchPanel);
             this.RentalsTabPage.Controls.Add(this.rentDispensePanel);
+            this.RentalsTabPage.Controls.Add(this.rentCustSearchPanel);
             this.RentalsTabPage.Location = new System.Drawing.Point(4, 25);
             this.RentalsTabPage.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.RentalsTabPage.Name = "RentalsTabPage";
@@ -1891,10 +1893,10 @@
             this.rentHistEmpID,
             this.rentHistCheckD,
             this.rentHistReturnD});
-            this.rentCustHistoryDGV.Location = new System.Drawing.Point(313, 235);
+            this.rentCustHistoryDGV.Location = new System.Drawing.Point(400, 235);
             this.rentCustHistoryDGV.Name = "rentCustHistoryDGV";
             this.rentCustHistoryDGV.RowHeadersWidth = 51;
-            this.rentCustHistoryDGV.Size = new System.Drawing.Size(545, 150);
+            this.rentCustHistoryDGV.Size = new System.Drawing.Size(458, 150);
             this.rentCustHistoryDGV.TabIndex = 44;
             // 
             // rentHistID
@@ -1936,7 +1938,7 @@
             // 
             this.RentalHistoryLabel.AutoSize = true;
             this.RentalHistoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.RentalHistoryLabel.Location = new System.Drawing.Point(310, 200);
+            this.RentalHistoryLabel.Location = new System.Drawing.Point(397, 200);
             this.RentalHistoryLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.RentalHistoryLabel.Name = "RentalHistoryLabel";
             this.RentalHistoryLabel.Size = new System.Drawing.Size(111, 17);
@@ -1947,19 +1949,14 @@
             // 
             this.rentCustQueueDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rentCustQueueDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.queueMovieID});
+            this.queueMovieID,
+            this.MovieName,
+            this.NumberCopies});
             this.rentCustQueueDGV.Location = new System.Drawing.Point(37, 235);
             this.rentCustQueueDGV.Name = "rentCustQueueDGV";
             this.rentCustQueueDGV.RowHeadersWidth = 51;
-            this.rentCustQueueDGV.Size = new System.Drawing.Size(240, 150);
+            this.rentCustQueueDGV.Size = new System.Drawing.Size(312, 150);
             this.rentCustQueueDGV.TabIndex = 42;
-            // 
-            // queueMovieID
-            // 
-            this.queueMovieID.HeaderText = "Movie ID";
-            this.queueMovieID.MinimumWidth = 6;
-            this.queueMovieID.Name = "queueMovieID";
-            this.queueMovieID.Width = 125;
             // 
             // RentQueueLabel
             // 
@@ -2146,6 +2143,20 @@
             this.ReportsAvailablePanel.Size = new System.Drawing.Size(853, 484);
             this.ReportsAvailablePanel.TabIndex = 3;
             // 
+            // ExecuteReportButton
+            // 
+            this.ExecuteReportButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ExecuteReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExecuteReportButton.ForeColor = System.Drawing.Color.White;
+            this.ExecuteReportButton.Location = new System.Drawing.Point(635, 417);
+            this.ExecuteReportButton.Margin = new System.Windows.Forms.Padding(5);
+            this.ExecuteReportButton.Name = "ExecuteReportButton";
+            this.ExecuteReportButton.Size = new System.Drawing.Size(185, 39);
+            this.ExecuteReportButton.TabIndex = 59;
+            this.ExecuteReportButton.Text = "Execute Report";
+            this.ExecuteReportButton.UseVisualStyleBackColor = false;
+            this.ExecuteReportButton.Click += new System.EventHandler(this.ExecuteReportButton_Click);
+            // 
             // YearlyIncomeComboBox
             // 
             this.YearlyIncomeComboBox.Enabled = false;
@@ -2292,41 +2303,6 @@
             this.ReportDisplayPanel.TabIndex = 59;
             this.ReportDisplayPanel.Visible = false;
             // 
-            // ReportTypeLabel
-            // 
-            this.ReportTypeLabel.AutoSize = true;
-            this.ReportTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportTypeLabel.Location = new System.Drawing.Point(23, 25);
-            this.ReportTypeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.ReportTypeLabel.Name = "ReportTypeLabel";
-            this.ReportTypeLabel.Size = new System.Drawing.Size(107, 20);
-            this.ReportTypeLabel.TabIndex = 50;
-            this.ReportTypeLabel.Text = "Report Type";
-            // 
-            // ExecuteReportButton
-            // 
-            this.ExecuteReportButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.ExecuteReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExecuteReportButton.ForeColor = System.Drawing.Color.White;
-            this.ExecuteReportButton.Location = new System.Drawing.Point(635, 417);
-            this.ExecuteReportButton.Margin = new System.Windows.Forms.Padding(5);
-            this.ExecuteReportButton.Name = "ExecuteReportButton";
-            this.ExecuteReportButton.Size = new System.Drawing.Size(185, 39);
-            this.ExecuteReportButton.TabIndex = 59;
-            this.ExecuteReportButton.Text = "Execute Report";
-            this.ExecuteReportButton.UseVisualStyleBackColor = false;
-            this.ExecuteReportButton.Click += new System.EventHandler(this.ExecuteReportButton_Click);
-            // 
-            // ReportDataGrid
-            // 
-            this.ReportDataGrid.AllowUserToResizeColumns = false;
-            this.ReportDataGrid.AllowUserToResizeRows = false;
-            this.ReportDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReportDataGrid.Location = new System.Drawing.Point(27, 73);
-            this.ReportDataGrid.Name = "ReportDataGrid";
-            this.ReportDataGrid.Size = new System.Drawing.Size(793, 383);
-            this.ReportDataGrid.TabIndex = 51;
-            // 
             // ExitReportViewButton
             // 
             this.ExitReportViewButton.BackColor = System.Drawing.Color.SteelBlue;
@@ -2340,6 +2316,44 @@
             this.ExitReportViewButton.Text = "Exit";
             this.ExitReportViewButton.UseVisualStyleBackColor = false;
             this.ExitReportViewButton.Click += new System.EventHandler(this.ExitReportViewButton_Click);
+            // 
+            // ReportDataGrid
+            // 
+            this.ReportDataGrid.AllowUserToResizeColumns = false;
+            this.ReportDataGrid.AllowUserToResizeRows = false;
+            this.ReportDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReportDataGrid.Location = new System.Drawing.Point(27, 73);
+            this.ReportDataGrid.Name = "ReportDataGrid";
+            this.ReportDataGrid.Size = new System.Drawing.Size(793, 383);
+            this.ReportDataGrid.TabIndex = 51;
+            // 
+            // ReportTypeLabel
+            // 
+            this.ReportTypeLabel.AutoSize = true;
+            this.ReportTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportTypeLabel.Location = new System.Drawing.Point(23, 25);
+            this.ReportTypeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.ReportTypeLabel.Name = "ReportTypeLabel";
+            this.ReportTypeLabel.Size = new System.Drawing.Size(107, 20);
+            this.ReportTypeLabel.TabIndex = 50;
+            this.ReportTypeLabel.Text = "Report Type";
+            // 
+            // queueMovieID
+            // 
+            this.queueMovieID.HeaderText = "Movie ID";
+            this.queueMovieID.MinimumWidth = 6;
+            this.queueMovieID.Name = "queueMovieID";
+            this.queueMovieID.Width = 125;
+            // 
+            // MovieName
+            // 
+            this.MovieName.HeaderText = "Movie Title";
+            this.MovieName.Name = "MovieName";
+            // 
+            // NumberCopies
+            // 
+            this.NumberCopies.HeaderText = "Number of Copies";
+            this.NumberCopies.Name = "NumberCopies";
             // 
             // Form1
             // 
@@ -2517,7 +2531,6 @@
         private System.Windows.Forms.DataGridView rentCustHistoryDGV;
         private System.Windows.Forms.Label RentalHistoryLabel;
         private System.Windows.Forms.DataGridView rentCustQueueDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn queueMovieID;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentHistID;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentHistMovieID;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentHistEmpID;
@@ -2579,6 +2592,9 @@
         private System.Windows.Forms.Button ExecuteReportButton;
         private System.Windows.Forms.DataGridView ReportDataGrid;
         private System.Windows.Forms.Button ExitReportViewButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn queueMovieID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MovieName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberCopies;
         // STOP
     }
 }
