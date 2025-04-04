@@ -1050,7 +1050,7 @@ namespace CMPT291_Project
         {
             ReportsAvailablePanel.Visible = false;
 
-            if (Top5MoviesRadioButton.Checked)
+            if (Top5MoviesRadioButton.Checked) // Top 5 Movies
             {
                 ReportTypeLabel.Text = Top5MoviesRadioButton.Text;
 
@@ -1091,34 +1091,67 @@ namespace CMPT291_Project
                     MessageBox.Show(e3.ToString(), "Error");
                 }
             }
-            else if (Top5CustRadioButton.Checked)
+            else if (Top5CustRadioButton.Checked) // Top 5 Customers
             {
                 ReportTypeLabel.Text = Top5CustRadioButton.Text;
 
-                //myCommand.CommandText = "SELECT * FROM (SELECT C.CustomerID, (SELECT (C1.FirstName) + ', ' + (C1.LastName) FROM Customer C1 " +
-                //    "WHERE C1.CustomerID = C.CustomerID) AS FullName, (SELECT COUNT(R1.RentalID) FROM Rental R1 WHERE R1.CustomerID = C.CustomerID) AS NumberOfRentals, " +
-                //    "ROW_NUMBER() OVER (ORDER BY (SELECT COUNT(*) FROM Rental R1 WHERE R1.CustomerID = C.CustomerID) DESC) AS RankOfRentals FROM Customer C) AS RankedCustomers" +
-                //    "WHERE (RankOfRentals <= 5) ORDER BY NumberOfRentals DESC";
+                myCommand.CommandText = "SELECT * " +
+                    "FROM (SELECT C.CustomerID, " +
+                    "(SELECT (C1.FirstName) + ' ' + (C1.LastName) " +
+                    "FROM Customer C1 " +
+                    "WHERE C1.CustomerID = C.CustomerID) AS FullName, " +
+                    "(SELECT COUNT(R1.RentalID) " +
+                    "FROM Rental R1 " +
+                    "WHERE R1.CustomerID = C.CustomerID) AS NumberOfRentals, " +
+                    "ROW_NUMBER() OVER (ORDER BY (SELECT COUNT(*) FROM Rental R1 WHERE R1.CustomerID = C.CustomerID) DESC) AS RankOfRentals " +
+                    "FROM Customer C) AS RankedCustomers " +
+                    "WHERE (RankOfRentals <= 5) " +
+                    "ORDER BY NumberOfRentals DESC";
 
-                //try
-                //{
-                //    myReader = myCommand.ExecuteReader();
+                //myCommand.CommandText = "SELECT * " +
+                //    "FROM (SELECT C.CustomerID, " +
+                //    "(SELECT C1.FirstName + ' ' + C1.LastName " +
+                //    "FROM Customer C1 " +
+                //    "WHERE C1.CustomerID = C.CustomerID) as FullName, COUNT(*) as NumberOfRentals " +
+                //    "FROM Customer C, Rental R " +
+                //    "WHERE C.CustomerID = R.CustomerID " +
+                //    "GROUP BY C.CustomerID) as RankedCustomers " +
+                //    "WHERE RankedCustomers.NumberOfRentals >= " +
+                //    "(SELECT NumberOfRentals " +
+                //    "FROM (SELECT C.CustomerID, COUNT(*) AS NumberOfRentals, ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) as rowNum " +
+                //    "FROM Customer C, Rental R " +
+                //    "WHERE C.CustomerID = R.CustomerID " +
+                //    "GROUP BY C.CustomerID) as Ranked2 " +
+                //    "WHERE rowNum = 5) " +
+                //    "ORDER BY RankedCustomers.NumberOfRentals DESC";
 
-                //    ReportDataGrid.Rows.Clear();
-                //    while (myReader.Read())
-                //    {
-                //        ReportDataGrid.Rows.Add(myReader["CustomerID"].ToString(), myReader["FullName"].ToString(), 
-                //            myReader["NumberOfRentals"].ToString(), myReader["RankedCustomers"].ToString());
-                //    }
+                ReportDataGrid.Columns.Clear();
+                ReportDataGrid.Columns.Add("CustomerID", "ID");
+                ReportDataGrid.Columns.Add("FullName", "Customer Name");
+                ReportDataGrid.Columns.Add("NumberOfRentals", "Number of Rentals");
+                ReportDataGrid.Columns[0].Width = 75;
+                ReportDataGrid.Columns[1].Width = 300;
+                ReportDataGrid.Columns[2].Width = 300;
 
-                //    myReader.Close();
-                //}
-                //catch (Exception e3)
-                //{
-                //    MessageBox.Show(e3.ToString(), "Error");
-                //}
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+
+                    ReportDataGrid.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        ReportDataGrid.Rows.Add(myReader["CustomerID"].ToString(), myReader["FullName"].ToString(),
+                            myReader["NumberOfRentals"].ToString());
+                    }
+
+                    myReader.Close();
+                }
+                catch (Exception e3)
+                {
+                    MessageBox.Show(e3.ToString(), "Error");
+                }
             }
-            else if (Top5ActorsRadioButton.Checked)
+            else if (Top5ActorsRadioButton.Checked) // Top 5 Actors
             {
                 ReportTypeLabel.Text = Top5ActorsRadioButton.Text;
 
@@ -1146,9 +1179,6 @@ namespace CMPT291_Project
                 {
                     myReader = myCommand.ExecuteReader();
 
-                    //MessageBox.Show(myReader.GetName(0) + "  " + myReader.GetName(1));
-                    //MessageBox.Show(myReader.GetString(0) + "  " + myReader.GetString(1));
-
                     ReportDataGrid.Rows.Clear();
                     while (myReader.Read())
                     {
@@ -1162,11 +1192,47 @@ namespace CMPT291_Project
                     MessageBox.Show(e3.ToString(), "Error");
                 }
             }
-            else if (SortEmployeesRadioButton.Checked)
+            else if (SortEmployeesRadioButton.Checked) // Sorted Employees
             {
                 ReportTypeLabel.Text = SortEmployeesRadioButton.Text;
+
+                myCommand.CommandText = "SELECT E.EmployeeID, " +
+                    "(E.FirstName) + ' ' + (E.LastName) as FullName, " +
+                    "(SELECT COUNT(R.RentalID) " +
+                    "FROM Rental R " +
+                    "WHERE R.EmployeeID = E.EmployeeID) as NumberOfRentalsDispensed " +
+                    "FROM Employee E " +
+                    "ORDER BY (SELECT COUNT(R.RentalID) " +
+                    "FROM Rental R " +
+                    "WHERE R.EmployeeID = E.EmployeeID) DESC";
+
+                ReportDataGrid.Columns.Clear();
+                ReportDataGrid.Columns.Add("EmployeeID", "ID");
+                ReportDataGrid.Columns.Add("FullName", "Employee Name");
+                ReportDataGrid.Columns.Add("NumberOfRentalsDispensed", "Number of Rentals Dispensed");
+                ReportDataGrid.Columns[0].Width = 75;
+                ReportDataGrid.Columns[1].Width = 300;
+                ReportDataGrid.Columns[2].Width = 300;
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+
+                    ReportDataGrid.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        ReportDataGrid.Rows.Add(myReader["EmployeeID"].ToString(), myReader["FullName"].ToString(),
+                            myReader["NumberOfRentalsDispensed"].ToString());
+                    }
+
+                    myReader.Close();
+                }
+                catch (Exception e3)
+                {
+                    MessageBox.Show(e3.ToString(), "Error");
+                }
             }
-            else
+            else // Total Income Specified by Year
             {
                 ReportTypeLabel.Text = YearlyIncomeRadioButton.Text;
             }
