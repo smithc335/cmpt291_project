@@ -994,6 +994,5 @@ namespace CMPT291_Project
             AddMoviePanel.Visible = false;
             SearchMoviePanel.Visible = true;
         }
-
     }
 }
