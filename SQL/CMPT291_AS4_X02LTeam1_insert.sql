@@ -179,6 +179,9 @@ INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth)
 INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
 	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Tom Hanks', 'M', '1956-07-09');
 
+INSERT INTO Actor (ActorID, Name, Gender, DateOfBirth) 
+	VALUES (NEXT VALUE FOR Actor_ActorID_Seq, 'Ryan Gosling', 'M', '1980-11-12');
+
 -- Add test data for Rental
 
 INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
@@ -189,6 +192,45 @@ INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, Ret
 
 INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
 	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 3, 1, 2, '2025-02-20', '2025-02-28', 5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 3, 1, 2, '2025-01-20', '2025-01-28', 4.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 2, 3, 1, '2025-02-26', '2025-03-03', 4);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 14, 5, 1, '2025-02-25', '2025-03-02', 3.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 10, 5, 1, '2025-02-25', '2025-03-02', 3);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 4, 4, 1, '2025-02-25', '2025-03-02', 2);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 4, 2, 1, '2025-02-25', '2025-03-02', 3);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 7, 2, 1, '2025-02-25', '2025-03-02', 4);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 12, 1, 3, '2025-02-25', '2025-03-02', 4.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 12, 2, 3, '2025-02-25', '2025-03-02', 5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 12, 1, 3, '2025-02-25', '2025-03-02', 4);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 13, 1, 3, '2025-02-25', '2025-03-02', 3.5);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 8, 3, 3, '2025-02-25', '2025-03-02', 1);
+
+INSERT INTO Rental (RentalID, MovieID, CustomerID, EmployeeID, CheckoutDate, ReturnDate, CustRateMovie) 
+	VALUES (NEXT VALUE FOR Rental_RentalID_Seq, 11, 4, 2, '2025-02-25', '2025-03-02', 4);
 
 -- Add test data for QueueUp
 
@@ -213,6 +255,9 @@ INSERT INTO AppearedIn (MovieID, ActorID)
 	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Captain America: The Winter Soldier'), (SELECT ActorID FROM Actor WHERE Name = 'Robert Downey Jr.'));
 
 INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Captain America: The Winter Soldier'), (SELECT ActorID FROM Actor WHERE Name = 'Chris Evans'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
 	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Superbad'), (SELECT ActorID FROM Actor WHERE Name = 'Leonardo DiCaprio'));
 
 INSERT INTO AppearedIn (MovieID, ActorID)
@@ -220,6 +265,24 @@ INSERT INTO AppearedIn (MovieID, ActorID)
 
 INSERT INTO AppearedIn (MovieID, ActorID)
 	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Parasite'), (SELECT ActorID FROM Actor WHERE Name = 'Scarlett Johansson'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Avengers: Age of Ultron'), (SELECT ActorID FROM Actor WHERE Name = 'Scarlett Johansson'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'The Notebook'), (SELECT ActorID FROM Actor WHERE Name = 'Ryan Gosling'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'La La Land'), (SELECT ActorID FROM Actor WHERE Name = 'Ryan Gosling'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'School of Rock'), (SELECT ActorID FROM Actor WHERE Name = 'Jack Black'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'Interstellar'), (SELECT ActorID FROM Actor WHERE Name = 'Anne Hathaway'));
+
+INSERT INTO AppearedIn (MovieID, ActorID)
+	VALUES ((SELECT MovieId FROM Movie WHERE Name = 'The Shawshank Redemption'), (SELECT ActorID FROM Actor WHERE Name = 'Leonardo DiCaprio'));
 
 -- Add test data for RateActor
 

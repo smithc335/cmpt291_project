@@ -560,6 +560,55 @@ namespace CMPT291_Project
             VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
         }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            string customerID = Customer.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+            string[] phoneNumbers;
+
+            // Update record in Customer table
+            myCommand.CommandText = "update Customer set FirstName = '" + VUFirstNameTextbox.Text + "', LastName = '" + VULastNameTextbox.Text +
+                "', EmailAddress = '" + VUEmailTextbox.Text + "', CreditCardNum = '" + VUCreditTextbox.Text + "', AcctNum = " +
+                VUAcctNumTextbox.Text + ", Address = '" + VUAddressTextbox.Text + "', City = '" + VUCityTextbox.Text + "', Province = '" +
+                VUProvinceComboBox.Text + "', PostalCode = '" + VUPostalCodeTextbox.Text + "' where CustomerID = " + customerID;
+
+            myCommand.ExecuteNonQuery();
+
+            // Update records in CustomerPhone table
+            myCommand.CommandText = "delete from CustomerPhone where CustomerID = " + customerID;
+            myCommand.ExecuteNonQuery();
+
+            if (VUPhoneListBox.Items.Count > 0)
+            {
+                for (int i = 0; i < VUPhoneListBox.Items.Count; i++)
+                {
+                    myCommand.CommandText = "insert into CustomerPhone (CustomerID, PhoneNum, PhoneType) values (" + customerID + ", '";
+
+                    phoneNumbers = VUPhoneListBox.Items[i].ToString().Split(' ');
+                    myCommand.CommandText += phoneNumbers[0] + "', '" + phoneNumbers[2] + "')";
+
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Customer information has been updated.");
+
+            // Change screens back to search screen
+            SearchCustomerPanel.Visible = true;
+            SearchButton.PerformClick();
+            ViewCustomerPanel.Visible = false;
+            AddCustomerPanel.Visible = false;
+        }
+
+        private void VUPhoneListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VUDeletePhoneButton.Enabled = (VUPhoneListBox.SelectedItem != null);
+        }
+
+        private void VUDeletePhoneButton_Click(object sender, EventArgs e)
+        {
+            VUPhoneListBox.Items.Remove(VUPhoneListBox.SelectedItem);
+        }
+
 
 // RENT / DISPENSE SCREEN CODE
 
@@ -709,7 +758,9 @@ namespace CMPT291_Project
 
 
                 // Commit transaction
-                myTransaction.Commit(); 
+                myTransaction.Commit();
+                LoadQueueUPData();
+                LoadRentalHistoryData();
 
             }
             catch (Exception e3)
@@ -727,11 +778,31 @@ namespace CMPT291_Project
 
         }
 
+
+
+        private void LoadQueueUPData()
+        {
+            rentCustQueueDGV.Columns.Clear();
+            SqlDataAdapter myAdapter = new SqlDataAdapter("SELECT * FROM QueueUp WHERE CustomerID = " + rentCustIdResultLabel.Text, myConnection);
+            DataTable dataTable = new DataTable();
+            myAdapter.Fill(dataTable);
+            rentCustQueueDGV.DataSource = dataTable;
+        }
+
+        private void LoadRentalHistoryData()
+        {
+            rentCustHistoryDGV.Columns.Clear();
+            SqlDataAdapter myAdapter = new SqlDataAdapter("SELECT * FROM Rental WHERE CustomerID = " + rentCustIdResultLabel.Text, myConnection);
+            DataTable dataTable = new DataTable();
+            myAdapter.Fill(dataTable);
+            rentCustHistoryDGV.DataSource = dataTable;
+        }
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Test
             // test  2
-        }
 
 
         // MOVIE FEATURE CODE
@@ -878,6 +949,7 @@ namespace CMPT291_Project
             {
                 MessageBox.Show("Please select a movie to delete.");
             }
+
         }
 
         private void LoadAllMovies()
